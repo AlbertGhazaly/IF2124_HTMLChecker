@@ -1,6 +1,6 @@
 from myClass import Transition, PDA
 
-def parseFile(filedir):
+def parseFilePDA(filedir):
     with open(f"{filedir}", "r") as file:
 
         content = file.readlines()
@@ -39,7 +39,7 @@ def parseFile(filedir):
 
 # contoh parsing PDA by Empty Stack
 print("PDA by Empty Stack")
-P = parseFile("txt/pda_empty.txt")
+P = parseFilePDA("txt/pda_empty.txt")
 
 print(P)
 for t in P.transitions:
@@ -49,7 +49,7 @@ print()
 
 # contoh parsing PDA by Accepted State
 print("PDA by Accepted State")
-P = parseFile("txt/pda_acceptedstates.txt")
+P = parseFilePDA("txt/pda_acceptedstates.txt")
 
 print(P)
 for t in P.transitions:
