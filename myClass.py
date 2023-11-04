@@ -10,6 +10,7 @@ class Transition:
     def __str__(self):
         return f"δ({self.iState}, {self.read}, {self.pop}) = ({self.fState}, {self.push})"
 
+
 class PDA:
 
     def __init__(self, states, alphabet, stackSymbol, transitions, startState, startStack, acceptedStates = None):

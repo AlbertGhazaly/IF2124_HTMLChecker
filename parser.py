@@ -1,7 +1,7 @@
 from myClass import Transition, PDA
 
 def parseFilePDA(filedir):
-    with open(f"{filedir}", "r") as file:
+    with open(f"{filedir}", "r", encoding="utf-8") as file:
 
         content = file.readlines()
         content = [line.rstrip('\n') for line in content]
@@ -37,20 +37,44 @@ def parseFilePDA(filedir):
         else: # PDA by Empty Stack
             return PDA(states, alphabet, stackSymbol, transitions, startState, startStack)
 
-# contoh parsing PDA by Empty Stack
-print("PDA by Empty Stack")
-P = parseFilePDA("txt/pda_empty.txt")
 
-print(P)
-for t in P.transitions:
-    print(t)
+def parseFileHTML(filedir):
+    with open(f"{filedir}", "r", encoding="utf-8") as file:
 
-print()
+        content = file.readlines()
+        content = [line.rstrip('\n') for line in content]
 
-# contoh parsing PDA by Accepted State
-print("PDA by Accepted State")
-P = parseFilePDA("txt/pda_acceptedstates.txt")
+        string = ""
+        for row in content:
+            for char in row:
+                if char != " ":
+                    string += char
+        
+        return string
 
-print(P)
-for t in P.transitions:
-    print(t)
+if __name__ == "__main__":
+
+    # contoh parsing file PDA by Empty Stack
+    print("PDA by Empty Stack")
+    P = parseFilePDA("txt/pda_empty.txt")
+
+    print(P)
+    for t in P.transitions:
+        print(t)
+
+    print()
+
+    # contoh parsing file PDA by Accepted States
+    print("PDA by Accepted States")
+    P = parseFilePDA("txt/pda_acceptedstates.txt")
+
+    print(P)
+    for t in P.transitions:
+        print(t)
+    
+    print()
+
+    # contoh parsing file HTML
+    print("String")
+    String = parseFileHTML("txt/html.txt")
+    print(String)
