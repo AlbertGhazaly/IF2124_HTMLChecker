@@ -52,7 +52,7 @@ Tuple PDA by Empty Stack:
 
 #############################################################################################################
 
-Tuple PDA by Final States:
+Tuple PDA by Accepted States:
 
     P(Q, ∑, Γ, δ, i, S, F)
 
@@ -62,7 +62,7 @@ Tuple PDA by Final States:
     δ = himpunan transisi
     i = start state
     S = start stack
-    F = himpunan final state
+    F = himpunan accepted state
 
 #############################################################################################################
 
