@@ -23,11 +23,12 @@ def parseFilePDA(filedir):
 
         for i in range(startIdx, len(content)):
 
-            iState = content[i][0].rstrip(" ")
-            read = content[i][2].rstrip(" ")
-            pop = content[i][4].rstrip(" ")
-            fState = content[i][6].rstrip(" ")
-            push = content[i][8:].rstrip(" ")
+            transition = content[i].split()
+            iState = transition[0]
+            read = transition[1]
+            pop = transition[2]
+            fState = transition[3]
+            push = transition[4]
 
             transition = Transition(iState, read, pop, fState, push)
             transitions.append(transition)
@@ -48,7 +49,7 @@ def parseFileHTML(filedir):
         for row in content:
             for char in row:
                 if char != " ":
-                    string += char
+                    string += char.lower()
         
         return String(string)
 

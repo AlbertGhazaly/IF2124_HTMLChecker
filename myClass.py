@@ -41,7 +41,7 @@ class PDA:
         idx = []
 
         for i in range(len(self.transitions)):
-            if (self.transitions[i].read == cc) and (self.transitions[i].pop == stack.top) and (self.transitions[i].iState == stack.state):
+            if (self.transitions[i].read == cc or self.transitions[i].read == "any") and (self.transitions[i].pop == stack.top) and (self.transitions[i].iState == stack.state):
                 idx.append(i)
         
         return idx
@@ -52,7 +52,7 @@ class PDA:
         transitions = []
 
         for i in range(len(self.transitions)):
-            if (self.transitions[i].read == cc) and (self.transitions[i].pop == stack.top) and (self.transitions[i].iState == stack.state):
+            if (self.transitions[i].read == cc or self.transitions[i].read == "any") and (self.transitions[i].pop == stack.top) and (self.transitions[i].iState == stack.state):
                 transitions.append(self.transitions[i])
         
         return transitions

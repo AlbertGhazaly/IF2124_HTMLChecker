@@ -66,9 +66,9 @@ else:
     for transition in pda.transitions:
         print(transition)
 
-    ### simulasi pengolahan string HTML ###
-    # print("\nString HTML :")
-    # print(html)
+    ## simulasi pengolahan string HTML ###
+    print("\nString HTML :")
+    print(html)
 
     # print("\nhtml.read()")
     # cc = html.read()
