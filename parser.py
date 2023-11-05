@@ -1,4 +1,4 @@
-from myClass import Transition, PDA
+from myclass import Transition, PDA, String
 
 def parseFilePDA(filedir):
     with open(f"{filedir}", "r", encoding="utf-8") as file:
@@ -50,7 +50,7 @@ def parseFileHTML(filedir):
                 if char != " ":
                     string += char
         
-        return string
+        return String(string)
 
 if __name__ == "__main__":
 
