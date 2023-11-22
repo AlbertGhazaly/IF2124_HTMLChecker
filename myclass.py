@@ -49,11 +49,11 @@ class PDA:
     def getPossibleTransitions(self, cc, stack):
 
         
-        transitions = []
+        transitions = None
 
         for i in range(len(self.transitions)):
             if (self.transitions[i].read == cc or self.transitions[i].read == "any") and (self.transitions[i].pop == stack.top) and (self.transitions[i].iState == stack.state):
-                transitions.append(self.transitions[i])
+                transitions = self.transitions[i]
         
         return transitions
     
@@ -68,8 +68,9 @@ class Stack:
     def __str__(self):
         return self.stack
 
-    def push(self, x):
-        self.stack += x[::-1]
+    def push(self,x):
+            self.stack += x[::-1]
+
 
     def isEmpty(self):
         return self.stack == ""
@@ -90,8 +91,9 @@ class Stack:
             pass # nge push epsilon ke stack
         else:
             self.push(transition.push)
-                
-            self.state = transition.fState
+        
+        self.state = transition.fState
+        self.top = self.stack[-1]
     
 class String:
 
@@ -99,22 +101,23 @@ class String:
         self.string = str
 
     def __str__(self):
-        return self.string
-
+        return self.string    
     def read(self, read = "any"):
 
         current_char = ""
-        
-        # jika yang dibaca bukan epsilon
-        if read == "any":
+        # jika membaca epsilon
+        if read == "epsilon":
+            current_char = "ε"
+        else:# jika yang dibaca bukan epsilon
             current_char = self.string[0]
             self.string = self.string[1:]
-
-        # jika membaca epsilon
-        elif read == "epsilon":
-            current_char = "ε"
-
         return current_char
+    
+    def isEmpty(self):
+        flag = False
+        if (self.string == ""):
+            flag = True
+        return flag
 
 if __name__ == "__main__":
     # contoh transition

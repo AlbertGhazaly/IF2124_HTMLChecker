@@ -53,29 +53,29 @@ def parseFileHTML(filedir):
         
         return String(string)
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
 
-    # contoh parsing file PDA by Empty Stack
-    print("PDA by Empty Stack")
-    P = parseFilePDA("txt/pda_empty.txt")
+#     # contoh parsing file PDA by Empty Stack
+#     print("PDA by Empty Stack")
+#     P = parseFilePDA("txt/pda_empty.txt")
 
-    print(P)
-    for t in P.transitions:
-        print(t)
+#     print(P)
+#     for t in P.transitions:
+#         print(t)
 
-    print()
+#     print()
 
-    # contoh parsing file PDA by Accepted States
-    print("PDA by Accepted States")
-    P = parseFilePDA("txt/pda_acceptedstates.txt")
+#     # contoh parsing file PDA by Accepted States
+#     print("PDA by Accepted States")
+#     P = parseFilePDA("txt/pda_acceptedstates.txt")
 
-    print(P)
-    for t in P.transitions:
-        print(t)
+#     print(P)
+#     for t in P.transitions:
+#         print(t)
     
-    print()
+#     print()
 
-    # contoh parsing file HTML
-    print("String")
-    String = parseFileHTML("txt/html.txt")
-    print(String)
+#     # contoh parsing file HTML
+#     print("String")
+#     String = parseFileHTML("txt/html.txt")
+#     print(String)

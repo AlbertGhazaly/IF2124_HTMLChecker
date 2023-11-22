@@ -70,7 +70,26 @@ else:
     ## simulasi pengolahan string HTML ###
     print("\nString HTML :")
     print(html)
+    cc = ""
+    accepted = True
+    flag = html.isEmpty()
+    while (not flag and accepted):
+        cc = html.read("any")
+        trans = pda.getPossibleTransitions(cc,stack)
+        if (trans==None):
+            accepted = False
+        else:
+            stack.doProcedure(trans)
+        flag = html.isEmpty()
+    if (accepted):
+        if (stack.top=="@"):
+            print("Accepted")
+        else:
+            print("Rejected")
+    else:
+        print("Rejected")
 
+        
     # print("\nhtml.read()")
     # cc = html.read()
     # print(f"Current character: {cc}")
