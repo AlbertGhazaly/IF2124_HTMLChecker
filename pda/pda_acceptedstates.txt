@@ -4,11 +4,27 @@ a
 Z Y 
 Q
 Z 
-F 
-Q a Z Q YZ
-Q a Y Q YY
-Q ε Z P Z
-Q ε Y P Y 
-P a Z P ε
-P a Y P ε
-P ε Z F ε
+ε
+# <html> </html>
+q < @ html html><head></head><body></body></html>
+html h  h html h
+html t t html t
+html m m html m
+html l l html l
+html > > html >
+
+html < < html <
+html / / html /
+
+# empty stack
+html ε @ q @
+
+# <head> </head>
+html e e head e
+head a a head a
+head d d head d
+head > > head >
+head < < head <
+head / / head /
+head h h head h
+

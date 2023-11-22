@@ -1,6 +1,7 @@
 import sys
 import os
 import parser
+from myclass import Transition, PDA, String
 from myclass import Stack
 
 # verifikasi jumlah argumen pada pemanggilan main.py
