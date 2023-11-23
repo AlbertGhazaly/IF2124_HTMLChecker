@@ -1,0 +1,2 @@
+print('kedua')
+print(string)
