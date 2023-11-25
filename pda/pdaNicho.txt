@@ -212,18 +212,6 @@ bodyopendone % < bodyopendone ε ε
 - accepts tag in body
 bodyopendone < < bodyacctag < ε
 bodyacctag / / bodyclose / ε
-bodyacctag ! / bodycommentopen ε ε
-
-- comment on body
-bodyacctag ! / bodycommentopen ε ----><
-bodycommentopen - - bodycommentopen-1 - ε
-bodycommentopen-1 - - bodycommentopen-2 - ε
-bodycommentopen-2 - - bodycommentopen-3 - ε
-bodycommentopen-2 any - bodycommentopen-2 ε ε
-bodycommentopen-3 - - bodycommentopen-4 - ε
-bodycommentopen-3 any - bodycommentopen-2 ε -
-bodycommentopen-4 any - bodycommentopen-2 ε -- 
-bodycommentopen-4 > > bodyopendone > ε
 
 - start closetag 
 bodyclose b b bodyclose b ε
@@ -297,6 +285,69 @@ imgalt " " imgtext " ε
 imgopen > > bodyopendone > ε
 imgopenatr > > bodyopendone > ε
 
+- img in body 
+bodyacctag i / imgopen ε mgsrc=""><
+imgopen m m imgopen m ε
+imgopen g g imgopen g ε
+
+- img text 
+imgtext " " imgopen " ε
+imgtext any " imgtext ε ε
+
+- spasi di img 
+imgopen % s imgopenatr ε ε
+imgopen % > imgopenatr ε ε
+imgopenatr % s imgopenatr ε ε
+imgopenatr $ s imgopenatr ε ε
+
+- id in img
+imgopenatr i s imgid ε d=""
+imgopenatr i > imgid ε d=""
+imgid d d imgid d ε
+imgid = = imgid = ε
+imgid " " imgtext " ε
+
+- class in img
+imgopenatr c s imgclass ε lass=""
+imgopenatr c > imgclass ε lass=""
+imgclass l l imgclass l ε
+imgclass a a imgclass a ε
+imgclass s s imgclass s ε
+imgclass = = imgclass = ε
+imgclass " " imgtext " ε
+
+- s attribut in img 
+imgopenatr s s imgsattr s ε 
+imgopenatr s > imgsattr ε ε 
+
+- style in img
+imgsattr t r imgstyle ε yle=""s
+imgsattr t > imgstyle ε yle=""
+imgstyle y y imgstyle y ε
+imgstyle l l imgstyle l ε
+imgstyle e e imgstyle e ε
+imgstyle = = imgstyle = ε
+imgstyle " " imgtext " ε
+
+- src in img 
+imgsattr r r imgsrc r ε
+imgsrc c c imgsrc c ε
+imgsrc = = imgsrc = ε
+imgsrc " " imgtext " ε
+
+- alt 
+imgopenatr a s imgalt ε lt=""
+imgopenatr a > imgalt ε lt=""
+imgalt l l imgalt l ε   
+imgalt t t imgalt t ε
+imgalt = = imgalt = ε
+imgalt " " imgtext " ε
+
+- close img tag
+imgopen > > bodyopendone > ε
+imgopenatr > > bodyopendone > ε
+
+
 - start hr html 
 bodyacctag h / hrtag ε r>
 hrtag r r hrtag r ε
@@ -333,3 +384,80 @@ hrtagstyle = = hrtagstyle = ε
 hrtagstyle " " hrtagtext " ε
 hrtagtext any " hrtagtext ε ε
 hrtagtext " " hrtag " ε
+
+- form in body
+bodyacctag f / formopentag ε orm></form>
+formopentag o o formopentag o ε
+formopentag r r formopentag e ε
+formopentag m m formopentag m ε
+formopentag % > formtagatr ε ε
+formopentag > > formcontent > ε
+formcontent any < formcontent ε ε
+formcontent < < formclosetag < ε
+formclosetag / / formclosetag / ε
+formclosetag f f formclosetag f ε
+formclosetag o o formclosetag o ε
+formclosetag r r formclosetag r ε
+formclosetag m m formclosetag m ε
+formclosetag > > bodyopendone > <
+
+- form atribut id
+formtagatr i > formtagid ε d=""
+formtagid d d formtagid d ε
+formtagid = = formtagid = ε
+formtagid " " formtagtext " ε
+formtagtext any " formtagtext ε ε
+formtagtext " " formopentag " ε
+
+- form atribut class
+formtagatr c > formtagclass ε lass=""
+formtagclass l l formtagclass l ε
+formtagclass a a formtagclass a ε
+formtagclass s s formtagclass s ε
+formtagclass s s formtagclass s ε
+formtagclass = = formtagclass = ε
+formtagclass " " formtagtext " ε
+formtagtext any " formtagtext ε ε
+formtagtext " " formopentag " ε
+
+- form atribut style
+formtagatr s > formtagstyle ε tyle=""
+formtagstyle t t formtagstyle t ε
+formtagstyle y y formtagstyle y ε
+formtagstyle l l formtagstyle l ε
+formtagstyle e e formtagstyle e ε
+formtagstyle = = formtagstyle = ε
+formtagstyle " " formtagtext " ε
+formtagtext any " formtagtext ε ε
+formtagtext " " formopentag " ε
+
+- form atribut action
+formtagatr a > formtagaction ε ction=""
+formtagaction c c formtagaction c ε
+formtagaction t t formtagaction t ε
+formtagaction i i formtagaction i ε
+formtagaction o o formtagaction o ε
+formtagaction n n formtagaction n ε
+formtagaction = = formtagaction = ε
+formtagaction " " formtagtext " ε
+formtagtext any " formtagtext ε ε
+formtagtext " " formopentag " ε
+
+- form atribut method
+formtagatr m > formtagaction ε ethod=""
+formtagaction e e formtagaction e ε
+formtagaction t t formtagaction t ε
+formtagaction h h formtagaction h ε
+formtagaction o o formtagaction o ε
+formtagaction d d formtagaction d ε
+formtagaction = = formtagaction = ε
+formtagaction " " formtagtext " ε
+formtagtext G " formtagacttextget ε ET
+formtagacttextget E E formtagacttextget E ε
+formtagacttextget T T formtagacttextget T ε
+formtagacttextget " " formopentag " ε
+formtagtext P " formtagacttextpost ε OST
+formtagacttextpost O O formtagacttextpost O ε
+formtagacttextpost S S formtagacttextpost S ε
+formtagacttextpost T T formtagacttextpost T ε
+formtagacttextpost " " formopentag " ε
