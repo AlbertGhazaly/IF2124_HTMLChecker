@@ -8,11 +8,41 @@ q0
 - template 
 q read top q' pop push
 
+- initiate
+q0 < # newtagbeforehtml ε ε
+q0 % # q0 ε ε
+q0 $ # q0 ε ε
+htmlclosedone % # htmlclosedone ε ε
+htmlclosedone $ # htmlclosedone ε ε
+
+
+- comment before html
+newtagbeforehtml ! # comment ε ---->
+comment - - comment-1 - ε
+comment-1 - - comment-2 - ε
+comment-2 - - comment-3 - ε
+comment-2 any - comment-2 ε ε
+comment-3 - - comment-4 - ε
+comment-3 any - comment-2 ε -
+comment-4 any - comment-2 ε -- 
+comment-4 > > q0 > ε
+
+- comment after html
+htmlclosedone < # newtagafterhtml ε ε
+newtagafterhtml ! # commenta ε ---->
+commenta - - comment-1a - ε
+comment-1a - - comment-2a - ε
+comment-2a - - comment-3a - ε
+comment-2a any - comment-2a ε ε
+comment-3a - - comment-4a - ε
+comment-3a any - comment-2a ε -
+comment-4a any - comment-2a ε -- 
+comment-4a > > htmlclosedone > ε
+
 - start open tag html 
-q0 < # htmlopen ε html></html>
+newtagbeforehtml h # htmlopen ε tml></html>
 
 - opentag html
-htmlopen h h htmlopen h ε
 htmlopen t t htmlopen t ε
 htmlopen m m htmlopen m ε
 htmlopen l l htmlopen l ε
@@ -27,9 +57,9 @@ htmlopenatr > > htmlopendone > ε
 htmlopenatr i > htmlid ε d=""
 htmlid d d htmlid d ε
 htmlid = = htmlid = ε
-htmlid " " htmlidtext " ε
-htmlidtext any " htmlidtext ε ε
-htmlidtext " " htmlatrdone " ε
+htmlid " " htmltext " ε
+htmltext any " htmltext ε ε
+htmltext " " htmlatrdone " ε
 htmlatrdone % > htmlopenatr ε ε
 htmlatrdone $ > htmlopenatr ε ε
 htmlatrdone > > htmlopendone > ε
@@ -44,9 +74,9 @@ htmlclass a a htmlclass a ε
 htmlclass s s htmlclasss s ε
 htmlclasss s s htmlclass s ε
 htmlclass = = htmlclass = ε
-htmlclass " " htmlclasstext " ε
-htmlclasstext any " htmlclasstext ε ε
-htmlclasstext " " htmlatrdone " ε
+htmlclass " " htmltext " ε
+htmltext any " htmltext ε ε
+htmltext " " htmlatrdone " ε
 htmlatrdone % > htmlopenatr ε ε
 htmlatrdone $ > htmlopenatr ε ε
 htmlatrdone > > htmlopendone > ε
@@ -62,8 +92,8 @@ htmlstyle l l htmlcstyle l ε
 htmlcstyle e e htmlstyle e ε
 htmlstyle = = htmlstyle = ε
 htmlstyle " " htmlstyletext " ε
-htmlstyletext any " htmlstyletext ε ε
-htmlstyletext " " htmlatrdone " ε
+htmltext any " htmltext ε ε
+htmltext " " htmlatrdone " ε
 htmlatrdone % > htmlopenatr ε ε
 htmlatrdone $ > htmlopenatr ε ε
 htmlatrdone > > htmlopendone > ε
@@ -100,9 +130,9 @@ headopenatr > > headopendone > ε
 headopenatr i > headid ε d=""
 headid d d headid d ε
 headid = = headid = ε
-headid " " htmlidtext " ε
-headidtext any " headidtext ε ε
-headidtext " " headatrdone " ε
+headid " " headtext " ε
+headtext any " headtext ε ε
+headtext " " headatrdone " ε
 headatrdone % > headopenatr ε ε
 headatrdone $ > headopenatr ε ε
 headatrdone > > headopendone > ε
@@ -117,9 +147,9 @@ headclass a a headclass a ε
 headclass s s headclasss s ε
 headclasss s s headclass s ε
 headclass = = headclass = ε
-headclass " " headclasstext " ε
-headclasstext any " headclasstext ε ε
-headclasstext " " headatrdone " ε
+headclass " " headtext " ε
+headtext any " headtext ε ε
+headtext " " headatrdone " ε
 headatrdone % > headopenatr ε ε
 headatrdone $ > headopenatr ε ε
 headatrdone > > headopendone > ε
@@ -134,9 +164,9 @@ headstyle y y headstyle y ε
 headstyle l l headcstyle l ε
 headcstyle e e headstyle e ε
 headstyle = = headstyle = ε
-headstyle " " headstyletext " ε
-headstyletext any " headstyletext ε ε
-headstyletext " " headatrdone " ε
+headstyle " " headtext " ε
+headtext any " headtext ε ε
+headtext " " headatrdone " ε
 headatrdone % > headopenatr ε ε
 headatrdone $ > headopenatr ε ε
 headatrdone > > headopendone > ε
@@ -155,7 +185,6 @@ headclose > > headclosedone > ε
 headclosedone $ < headclosedone ε ε
 headclosedone % < headclosedone ε ε
 headclosedone < < newtag / ε
-
 
 - body
 newtag b / bodyopen ε ody></body><
