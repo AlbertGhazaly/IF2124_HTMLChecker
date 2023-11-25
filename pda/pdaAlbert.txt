@@ -2,57 +2,201 @@ states
 symbols
 stacksymbol
 #
-q
+q0
+
+
+- template 
 q read top q' pop push
 
--start opentag html - - - - -
-q < # htmlopen ε html><body></body></html>
+- initiate
+q0 < # newtagbeforehtml ε ε
+q0 % # q0 ε ε
+q0 $ # q0 ε ε
+htmlclosedone % # htmlclosedone ε ε
+htmlclosedone $ # htmlclosedone ε ε
 
--htmlopen - - - - -
-htmlopen h h htmlopen h ε
+
+- comment before html
+newtagbeforehtml ! # comment ε ---->
+comment - - comment-1 - ε
+comment-1 - - comment-2 - ε
+comment-2 - - comment-3 - ε
+comment-2 any - comment-2 ε ε
+comment-3 - - comment-4 - ε
+comment-3 any - comment-2 ε -
+comment-4 any - comment-2 ε -- 
+comment-4 > > q0 > ε
+
+- comment after html
+htmlclosedone < # newtagafterhtml ε ε
+newtagafterhtml ! # commenta ε ---->
+commenta - - comment-1a - ε
+comment-1a - - comment-2a - ε
+comment-2a - - comment-3a - ε
+comment-2a any - comment-2a ε ε
+comment-3a - - comment-4a - ε
+comment-3a any - comment-2a ε -
+comment-4a any - comment-2a ε -- 
+comment-4a > > htmlclosedone > ε
+
+- start open tag html 
+newtagbeforehtml h # htmlopen ε tml></html>
+
+- opentag html
 htmlopen t t htmlopen t ε
 htmlopen m m htmlopen m ε
 htmlopen l l htmlopen l ε
 
--spasi di html open setelah html selesai berarti mau ada atribut
+- atribut html 
+htmlopen $ > htmlopenatr ε ε
 htmlopen % > htmlopenatr ε ε
 htmlopenatr % > htmlopenatr ε ε
+htmlopenatr > > htmlopendone > ε
 
--ketemu i berarti mau baca id
+- id html 
 htmlopenatr i > htmlid ε d=""
 htmlid d d htmlid d ε
 htmlid = = htmlid = ε
-htmlid " " htmlidtext " ε
-htmlidtext any " htmlidtext ε ε
-htmlidtext " " htmlatrdone " ε
-htmlatrdone % > htmlatrdone ε ε
+htmlid " " htmltext " ε
+htmltext any " htmltext ε ε
+htmltext " " htmlatrdone " ε
+htmlatrdone % > htmlopenatr ε ε
+htmlatrdone $ > htmlopenatr ε ε
+htmlatrdone > > htmlopendone > ε
+htmlopen > > htmlopendone > ε
+htmlopendone $ < htmlopendone ε ε
+htmlopendone % < htmlopendone ε ε
+
+- class html 
+htmlopenatr c > htmlclass ε lass=""
+htmlclass l l htmlclass l ε
+htmlclass a a htmlclass a ε
+htmlclass s s htmlclasss s ε
+htmlclasss s s htmlclass s ε
+htmlclass = = htmlclass = ε
+htmlclass " " htmltext " ε
+htmltext any " htmltext ε ε
+htmltext " " htmlatrdone " ε
+htmlatrdone % > htmlopenatr ε ε
+htmlatrdone $ > htmlopenatr ε ε
+htmlatrdone > > htmlopendone > ε
+htmlopen > > htmlopendone > ε
+htmlopendone $ < htmlopendone ε ε
+htmlopendone % < htmlopendone ε ε
+
+- style html 
+htmlopenatr s > htmlstyle ε tyle=""
+htmlstyle t t htmlstyle t ε
+htmlstyle y y htmlstyle y ε
+htmlstyle l l htmlcstyle l ε
+htmlcstyle e e htmlstyle e ε
+htmlstyle = = htmlstyle = ε
+htmlstyle " " htmlstyletext " ε
+htmltext any " htmltext ε ε
+htmltext " " htmlatrdone " ε
+htmlatrdone % > htmlopenatr ε ε
+htmlatrdone $ > htmlopenatr ε ε
 htmlatrdone > > htmlopendone > ε
 htmlopen > > htmlopendone > ε
 htmlopendone % < htmlopendone ε ε
 htmlopendone $ < htmlopendone ε ε
-htmlopendone < < bodyopen < ε
 
--start closetag html - - - - -
-htmlclose / / htmlclose / ε
-htmlclose h h htmlclose h ε
-htmlclose t t htmlclose t ε
+
+- closing tag html
+htmlopendone < < newtag < ε
+newtag / / closetag / ε
+closetag h h html/headclose h ε
+html/headclose t t htmlclose t ε
 htmlclose m m htmlclose m ε
 htmlclose l l htmlclose l ε
 htmlclose > > htmlclosedone > ε
-htmlclosedone any # finish # ε
 
+- start open tag head 
+newtag h / headopen ε ead></head><
 
-- body - - - -
-bodyopen b b bodyopen b ε
+- opentag head
+headopen h h headopen h ε
+headopen e e headopen e ε
+headopen a a headopen a ε
+headopen d d headopen d ε
+
+- atribut head 
+headopen $ > headopenatr ε ε
+headopen % > headopenatr ε ε
+headopenatr % > headopenatr ε ε
+headopenatr > > headopendone > ε
+
+- id head 
+headopenatr i > headid ε d=""
+headid d d headid d ε
+headid = = headid = ε
+headid " " headtext " ε
+headtext any " headtext ε ε
+headtext " " headatrdone " ε
+headatrdone % > headopenatr ε ε
+headatrdone $ > headopenatr ε ε
+headatrdone > > headopendone > ε
+headopen > > headopendone > ε
+headopendone $ < headopendone ε ε
+headopendone % < headopendone ε ε
+
+- class head 
+headopenatr c > headclass ε lass=""
+headclass l l headclass l ε
+headclass a a headclass a ε
+headclass s s headclasss s ε
+headclasss s s headclass s ε
+headclass = = headclass = ε
+headclass " " headtext " ε
+headtext any " headtext ε ε
+headtext " " headatrdone " ε
+headatrdone % > headopenatr ε ε
+headatrdone $ > headopenatr ε ε
+headatrdone > > headopendone > ε
+headopen > > headopendone > ε
+headopendone $ < headopendone ε ε
+headopendone % < headopendone ε ε
+
+- style head
+headopenatr s > headstyle ε tyle=""
+headstyle t t headstyle t ε
+headstyle y y headstyle y ε
+headstyle l l headcstyle l ε
+headcstyle e e headstyle e ε
+headstyle = = headstyle = ε
+headstyle " " headtext " ε
+headtext any " headtext ε ε
+headtext " " headatrdone " ε
+headatrdone % > headopenatr ε ε
+headatrdone $ > headopenatr ε ε
+headatrdone > > headopendone > ε
+headopen > > headopendone > ε
+headopendone $ < headopendone ε ε
+headopendone % < headopendone ε ε
+
+- closing tag head 
+headopendone < < newtag < ε
+newtag / / closetag / ε
+closetag h h html/headclose h ε
+html/headclose e e headclose e ε
+headclose a a headclose a ε
+headclose d d headclose d ε
+headclose > > headclosedone > ε
+headclosedone $ < headclosedone ε ε
+headclosedone % < headclosedone ε ε
+headclosedone < < newtag / ε
+
+- body
+newtag b / bodyopen ε ody></body><
 bodyopen o o bodyopen o ε
 bodyopen d d bodyopen d ε
 bodyopen y y bodyopen y ε
 
--spasi di body open - -
+- spasi di body open
 bodyopen % > bodyopenatr ε ε
 bodyopenatr % > bodyopenatr ε ε
 
--ketemu i berarti mau baca id
+- ketemu i berarti mau baca id
 bodyopenatr i > bodyid ε d=""
 bodyid d d bodyid d ε
 bodyid = = bodyid = ε
@@ -63,12 +207,25 @@ bodyatrdone % > bodyatrdone ε ε
 bodyatrdone > > bodyopendone > ε
 bodyopen > > bodyopendone > ε
 bodyopendone any < bodyopendone ε ε
+bodyopendone % < bodyopendone ε ε
 
-- -  accepts tag in body- - -
+- accepts tag in body
 bodyopendone < < bodyacctag < ε
 bodyacctag / / bodyclose / ε
+bodyacctag ! / bodycommentopen ε ε
 
--start closetag - - - - 
+- comment on body
+bodyacctag ! / bodycommentopen ε ----><
+bodycommentopen - - bodycommentopen-1 - ε
+bodycommentopen-1 - - bodycommentopen-2 - ε
+bodycommentopen-2 - - bodycommentopen-3 - ε
+bodycommentopen-2 any - bodycommentopen-2 ε ε
+bodycommentopen-3 - - bodycommentopen-4 - ε
+bodycommentopen-3 any - bodycommentopen-2 ε -
+bodycommentopen-4 any - bodycommentopen-2 ε -- 
+bodycommentopen-4 > > bodyopendone > ε
+
+- start closetag 
 bodyclose b b bodyclose b ε
 bodyclose o o bodyclose o ε
 bodyclose d d bodyclose d ε
@@ -76,27 +233,31 @@ bodyclose y y bodyclose y ε
 bodyclose > > bodyclosedone > ε
 bodyclosedone $ < bodyclosedone ε ε
 bodyclosedone % < bodyclosedone ε ε
-bodyclosedone < < htmlclose < ε
+bodyclosedone < < newtag < ε
 
-- - img in body - - -
+- img in body 
 bodyacctag i / imgopen ε mgsrc=""><
 imgopen m m imgopen m ε
 imgopen g g imgopen g ε
-- - - img text - -
+
+- img text 
 imgtext " " imgopen " ε
 imgtext any " imgtext ε ε
-- - - spasi di img - -
+
+- spasi di img 
 imgopen % s imgopenatr ε ε
 imgopen % > imgopenatr ε ε
 imgopenatr % s imgopenatr ε ε
 imgopenatr $ s imgopenatr ε ε
-- - - id in img - -
+
+- id image
 imgopenatr i s imgid ε d=""
 imgopenatr i > imgid ε d=""
 imgid d d imgid d ε
 imgid = = imgid = ε
 imgid " " imgtext " ε
-- - - class in img - - -
+
+- class in img 
 imgopenatr c s imgclass ε lass=""
 imgopenatr c > imgclass ε lass=""
 imgclass l l imgclass l ε
@@ -104,10 +265,12 @@ imgclass a a imgclass a ε
 imgclass s s imgclass s ε
 imgclass = = imgclass = ε
 imgclass " " imgtext " ε
-- - - s attribut in img - -
+
+- s attribut in img
 imgopenatr s s imgsattr s ε 
 imgopenatr s > imgsattr ε ε 
-- - - style in img - - -
+
+- style in img 
 imgsattr t r imgstyle ε yle=""s
 imgsattr t > imgstyle ε yle=""
 imgstyle y y imgstyle y ε
@@ -115,20 +278,121 @@ imgstyle l l imgstyle l ε
 imgstyle e e imgstyle e ε
 imgstyle = = imgstyle = ε
 imgstyle " " imgtext " ε
-- - src in img - -
+
+- src in img 
 imgsattr r r imgsrc r ε
 imgsrc c c imgsrc c ε
 imgsrc = = imgsrc = ε
 imgsrc " " imgtext " ε
-- - - alt - - -
+
+- alt 
 imgopenatr a s imgalt ε lt=""
 imgopenatr a > imgalt ε lt=""
 imgalt l l imgalt l ε   
 imgalt t t imgalt t ε
 imgalt = = imgalt = ε
 imgalt " " imgtext " ε
-- - close img tag - - -
+
+- close img tag
+imgopen > > bodyopendone > ε
+imgopenatr > > bodyopendone > ε
+
+- img in body 
+bodyacctag i / imgopen ε mgsrc=""><
+imgopen m m imgopen m ε
+imgopen g g imgopen g ε
+
+- img text 
+imgtext " " imgopen " ε
+imgtext any " imgtext ε ε
+
+- spasi di img 
+imgopen % s imgopenatr ε ε
+imgopen % > imgopenatr ε ε
+imgopenatr % s imgopenatr ε ε
+imgopenatr $ s imgopenatr ε ε
+
+- id in img
+imgopenatr i s imgid ε d=""
+imgopenatr i > imgid ε d=""
+imgid d d imgid d ε
+imgid = = imgid = ε
+imgid " " imgtext " ε
+
+- class in img
+imgopenatr c s imgclass ε lass=""
+imgopenatr c > imgclass ε lass=""
+imgclass l l imgclass l ε
+imgclass a a imgclass a ε
+imgclass s s imgclass s ε
+imgclass = = imgclass = ε
+imgclass " " imgtext " ε
+
+- s attribut in img 
+imgopenatr s s imgsattr s ε 
+imgopenatr s > imgsattr ε ε 
+
+- style in img
+imgsattr t r imgstyle ε yle=""s
+imgsattr t > imgstyle ε yle=""
+imgstyle y y imgstyle y ε
+imgstyle l l imgstyle l ε
+imgstyle e e imgstyle e ε
+imgstyle = = imgstyle = ε
+imgstyle " " imgtext " ε
+
+- src in img 
+imgsattr r r imgsrc r ε
+imgsrc c c imgsrc c ε
+imgsrc = = imgsrc = ε
+imgsrc " " imgtext " ε
+
+- alt 
+imgopenatr a s imgalt ε lt=""
+imgopenatr a > imgalt ε lt=""
+imgalt l l imgalt l ε   
+imgalt t t imgalt t ε
+imgalt = = imgalt = ε
+imgalt " " imgtext " ε
+
+- close img tag
 imgopen > > bodyopendone > ε
 imgopenatr > > bodyopendone > ε
 
 
+- start hr html 
+bodyacctag h / hrtag ε r>
+hrtag r r hrtag r ε
+hrtag % > hrtagatr ε ε
+hrtagatr % > hrtag ε ε
+hrtag > > bodyopendone > <
+
+- hrtagatr id
+hrtagatr i > hrtagid ε d=""
+hrtagid d d hrtagid d ε
+hrtagid = = hrtagid = ε
+hrtagid " " hrtagtext " ε
+hrtagtext any " hrtagtext ε ε
+hrtagtext " " hrtag " ε
+
+- hrtagatr class 
+hrtagatr c > hrtagclass ε lass=""
+hrtagclass l l hrtagclass l ε
+hrtagclass a a hrtagclass a ε
+hrtagclass s s hrtagclass s ε
+hrtagclass s s hrtagclass s ε
+hrtagclass = = hrtagclass = ε
+hrtagclass " " hrtagtext " ε
+hrtagtext any " hrtagtext ε ε
+hrtagtext " " hrtag " ε
+
+- hrtagatr style 
+hrtagatr s > hrtagstyle ε tyle=""
+hrtagstyle t t hrtagstyle t ε
+hrtagstyle y y hrtagstyle y ε
+hrtagstyle l l hrtagstyle l ε
+hrtagstyle e e hrtagstyle e ε
+hrtagstyle = = hrtagstyle = ε
+hrtagstyle " " hrtagtext " ε
+hrtagtext any " hrtagtext ε ε
+hrtagtext " " hrtag " ε
