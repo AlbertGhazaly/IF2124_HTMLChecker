@@ -1,0 +1,156 @@
+states
+symbols
+stacksymbol
+#
+q0
+
+
+- - - template - - -
+q0 read top q' pop push
+
+- - - start open tag html - - -
+q0 < # htmlopen ε html></html>
+
+- - - opentag html - - -
+htmlopen h h htmlopen h ε
+htmlopen t t htmlopen t ε
+htmlopen m m htmlopen m ε
+htmlopen l l htmlopen l ε
+
+- - - atribut html - - -
+htmlopen $ > htmlopenatr ε ε
+htmlopen % > htmlopenatr ε ε
+htmlopenatr % > htmlopenatr ε ε
+htmlopenatr > > htmlopendone > ε
+
+- - - id html - - -
+htmlopenatr i > htmlid ε d=""
+htmlid d d htmlid d ε
+htmlid = = htmlid = ε
+htmlid " " htmlidtext " ε
+htmlidtext any " htmlidtext ε ε
+htmlidtext " " htmlatrdone " ε
+htmlatrdone % > htmlopenatr ε ε
+htmlatrdone $ > htmlopenatr ε ε
+htmlatrdone > > htmlopendone > ε
+htmlopen > > htmlopendone > ε
+htmlopendone $ < htmlopendone ε ε
+htmlopendone % < htmlopendone ε ε
+
+- - - class html - - -
+htmlopenatr c > htmlclass ε lass=""
+htmlclass l l htmlclass l ε
+htmlclass a a htmlclass a ε
+htmlclass s s htmlclasss s ε
+htmlclasss s s htmlclass s ε
+htmlclass = = htmlclass = ε
+htmlclass " " htmlclasstext " ε
+htmlclasstext any " htmlclasstext ε ε
+htmlclasstext " " htmlatrdone " ε
+htmlatrdone % > htmlopenatr ε ε
+htmlatrdone $ > htmlopenatr ε ε
+htmlatrdone > > htmlopendone > ε
+htmlopen > > htmlopendone > ε
+htmlopendone $ < htmlopendone ε ε
+htmlopendone % < htmlopendone ε ε
+
+- - - style html - - -
+htmlopenatr s > htmlstyle ε tyle=""
+htmlstyle t t htmlstyle t ε
+htmlstyle y y htmlstyle y ε
+htmlstyle l l htmlcstyle l ε
+htmlcstyle e e htmlstyle e ε
+htmlstyle = = htmlstyle = ε
+htmlstyle " " htmlstyletext " ε
+htmlstyletext any " htmlstyletext ε ε
+htmlstyletext " " htmlatrdone " ε
+htmlatrdone % > htmlopenatr ε ε
+htmlatrdone $ > htmlopenatr ε ε
+htmlatrdone > > htmlopendone > ε
+htmlopen > > htmlopendone > ε
+htmlopendone $ < htmlopendone ε ε
+htmlopendone % < htmlopendone ε ε
+
+- - - closing tag html - - -
+htmlopendone < < newtag < ε
+newtag / / closetag / ε
+closetag h h html/headclose h ε
+html/headclose t t htmlclose t ε
+htmlclose m m htmlclose m ε
+htmlclose l l htmlclose l ε
+htmlclose > > htmlclosedone > ε
+
+- - - start open tag head - - -
+newtag h / headopen ε ead></head><
+
+- - - opentag head - - -
+headopen h h headopen h ε
+headopen e e headopen e ε
+headopen a a headopen a ε
+headopen d d headopen d ε
+
+- - - atribut head - - -
+headopen $ > headopenatr ε ε
+headopen % > headopenatr ε ε
+headopenatr % > headopenatr ε ε
+headopenatr > > headopendone > ε
+
+- - - id head - - -
+headopenatr i > headid ε d=""
+headid d d headid d ε
+headid = = headid = ε
+headid " " htmlidtext " ε
+headidtext any " headidtext ε ε
+headidtext " " headatrdone " ε
+headatrdone % > headopenatr ε ε
+headatrdone $ > headopenatr ε ε
+headatrdone > > headopendone > ε
+headopen > > headopendone > ε
+headopendone $ < headopendone ε ε
+headopendone % < headopendone ε ε
+
+- - - class head - - -
+headopenatr c > headclass ε lass=""
+headclass l l headclass l ε
+headclass a a headclass a ε
+headclass s s headclasss s ε
+headclasss s s headclass s ε
+headclass = = headclass = ε
+headclass " " headclasstext " ε
+headclasstext any " headclasstext ε ε
+headclasstext " " headatrdone " ε
+headatrdone % > headopenatr ε ε
+headatrdone $ > headopenatr ε ε
+headatrdone > > headopendone > ε
+headopen > > headopendone > ε
+headopendone $ < headopendone ε ε
+headopendone % < headopendone ε ε
+
+- - - style head - - -
+headopenatr s > headstyle ε tyle=""
+headstyle t t headstyle t ε
+headstyle y y headstyle y ε
+headstyle l l headcstyle l ε
+headcstyle e e headstyle e ε
+headstyle = = headstyle = ε
+headstyle " " headstyletext " ε
+headstyletext any " headstyletext ε ε
+headstyletext " " headatrdone " ε
+headatrdone % > headopenatr ε ε
+headatrdone $ > headopenatr ε ε
+headatrdone > > headopendone > ε
+headopen > > headopendone > ε
+headopendone $ < headopendone ε ε
+headopendone % < headopendone ε ε
+
+- - - closing tag head - - -
+headopendone < < newtag < ε
+newtag / / closetag / ε
+closetag h h html/headclose h ε
+html/headclose e e headclose e ε
+headclose a a headclose a ε
+headclose d d headclose d ε
+headclose > > headclosedone > ε
+headclosedone $ < headclosedone ε ε
+headclosedone & < headclosedone ε ε
+headclosedone < < newtag / ε

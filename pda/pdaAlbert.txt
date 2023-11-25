@@ -1,0 +1,134 @@
+states
+symbols
+stacksymbol
+#
+q
+q read top q' pop push
+
+-start opentag html - - - - -
+q < # htmlopen ε html><body></body></html>
+
+-htmlopen - - - - -
+htmlopen h h htmlopen h ε
+htmlopen t t htmlopen t ε
+htmlopen m m htmlopen m ε
+htmlopen l l htmlopen l ε
+
+-spasi di html open setelah html selesai berarti mau ada atribut
+htmlopen % > htmlopenatr ε ε
+htmlopenatr % > htmlopenatr ε ε
+
+-ketemu i berarti mau baca id
+htmlopenatr i > htmlid ε d=""
+htmlid d d htmlid d ε
+htmlid = = htmlid = ε
+htmlid " " htmlidtext " ε
+htmlidtext any " htmlidtext ε ε
+htmlidtext " " htmlatrdone " ε
+htmlatrdone % > htmlatrdone ε ε
+htmlatrdone > > htmlopendone > ε
+htmlopen > > htmlopendone > ε
+htmlopendone % < htmlopendone ε ε
+htmlopendone $ < htmlopendone ε ε
+htmlopendone < < bodyopen < ε
+
+-start closetag html - - - - -
+htmlclose / / htmlclose / ε
+htmlclose h h htmlclose h ε
+htmlclose t t htmlclose t ε
+htmlclose m m htmlclose m ε
+htmlclose l l htmlclose l ε
+htmlclose > > htmlclosedone > ε
+htmlclosedone any # finish # ε
+
+
+- body - - - -
+bodyopen b b bodyopen b ε
+bodyopen o o bodyopen o ε
+bodyopen d d bodyopen d ε
+bodyopen y y bodyopen y ε
+
+-spasi di body open - -
+bodyopen % > bodyopenatr ε ε
+bodyopenatr % > bodyopenatr ε ε
+
+-ketemu i berarti mau baca id
+bodyopenatr i > bodyid ε d=""
+bodyid d d bodyid d ε
+bodyid = = bodyid = ε
+bodyid " " bodyidtext " ε
+bodyidtext any " bodyidtext ε ε
+bodyidtext " " bodyatrdone " ε
+bodyatrdone % > bodyatrdone ε ε
+bodyatrdone > > bodyopendone > ε
+bodyopen > > bodyopendone > ε
+bodyopendone any < bodyopendone ε ε
+
+- -  accepts tag in body- - -
+bodyopendone < < bodyacctag < ε
+bodyacctag / / bodyclose / ε
+
+-start closetag - - - - 
+bodyclose b b bodyclose b ε
+bodyclose o o bodyclose o ε
+bodyclose d d bodyclose d ε
+bodyclose y y bodyclose y ε
+bodyclose > > bodyclosedone > ε
+bodyclosedone $ < bodyclosedone ε ε
+bodyclosedone % < bodyclosedone ε ε
+bodyclosedone < < htmlclose < ε
+
+- - img in body - - -
+bodyacctag i / imgopen ε mgsrc=""><
+imgopen m m imgopen m ε
+imgopen g g imgopen g ε
+- - - img text - -
+imgtext " " imgopen " ε
+imgtext any " imgtext ε ε
+- - - spasi di img - -
+imgopen % s imgopenatr ε ε
+imgopen % > imgopenatr ε ε
+imgopenatr % s imgopenatr ε ε
+imgopenatr $ s imgopenatr ε ε
+- - - id in img - -
+imgopenatr i s imgid ε d=""
+imgopenatr i > imgid ε d=""
+imgid d d imgid d ε
+imgid = = imgid = ε
+imgid " " imgtext " ε
+- - - class in img - - -
+imgopenatr c s imgclass ε lass=""
+imgopenatr c > imgclass ε lass=""
+imgclass l l imgclass l ε
+imgclass a a imgclass a ε
+imgclass s s imgclass s ε
+imgclass = = imgclass = ε
+imgclass " " imgtext " ε
+- - - s attribut in img - -
+imgopenatr s s imgsattr s ε 
+imgopenatr s > imgsattr ε ε 
+- - - style in img - - -
+imgsattr t r imgstyle ε yle=""s
+imgsattr t > imgstyle ε yle=""
+imgstyle y y imgstyle y ε
+imgstyle l l imgstyle l ε
+imgstyle e e imgstyle e ε
+imgstyle = = imgstyle = ε
+imgstyle " " imgtext " ε
+- - src in img - -
+imgsattr r r imgsrc r ε
+imgsrc c c imgsrc c ε
+imgsrc = = imgsrc = ε
+imgsrc " " imgtext " ε
+- - - alt - - -
+imgopenatr a s imgalt ε lt=""
+imgopenatr a > imgalt ε lt=""
+imgalt l l imgalt l ε   
+imgalt t t imgalt t ε
+imgalt = = imgalt = ε
+imgalt " " imgtext " ε
+- - close img tag - - -
+imgopen > > bodyopendone > ε
+imgopenatr > > bodyopendone > ε
+
+

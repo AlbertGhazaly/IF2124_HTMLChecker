@@ -28,9 +28,9 @@ while check:
     currState = stack.state
 
     currChar = html[0]
-    print(f"stack: {stack}")
-    print(f"str: {html}")
-    print()
+    # print(f"stack: {stack}")
+    # print(f"str: {html}")
+    # print()
     if len(html) == 1:
         check = False
         html = ""
