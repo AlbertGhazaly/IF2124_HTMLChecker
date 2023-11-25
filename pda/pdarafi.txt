@@ -4,6 +4,7 @@ stacksymbol
 #
 q0
 
+
 - template 
 q read top q' pop push
 
@@ -13,6 +14,7 @@ q0 % # q0 ε ε
 q0 $ # q0 ε ε
 htmlclosedone % # htmlclosedone ε ε
 htmlclosedone $ # htmlclosedone ε ε
+
 
 - comment before html
 newtagbeforehtml ! # comment ε ---->
@@ -99,17 +101,18 @@ htmlopen > > htmlopendone > ε
 htmlopendone % < htmlopendone ε ε
 htmlopendone $ < htmlopendone ε ε
 
+
 - closing tag html
-htmlopendone < < newtagnohead < ε
-newtagbodyclosedone / / htmlclose / ε
-htmlclose h h htmlclose h ε
-htmlclose t t htmlclose t ε
+htmlopendone < < newtag < ε
+newtag / / closetag / ε
+closetag h h html/headclose h ε
+html/headclose t t htmlclose t ε
 htmlclose m m htmlclose m ε
 htmlclose l l htmlclose l ε
 htmlclose > > htmlclosedone > ε
 
 - start open tag head 
-newtagnohead h / headopen ε ead></head><
+newtag h / headopen ε ead></head><
 
 - opentag head
 headopen h h headopen h ε
@@ -172,19 +175,19 @@ headopendone $ < headopendone ε ε
 headopendone % < headopendone ε ε
 
 - closing tag head 
-headopendone < < newtagheadopendone < ε
-newtagheadopendone / / closetaghead / ε
-closetaghead h h headclose h ε
-headclose e e headclose e ε
+headopendone < < newtag < ε
+newtag / / closetag / ε
+closetag h h html/headclose h ε
+html/headclose e e headclose e ε
 headclose a a headclose a ε
 headclose d d headclose d ε
 headclose > > headclosedone > ε
 headclosedone $ < headclosedone ε ε
 headclosedone % < headclosedone ε ε
-headclosedone < < newtagnobody / ε
+headclosedone < < newtag / ε
 
 - body
-newtagnobody b / bodyopen ε ody></body><
+newtag b / bodyopen ε ody></body><
 bodyopen o o bodyopen o ε
 bodyopen d d bodyopen d ε
 bodyopen y y bodyopen y ε
@@ -218,7 +221,7 @@ bodyclose y y bodyclose y ε
 bodyclose > > bodyclosedone > ε
 bodyclosedone $ < bodyclosedone ε ε
 bodyclosedone % < bodyclosedone ε ε
-bodyclosedone < < newtagbodyclosedone < ε
+bodyclosedone < < newtag < ε
 
 - img in body 
 bodyacctag i / imgopen ε mgsrc=""><
@@ -343,6 +346,7 @@ imgalt " " imgtext " ε
 - close img tag
 imgopen > > bodyopendone > ε
 imgopenatr > > bodyopendone > ε
+
 
 - start hr html 
 bodyacctag h / hrtag ε r>
