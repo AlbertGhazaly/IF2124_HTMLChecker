@@ -64,9 +64,11 @@ bodyatrdone > > bodyopendone > ε
 bodyopen > > bodyopendone > ε
 bodyopendone any < bodyopendone ε ε
 
+- -  accepts tag in body- - -
+bodyopendone < < bodyacctag < ε
+bodyacctag / / bodyclose / ε
+
 -start closetag - - - - 
-bodyopendone < < bodyclose < ε
-bodyclose / / bodyclose / ε
 bodyclose b b bodyclose b ε
 bodyclose o o bodyclose o ε
 bodyclose d d bodyclose d ε
@@ -75,3 +77,4 @@ bodyclose > > bodyclosedone > ε
 bodyclosedone $ < bodyclosedone ε ε
 bodyclosedone % < bodyclosedone ε ε
 bodyclosedone < < htmlclose < ε
+
