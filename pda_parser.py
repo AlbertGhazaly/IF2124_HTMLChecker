@@ -23,8 +23,6 @@ def read_pda(filepath):
 
         return pda(states, symbols, stacksymbol, startstate, transition_rules)
 
-
-
 filepath = "pda/pda.txt"
 pda = read_pda(filepath)
 
