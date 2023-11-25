@@ -61,7 +61,7 @@ def read_pda(filepath):
         for i in range(5, len(content)):
             transition_rule = content[i].split()
             key = (transition_rule[0], transition_rule[1], transition_rule[2])
-            value = (transition_rule[3], transition_rule[4], transition_rule[5])
+            value = (transition_rule[3], transition_rule[4], transition_rule[5][::-1])
             transition_rules[key] = value
 
         return PDA(states, symbols, stacksymbol, startstate, startstack, transition_rules)
