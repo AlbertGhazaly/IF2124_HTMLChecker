@@ -12,7 +12,7 @@ print(html)
 pda = read_pda(pda_path)
 stack = STACK(pda)
 
-check = True
+check = (len(html > 0))
 keys = pda.transition_rules.keys()
 
 while check:
@@ -20,7 +20,11 @@ while check:
     currState = stack.state
 
     currChar = html[0]
-    html = html[1:]
+
+    if len(html) == 1:
+        check = False
+    else:
+        html = html[1:]
 
     currTop = stack.top
 
