@@ -63,6 +63,7 @@ bodyatrdone % > bodyatrdone ε ε
 bodyatrdone > > bodyopendone > ε
 bodyopen > > bodyopendone > ε
 bodyopendone any < bodyopendone ε ε
+bodyopendone % < bodyopendone ε ε
 
 - -  accepts tag in body- - -
 bodyopendone < < bodyacctag < ε
@@ -132,3 +133,93 @@ imgopen > > bodyopendone > ε
 imgopenatr > > bodyopendone > ε
 
 
+- - img in body - - -
+bodyacctag i / imgopen ε mgsrc=""><
+imgopen m m imgopen m ε
+imgopen g g imgopen g ε
+- - - img text - -
+imgtext " " imgopen " ε
+imgtext any " imgtext ε ε
+- - - spasi di img - -
+imgopen % s imgopenatr ε ε
+imgopen % > imgopenatr ε ε
+imgopenatr % s imgopenatr ε ε
+imgopenatr $ s imgopenatr ε ε
+- - - id in img - -
+imgopenatr i s imgid ε d=""
+imgopenatr i > imgid ε d=""
+imgid d d imgid d ε
+imgid = = imgid = ε
+imgid " " imgtext " ε
+- - - class in img - - -
+imgopenatr c s imgclass ε lass=""
+imgopenatr c > imgclass ε lass=""
+imgclass l l imgclass l ε
+imgclass a a imgclass a ε
+imgclass s s imgclass s ε
+imgclass = = imgclass = ε
+imgclass " " imgtext " ε
+- - - s attribut in img - -
+imgopenatr s s imgsattr s ε 
+imgopenatr s > imgsattr ε ε 
+- - - style in img - - -
+imgsattr t r imgstyle ε yle=""s
+imgsattr t > imgstyle ε yle=""
+imgstyle y y imgstyle y ε
+imgstyle l l imgstyle l ε
+imgstyle e e imgstyle e ε
+imgstyle = = imgstyle = ε
+imgstyle " " imgtext " ε
+- - src in img - -
+imgsattr r r imgsrc r ε
+imgsrc c c imgsrc c ε
+imgsrc = = imgsrc = ε
+imgsrc " " imgtext " ε
+- - - alt - - -
+imgopenatr a s imgalt ε lt=""
+imgopenatr a > imgalt ε lt=""
+imgalt l l imgalt l ε   
+imgalt t t imgalt t ε
+imgalt = = imgalt = ε
+imgalt " " imgtext " ε
+- - close img tag - - -
+imgopen > > bodyopendone > ε
+imgopenatr > > bodyopendone > ε
+
+
+- - start hr html - - - - - - - -
+bodyacctag h / hrtag ε r>
+hrtag r r hrtag r ε
+hrtag % > hrtagatr ε ε
+hrtagatr % > hrtag ε ε
+hrtag > > bodyopendone > <
+
+- - hrtagatr id - - - - - -
+hrtagatr i > hrtagid ε d=""
+hrtagid d d hrtagid d ε
+hrtagid = = hrtagid = ε
+hrtagid " " hrtagtext " ε
+hrtagtext any " hrtagtext ε ε
+hrtagtext " " hrtag " ε
+
+- - hrtagatr class - - - - -
+hrtagatr c > hrtagclass ε lass=""
+hrtagclass l l hrtagclass l ε
+hrtagclass a a hrtagclass a ε
+hrtagclass s s hrtagclass s ε
+hrtagclass s s hrtagclass s ε
+hrtagclass = = hrtagclass = ε
+hrtagclass " " hrtagtext " ε
+hrtagtext any " hrtagtext ε ε
+hrtagtext " " hrtag " ε
+
+- - hrtagatr style - - - - -
+hrtagatr s > hrtagstyle ε tyle=""
+hrtagstyle t t hrtagstyle t ε
+hrtagstyle y y hrtagstyle y ε
+hrtagstyle l l hrtagstyle l ε
+hrtagstyle e e hrtagstyle e ε
+hrtagstyle = = hrtagstyle = ε
+hrtagstyle " " hrtagtext " ε
+hrtagtext any " hrtagtext ε ε
+hrtagtext " " hrtag " ε
