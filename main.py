@@ -21,8 +21,8 @@ keys = pda.transition_rules.keys()
 
 while check:
 
-    print(f"stack: {stack}")
-    print(f"str: {html}")
+    # print(f"stack: {stack}")
+    # print(f"str: {html}")
 
     currState = stack.state
 
@@ -40,8 +40,8 @@ while check:
 
     if key in keys:
         stack.do_procedure(pda.transition_rules[key])
-        print(f"rules: {pda.transition_rules[key]}")
-        print(" ")
+        # print(f"rules: {pda.transition_rules[key]}")
+        # print(" ")
 
     elif keyAny in keys:
         stack.do_procedure(pda.transition_rules[keyAny])
@@ -53,8 +53,8 @@ key = (currState, "any", "#")
 if key in keys:
         stack.do_procedure(pda.transition_rules[key])
 
-# print(f"stack: {stack}")
-# print(f"str: {html}")
+print(f"stack: {stack}")
+print(f"str: {html}")
 # print(pda.transition_rules[key])
 
 if stack.isEmpty and len(html) == 1:

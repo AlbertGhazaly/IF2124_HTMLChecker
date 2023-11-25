@@ -4,22 +4,33 @@ stacksymbol
 #
 q
 q read top q' pop push
+
+-start opentag html - - - - -
 q < # htmlopen ε html></html>
+
+-htmlopen - - - - -
 htmlopen h h htmlopen h ε
 htmlopen t t htmlopen t ε
 htmlopen m m htmlopen m ε
 htmlopen l l htmlopen l ε
+
+-spasi di html open setelah html selesai berarti mau ada atribut
 htmlopen % > htmlopenatr ε ε
-htmlopenatr i > htmlid ε d=""
 htmlopenatr % > htmlopenatr ε ε
+
+-ketemu i berarti mau baca id
+htmlopenatr i > htmlid ε d=""
 htmlid d d htmlid d ε
 htmlid = = htmlid = ε
 htmlid " " htmlidtext " ε
 htmlidtext any " htmlidtext ε ε
-htmlidtext " " htmliddone " ε
-htmliddone > > htmlopendone > ε
+htmlidtext " " htmlatrdone " ε
+htmlatrdone % > htmlatrdone ε ε
+htmlatrdone > > htmlopendone > ε
 htmlopen > > htmlopendone > ε
 htmlopendone any < htmlopendone ε ε
+
+-start closetag html - - - - -
 htmlopendone < < htmlclose < ε
 htmlclose / / htmlclose / ε
 htmlclose h h htmlclose h ε

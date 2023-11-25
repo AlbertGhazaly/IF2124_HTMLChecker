@@ -54,7 +54,9 @@ class STACK:
 
 def read_pda(filepath):
     with open(filepath, 'r', encoding="utf-8") as file:
-        content = [e.rstrip("\n") for e in file.readlines()]
+        content = [e.rstrip("\n") for e in file.readlines() if e != "\n"]
+
+        # print(content)
         
         states = content[0].split()
         symbols = content[1].split()
