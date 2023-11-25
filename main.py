@@ -2,28 +2,40 @@ from sys import argv as argv
 from html_parser import readHtml
 from pda_parser import pda, Stack
 from pda_parser import read_pda
-def main():
-    pda_path = argv[1]
-    html_path = argv[2]
-    html = readHtml(html_path)
-    print(html)
-    pda = read_pda(pda_path)
-    stack = Stack(pda)
-    for element in pda.transition_rules:
-        print(element)
 
-    keys = pda.t'transition_rules.key
-    check = True
-    while check:
+pda_path = argv[1]
+html_path = argv[2]
 
-        key = (stck.stte, string.red, stck.top)
-        keyany = (stck.stte, "any", stck.top)
+html = readHtml(html_path)
+print(html)
 
+pda = read_pda(pda_path)
+stack = STACK(pda)
 
-<div> </div>
+check = True
+keys = pda.transition_rules.keys()
 
+while check:
 
+    currState = stack.state
 
-if __name__ =="__main__":
-    main()
+    currChar = html[0]
+    html = html[1:]
+
+    currTop = stack.top
+
+    key = (currState, currChar, currTop)
+    keyAny = (currState, "any", currTop)
+
+    if key in keys:
+        stack.do_procedure(key)
+    elif keyAny in keys:
+        stack.do_procedure(keyAny)
+    else:
+        check = False
+
+if stack.isEmpty:
+    print("Accepted")
+else:
+    print("Not Accepted")
 
