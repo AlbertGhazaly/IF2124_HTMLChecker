@@ -213,17 +213,6 @@ bodyopendone % < bodyopendone ε ε
 bodyopendone < < bodyacctag < ε
 bodyacctag / / bodyclose / ε
 
-- comment on body
-bodyacctag ! / bodycommentopen ε ----><
-bodycommentopen - - bodycommentopen-1 - ε
-bodycommentopen-1 - - bodycommentopen-2 - ε
-bodycommentopen-2 - - bodycommentopen-3 - ε
-bodycommentopen-2 any - bodycommentopen-2 ε ε
-bodycommentopen-3 - - bodycommentopen-4 - ε
-bodycommentopen-3 any - bodycommentopen-2 ε -
-bodycommentopen-4 any - bodycommentopen-2 ε -- 
-bodycommentopen-4 > > bodyopendone > ε
-
 - start closetag 
 bodyclose b b bodyclose b ε
 bodyclose o o bodyclose o ε
@@ -357,6 +346,7 @@ imgalt " " imgtext " ε
 - close img tag
 imgopen > > bodyopendone > ε
 imgopenatr > > bodyopendone > ε
+
 
 - start hr html 
 bodyacctag h / hrtag ε r>
