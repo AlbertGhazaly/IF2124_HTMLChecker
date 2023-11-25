@@ -21,7 +21,8 @@ class STACK:
         return self.stack == ""
     
     def stackpush(self,x):
-            self.stack += x
+            if x != "ε":
+                self.stack += x
 
     def stackpop(self):
 
