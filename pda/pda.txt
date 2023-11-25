@@ -1,7 +1,6 @@
 states
 symbols
 stacksymbol
-startstate
-startstack
+q
+#
 q read top q' pop push
-q1 d i q2 x y

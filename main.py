@@ -7,7 +7,6 @@ pda_path = argv[1]
 html_path = argv[2]
 
 html = readHtml(html_path)
-print(html)
 
 pda = read_pda(pda_path)
 stack = STACK(pda)
@@ -16,6 +15,9 @@ check = ((len(html) > 0))
 keys = pda.transition_rules.keys()
 
 while check:
+
+    print(stack)
+    print(html)
 
     currState = stack.state
 
