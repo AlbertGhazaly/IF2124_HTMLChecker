@@ -12,6 +12,7 @@ pda = read_pda(pda_path)
 stack = STACK(pda)
 
 check = ((len(html) > 0))
+invalid = False
 
 # for t in pda.transition_rules:
 #     print(t)
@@ -48,17 +49,25 @@ while check:
         stack.do_procedure(pda.transition_rules[keyAny])
     else:
         check = False
+        invalid = True
+    
+    # print(f"\nstack: {stack}")
+    # print(f"str: {html}")
+    # print(f"cur: {currChar}")
+    # print(f"state: {stack.state}")
 
 currState = stack.state
 key = (currState, "any", "#")
 if key in keys:
         stack.do_procedure(pda.transition_rules[key])
 
-print(f"stack: {stack}")
+print(f"\nstack: {stack}")
 print(f"str: {html}")
+print(f"cur: {currChar}")
+print(f"state: {stack.state}")
 # print(pda.transition_rules[key])
 
-if stack.isEmpty and len(html) == 0:
+if stack.top == "#" and len(html) == 0 and not(invalid):
     print("Accepted")
 else:
     print("Not Accepted")
