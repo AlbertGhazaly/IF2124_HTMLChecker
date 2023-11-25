@@ -213,6 +213,17 @@ bodyopendone % < bodyopendone ε ε
 bodyopendone < < bodyacctag < ε
 bodyacctag / / bodyclose / ε
 
+- comment on body
+bodyacctag ! / bodycommentopen ε ----><
+bodycommentopen - - bodycommentopen-1 - ε
+bodycommentopen-1 - - bodycommentopen-2 - ε
+bodycommentopen-2 - - bodycommentopen-3 - ε
+bodycommentopen-2 any - bodycommentopen-2 ε ε
+bodycommentopen-3 - - bodycommentopen-4 - ε
+bodycommentopen-3 any - bodycommentopen-2 ε -
+bodycommentopen-4 any - bodycommentopen-2 ε -- 
+bodycommentopen-4 > > bodyopendone > ε
+
 - start closetag 
 bodyclose b b bodyclose b ε
 bodyclose o o bodyclose o ε
@@ -347,7 +358,6 @@ imgalt " " imgtext " ε
 imgopen > > bodyopendone > ε
 imgopenatr > > bodyopendone > ε
 
-
 - start hr html 
 bodyacctag h / hrtag ε r>
 hrtag r r hrtag r ε
@@ -444,14 +454,14 @@ formtagtext any " formtagtext ε ε
 formtagtext " " formopentag " ε
 
 - form atribut method
-formtagatr m > formtagaction ε ethod=""
-formtagaction e e formtagaction e ε
-formtagaction t t formtagaction t ε
-formtagaction h h formtagaction h ε
-formtagaction o o formtagaction o ε
-formtagaction d d formtagaction d ε
-formtagaction = = formtagaction = ε
-formtagaction " " formtagtext " ε
+formtagatr m > formtagmethod ε ethod=""
+formtagmethod e e formtagmethod e ε
+formtagmethod t t formtagmethod t ε
+formtagmethod h h formtagmethod h ε
+formtagmethod o o formtagmethod o ε
+formtagmethod d d formtagmethod d ε
+formtagmethod = = formtagmethod = ε
+formtagmethod " " formtagtext " ε
 formtagtext G " formtagacttextget ε ET
 formtagacttextget E E formtagacttextget E ε
 formtagacttextget T T formtagacttextget T ε
@@ -461,3 +471,81 @@ formtagacttextpost O O formtagacttextpost O ε
 formtagacttextpost S S formtagacttextpost S ε
 formtagacttextpost T T formtagacttextpost T ε
 formtagacttextpost " " formopentag " ε
+
+- button in body
+bodyacctag b / buttonopentag ε utton></button>
+buttonopentag u u buttonopentag u ε
+buttonopentag t t buttonopentag t ε
+buttonopentag t t buttonopentag t ε
+buttonopentag o o buttonopentag o ε
+buttonopentag n n buttonopentag n ε
+buttonopentag % > buttontagatr ε ε
+buttonopentag > > buttoncontent > ε
+buttoncontent any < buttoncontent ε ε
+buttoncontent < < buttonclosetag < ε
+buttonclosetag / / buttonclosetag / ε
+buttonclosetag b b buttonclosetag b ε
+buttonclosetag u u buttonclosetag u ε
+buttonclosetag t t buttonclosetag t ε
+buttonclosetag t t buttonclosetag t ε
+buttonclosetag o o buttonclosetag o ε
+buttonclosetag n n buttonclosetag n ε
+buttonclosetag > > bodyopendone > <
+
+- button atribut id
+buttontagatr i > buttontagid ε d=""
+buttontagid d d buttontagid d ε
+buttontagid = = buttontagid = ε
+buttontagid " " buttontagtext " ε
+buttontagtext any " buttontagtext ε ε
+buttontagtext " " buttonopentag " ε
+
+- button atribut class
+buttontagatr c > buttontagclass ε lass=""
+buttontagclass l l buttontagclass l ε
+buttontagclass a a buttontagclass a ε
+buttontagclass s s buttontagclass s ε
+buttontagclass s s buttontagclass s ε
+buttontagclass = = buttontagclass = ε
+buttontagclass " " buttontagtext " ε
+buttontagtext any " buttontagtext ε ε
+buttontagtext " " buttonopentag " ε
+
+- button atribut style
+buttontagatr s > buttontagstyle ε tyle=""
+buttontagstyle t t buttontagstyle t ε
+buttontagstyle y y buttontagstyle y ε
+buttontagstyle l l buttontagstyle l ε
+buttontagstyle e e buttontagstyle e ε
+buttontagstyle = = buttontagstyle = ε
+buttontagstyle " " buttontagtext " ε
+buttontagtext any " buttontagtext ε ε
+buttontagtext " " buttonopentag " ε
+
+- button atribut type
+buttontagatr t > buttontagtype ε ype=""
+buttontagtype y y buttontagtype y ε
+buttontagtype p p buttontagtype p ε
+buttontagtype e e buttontagtype e ε
+buttontagtype = = buttontagtype = ε
+buttontagtype " " buttontagtext " ε
+buttontagtext S " buttontagtypetextsubmit ε UBMIT
+buttontagtypetextsubmit U U buttontagtypetextsubmit U ε
+buttontagtypetextsubmit B B buttontagtypetextsubmit B ε
+buttontagtypetextsubmit M M buttontagtypetextsubmit M ε
+buttontagtypetextsubmit I I buttontagtypetextsubmit I ε
+buttontagtypetextsubmit T T buttontagtypetextsubmit T ε
+buttontagtypetextsubmit " " buttonopentag " ε
+buttontagtext R " buttontagtypetextreset ε ESET
+buttontagtypetextreset E E buttontagtypetextreset E ε
+buttontagtypetextreset S S buttontagtypetextreset S ε
+buttontagtypetextreset E E buttontagtypetextreset E ε
+buttontagtypetextreset T T buttontagtypetextreset T ε
+buttontagtypetextreset " " buttonopentag " ε
+buttontagtext B " buttontagtypetextbutton ε UTTON
+buttontagtypetextbutton U U buttontagtypetextbutton U ε
+buttontagtypetextbutton T T buttontagtypetextbutton T ε
+buttontagtypetextbutton T T buttontagtypetextbutton T ε
+buttontagtypetextbutton O O buttontagtypetextbutton O ε
+buttontagtypetextbutton N N buttontagtypetextbutton N ε
+buttontagtypetextbutton " " buttonopentag " ε
