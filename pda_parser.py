@@ -23,9 +23,40 @@ def read_pda(filepath):
 
         return pda(states, symbols, stacksymbol, startstate, transition_rules)
 
-filepath = "pda/pda.txt"
-pda = read_pda(filepath)
 
-tr = pda.transition_rules
-for element in tr:
-    print(element)
+class Stack:
+
+    def __init__(self, pda):
+        self.stack = pda.startStack
+        self.state = pda.startState
+        self.top = pda.startStack
+
+    def __str__(self):
+        return self.stack
+
+    def push(self,x):
+            self.stack += x
+
+
+    def isEmpty(self):
+        return self.stack == ""
+    
+    def pop(self):
+        self.stack = self.stack[0]
+
+        if self.isEmpty():
+            self.top = None
+        else: 
+            self.top = self.stack[-2]
+
+    # prosedur transisi pada stack
+    def doProcedure(self, transition):
+
+        self.pop()
+        if (transition.push == "ε"):
+            pass # nge push epsilon ke stack
+        else:
+            self.push(transition.push)
+        
+        self.state = transition.fState
+        self.top = self.stack[-1]
