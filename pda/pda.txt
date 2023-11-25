@@ -63,6 +63,7 @@ bodyatrdone % > bodyatrdone ε ε
 bodyatrdone > > bodyopendone > ε
 bodyopen > > bodyopendone > ε
 bodyopendone any < bodyopendone ε ε
+bodyopendone % < bodyopendone ε ε
 
 - -  accepts tag in body- - -
 bodyopendone < < bodyacctag < ε
@@ -78,3 +79,39 @@ bodyclosedone $ < bodyclosedone ε ε
 bodyclosedone % < bodyclosedone ε ε
 bodyclosedone < < htmlclose < ε
 
+- - start hr html - - - - - - - -
+bodyacctag h / hrtag ε r>
+hrtag r r hrtag r ε
+hrtag % > hrtagatr ε ε
+hrtagatr % > hrtag ε ε
+hrtag > > bodyopendone > <
+
+- - hrtagatr id - - - - - -
+hrtagatr i > hrtagid ε d=""
+hrtagid d d hrtagid d ε
+hrtagid = = hrtagid = ε
+hrtagid " " hrtagtext " ε
+hrtagtext any " hrtagtext ε ε
+hrtagtext " " hrtag " ε
+
+- - hrtagatr class - - - - -
+hrtagatr c > hrtagclass ε lass=""
+hrtagclass l l hrtagclass l ε
+hrtagclass a a hrtagclass a ε
+hrtagclass s s hrtagclass s ε
+hrtagclass s s hrtagclass s ε
+hrtagclass = = hrtagclass = ε
+hrtagclass " " hrtagtext " ε
+hrtagtext any " hrtagtext ε ε
+hrtagtext " " hrtag " ε
+
+- - hrtagatr style - - - - -
+hrtagatr s > hrtagstyle ε tyle=""
+hrtagstyle t t hrtagstyle t ε
+hrtagstyle y y hrtagstyle y ε
+hrtagstyle l l hrtagstyle l ε
+hrtagstyle e e hrtagstyle e ε
+hrtagstyle = = hrtagstyle = ε
+hrtagstyle " " hrtagtext " ε
+hrtagtext any " hrtagtext ε ε
+hrtagtext " " hrtag " ε
