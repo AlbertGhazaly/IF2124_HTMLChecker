@@ -347,6 +347,7 @@ inputedtext m m inputedtext m ε
 inputedtext b b inputedtext b ε
 inputedtext e e inputedtext e ε
 inputedtext r r inputedtext r ε
+
 - checkbox
 inputtext c " inputedtext ε heckbox
 inputedtext h h inputedtext h ε
@@ -356,7 +357,6 @@ inputedtext k k inputedtext k ε
 inputedtext b b inputedtext b ε
 inputedtext o o inputedtext o ε
 inputedtext x x inputedtext x ε
-
 
 - start hr html 
 bodyacctag h / hrtag ε r>
