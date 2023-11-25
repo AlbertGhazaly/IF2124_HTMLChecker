@@ -1,5 +1,5 @@
 class PDA:
-    def __init__(self, states, symbols, stacksymbols, startstack, start_state, transition_rules):
+    def __init__(self, states, symbols, stacksymbols, startstack, startstate, transition_rules):
         self.states = states
         self.symbols = symbols
         self.stacksymbols = stacksymbols
@@ -12,7 +12,7 @@ class STACK:
     def __init__(self, pda):
         self.stack = pda.startstack
         self.state = pda.startstate
-        self.top = pda.startStack
+        self.top = pda.startstack
 
     def __str__(self):
         return self.stack
@@ -55,11 +55,12 @@ def read_pda(filepath):
         stacksymbol = content[2].split()
         startstate = content[3]
         startstack = content[4]
-        transition_rules = []
+        transition_rules = {}
 
         for i in range(5, len(content)):
             transition_rule = content[i].split()
-            transition_rule = {(transition_rule[0], transition_rule[1], transition_rule[2]): (transition_rule[3], transition_rule[4], transition_rule[5])}
-            transition_rules.append(transition_rule)
+            key = (transition_rule[0], transition_rule[1], transition_rule[2])
+            value = (transition_rule[3], transition_rule[4], transition_rule[5])
+            transition_rules[key] = value
 
         return PDA(states, symbols, stacksymbol, startstate, startstack, transition_rules)

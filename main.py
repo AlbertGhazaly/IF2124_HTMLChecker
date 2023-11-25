@@ -1,6 +1,6 @@
 from sys import argv as argv
 from html_parser import readHtml
-from pda_parser import pda, Stack
+from pda_parser import PDA, STACK
 from pda_parser import read_pda
 
 pda_path = argv[1]
@@ -12,7 +12,7 @@ print(html)
 pda = read_pda(pda_path)
 stack = STACK(pda)
 
-check = (len(html > 0))
+check = ((len(html) > 0))
 keys = pda.transition_rules.keys()
 
 while check:
@@ -38,7 +38,7 @@ while check:
     else:
         check = False
 
-if stack.isEmpty:
+if stack.isEmpty and len(html) == 0:
     print("Accepted")
 else:
     print("Not Accepted")
