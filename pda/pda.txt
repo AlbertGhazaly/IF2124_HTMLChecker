@@ -28,7 +28,8 @@ htmlidtext " " htmlatrdone " ε
 htmlatrdone % > htmlatrdone ε ε
 htmlatrdone > > htmlopendone > ε
 htmlopen > > htmlopendone > ε
-htmlopendone any < htmlopendone ε ε
+htmlopendone % < htmlopendone ε ε
+htmlopendone $ < htmlopendone ε ε
 htmlopendone < < bodyopen < ε
 
 -start closetag html - - - - -
@@ -47,7 +48,7 @@ bodyopen o o bodyopen o ε
 bodyopen d d bodyopen d ε
 bodyopen y y bodyopen y ε
 
--spasi di html open setelah html selesai berarti mau ada atribut
+-spasi di body open - -
 bodyopen % > bodyopenatr ε ε
 bodyopenatr % > bodyopenatr ε ε
 
@@ -63,7 +64,7 @@ bodyatrdone > > bodyopendone > ε
 bodyopen > > bodyopendone > ε
 bodyopendone any < bodyopendone ε ε
 
--start closetag html - - - - -
+-start closetag - - - - 
 bodyopendone < < bodyclose < ε
 bodyclose / / bodyclose / ε
 bodyclose b b bodyclose b ε
@@ -71,5 +72,6 @@ bodyclose o o bodyclose o ε
 bodyclose d d bodyclose d ε
 bodyclose y y bodyclose y ε
 bodyclose > > bodyclosedone > ε
-bodyclosedone any < bodyclosedone ε ε
+bodyclosedone $ < bodyclosedone ε ε
+bodyclosedone % < bodyclosedone ε ε
 bodyclosedone < < htmlclose < ε
