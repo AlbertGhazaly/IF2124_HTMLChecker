@@ -6,7 +6,7 @@ q
 q read top q' pop push
 
 -start opentag html - - - - -
-q < # htmlopen ε html></html>
+q < # htmlopen ε html><body></body></html>
 
 -htmlopen - - - - -
 htmlopen h h htmlopen h ε
@@ -29,9 +29,9 @@ htmlatrdone % > htmlatrdone ε ε
 htmlatrdone > > htmlopendone > ε
 htmlopen > > htmlopendone > ε
 htmlopendone any < htmlopendone ε ε
+htmlopendone < < bodyopen < ε
 
 -start closetag html - - - - -
-htmlopendone < < htmlclose < ε
 htmlclose / / htmlclose / ε
 htmlclose h h htmlclose h ε
 htmlclose t t htmlclose t ε
@@ -39,3 +39,37 @@ htmlclose m m htmlclose m ε
 htmlclose l l htmlclose l ε
 htmlclose > > htmlclosedone > ε
 htmlclosedone any # finish # ε
+
+
+- body - - - -
+bodyopen b b bodyopen b ε
+bodyopen o o bodyopen o ε
+bodyopen d d bodyopen d ε
+bodyopen y y bodyopen y ε
+
+-spasi di html open setelah html selesai berarti mau ada atribut
+bodyopen % > bodyopenatr ε ε
+bodyopenatr % > bodyopenatr ε ε
+
+-ketemu i berarti mau baca id
+bodyopenatr i > bodyid ε d=""
+bodyid d d bodyid d ε
+bodyid = = bodyid = ε
+bodyid " " bodyidtext " ε
+bodyidtext any " bodyidtext ε ε
+bodyidtext " " bodyatrdone " ε
+bodyatrdone % > bodyatrdone ε ε
+bodyatrdone > > bodyopendone > ε
+bodyopen > > bodyopendone > ε
+bodyopendone any < bodyopendone ε ε
+
+-start closetag html - - - - -
+bodyopendone < < bodyclose < ε
+bodyclose / / bodyclose / ε
+bodyclose b b bodyclose b ε
+bodyclose o o bodyclose o ε
+bodyclose d d bodyclose d ε
+bodyclose y y bodyclose y ε
+bodyclose > > bodyclosedone > ε
+bodyclosedone any < bodyclosedone ε ε
+bodyclosedone < < htmlclose < ε
