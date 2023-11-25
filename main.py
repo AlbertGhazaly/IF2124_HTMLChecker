@@ -30,6 +30,7 @@ while check:
 
     if len(html) == 1:
         check = False
+        html = ""
     else:
         html = html[1:]
 
@@ -57,7 +58,7 @@ print(f"stack: {stack}")
 print(f"str: {html}")
 # print(pda.transition_rules[key])
 
-if stack.isEmpty and len(html) == 1:
+if stack.isEmpty and len(html) == 0:
     print("Accepted")
 else:
     print("Not Accepted")
