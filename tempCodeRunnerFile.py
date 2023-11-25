@@ -1,2 +1,0 @@
-print('kedua')
-print(string)
