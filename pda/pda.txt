@@ -68,8 +68,9 @@ htmlatrdone % > htmlopenatr ε ε
 htmlatrdone $ > htmlopenatr ε ε
 htmlatrdone > > htmlopendone > ε
 htmlopen > > htmlopendone > ε
-htmlopendone $ < htmlopendone ε ε
 htmlopendone % < htmlopendone ε ε
+htmlopendone $ < htmlopendone ε ε
+htmlopendone < < bodyopen < ε
 
 - - - closing tag html - - -
 htmlopendone < < newtag < ε
@@ -154,3 +155,78 @@ headclose > > headclosedone > ε
 headclosedone $ < headclosedone ε ε
 headclosedone & < headclosedone ε ε
 headclosedone < < newtag / ε
+
+
+- body - - - -
+bodyopen b b bodyopen b ε
+bodyopen o o bodyopen o ε
+bodyopen d d bodyopen d ε
+bodyopen y y bodyopen y ε
+
+-spasi di body open - -
+bodyopen % > bodyopenatr ε ε
+bodyopenatr % > bodyopenatr ε ε
+
+-ketemu i berarti mau baca id
+bodyopenatr i > bodyid ε d=""
+bodyid d d bodyid d ε
+bodyid = = bodyid = ε
+bodyid " " bodyidtext " ε
+bodyidtext any " bodyidtext ε ε
+bodyidtext " " bodyatrdone " ε
+bodyatrdone % > bodyatrdone ε ε
+bodyatrdone > > bodyopendone > ε
+bodyopen > > bodyopendone > ε
+bodyopendone any < bodyopendone ε ε
+bodyopendone % < bodyopendone ε ε
+
+- -  accepts tag in body- - -
+bodyopendone < < bodyacctag < ε
+bodyacctag / / bodyclose / ε
+
+-start closetag - - - - 
+bodyclose b b bodyclose b ε
+bodyclose o o bodyclose o ε
+bodyclose d d bodyclose d ε
+bodyclose y y bodyclose y ε
+bodyclose > > bodyclosedone > ε
+bodyclosedone $ < bodyclosedone ε ε
+bodyclosedone % < bodyclosedone ε ε
+bodyclosedone < < htmlclose < ε
+
+- - start hr html - - - - - - - -
+bodyacctag h / hrtag ε r>
+hrtag r r hrtag r ε
+hrtag % > hrtagatr ε ε
+hrtagatr % > hrtag ε ε
+hrtag > > bodyopendone > <
+
+- - hrtagatr id - - - - - -
+hrtagatr i > hrtagid ε d=""
+hrtagid d d hrtagid d ε
+hrtagid = = hrtagid = ε
+hrtagid " " hrtagtext " ε
+hrtagtext any " hrtagtext ε ε
+hrtagtext " " hrtag " ε
+
+- - hrtagatr class - - - - -
+hrtagatr c > hrtagclass ε lass=""
+hrtagclass l l hrtagclass l ε
+hrtagclass a a hrtagclass a ε
+hrtagclass s s hrtagclass s ε
+hrtagclass s s hrtagclass s ε
+hrtagclass = = hrtagclass = ε
+hrtagclass " " hrtagtext " ε
+hrtagtext any " hrtagtext ε ε
+hrtagtext " " hrtag " ε
+
+- - hrtagatr style - - - - -
+hrtagatr s > hrtagstyle ε tyle=""
+hrtagstyle t t hrtagstyle t ε
+hrtagstyle y y hrtagstyle y ε
+hrtagstyle l l hrtagstyle l ε
+hrtagstyle e e hrtagstyle e ε
+hrtagstyle = = hrtagstyle = ε
+hrtagstyle " " hrtagtext " ε
+hrtagtext any " hrtagtext ε ε
+hrtagtext " " hrtag " ε
