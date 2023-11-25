@@ -358,8 +358,37 @@ inputedtext b b inputedtext b ε
 inputedtext o o inputedtext o ε
 inputedtext x x inputedtext x ε
 
+- input any text
+inputanytext any " inputanytext ε ε
+inputanytext " " inputdone " ε
+
+- input id
+inputatr i > inputid ε d=""
+inputid d d inputid d ε
+inputid = = inputid = ε
+inputid " " inputanytext " ε
+
+
+- input class 
+inputatr c > inputclass ε lass=""
+inputclass l l inputclass l ε
+inputclass a a inputclass a ε
+inputclass s s inputclass s ε
+inputclass s s inputclass s ε
+inputclass = = inputclass = ε
+inputclass " " inputanytext " ε
+
+- input style 
+inputatr s > inputstyle ε tyle=""
+inputstyle t t inputstyle t ε
+inputstyle y y inputstyle y ε
+inputstyle l l inputstyle l ε
+inputstyle e e inputstyle e ε
+inputstyle = = inputstyle = ε
+inputstyle " " inputanytext " ε
+
 - start hr html 
-bodyacctag h / hrtag ε r>
+bodyacctag h / hrtag ε r><
 hrtag r r hrtag r ε
 hrtag % > hrtagatr ε ε
 hrtagatr % > hrtag ε ε
@@ -798,3 +827,55 @@ h6tagstyle = = h6tagstyle = ε
 h6tagstyle " " h6tagtext " ε
 h6tagtext any " h6tagtext ε ε
 h6tagtext " " h6opentag " ε
+
+- <a> tag
+bodyacctag a / aopen  ε ></a><
+aopen $ > aatr ε ε
+aopen % > aatr ε ε
+aatr % > aatr ε ε
+aatr $ > aatr ε ε
+- to inside a
+aopen > > acontent > ε 
+aatr > > acontent > ε
+- href 
+aatr h > ahref ε ref=""
+ahref r r ahref r ε
+ahref e e ahref e ε
+ahref f f ahref f ε
+ahref = = ahref = ε
+ahref " " atext " ε
+- atext
+atext any " atext ε ε
+atext " " aopen " ε
+- a id
+aatr i > aid ε d=""
+aid d d aid d ε
+aid = = aid = ε
+aid " " atext " ε
+
+- a class 
+aatr c > aclass ε lass=""
+aclass l l aclass l ε
+aclass a a aclass a ε
+aclass s s aclass s ε
+aclass s s aclass s ε
+aclass = = aclass = ε
+aclass " " atext " ε
+
+- a style 
+aatr s > astyle ε tyle=""
+astyle t t astyle t ε
+astyle y y astyle y ε
+astyle l l astyle l ε
+astyle e e astyle e ε
+astyle = = astyle = ε
+astyle " " atext " ε
+
+- acontent
+acontent any < acontent ε ε
+acontent < < aclose < ε
+
+- aclose
+aclose / / aclose / ε
+aclose a a aclose a ε
+aclose > > bodyopendone > ε
