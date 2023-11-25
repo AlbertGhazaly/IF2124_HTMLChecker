@@ -1,6 +1,45 @@
-states
-symbols
-stacksymbol
+Q
+S
+Stak
 q
-#
 q read top q' pop push
+q < @ htmlopen ε html><head></head><body></body></html>
+htmlopen h h htmlopen h ε
+htmlopen t t htmlopen t ε
+htmlopen m m htmlopen m ε
+htmlopen l l htmlopen l ε
+htmlopen > > html > ε
+html < < headopen < ε
+headopen h h headopen  h ε
+headopen e e headopen  e ε
+headopen a a headopen  a ε
+headopen d d headopen  d ε
+headopen > > head  > ε
+head < < headclose  < ε
+headclose / / headclose  / ε
+headclose h h headclose  h ε
+headclose e e headclose  e ε
+headclose a a headclose  a ε
+headclose d d headclose  d ε
+headclose > > headclose  > ε
+headclose < < bodyopen < ε
+bodyopen < < bodyopen < ε
+bodyopen b b bodyopen b ε
+bodyopen o o bodyopen o ε
+bodyopen d d bodyopen d ε
+bodyopen y y bodyopen y ε
+bodyopen > > body > ε
+body < < bodyclose < ε
+bodyclose / / bodyclose / ε
+bodyclose b b bodyclose b ε
+bodyclose o o bodyclose o ε
+bodyclose d d bodyclose d ε
+bodyclose y y bodyclose y ε
+bodyclose > > html > ε
+html < < htmlclose < ε
+htmlclose / / htmlclose / ε
+htmlclose h h htmlclose h ε
+htmlclose t t htmlclose t ε
+htmlclose m m htmlclose m ε
+htmlclose l l htmlclose l ε
+htmlclose > > htmlclose > ε
