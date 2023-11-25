@@ -234,9 +234,11 @@ bodyclosedone $ < bodyclosedone ε ε
 bodyclosedone % < bodyclosedone ε ε
 bodyclosedone < < newtag < ε
 
+- i tag in body
+bodyacctag i / bodyitag ε <
+
 - img in body 
-bodyacctag i / imgopen ε mgsrc=""><
-imgopen m m imgopen m ε
+bodyitag m < imgopen ε gsrc="">
 imgopen g g imgopen g ε
 
 - img text 
@@ -296,67 +298,65 @@ imgalt " " imgtext " ε
 imgopen > > bodyopendone > ε
 imgopenatr > > bodyopendone > ε
 
-- img in body 
-bodyacctag i / imgopen ε mgsrc=""><
-imgopen m m imgopen m ε
-imgopen g g imgopen g ε
+- input tag in body
+bodyitag n < input ε put>
+input p p input p ε
+input u u input u ε
+input t t inputdone t ε
+inputdone % > inputatr ε ε
+inputdone $ > inputatr ε ε
+inputatr $ > inputatr ε ε
+inputatr % > inputatr ε ε
+inputatr t > inputatr ε ype=""
+inputatr y y inputatr y ε
+inputatr p p inputatr p ε
+inputatr e e inputatr e ε
+inputatr = = inputatr = ε
+inputatr " " inputtext " ε
 
-- img text 
-imgtext " " imgopen " ε
-imgtext any " imgtext ε ε
+- terimnation input
+inputdone > > bodyopendone > ε 
+inputatr > > bodyopendone > ε 
 
-- spasi di img 
-imgopen % s imgopenatr ε ε
-imgopen % > imgopenatr ε ε
-imgopenatr % s imgopenatr ε ε
-imgopenatr $ s imgopenatr ε ε
+- type in input
+- termination input
+inputedtext " " inputdone " ε 
+- text
+inputtext t " inputedtext ε ext
+inputedtext e e inputedtext e ε
+inputedtext x x inputedtext x ε
+inputedtext t t inputedtext t ε
+- password
+inputtext p " inputedtext ε assword
+inputedtext a a inputedtext a ε
+inputedtext s s inputedtext s ε
+inputedtext w w inputedtext w ε
+inputedtext o o inputedtext o ε
+inputedtext r r inputedtext r ε
+inputedtext d d inputedtext d ε
+- email
+inputtext e " inputedtext ε mail
+inputedtext m m inputedtext m ε
+inputedtext a a inputedtext a ε
+inputedtext i i inputedtext i ε
+inputedtext l l inputedtext l ε
+- number
+inputtext n " inputedtext ε umber
+inputedtext u u inputedtext u ε
+inputedtext m m inputedtext m ε
+inputedtext b b inputedtext b ε
+inputedtext e e inputedtext e ε
+inputedtext r r inputedtext r ε
+- checkbox
+inputtext c " inputedtext ε heckbox
+inputedtext h h inputedtext h ε
+inputedtext e e inputedtext e ε
+inputedtext c c inputedtext c ε
+inputedtext k k inputedtext k ε
+inputedtext b b inputedtext b ε
+inputedtext o o inputedtext o ε
+inputedtext x x inputedtext x ε
 
-- id in img
-imgopenatr i s imgid ε d=""
-imgopenatr i > imgid ε d=""
-imgid d d imgid d ε
-imgid = = imgid = ε
-imgid " " imgtext " ε
-
-- class in img
-imgopenatr c s imgclass ε lass=""
-imgopenatr c > imgclass ε lass=""
-imgclass l l imgclass l ε
-imgclass a a imgclass a ε
-imgclass s s imgclass s ε
-imgclass = = imgclass = ε
-imgclass " " imgtext " ε
-
-- s attribut in img 
-imgopenatr s s imgsattr s ε 
-imgopenatr s > imgsattr ε ε 
-
-- style in img
-imgsattr t r imgstyle ε yle=""s
-imgsattr t > imgstyle ε yle=""
-imgstyle y y imgstyle y ε
-imgstyle l l imgstyle l ε
-imgstyle e e imgstyle e ε
-imgstyle = = imgstyle = ε
-imgstyle " " imgtext " ε
-
-- src in img 
-imgsattr r r imgsrc r ε
-imgsrc c c imgsrc c ε
-imgsrc = = imgsrc = ε
-imgsrc " " imgtext " ε
-
-- alt 
-imgopenatr a s imgalt ε lt=""
-imgopenatr a > imgalt ε lt=""
-imgalt l l imgalt l ε   
-imgalt t t imgalt t ε
-imgalt = = imgalt = ε
-imgalt " " imgtext " ε
-
-- close img tag
-imgopen > > bodyopendone > ε
-imgopenatr > > bodyopendone > ε
 
 - start hr html 
 bodyacctag h / hrtag ε r>

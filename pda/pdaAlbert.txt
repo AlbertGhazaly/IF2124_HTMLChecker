@@ -235,9 +235,11 @@ bodyclosedone $ < bodyclosedone ε ε
 bodyclosedone % < bodyclosedone ε ε
 bodyclosedone < < newtag < ε
 
+- i tag in body
+bodyacctag i / bodyitag ε <
+
 - img in body 
-bodyacctag i / imgopen ε mgsrc=""><
-imgopen m m imgopen m ε
+bodyitag m < imgopen ε gsrc="">
 imgopen g g imgopen g ε
 
 - img text 
@@ -296,6 +298,66 @@ imgalt " " imgtext " ε
 - close img tag
 imgopen > > bodyopendone > ε
 imgopenatr > > bodyopendone > ε
+
+- input tag in body
+bodyitag n < input ε put>
+input p p input p ε
+input u u input u ε
+input t t inputdone t ε
+inputdone % > inputatr ε ε
+inputdone $ > inputatr ε ε
+inputatr $ > inputatr ε ε
+inputatr % > inputatr ε ε
+inputatr t > inputatr ε ype=""
+inputatr y y inputatr y ε
+inputatr p p inputatr p ε
+inputatr e e inputatr e ε
+inputatr = = inputatr = ε
+inputatr " " inputtext " ε
+
+- terimnation input
+inputdone > > bodyopendone > ε 
+inputatr > > bodyopendone > ε 
+
+- type in input
+- termination input
+inputedtext " " inputdone " ε 
+- text
+inputtext t " inputedtext ε ext
+inputedtext e e inputedtext e ε
+inputedtext x x inputedtext x ε
+inputedtext t t inputedtext t ε
+- password
+inputtext p " inputedtext ε assword
+inputedtext a a inputedtext a ε
+inputedtext s s inputedtext s ε
+inputedtext w w inputedtext w ε
+inputedtext o o inputedtext o ε
+inputedtext r r inputedtext r ε
+inputedtext d d inputedtext d ε
+- email
+inputtext e " inputedtext ε mail
+inputedtext m m inputedtext m ε
+inputedtext a a inputedtext a ε
+inputedtext i i inputedtext i ε
+inputedtext l l inputedtext l ε
+- number
+inputtext n " inputedtext ε umber
+inputedtext u u inputedtext u ε
+inputedtext m m inputedtext m ε
+inputedtext b b inputedtext b ε
+inputedtext e e inputedtext e ε
+inputedtext r r inputedtext r ε
+- checkbox
+inputtext c " inputedtext ε heckbox
+inputedtext h h inputedtext h ε
+inputedtext e e inputedtext e ε
+inputedtext c c inputedtext c ε
+inputedtext k k inputedtext k ε
+inputedtext b b inputedtext b ε
+inputedtext o o inputedtext o ε
+inputedtext x x inputedtext x ε
+
 
 - start hr html 
 bodyacctag h / hrtag ε r>
