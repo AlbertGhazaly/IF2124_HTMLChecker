@@ -1,6 +1,30 @@
 states
 symbols
 stacksymbol
-q
 #
+q
 q read top q' pop push
+q < # htmlopen ε html></html>
+htmlopen h h htmlopen h ε
+htmlopen t t htmlopen t ε
+htmlopen m m htmlopen m ε
+htmlopen l l htmlopen l ε
+htmlopen % > htmlopenatr ε ε
+htmlopenatr i > htmlid ε d=""
+htmlopenatr % > htmlopenatr ε ε
+htmlid d d htmlid d ε
+htmlid = = htmlid = ε
+htmlid " " htmlidtext " ε
+htmlidtext any " htmlidtext ε ε
+htmlidtext " " htmliddone " ε
+htmliddone > > htmlopendone > ε
+htmlopen > > htmlopendone > ε
+htmlopendone any < htmlopendone ε ε
+htmlopendone < < htmlclose < ε
+htmlclose / / htmlclose / ε
+htmlclose h h htmlclose h ε
+htmlclose t t htmlclose t ε
+htmlclose m m htmlclose m ε
+htmlclose l l htmlclose l ε
+htmlclose > > htmlclosedone > ε
+htmlclosedone any # finish # ε

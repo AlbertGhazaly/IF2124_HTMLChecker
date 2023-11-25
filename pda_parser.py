@@ -18,11 +18,14 @@ class STACK:
         return self.stack
 
     def isEmpty(self):
+        # print(f"stack : |{self}|")
+        # print(self.stack == "")
         return self.stack == ""
     
     def stackpush(self,x):
             if x != "ε":
                 self.stack += x
+                self.top = x[-1]
 
     def stackpop(self):
 
@@ -30,28 +33,29 @@ class STACK:
             self.top = None
             self.stack = ""
         else: 
-            self.top = self.stack[-2]
-            self.stack = self.stack[:-1]
+            if len(self.stack) == 1:
+                self.top = ""
+                self.stack = ""
+            else:
+                self.top = self.stack[-2]
+                self.stack = self.stack[:-1]
 
     def do_procedure(self, transition):
 
         fstate = transition[0]
-        pop = transition[0]
+        pop = transition[1]
         push = transition[2]
 
         self.state = fstate
         if pop != 'ε':
-            self.stackpop
+            self.stackpop()
         self.stackpush(push)
 
-        self.top = self.stack[-1]
-        self.state = fstate
 
 def read_pda(filepath):
-    with open(filepath, 'r') as file:
+    with open(filepath, 'r', encoding="utf-8") as file:
         content = [e.rstrip("\n") for e in file.readlines()]
         
-
         states = content[0].split()
         symbols = content[1].split()
         stacksymbol = content[2].split()

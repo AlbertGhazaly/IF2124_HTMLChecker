@@ -1,6 +1,6 @@
 def readHtml(filename):
     f = open(filename,"r")
-    lines = "".join(f.readlines()).replace("\n",'$')
+    lines = ("".join(f.readlines()).replace("\n",'$')).replace(" ",'%')
     f.close
     return lines
 
