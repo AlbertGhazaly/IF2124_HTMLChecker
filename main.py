@@ -32,9 +32,9 @@ while check:
         counterCol = -1
     counterCol += 1
 
-    print(f"stack: {stack}")
-    print(f"str: {html}")
-    print()
+    # print(f"stack: {stack}")
+    # print(f"str: {html}")
+    # print()
     
     if len(html) == 1:
         check = False
