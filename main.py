@@ -1,5 +1,5 @@
 from sys import argv as argv
-from html_parser import readHtml
+from html_parser import readHtml, readHtmlList
 from pda_parser import PDA, STACK
 from pda_parser import read_pda
 
@@ -7,6 +7,7 @@ pda_path = argv[1]
 html_path = argv[2]
 
 html = readHtml(html_path)
+html_List = readHtmlList(html_path)
 
 pda = read_pda(pda_path)
 stack = STACK(pda)
@@ -16,14 +17,24 @@ invalid = False
 
 keys = pda.transition_rules.keys()
 
+counterCol = -1
+counterRow = 0
+
+newLine = False
+
 while check:
 
     currState = stack.state
     currChar = html[0]
 
-    print(f"stack: {stack}")
-    print(f"str: {html}")
-    print()
+    if currChar == "$":
+        counterRow += 1
+        counterCol = -1
+    counterCol += 1
+
+    # print(f"stack: {stack}")
+    # print(f"str: {html}")
+    # print()
     
     if len(html) == 1:
         check = False
@@ -66,5 +77,10 @@ print(f"state: {stack.state}")
 if stack.top == "#" and len(html) == 0 and not(invalid):
     print("\nAccepted!\n")
 else:
-    print("\nNot Accepted :(\n")
-
+    print("")
+    print(f"  file \"{html_path}\", line {counterRow}")
+    print(html_List[counterRow], end="")
+    for i in range(counterCol-1):
+        print(" ", end="")
+    print("^")
+    print(f"SyntaxError: kode kamu jelek (detected at line {counterRow})")
