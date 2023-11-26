@@ -479,6 +479,8 @@ bodyopendone % < bodyopendone ε ε
 - accepts tag in body
 bodyopendone < < bodyacctag < ε
 bodyacctag / / bodyclosetag / ε
+bodyacctag a / abodytag ε ε
+bodyclosetag a a aclose a ε
 bodyclosetag f f formclosetag f ε
 bodyclosetag t t tableclosetag t ε
 bodyclosetag b b bodyclosetagb b ε
@@ -1126,16 +1128,18 @@ h6tagtext any " h6tagtext ε ε
 h6tagtext " " h6opentag " ε
 
 - <a> tag
-bodyacctag a / aopen  ε ></a><
-aopen $ > aatr ε ε
-aopen % > aatr ε ε
-aatr % > aatr ε ε
-aatr $ > aatr ε ε
+abodytag > / bodyopendone ε </a><
+abodytag $ / aatr ε ε
+abodytag % / aatr ε ε
+aatr % / aatr ε ε
+aatr $ / aatr ε ε
+aopen $ / aatr ε ε
+aopen % / aatr ε ε
 - to inside a
-aopen > > acontent > ε 
-aatr > > acontent > ε
+aopen > / bodyopendone ε </a><
+aatr > / bodyopendone ε </a><
 - href 
-aatr h > ahref ε ref=""
+aatr h / ahref ε ref=""
 ahref r r ahref r ε
 ahref e e ahref e ε
 ahref f f ahref f ε
@@ -1145,13 +1149,13 @@ ahref " " atext " ε
 atext any " atext ε ε
 atext " " aopen " ε
 - a id
-aatr i > aid ε d=""
+aatr i / aid ε d=""
 aid d d aid d ε
 aid = = aid = ε
 aid " " atext " ε
 
 - a class 
-aatr c > aclass ε lass=""
+aatr c / aclass ε lass=""
 aclass l l aclass l ε
 aclass a a aclass a ε
 aclass s s aclass s ε
@@ -1160,21 +1164,14 @@ aclass = = aclass = ε
 aclass " " atext " ε
 
 - a style 
-aatr s > astyle ε tyle=""
+aatr s / astyle ε tyle=""
 astyle t t astyle t ε
 astyle y y astyle y ε
 astyle l l astyle l ε
 astyle e e astyle e ε
 astyle = = astyle = ε
 astyle " " atext " ε
-
-- acontent
-acontent any < acontent ε ε
-acontent < < aclose < ε
-
 - aclose
-aclose / / aclose / ε
-aclose a a aclose a ε
 aclose > > bodyopendone > ε
 
 
@@ -1579,3 +1576,45 @@ bstyle = = bstyle = ε
 bstyle " " btext " ε
 - termination
 bodyclosetagb > > bodyopendone > ε
+
+- abbr tag
+abodytag b / abbrtag ε br></abbr>
+abbrtag b b abbrtag b ε
+abbrtag r r abbrtag r ε
+abbrtag % > abbratr ε ε
+abbrtag $ > abbratr ε ε
+abbratr % > abbratr ε ε
+abbratr $ > abbratr ε ε
+- to bodyopendone
+abbrtag > > bodyopendone > ε
+abbratr > > bodyopendone > ε
+- abbr text
+abbrtext any " abbrtext ε ε 
+abbrtext " " abbrtag " ε 
+- abbr id
+abbratr i > abbrid ε d=""
+abbrid d d abbrid d ε
+abbrid = = abbrid = ε
+abbrid " " abbrtext " ε
+
+- abbr class 
+abbratr c > abbrclass ε lass=""
+abbrclass l l abbrclass l ε
+abbrclass a a abbrclass a ε
+abbrclass s s abbrclass s ε
+abbrclass = = abbrclass = ε
+abbrclass " " abbrtext " ε
+
+- abbr style 
+abbratr s > abbrstyle ε tyle=""
+abbrstyle t t abbrstyle t ε
+abbrstyle y y abbrstyle y ε
+abbrstyle l l abbrstyle l ε
+abbrstyle e e abbrstyle e ε
+abbrstyle = = abbrstyle = ε
+abbrstyle " " abbrtext " ε
+-close abbr
+aclose b b abbrclose b ε
+abbrclose b b abbrclose b ε
+abbrclose r r abbrclose r ε
+abbrclose > > bodyopendone > <
