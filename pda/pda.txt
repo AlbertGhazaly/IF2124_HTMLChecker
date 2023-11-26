@@ -4,10 +4,6 @@ stacksymbol
 #
 q0
 
-
-- template 
-q read top q' pop push
-
 - initiate
 q0 < # newtagbeforehtml ε ε
 q0 % # q0 ε ε
