@@ -68,10 +68,10 @@ key = (currState, "any", "#")
 if key in keys:
         stack.do_procedure(pda.transition_rules[key])
 
-print(f"\nstack: {stack}")
-print(f"str: {html}")
-print(f"read: {currChar}")
-print(f"state: {stack.state}")
+# print(f"\nstack: {stack}")
+# print(f"str: {html}")
+# print(f"read: {currChar}")
+# print(f"state: {stack.state}")
 # print(pda.transition_rules[key])
 
 if stack.top == "#" and len(html) == 0 and not(invalid):
