@@ -214,6 +214,8 @@ bodyopendone < < bodyacctag < ε
 bodyacctag / / bodyclosetag / ε
 bodyclosetag b b bodyclose b ε
 bodyclosetag f f formclosetag f ε
+bodyclosetag t t tableclosetag t ε
+
 - comment on body
 bodyacctag ! / bodycommentopen ε ----><
 bodycommentopen - - bodycommentopen-1 - ε
@@ -387,9 +389,9 @@ inputstyle e e inputstyle e ε
 inputstyle = = inputstyle = ε
 inputstyle " " inputanytext " ε
 
-- start hr html 
-bodyacctag h / hrtag ε r><
-hrtag r r hrtag r ε
+- hr in body
+bodyacctag h / hopentag ε ε
+hopentag r / hrtag ε >
 hrtag % > hrtagatr ε ε
 hrtagatr % > hrtag ε ε
 hrtag > > bodyopendone > <
@@ -913,3 +915,49 @@ brtagstyle = = brtagstyle = ε
 brtagstyle " " brtagtext " ε
 brtagtext any " brtagtext ε ε
 brtagtext " " brtag " ε
+
+- tag yang ada t nya
+bodyacctag t / topentag ε ε
+
+- table dalam body
+topentag a / tableopentag ε ble></table>
+tableopentag b b tableopentag b ε
+tableopentag l l tableopentag l ε
+tableopentag e e tableopentag e ε
+tableopentag % > tabletagatr ε ε
+tableopentag > > bodyopendone > ε
+tableclosetag a a tableclosetag a ε
+tableclosetag b b tableclosetag b ε
+tableclosetag l l tableclosetag l ε
+tableclosetag e e tableclosetag e ε
+tableclosetag > > bodyopendone > <
+
+- table atribut id
+tabletagatr i > tabletagid ε d=""
+tabletagid d d tabletagid d ε
+tabletagid = = tabletagid = ε
+tabletagid " " tabletagtext " ε
+tabletagtext any " tabletagtext ε ε
+tabletagtext " " tableopentag " ε
+
+- table atribut class
+tabletagatr c > tabletagclass ε lass=""
+tabletagclass l l tabletagclass l ε
+tabletagclass a a tabletagclass a ε
+tabletagclass s s tabletagclass s ε
+tabletagclass s s tabletagclass s ε
+tabletagclass = = tabletagclass = ε
+tabletagclass " " tabletagtext " ε
+tabletagtext any " tabletagtext ε ε
+tabletagtext " " tableopentag " ε
+
+- table atribut style
+tabletagatr s > tabletagstyle ε tyle=""
+tabletagstyle t t tabletagstyle t ε
+tabletagstyle y y tabletagstyle y ε
+tabletagstyle l l tabletagstyle l ε
+tabletagstyle e e tabletagstyle e ε
+tabletagstyle = = tabletagstyle = ε
+tabletagstyle " " tabletagtext " ε
+tabletagtext any " tabletagtext ε ε
+tabletagtext " " tableopentag " ε
