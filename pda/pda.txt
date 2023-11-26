@@ -777,14 +777,14 @@ formtagtext any " formtagtext ε ε
 formtagtext " " formopentag " ε
 
 - form atribut method
-formtagatr m > formtagaction ε ethod=""
-formtagaction e e formtagaction e ε
-formtagaction t t formtagaction t ε
-formtagaction h h formtagaction h ε
-formtagaction o o formtagaction o ε
-formtagaction d d formtagaction d ε
-formtagaction = = formtagaction = ε
-formtagaction " " formtagtext " ε
+formtagatr m > formtagmethod ε ethod=""
+formtagmethod e e formtagmethod e ε
+formtagmethod t t formtagmethod t ε
+formtagmethod h h formtagmethod h ε
+formtagmethod o o formtagmethod o ε
+formtagmethod d d formtagmethod d ε
+formtagmethod = = formtagmethod = ε
+formtagmethod " " formtagtext " ε
 formtagtext G " formtagacttextget ε ET
 formtagacttextget E E formtagacttextget E ε
 formtagacttextget T T formtagacttextget T ε
