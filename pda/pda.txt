@@ -35,27 +35,61 @@ comment-3a any - comment-2a ε -
 comment-4a any - comment-2a ε -- 
 comment-4a > > htmlclosedone > ε
 
-- comment in html
-newtag ! / commenth ε ---->
-commenth - - commenth-1 - ε
-commenth-1 - - commenth-2 - ε
-commenth-2 - - commenth-3 - ε
-commenth-2 any - commenth-2 ε ε
-commenth-3 - - commenth-4 - ε
-commenth-3 any - commenth-2 ε -
-commenth-4 any - commenth-2 ε -- 
-commenth-4 > > htmlopendone > <
+- comment before head
+newtaghtmlopendone ! / commentb ε ----><
+commentb - - comment-1b - ε
+comment-1b - - comment-2b - ε
+comment-2b - - comment-3b - ε
+comment-2b any - comment-2b ε ε
+comment-3b - - comment-4b - ε
+comment-3b any - comment-2b ε -
+comment-4b any - comment-2b ε -- 
+comment-4b > > htmlopendone > ε
 
-- comment on body
-bodyacctag ! / bodycommentopen ε ----><
-bodycommentopen - - bodycommentopen-1 - ε
-bodycommentopen-1 - - bodycommentopen-2 - ε
-bodycommentopen-2 - - bodycommentopen-3 - ε
-bodycommentopen-2 any - bodycommentopen-2 ε ε
-bodycommentopen-3 - - bodycommentopen-4 - ε
-bodycommentopen-3 any - bodycommentopen-2 ε -
-bodycommentopen-4 any - bodycommentopen-2 ε -- 
-bodycommentopen-4 > > bodyopendone > ε
+- comment in head
+newtaginhead ! / commentc ε ----><
+commentc - - comment-1c - ε
+comment-1c - - comment-2c - ε
+comment-2c - - comment-3c - ε
+comment-2c any - comment-2c ε ε
+comment-3c - - comment-4c - ε
+comment-3c any - comment-2c ε -
+comment-4c any - comment-2c ε -- 
+comment-4c > > headopendone > ε
+
+- comment after head
+newtagheaddone ! / commentd ε ----><
+commentd - - comment-1d - ε
+comment-1d - - comment-2d - ε
+comment-2d - - comment-3d - ε
+comment-2d any - comment-2d ε ε
+comment-3d - - comment-4d - ε
+comment-3d any - comment-2d ε -
+comment-4d any - comment-2d ε -- 
+comment-4d > > headclosedone > ε
+
+- comment in body
+bodyacctag ! / commente ε ----><
+commente - - comment-1e - ε
+comment-1e - - comment-2e - ε
+comment-2e - - comment-3e - ε
+comment-2e any - comment-2e ε ε
+comment-3e - - comment-4e - ε
+comment-3e any - comment-2e ε -
+comment-4e any - comment-2e ε -- 
+comment-4e > > bodyopendone > ε
+
+- comment after body
+newtagbodydone ! / commentf ε ----><
+commentf - - comment-1f - ε
+comment-1f - - comment-2f - ε
+comment-2f - - comment-3f - ε
+comment-2f any - comment-2f ε ε
+comment-3f - - comment-4f - ε
+comment-3f any - comment-2f ε -
+comment-4f any - comment-2f ε -- 
+comment-4f > > bodyclosedone > ε
+
 
 - start open tag html 
 newtagbeforehtml h # htmlopen ε tml></html>
@@ -121,16 +155,16 @@ htmlopendone $ < htmlopendone ε ε
 
 
 - closing tag html
-htmlopendone < < newtag < ε
-newtag / / closetag / ε
-closetag h h html/headclose h ε
-html/headclose t t htmlclose t ε
+newtagbodydone / / closetaghtml / ε
+closetaghtml h h htmlclose h ε
+htmlclose t t htmlclose t ε
 htmlclose m m htmlclose m ε
 htmlclose l l htmlclose l ε
 htmlclose > > htmlclosedone > ε
 
 - start open tag head 
-newtag h / headopen ε ead></head><
+htmlopendone < < newtaghtmlopendone < ε
+newtaghtmlopendone h / headopen ε ead></head><
 
 - opentag head
 headopen e e headopen e ε
@@ -469,10 +503,10 @@ headclose d d headclose d ε
 headclose > > headclosedone > ε
 headclosedone $ < headclosedone ε ε
 headclosedone % < headclosedone ε ε
-headclosedone < < newtag / ε
+headclosedone < < newtagheaddone / ε
 
 - body
-newtag b / bodyopen ε ody></body><
+newtagheaddone b / bodyopen ε ody></body><
 bodyopen o o bodyopen o ε
 bodyopen d d bodyopen d ε
 bodyopen y y bodyopen y ε
@@ -523,7 +557,7 @@ bodyclose y y bodyclose y ε
 bodyclose > > bodyclosedone > ε
 bodyclosedone $ < bodyclosedone ε ε
 bodyclosedone % < bodyclosedone ε ε
-bodyclosedone < < newtag < ε
+bodyclosedone < < newtagbodydone < ε
 
 - i tag in body
 bodyacctag i / bodyitag ε <

@@ -4,10 +4,6 @@ stacksymbol
 #
 q0
 
-
-- template 
-q read top q' pop push
-
 - initiate
 q0 < # newtagbeforehtml ε ε
 q0 % # q0 ε ε
@@ -38,6 +34,28 @@ comment-3a - - comment-4a - ε
 comment-3a any - comment-2a ε -
 comment-4a any - comment-2a ε -- 
 comment-4a > > htmlclosedone > ε
+
+- comment in html
+newtag ! / commenth ε ---->
+commenth - - commenth-1 - ε
+commenth-1 - - commenth-2 - ε
+commenth-2 - - commenth-3 - ε
+commenth-2 any - commenth-2 ε ε
+commenth-3 - - commenth-4 - ε
+commenth-3 any - commenth-2 ε -
+commenth-4 any - commenth-2 ε -- 
+commenth-4 > > htmlopendone > <
+
+- comment on body
+bodyacctag ! / bodycommentopen ε ----><
+bodycommentopen - - bodycommentopen-1 - ε
+bodycommentopen-1 - - bodycommentopen-2 - ε
+bodycommentopen-2 - - bodycommentopen-3 - ε
+bodycommentopen-2 any - bodycommentopen-2 ε ε
+bodycommentopen-3 - - bodycommentopen-4 - ε
+bodycommentopen-3 any - bodycommentopen-2 ε -
+bodycommentopen-4 any - bodycommentopen-2 ε -- 
+bodycommentopen-4 > > bodyopendone > ε
 
 - start open tag html 
 newtagbeforehtml h # htmlopen ε tml></html>
@@ -497,17 +515,6 @@ hclosetag 4 4 hclosetag 4 ε
 hclosetag 5 5 hclosetag 5 ε
 hclosetag 6 6 hclosetag 6 ε
 hclosetag > > bodyopendone > <
-
-- comment on body
-bodyacctag ! / bodycommentopen ε ----><
-bodycommentopen - - bodycommentopen-1 - ε
-bodycommentopen-1 - - bodycommentopen-2 - ε
-bodycommentopen-2 - - bodycommentopen-3 - ε
-bodycommentopen-2 any - bodycommentopen-2 ε ε
-bodycommentopen-3 - - bodycommentopen-4 - ε
-bodycommentopen-3 any - bodycommentopen-2 ε -
-bodycommentopen-4 any - bodycommentopen-2 ε -- 
-bodycommentopen-4 > > bodyopendone > ε
 
 - start closetag 
 bodyclose o o bodyclose o ε
@@ -1440,10 +1447,10 @@ divclosetag i i divclosetag i ε
 divclosetag v v divclosetag v ε
 divclosetag > > bodyopendone > ε
 - scriptbody 
-bodyacctag s / script/strong/small ε ε
+bodyacctag s / script/small/strong ε ε
 
 - opentag scriptbody
-script/strong/small c / scriptbody ε ript></script><
+script/small/strong c / scriptbody ε ript></script><
 scriptbody r r scriptbodyopen r ε
 scriptbodyopen i i scriptbodyopen i ε
 scriptbodyopen p p scriptbodyopen t ε
@@ -1750,7 +1757,7 @@ abbrclose r r abbrclose r ε
 abbrclose > > bodyopendone > <
 
 - opentag strongbody
-script/strong/small t / strongbody ε rong></strong><
+script/small/strong t / strongbody ε rong></strong><
 strongbody r r strongbodyopen r ε
 strongbodyopen o o strongbodyopen o ε
 strongbodyopen n n strongbodyopen n ε
@@ -1823,7 +1830,7 @@ strongbodyclose g g strongbodyclose g ε
 strongbodyclose > > bodyopendone > ε
 
 - opentag smallbody
-script/strong/small m / smallbody ε all></small><
+script/small/strong m / smallbody ε all></small><
 smallbody a a smallbodyopen a ε
 smallbodyopen l l smallbodyopen l ε
 
@@ -2388,3 +2395,271 @@ tdclosetag / / tdclosetag / ε
 tdclosetag e e emtdclose e ε
 emtdclose m m emtdclose m ε
 emtdclose > > tdcontent > ε
+
+- opentag bth
+thcontent < < thclosetag < ε
+thclosetag b / bthopen ε ></b><
+
+- atribut bth 
+bthopen $ > bthopenatr ε ε
+bthopen % > bthopenatr ε ε
+bthopenatr % > bthopenatr ε ε
+bthopenatr > > thcontent > ε
+
+- id bth 
+bthopenatr i > bthid ε d=""
+bthid d d bthid d ε
+bthid = = bthid = ε
+bthid " " bthtext " ε
+bthtext any " bthtext ε ε
+bthtext " " bthatrdone " ε
+bthatrdone % > bthopenatr ε ε
+bthatrdone $ > bthopenatr ε ε
+bthatrdone > > thcontent > ε
+bthopen > > thcontent > ε
+thcontent $ < thcontent ε ε
+thcontent % < thcontent ε ε
+
+- class bth 
+bthopenatr c > bthclass ε lass=""
+bthclass l l bthclass l ε
+bthclass a a bthclass a ε
+bthclass s s bthclasss s ε
+bthclasss s s bthclass s ε
+bthclass = = bthclass = ε
+bthclass " " bthtext " ε
+bthtext any " bthtext ε ε
+bthtext " " bthatrdone " ε
+bthatrdone % > bthopenatr ε ε
+bthatrdone $ > bthopenatr ε ε
+bthatrdone > > thcontent > ε
+bthopen > > thcontent > ε
+thcontent $ < thcontent ε ε
+thcontent % < thcontent ε ε
+
+- style bth
+bthopenatr s > bthstyleorsrc ε ε
+bthstyleorsrc t > bthstyle ε yle=""
+bthstyle y y bthstyle y ε
+bthstyle l l bthcstyle l ε
+bthcstyle e e bthstyle e ε
+bthstyle = = bthstyle = ε
+bthstyle " " bthtext " ε
+bthtext any " bthtext ε ε
+bthtext " " bthatrdone " ε
+bthatrdone % > bthopenatr ε ε
+bthatrdone $ > bthopenatr ε ε
+bthatrdone > > thcontent > ε
+bthopen > > thcontent > ε
+thcontent $ < thcontent ε ε
+thcontent % < thcontent ε ε
+thcontent any < thcontent ε ε
+
+- closing tag bth
+thcontent < < thclosetag < ε
+thclosetag / / thclosetag / ε
+thclosetag b b bthclose s ε
+bthclose > > thcontent > ε
+
+- opentag abbrth
+thcontent < < thclosetag < ε
+thclosetag a / abbrthopen ε bbr></abbr><
+abbrthopen b b abbrthopen b ε
+abbrthopen r r abbrthopen r ε
+
+- atribut abbrth 
+abbrthopen $ > abbrthopenatr ε ε
+abbrthopen % > abbrthopenatr ε ε
+abbrthopenatr % > abbrthopenatr ε ε
+abbrthopenatr > > thcontent > ε
+
+- id abbrth 
+abbrthopenatr i > abbrthid ε d=""
+abbrthid d d abbrthid d ε
+abbrthid = = abbrthid = ε
+abbrthid " " abbrthtext " ε
+abbrthtext any " abbrthtext ε ε
+abbrthtext " " abbrthatrdone " ε
+abbrthatrdone % > abbrthopenatr ε ε
+abbrthatrdone $ > abbrthopenatr ε ε
+abbrthatrdone > > thcontent > ε
+abbrthopen > > thcontent > ε
+thcontent $ < thcontent ε ε
+thcontent % < thcontent ε ε
+
+- class abbrth 
+abbrthopenatr c > abbrthclass ε lass=""
+abbrthclass l l abbrthclass l ε
+abbrthclass a a abbrthclass a ε
+abbrthclass s s abbrthclasss s ε
+abbrthclasss s s abbrthclass s ε
+abbrthclass = = abbrthclass = ε
+abbrthclass " " abbrthtext " ε
+abbrthtext any " abbrthtext ε ε
+abbrthtext " " abbrthatrdone " ε
+abbrthatrdone % > abbrthopenatr ε ε
+abbrthatrdone $ > abbrthopenatr ε ε
+abbrthatrdone > > thcontent > ε
+abbrthopen > > thcontent > ε
+thcontent $ < thcontent ε ε
+thcontent % < thcontent ε ε
+
+- style abbrth
+abbrthopenatr s > abbrthstyleorsrc ε ε
+abbrthstyleorsrc t > abbrthstyle ε yle=""
+abbrthstyle y y abbrthstyle y ε
+abbrthstyle l l abbrthcstyle l ε
+abbrthcstyle e e abbrthstyle e ε
+abbrthstyle = = abbrthstyle = ε
+abbrthstyle " " abbrthtext " ε
+abbrthtext any " abbrthtext ε ε
+abbrthtext " " abbrthatrdone " ε
+abbrthatrdone % > abbrthopenatr ε ε
+abbrthatrdone $ > abbrthopenatr ε ε
+abbrthatrdone > > thcontent > ε
+abbrthopen > > thcontent > ε
+thcontent $ < thcontent ε ε
+thcontent % < thcontent ε ε
+thcontent any < thcontent ε ε
+
+- closing tag abbrth
+thcontent < < thclosetag < ε
+thclosetag / / thclosetag / ε
+thclosetag a a abbrthclose a ε
+abbrthclose b b abbrthclose a ε
+abbrthclose r r abbrthclose r ε
+abbrthclose > > thcontent > ε
+
+- opentag btd
+tdcontent < < tdclosetag < ε
+tdclosetag b / btdopen ε ></b><
+
+- atribut btd 
+btdopen $ > btdopenatr ε ε
+btdopen % > btdopenatr ε ε
+btdopenatr % > btdopenatr ε ε
+btdopenatr > > tdcontent > ε
+
+- id btd 
+btdopenatr i > btdid ε d=""
+btdid d d btdid d ε
+btdid = = btdid = ε
+btdid " " btdtext " ε
+btdtext any " btdtext ε ε
+btdtext " " btdatrdone " ε
+btdatrdone % > btdopenatr ε ε
+btdatrdone $ > btdopenatr ε ε
+btdatrdone > > tdcontent > ε
+btdopen > > tdcontent > ε
+tdcontent $ < tdcontent ε ε
+tdcontent % < tdcontent ε ε
+
+- class btd 
+btdopenatr c > btdclass ε lass=""
+btdclass l l btdclass l ε
+btdclass a a btdclass a ε
+btdclass s s btdclasss s ε
+btdclasss s s btdclass s ε
+btdclass = = btdclass = ε
+btdclass " " btdtext " ε
+btdtext any " btdtext ε ε
+btdtext " " btdatrdone " ε
+btdatrdone % > btdopenatr ε ε
+btdatrdone $ > btdopenatr ε ε
+btdatrdone > > tdcontent > ε
+btdopen > > tdcontent > ε
+tdcontent $ < tdcontent ε ε
+tdcontent % < tdcontent ε ε
+
+- style btd
+btdopenatr s > btdstyleorsrc ε ε
+btdstyleorsrc t > btdstyle ε yle=""
+btdstyle y y btdstyle y ε
+btdstyle l l btdcstyle l ε
+btdcstyle e e btdstyle e ε
+btdstyle = = btdstyle = ε
+btdstyle " " btdtext " ε
+btdtext any " btdtext ε ε
+btdtext " " btdatrdone " ε
+btdatrdone % > btdopenatr ε ε
+btdatrdone $ > btdopenatr ε ε
+btdatrdone > > tdcontent > ε
+btdopen > > tdcontent > ε
+tdcontent $ < tdcontent ε ε
+tdcontent % < tdcontent ε ε
+tdcontent any < tdcontent ε ε
+
+- closing tag btd
+tdcontent < < tdclosetag < ε
+tdclosetag / / tdclosetag / ε
+tdclosetag b b btdclose s ε
+btdclose > > tdcontent > ε
+
+- opentag abbrtd
+tdcontent < < tdclosetag < ε
+tdclosetag a / abbrtdopen ε bbr></abbr><
+abbrtdopen b b abbrtdopen b ε
+abbrtdopen r r abbrtdopen r ε
+
+- atribut abbrtd 
+abbrtdopen $ > abbrtdopenatr ε ε
+abbrtdopen % > abbrtdopenatr ε ε
+abbrtdopenatr % > abbrtdopenatr ε ε
+abbrtdopenatr > > tdcontent > ε
+
+- id abbrtd 
+abbrtdopenatr i > abbrtdid ε d=""
+abbrtdid d d abbrtdid d ε
+abbrtdid = = abbrtdid = ε
+abbrtdid " " abbrtdtext " ε
+abbrtdtext any " abbrtdtext ε ε
+abbrtdtext " " abbrtdatrdone " ε
+abbrtdatrdone % > abbrtdopenatr ε ε
+abbrtdatrdone $ > abbrtdopenatr ε ε
+abbrtdatrdone > > tdcontent > ε
+abbrtdopen > > tdcontent > ε
+tdcontent $ < tdcontent ε ε
+tdcontent % < tdcontent ε ε
+
+- class abbrtd 
+abbrtdopenatr c > abbrtdclass ε lass=""
+abbrtdclass l l abbrtdclass l ε
+abbrtdclass a a abbrtdclass a ε
+abbrtdclass s s abbrtdclasss s ε
+abbrtdclasss s s abbrtdclass s ε
+abbrtdclass = = abbrtdclass = ε
+abbrtdclass " " abbrtdtext " ε
+abbrtdtext any " abbrtdtext ε ε
+abbrtdtext " " abbrtdatrdone " ε
+abbrtdatrdone % > abbrtdopenatr ε ε
+abbrtdatrdone $ > abbrtdopenatr ε ε
+abbrtdatrdone > > tdcontent > ε
+abbrtdopen > > tdcontent > ε
+tdcontent $ < tdcontent ε ε
+tdcontent % < tdcontent ε ε
+
+- style abbrtd
+abbrtdopenatr s > abbrtdstyleorsrc ε ε
+abbrtdstyleorsrc t > abbrtdstyle ε yle=""
+abbrtdstyle y y abbrtdstyle y ε
+abbrtdstyle l l abbrtdcstyle l ε
+abbrtdcstyle e e abbrtdstyle e ε
+abbrtdstyle = = abbrtdstyle = ε
+abbrtdstyle " " abbrtdtext " ε
+abbrtdtext any " abbrtdtext ε ε
+abbrtdtext " " abbrtdatrdone " ε
+abbrtdatrdone % > abbrtdopenatr ε ε
+abbrtdatrdone $ > abbrtdopenatr ε ε
+abbrtdatrdone > > tdcontent > ε
+abbrtdopen > > tdcontent > ε
+tdcontent $ < tdcontent ε ε
+tdcontent % < tdcontent ε ε
+tdcontent any < tdcontent ε ε
+
+- closing tag abbrtd
+tdcontent < < tdclosetag < ε
+tdclosetag / / tdclosetag / ε
+tdclosetag a a abbrtdclose a ε
+abbrtdclose b b abbrtdclose a ε
+abbrtdclose r r abbrtdclose r ε
+abbrtdclose > > tdcontent > ε
