@@ -473,8 +473,8 @@ formtagacttextpost T T formtagacttextpost T ε
 formtagacttextpost " " formopentag " ε
 
 - button in body
-bodyacctag b / buttonopentag ε utton></button>
-buttonopentag u u buttonopentag u ε
+bodyacctag b / bopentag ε ε
+bopentag u / buttonopentag ε tton></button>
 buttonopentag t t buttonopentag t ε
 buttonopentag t t buttonopentag t ε
 buttonopentag o o buttonopentag o ε
@@ -798,3 +798,40 @@ h6tagstyle = = h6tagstyle = ε
 h6tagstyle " " h6tagtext " ε
 h6tagtext any " h6tagtext ε ε
 h6tagtext " " h6opentag " ε
+
+- start br html 
+bodyacctag b / bopentag ε ε
+bopentag r / brtag ε >
+brtag % > brtagatr ε ε
+brtagatr % > brtag ε ε
+brtag > > bodyopendone > <
+
+- brtagatr id
+brtagatr i > brtagid ε d=""
+brtagid d d brtagid d ε
+brtagid = = brtagid = ε
+brtagid " " brtagtext " ε
+brtagtext any " brtagtext ε ε
+brtagtext " " brtag " ε
+
+- brtagatr class 
+brtagatr c > brtagclass ε lass=""
+brtagclass l l brtagclass l ε
+brtagclass a a brtagclass a ε
+brtagclass s s brtagclass s ε
+brtagclass s s brtagclass s ε
+brtagclass = = brtagclass = ε
+brtagclass " " brtagtext " ε
+brtagtext any " brtagtext ε ε
+brtagtext " " brtag " ε
+
+- brtagatr style 
+brtagatr s > brtagstyle ε tyle=""
+brtagstyle t t brtagstyle t ε
+brtagstyle y y brtagstyle y ε
+brtagstyle l l brtagstyle l ε
+brtagstyle e e brtagstyle e ε
+brtagstyle = = brtagstyle = ε
+brtagstyle " " brtagtext " ε
+brtagtext any " brtagtext ε ε
+brtagtext " " brtag " ε
