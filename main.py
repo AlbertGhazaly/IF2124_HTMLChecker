@@ -32,6 +32,11 @@ while check:
         counterCol = -1
     counterCol += 1
 
+    if currChar == "$":
+        counterRow += 1
+        counterCol = -1
+    counterCol += 1
+
     # print(f"stack: {stack}")
     # print(f"str: {html}")
     # print()

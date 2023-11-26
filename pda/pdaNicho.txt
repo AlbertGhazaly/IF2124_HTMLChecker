@@ -213,6 +213,17 @@ bodyopendone % < bodyopendone ε ε
 bodyopendone < < bodyacctag < ε
 bodyacctag / / bodyclose / ε
 
+- comment on body
+bodyacctag ! / bodycommentopen ε ----><
+bodycommentopen - - bodycommentopen-1 - ε
+bodycommentopen-1 - - bodycommentopen-2 - ε
+bodycommentopen-2 - - bodycommentopen-3 - ε
+bodycommentopen-2 any - bodycommentopen-2 ε ε
+bodycommentopen-3 - - bodycommentopen-4 - ε
+bodycommentopen-3 any - bodycommentopen-2 ε -
+bodycommentopen-4 any - bodycommentopen-2 ε -- 
+bodycommentopen-4 > > bodyopendone > ε
+
 - start closetag 
 bodyclose b b bodyclose b ε
 bodyclose o o bodyclose o ε
@@ -347,10 +358,9 @@ imgalt " " imgtext " ε
 imgopen > > bodyopendone > ε
 imgopenatr > > bodyopendone > ε
 
-
 - start hr html 
-bodyacctag h / hrtag ε r>
-hrtag r r hrtag r ε
+bodyacctag h / hopentag ε ε
+hopentag r / hrtag ε >
 hrtag % > hrtagatr ε ε
 hrtagatr % > hrtag ε ε
 hrtag > > bodyopendone > <
@@ -444,14 +454,14 @@ formtagtext any " formtagtext ε ε
 formtagtext " " formopentag " ε
 
 - form atribut method
-formtagatr m > formtagaction ε ethod=""
-formtagaction e e formtagaction e ε
-formtagaction t t formtagaction t ε
-formtagaction h h formtagaction h ε
-formtagaction o o formtagaction o ε
-formtagaction d d formtagaction d ε
-formtagaction = = formtagaction = ε
-formtagaction " " formtagtext " ε
+formtagatr m > formtagmethod ε ethod=""
+formtagmethod e e formtagmethod e ε
+formtagmethod t t formtagmethod t ε
+formtagmethod h h formtagmethod h ε
+formtagmethod o o formtagmethod o ε
+formtagmethod d d formtagmethod d ε
+formtagmethod = = formtagmethod = ε
+formtagmethod " " formtagtext " ε
 formtagtext G " formtagacttextget ε ET
 formtagacttextget E E formtagacttextget E ε
 formtagacttextget T T formtagacttextget T ε
@@ -461,3 +471,367 @@ formtagacttextpost O O formtagacttextpost O ε
 formtagacttextpost S S formtagacttextpost S ε
 formtagacttextpost T T formtagacttextpost T ε
 formtagacttextpost " " formopentag " ε
+
+- button in body
+bodyacctag b / bopentag ε ε
+bopentag u / buttonopentag ε tton></button>
+buttonopentag t t buttonopentag t ε
+buttonopentag t t buttonopentag t ε
+buttonopentag o o buttonopentag o ε
+buttonopentag n n buttonopentag n ε
+buttonopentag % > buttontagatr ε ε
+buttonopentag > > buttoncontent > ε
+buttoncontent any < buttoncontent ε ε
+buttoncontent < < buttonclosetag < ε
+buttonclosetag / / buttonclosetag / ε
+buttonclosetag b b buttonclosetag b ε
+buttonclosetag u u buttonclosetag u ε
+buttonclosetag t t buttonclosetag t ε
+buttonclosetag t t buttonclosetag t ε
+buttonclosetag o o buttonclosetag o ε
+buttonclosetag n n buttonclosetag n ε
+buttonclosetag > > bodyopendone > <
+
+- button atribut id
+buttontagatr i > buttontagid ε d=""
+buttontagid d d buttontagid d ε
+buttontagid = = buttontagid = ε
+buttontagid " " buttontagtext " ε
+buttontagtext any " buttontagtext ε ε
+buttontagtext " " buttonopentag " ε
+
+- button atribut class
+buttontagatr c > buttontagclass ε lass=""
+buttontagclass l l buttontagclass l ε
+buttontagclass a a buttontagclass a ε
+buttontagclass s s buttontagclass s ε
+buttontagclass s s buttontagclass s ε
+buttontagclass = = buttontagclass = ε
+buttontagclass " " buttontagtext " ε
+buttontagtext any " buttontagtext ε ε
+buttontagtext " " buttonopentag " ε
+
+- button atribut style
+buttontagatr s > buttontagstyle ε tyle=""
+buttontagstyle t t buttontagstyle t ε
+buttontagstyle y y buttontagstyle y ε
+buttontagstyle l l buttontagstyle l ε
+buttontagstyle e e buttontagstyle e ε
+buttontagstyle = = buttontagstyle = ε
+buttontagstyle " " buttontagtext " ε
+buttontagtext any " buttontagtext ε ε
+buttontagtext " " buttonopentag " ε
+
+- button atribut type
+buttontagatr t > buttontagtype ε ype=""
+buttontagtype y y buttontagtype y ε
+buttontagtype p p buttontagtype p ε
+buttontagtype e e buttontagtype e ε
+buttontagtype = = buttontagtype = ε
+buttontagtype " " buttontagtext " ε
+buttontagtext S " buttontagtypetextsubmit ε UBMIT
+buttontagtypetextsubmit U U buttontagtypetextsubmit U ε
+buttontagtypetextsubmit B B buttontagtypetextsubmit B ε
+buttontagtypetextsubmit M M buttontagtypetextsubmit M ε
+buttontagtypetextsubmit I I buttontagtypetextsubmit I ε
+buttontagtypetextsubmit T T buttontagtypetextsubmit T ε
+buttontagtypetextsubmit " " buttonopentag " ε
+buttontagtext R " buttontagtypetextreset ε ESET
+buttontagtypetextreset E E buttontagtypetextreset E ε
+buttontagtypetextreset S S buttontagtypetextreset S ε
+buttontagtypetextreset E E buttontagtypetextreset E ε
+buttontagtypetextreset T T buttontagtypetextreset T ε
+buttontagtypetextreset " " buttonopentag " ε
+buttontagtext B " buttontagtypetextbutton ε UTTON
+buttontagtypetextbutton U U buttontagtypetextbutton U ε
+buttontagtypetextbutton T T buttontagtypetextbutton T ε
+buttontagtypetextbutton T T buttontagtypetextbutton T ε
+buttontagtypetextbutton O O buttontagtypetextbutton O ε
+buttontagtypetextbutton N N buttontagtypetextbutton N ε
+buttontagtypetextbutton " " buttonopentag " ε
+
+- h1 sampai h6 in body
+bodyacctag h / hopentag ε ε
+
+- kasus h1
+hopentag 1 / h1opentag ε ></h1>
+h1opentag % > h1tagatr ε ε
+h1opentag > > h1content > ε
+h1content any < h1content ε ε
+h1content < < h1closetag < ε
+h1closetag / / h1closetag / ε
+h1closetag h h h1closetag h ε
+h1closetag 1 1 h1closetag 1 ε
+h1closetag > > bodyopendone > <
+
+- h1 atribut id
+h1tagatr i > h1tagid ε d=""
+h1tagid d d h1tagid d ε
+h1tagid = = h1tagid = ε
+h1tagid " " h1tagtext " ε
+h1tagtext any " h1tagtext ε ε
+h1tagtext " " h1opentag " ε
+
+- h1 atribut class
+h1tagatr c > h1tagclass ε lass=""
+h1tagclass l l h1tagclass l ε
+h1tagclass a a h1tagclass a ε
+h1tagclass s s h1tagclass s ε
+h1tagclass s s h1tagclass s ε
+h1tagclass = = h1tagclass = ε
+h1tagclass " " h1tagtext " ε
+h1tagtext any " h1tagtext ε ε
+h1tagtext " " h1opentag " ε
+
+- h1 atribut style
+h1tagatr s > h1tagstyle ε tyle=""
+h1tagstyle t t h1tagstyle t ε
+h1tagstyle y y h1tagstyle y ε
+h1tagstyle l l h1tagstyle l ε
+h1tagstyle e e h1tagstyle e ε
+h1tagstyle = = h1tagstyle = ε
+h1tagstyle " " h1tagtext " ε
+h1tagtext any " h1tagtext ε ε
+h1tagtext " " h1opentag " ε
+
+- kasus h2
+hopentag 2 / h2opentag ε ></h2>
+h2opentag % > h2tagatr ε ε
+h2opentag > > h2content > ε
+h2content any < h2content ε ε
+h2content < < h2closetag < ε
+h2closetag / / h2closetag / ε
+h2closetag h h h2closetag h ε
+h2closetag 2 2 h1closetag 2 ε
+h2closetag > > bodyopendone > <
+
+- h2 atribut id
+h2tagatr i > h2tagid ε d=""
+h2tagid d d h2tagid d ε
+h2tagid = = h2tagid = ε
+h2tagid " " h2tagtext " ε
+h2tagtext any " h2tagtext ε ε
+h2tagtext " " h2opentag " ε
+
+- h2 atribut class
+h2tagatr c > h2tagclass ε lass=""
+h2tagclass l l h2tagclass l ε
+h2tagclass a a h2tagclass a ε
+h2tagclass s s h2tagclass s ε
+h2tagclass s s h2tagclass s ε
+h2tagclass = = h2tagclass = ε
+h2tagclass " " h2tagtext " ε
+h2tagtext any " h2tagtext ε ε
+h2tagtext " " h2opentag " ε
+
+- h2 atribut style
+h2tagatr s > h2tagstyle ε tyle=""
+h2tagstyle t t h2tagstyle t ε
+h2tagstyle y y h2tagstyle y ε
+h2tagstyle l l h2tagstyle l ε
+h2tagstyle e e h2tagstyle e ε
+h2tagstyle = = h2tagstyle = ε
+h2tagstyle " " h2tagtext " ε
+h2tagtext any " h2tagtext ε ε
+h2tagtext " " h2opentag " ε
+
+- kasus h3
+hopentag 3 / h3opentag ε ></h3>
+h3opentag % > h3tagatr ε ε
+h3opentag > > h3content > ε
+h3content any < h3content ε ε
+h3content < < h3closetag < ε
+h3closetag / / h3closetag / ε
+h3closetag h h h3closetag h ε
+h3closetag 3 3 h3closetag 3 ε
+h3closetag > > bodyopendone > <
+
+- h3 atribut id
+h3tagatr i > h3tagid ε d=""
+h3tagid d d h3tagid d ε
+h3tagid = = h3tagid = ε
+h3tagid " " h3tagtext " ε
+h3tagtext any " h3tagtext ε ε
+h3tagtext " " h3opentag " ε
+
+- h3 atribut class
+h3tagatr c > h3tagclass ε lass=""
+h3tagclass l l h3tagclass l ε
+h3tagclass a a h3tagclass a ε
+h3tagclass s s h3tagclass s ε
+h3tagclass s s h3tagclass s ε
+h3tagclass = = h3tagclass = ε
+h3tagclass " " h3tagtext " ε
+h3tagtext any " h3tagtext ε ε
+h3tagtext " " h3opentag " ε
+
+- h3 atribut style
+h3tagatr s > h3tagstyle ε tyle=""
+h3tagstyle t t h3tagstyle t ε
+h3tagstyle y y h3tagstyle y ε
+h3tagstyle l l h3tagstyle l ε
+h3tagstyle e e h3tagstyle e ε
+h3tagstyle = = h3tagstyle = ε
+h3tagstyle " " h3tagtext " ε
+h3tagtext any " h3tagtext ε ε
+h3tagtext " " h3opentag " ε
+
+- kasus h4
+hopentag 4 / h4opentag ε ></h4>
+h4opentag % > h4tagatr ε ε
+h4opentag > > h4content > ε
+h4content any < h4content ε ε
+h4content < < h4closetag < ε
+h4closetag / / h4closetag / ε
+h4closetag h h h4closetag h ε
+h4closetag 4 4 h4closetag 4 ε
+h4closetag > > bodyopendone > <
+
+- h4 atribut id
+h4tagatr i > h4tagid ε d=""
+h4tagid d d h4tagid d ε
+h4tagid = = h4tagid = ε
+h4tagid " " h4tagtext " ε
+h4tagtext any " h4tagtext ε ε
+h4tagtext " " h4opentag " ε
+
+- h4 atribut class
+h4tagatr c > h4tagclass ε lass=""
+h4tagclass l l h4tagclass l ε
+h4tagclass a a h4tagclass a ε
+h4tagclass s s h4tagclass s ε
+h4tagclass s s h4tagclass s ε
+h4tagclass = = h4tagclass = ε
+h4tagclass " " h4tagtext " ε
+h4tagtext any " h4tagtext ε ε
+h4tagtext " " h4opentag " ε
+
+- h4 atribut style
+h4tagatr s > h4tagstyle ε tyle=""
+h4tagstyle t t h4tagstyle t ε
+h4tagstyle y y h4tagstyle y ε
+h4tagstyle l l h4tagstyle l ε
+h4tagstyle e e h4tagstyle e ε
+h4tagstyle = = h4tagstyle = ε
+h4tagstyle " " h4tagtext " ε
+h4tagtext any " h4tagtext ε ε
+h4tagtext " " h4opentag " ε
+
+- kasus h5
+hopentag 5 / h5opentag ε ></h5>
+h5opentag % > h5tagatr ε ε
+h5opentag > > h5content > ε
+h5content any < h5content ε ε
+h5content < < h5closetag < ε
+h5closetag / / h5closetag / ε
+h5closetag h h h5closetag h ε
+h5closetag 5 5 h5closetag 5 ε
+h5closetag > > bodyopendone > <
+
+- h5 atribut id
+h5tagatr i > h5tagid ε d=""
+h5tagid d d h5tagid d ε
+h5tagid = = h5tagid = ε
+h5tagid " " h5tagtext " ε
+h5tagtext any " h5tagtext ε ε
+h5tagtext " " h5opentag " ε
+
+- h5 atribut class
+h5tagatr c > h5tagclass ε lass=""
+h5tagclass l l h5tagclass l ε
+h5tagclass a a h5tagclass a ε
+h5tagclass s s h5tagclass s ε
+h5tagclass s s h5tagclass s ε
+h5tagclass = = h5tagclass = ε
+h5tagclass " " h5tagtext " ε
+h5tagtext any " h5tagtext ε ε
+h5tagtext " " h5opentag " ε
+
+- h5 atribut style
+h5tagatr s > h5tagstyle ε tyle=""
+h5tagstyle t t h5tagstyle t ε
+h5tagstyle y y h5tagstyle y ε
+h5tagstyle l l h5tagstyle l ε
+h5tagstyle e e h5tagstyle e ε
+h5tagstyle = = h5tagstyle = ε
+h5tagstyle " " h5tagtext " ε
+h5tagtext any " h5tagtext ε ε
+h5tagtext " " h5opentag " ε
+
+- kasus h6
+hopentag 6 / h6opentag ε ></h6>
+h6opentag % > h6tagatr ε ε
+h6opentag > > h6content > ε
+h6content any < h6content ε ε
+h6content < < h6closetag < ε
+h6closetag / / h6closetag / ε
+h6closetag h h h6closetag h ε
+h6closetag 6 6 h6closetag 6 ε
+h6closetag > > bodyopendone > <
+
+- h6 atribut id
+h6tagatr i > h6tagid ε d=""
+h6tagid d d h6tagid d ε
+h6tagid = = h6tagid = ε
+h6tagid " " h6tagtext " ε
+h6tagtext any " h6tagtext ε ε
+h6tagtext " " h6opentag " ε
+
+- h6 atribut class
+h6tagatr c > h6tagclass ε lass=""
+h6tagclass l l h6tagclass l ε
+h6tagclass a a h6tagclass a ε
+h6tagclass s s h6tagclass s ε
+h6tagclass s s h6tagclass s ε
+h6tagclass = = h6tagclass = ε
+h6tagclass " " h6tagtext " ε
+h6tagtext any " h6tagtext ε ε
+h6tagtext " " h6opentag " ε
+
+- h6 atribut style
+h6tagatr s > h6tagstyle ε tyle=""
+h6tagstyle t t h6tagstyle t ε
+h6tagstyle y y h6tagstyle y ε
+h6tagstyle l l h6tagstyle l ε
+h6tagstyle e e h6tagstyle e ε
+h6tagstyle = = h6tagstyle = ε
+h6tagstyle " " h6tagtext " ε
+h6tagtext any " h6tagtext ε ε
+h6tagtext " " h6opentag " ε
+
+- start br html 
+bodyacctag b / bopentag ε ε
+bopentag r / brtag ε >
+brtag % > brtagatr ε ε
+brtagatr % > brtag ε ε
+brtag > > bodyopendone > <
+
+- brtagatr id
+brtagatr i > brtagid ε d=""
+brtagid d d brtagid d ε
+brtagid = = brtagid = ε
+brtagid " " brtagtext " ε
+brtagtext any " brtagtext ε ε
+brtagtext " " brtag " ε
+
+- brtagatr class 
+brtagatr c > brtagclass ε lass=""
+brtagclass l l brtagclass l ε
+brtagclass a a brtagclass a ε
+brtagclass s s brtagclass s ε
+brtagclass s s brtagclass s ε
+brtagclass = = brtagclass = ε
+brtagclass " " brtagtext " ε
+brtagtext any " brtagtext ε ε
+brtagtext " " brtag " ε
+
+- brtagatr style 
+brtagatr s > brtagstyle ε tyle=""
+brtagstyle t t brtagstyle t ε
+brtagstyle y y brtagstyle y ε
+brtagstyle l l brtagstyle l ε
+brtagstyle e e brtagstyle e ε
+brtagstyle = = brtagstyle = ε
+brtagstyle " " brtagtext " ε
+brtagtext any " brtagtext ε ε
+brtagtext " " brtag " ε
