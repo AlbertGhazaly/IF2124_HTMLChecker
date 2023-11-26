@@ -39,6 +39,17 @@ comment-3a any - comment-2a ε -
 comment-4a any - comment-2a ε -- 
 comment-4a > > htmlclosedone > ε
 
+- comment in html
+newtag ! / commenth ε ---->
+commenth - - commenth-1 - ε
+commenth-1 - - commenth-2 - ε
+commenth-2 - - commenth-3 - ε
+commenth-2 any - commenth-2 ε ε
+commenth-3 - - commenth-4 - ε
+commenth-3 any - commenth-2 ε -
+commenth-4 any - commenth-2 ε -- 
+commenth-4 > > htmlopendone > <
+
 - start open tag html 
 newtagbeforehtml h # htmlopen ε tml></html>
 
