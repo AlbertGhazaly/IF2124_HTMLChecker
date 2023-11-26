@@ -489,6 +489,14 @@ bodyclosetag b b bodyclosetagb b ε
 bodyclosetagb u u buttonclosetag u ε
 bodyclosetagb o o bodyclose o ε
 bodyclosetag d d divclosetag d ε
+bodyclosetag h h hclosetag h ε
+hclosetag 1 1 hclosetag 1 ε
+hclosetag 2 2 hclosetag 2 ε
+hclosetag 3 3 hclosetag 3 ε
+hclosetag 4 4 hclosetag 4 ε
+hclosetag 5 5 hclosetag 5 ε
+hclosetag 6 6 hclosetag 6 ε
+hclosetag > > bodyopendone > <
 
 - comment on body
 bodyacctag ! / bodycommentopen ε ----><
@@ -791,12 +799,7 @@ buttonopentag % > buttontagatr ε ε
 buttonopentag $ > buttontagatr ε ε
 buttontagatr % > buttontagatr ε ε
 buttontagatr $ > buttontagatr ε ε
-buttonopentag > > buttoncontent > ε
-buttoncontent any < buttoncontent ε ε
-buttoncontent < < buttonclosetag < ε
-buttonclosetag / / buttonclosetag / ε
-buttonclosetag b b buttonclosetag b ε
-buttonclosetag u u buttonclosetag u ε
+buttonopentag > > bodyopendone > ε
 buttonclosetag t t buttonclosetag t ε
 buttonclosetag t t buttonclosetag t ε
 buttonclosetag o o buttonclosetag o ε
@@ -861,6 +864,7 @@ buttontagtypetextbutton O O buttontagtypetextbutton O ε
 buttontagtypetextbutton N N buttontagtypetextbutton N ε
 buttontagtypetextbutton " " buttonopentag " ε
 
+
 - h1 sampai h6 in body
 bodyacctag h / hopentag ε ε
 
@@ -870,14 +874,8 @@ h1opentag % > h1tagatr ε ε
 h1opentag $ > h1tagatr ε ε
 h1tagatr % > h1tagatr ε ε
 h1tagatr $ > h1tagatr ε ε
-h1tagatr > > h1content > ε
-h1opentag > > h1content > ε
-h1content any < h1content ε ε
-h1content < < h1closetag < ε
-h1closetag / / h1closetag / ε
-h1closetag h h h1closetag h ε
-h1closetag 1 1 h1closetag 1 ε
-h1closetag > > bodyopendone > <
+h1tagatr > > bodyopendone > ε
+h1opentag > > bodyopendone > ε
 
 - h1 atribut id
 h1tagatr i > h1tagid ε d=""
@@ -915,14 +913,8 @@ h2opentag % > h2tagatr ε ε
 h2opentag $ > h2tagatr ε ε
 h2tagatr % > h2tagatr ε ε
 h2tagatr $ > h2tagatr ε ε
-h2tagatr > > h2content > ε
-h2opentag > > h2content > ε
-h2content any < h2content ε ε
-h2content < < h2closetag < ε
-h2closetag / / h2closetag / ε
-h2closetag h h h2closetag h ε
-h2closetag 2 2 h1closetag 2 ε
-h2closetag > > bodyopendone > <
+h2tagatr > > bodyopendone > ε
+h2opentag > > bodyopendone > ε
 
 - h2 atribut id
 h2tagatr i > h2tagid ε d=""
@@ -960,14 +952,8 @@ h3opentag % > h3tagatr ε ε
 h3opentag $ > h3tagatr ε ε
 h3tagatr % > h3tagatr ε ε
 h3tagatr $ > h3tagatr ε ε
-h3tagatr > > h3content > ε
-h3opentag > > h3content > ε
-h3content any < h3content ε ε
-h3content < < h3closetag < ε
-h3closetag / / h3closetag / ε
-h3closetag h h h3closetag h ε
-h3closetag 3 3 h3closetag 3 ε
-h3closetag > > bodyopendone > <
+h3tagatr > > bodyopendone > ε
+h3opentag > > bodyopendone > ε
 
 - h3 atribut id
 h3tagatr i > h3tagid ε d=""
@@ -1005,14 +991,8 @@ h4opentag % > h4tagatr ε ε
 h4opentag $ > h4tagatr ε ε
 h4tagatr % > h4tagatr ε ε
 h4tagatr $ > h4tagatr ε ε
-h4tagatr > > h4content > ε
-h4opentag > > h4content > ε
-h4content any < h4content ε ε
-h4content < < h4closetag < ε
-h4closetag / / h4closetag / ε
-h4closetag h h h4closetag h ε
-h4closetag 4 4 h4closetag 4 ε
-h4closetag > > bodyopendone > <
+h4tagatr > > bodyopendone > ε
+h4opentag > > bodyopendone > ε
 
 - h4 atribut id
 h4tagatr i > h4tagid ε d=""
@@ -1050,14 +1030,8 @@ h5opentag % > h5tagatr ε ε
 h5opentag $ > h5tagatr ε ε
 h5tagatr % > h5tagatr ε ε
 h5tagatr $ > h5tagatr ε ε
-h5tagatr > > h5content > ε
-h5opentag > > h5content > ε
-h5content any < h5content ε ε
-h5content < < h5closetag < ε
-h5closetag / / h5closetag / ε
-h5closetag h h h5closetag h ε
-h5closetag 5 5 h5closetag 5 ε
-h5closetag > > bodyopendone > <
+h5tagatr > > bodyopendone > ε
+h5opentag > > bodyopendone > ε
 
 - h5 atribut id
 h5tagatr i > h5tagid ε d=""
@@ -1095,14 +1069,8 @@ h6opentag % > h6tagatr ε ε
 h6opentag $ > h6tagatr ε ε
 h6tagatr % > h6tagatr ε ε
 h6tagatr $ > h6tagatr ε ε
-h6tagatr > > h6content > ε
-h6opentag > > h6content > ε
-h6content any < h6content ε ε
-h6content < < h6closetag < ε
-h6closetag / / h6closetag / ε
-h6closetag h h h6closetag h ε
-h6closetag 6 6 h6closetag 6 ε
-h6closetag > > bodyopendone > <
+h6tagatr > > bodyopendone > ε
+h6opentag > > bodyopendone > ε
 
 - h6 atribut id
 h6tagatr i > h6tagid ε d=""
