@@ -1766,3 +1766,213 @@ aclose b b abbrclose b ε
 abbrclose b b abbrclose b ε
 abbrclose r r abbrclose r ε
 abbrclose > > bodyopendone > <
+
+- opentag strongbody
+script/small/strong t / strongbody ε rong></strong><
+strongbody r r strongbodyopen r ε
+strongbodyopen o o strongbodyopen o ε
+strongbodyopen n n strongbodyopen n ε
+strongbodyopen g g strongbodyopen g ε
+
+- atribut strongbody 
+strongbodyopen $ > strongbodyopenatr ε ε
+strongbodyopen % > strongbodyopenatr ε ε
+strongbodyopenatr % > strongbodyopenatr ε ε
+strongbodyopenatr > > bodyopendone > ε
+
+- id strongbody 
+strongbodyopenatr i > strongbodyid ε d=""
+strongbodyid d d strongbodyid d ε
+strongbodyid = = strongbodyid = ε
+strongbodyid " " strongbodytext " ε
+strongbodytext any " strongbodytext ε ε
+strongbodytext " " strongbodyatrdone " ε
+strongbodyatrdone % > strongbodyopenatr ε ε
+strongbodyatrdone $ > strongbodyopenatr ε ε
+strongbodyatrdone > > bodyopendone > ε
+strongbodyopen > > bodyopendone > ε
+bodyopendone $ < bodyopendone ε ε
+bodyopendone % < bodyopendone ε ε
+
+- class strongbody 
+strongbodyopenatr c > strongbodyclass ε lass=""
+strongbodyclass l l strongbodyclass l ε
+strongbodyclass a a strongbodyclass a ε
+strongbodyclass s s strongbodyclasss s ε
+strongbodyclasss s s strongbodyclass s ε
+strongbodyclass = = strongbodyclass = ε
+strongbodyclass " " strongbodytext " ε
+strongbodytext any " strongbodytext ε ε
+strongbodytext " " strongbodyatrdone " ε
+strongbodyatrdone % > strongbodyopenatr ε ε
+strongbodyatrdone $ > strongbodyopenatr ε ε
+strongbodyatrdone > > bodyopendone > ε
+strongbodyopen > > bodyopendone > ε
+bodyopendone $ < bodyopendone ε ε
+bodyopendone % < bodyopendone ε ε
+
+- style strongbody
+strongbodyopenatr s > strongbodystyleorsrc ε ε
+strongbodystyleorsrc t > strongbodystyle ε yle=""
+strongbodystyle y y strongbodystyle y ε
+strongbodystyle l l strongbodycstyle l ε
+strongbodycstyle e e strongbodystyle e ε
+strongbodystyle = = strongbodystyle = ε
+strongbodystyle " " strongbodytext " ε
+strongbodytext any " strongbodytext ε ε
+strongbodytext " " strongbodyatrdone " ε
+strongbodyatrdone % > strongbodyopenatr ε ε
+strongbodyatrdone $ > strongbodyopenatr ε ε
+strongbodyatrdone > > bodyopendone > ε
+strongbodyopen > > bodyopendone > ε
+bodyopendone $ < bodyopendone ε ε
+bodyopendone % < bodyopendone ε ε
+bodyopendone any < bodyopendone ε ε
+
+- closing tag strongbody
+bodyopendone < < bodyacctag < ε
+bodyacctag / / bodyclosetag / ε
+bodyclosetag s s strong/smallbodyclose s ε
+strong/smallbodyclose t t strongbodyclose t ε
+strongbodyclose r r strongbodyclose r ε
+strongbodyclose o o strongbodyclose o ε
+strongbodyclose n n strongbodyclose n ε
+strongbodyclose g g strongbodyclose g ε
+strongbodyclose > > bodyopendone > ε
+
+- opentag smallbody
+script/small/strong m / smallbody ε all></small><
+smallbody a a smallbodyopen a ε
+smallbodyopen l l smallbodyopen l ε
+
+- atribut smallbody 
+smallbodyopen $ > smallbodyopenatr ε ε
+smallbodyopen % > smallbodyopenatr ε ε
+smallbodyopenatr % > smallbodyopenatr ε ε
+smallbodyopenatr > > bodyopendone > ε
+
+- id smallbody 
+smallbodyopenatr i > smallbodyid ε d=""
+smallbodyid d d smallbodyid d ε
+smallbodyid = = smallbodyid = ε
+smallbodyid " " smallbodytext " ε
+smallbodytext any " smallbodytext ε ε
+smallbodytext " " smallbodyatrdone " ε
+smallbodyatrdone % > smallbodyopenatr ε ε
+smallbodyatrdone $ > smallbodyopenatr ε ε
+smallbodyatrdone > > bodyopendone > ε
+smallbodyopen > > bodyopendone > ε
+bodyopendone $ < bodyopendone ε ε
+bodyopendone % < bodyopendone ε ε
+
+- class smallbody 
+smallbodyopenatr c > smallbodyclass ε lass=""
+smallbodyclass l l smallbodyclass l ε
+smallbodyclass a a smallbodyclass a ε
+smallbodyclass s s smallbodyclasss s ε
+smallbodyclasss s s smallbodyclass s ε
+smallbodyclass = = smallbodyclass = ε
+smallbodyclass " " smallbodytext " ε
+smallbodytext any " smallbodytext ε ε
+smallbodytext " " smallbodyatrdone " ε
+smallbodyatrdone % > smallbodyopenatr ε ε
+smallbodyatrdone $ > smallbodyopenatr ε ε
+smallbodyatrdone > > bodyopendone > ε
+smallbodyopen > > bodyopendone > ε
+bodyopendone $ < bodyopendone ε ε
+bodyopendone % < bodyopendone ε ε
+
+- style smallbody
+smallbodyopenatr s > smallbodystyleorsrc ε ε
+smallbodystyleorsrc t > smallbodystyle ε yle=""
+smallbodystyle y y smallbodystyle y ε
+smallbodystyle l l smallbodycstyle l ε
+smallbodycstyle e e smallbodystyle e ε
+smallbodystyle = = smallbodystyle = ε
+smallbodystyle " " smallbodytext " ε
+smallbodytext any " smallbodytext ε ε
+smallbodytext " " smallbodyatrdone " ε
+smallbodyatrdone % > smallbodyopenatr ε ε
+smallbodyatrdone $ > smallbodyopenatr ε ε
+smallbodyatrdone > > bodyopendone > ε
+smallbodyopen > > bodyopendone > ε
+bodyopendone $ < bodyopendone ε ε
+bodyopendone % < bodyopendone ε ε
+bodyopendone any < bodyopendone ε ε
+
+- closing tag smallbody
+bodyopendone < < bodyacctag < ε
+bodyacctag / / bodyclosetag / ε
+bodyclosetag s s strong/smallbodyclose s ε
+strong/smallbodyclose m m smallbodyclose m ε
+smallbodyclose a a smallbodyclose a ε
+smallbodyclose l l smallbodyclose l ε
+smallbodyclose > > bodyopendone > ε
+
+
+
+- opentag embody
+bodyacctag e / embodyopen ε m></em><
+embodyopen m m embodyopen m ε
+
+- atribut embody 
+embodyopen $ > embodyopenatr ε ε
+embodyopen % > embodyopenatr ε ε
+embodyopenatr % > embodyopenatr ε ε
+embodyopenatr > > bodyopendone > ε
+
+- id embody 
+embodyopenatr i > embodyid ε d=""
+embodyid d d embodyid d ε
+embodyid = = embodyid = ε
+embodyid " " embodytext " ε
+embodytext any " embodytext ε ε
+embodytext " " embodyatrdone " ε
+embodyatrdone % > embodyopenatr ε ε
+embodyatrdone $ > embodyopenatr ε ε
+embodyatrdone > > bodyopendone > ε
+embodyopen > > bodyopendone > ε
+bodyopendone $ < bodyopendone ε ε
+bodyopendone % < bodyopendone ε ε
+
+- class embody 
+embodyopenatr c > embodyclass ε lass=""
+embodyclass l l embodyclass l ε
+embodyclass a a embodyclass a ε
+embodyclass s s embodyclasss s ε
+embodyclasss s s embodyclass s ε
+embodyclass = = embodyclass = ε
+embodyclass " " embodytext " ε
+embodytext any " embodytext ε ε
+embodytext " " embodyatrdone " ε
+embodyatrdone % > embodyopenatr ε ε
+embodyatrdone $ > embodyopenatr ε ε
+embodyatrdone > > bodyopendone > ε
+embodyopen > > bodyopendone > ε
+bodyopendone $ < bodyopendone ε ε
+bodyopendone % < bodyopendone ε ε
+
+- style embody
+embodyopenatr s > embodystyleorsrc ε ε
+embodystyleorsrc t > embodystyle ε yle=""
+embodystyle y y embodystyle y ε
+embodystyle l l embodycstyle l ε
+embodycstyle e e embodystyle e ε
+embodystyle = = embodystyle = ε
+embodystyle " " embodytext " ε
+embodytext any " embodytext ε ε
+embodytext " " embodyatrdone " ε
+embodyatrdone % > embodyopenatr ε ε
+embodyatrdone $ > embodyopenatr ε ε
+embodyatrdone > > bodyopendone > ε
+embodyopen > > bodyopendone > ε
+bodyopendone $ < bodyopendone ε ε
+bodyopendone % < bodyopendone ε ε
+bodyopendone any < bodyopendone ε ε
+
+- closing tag embody
+bodyopendone < < bodyacctag < ε
+bodyacctag / / bodyclosetag / ε
+bodyclosetag e e embodyclose e ε
+embodyclose m m embodyclose m ε
+embodyclose > > bodyopendone > ε
