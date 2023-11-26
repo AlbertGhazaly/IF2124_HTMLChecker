@@ -1341,8 +1341,10 @@ thtagatr > > thcontent > ε
 thcontent % < thcontent ε ε
 thcontent $ < thcontent ε ε
 thcontent any < thcontent ε ε
-thcontent < < trprop < ε
-trclosetag h h thclosetag h ε
+thcontent < < thclosetag < ε
+thclosetag / / thclosetag / ε
+thclosetag t t thclosetag t ε
+thclosetag h h thclosetag h ε
 thclosetag % > thclosetag ε ε
 thclosetag $ > thclosetag ε ε
 thclosetag > > trcontent > <
@@ -1388,8 +1390,10 @@ tdtagatr > > tdcontent > ε
 tdcontent % < tdcontent ε ε
 tdcontent $ < tdcontent ε ε
 tdcontent any < tdcontent ε ε
-tdcontent < < trprop < ε
-trclosetag d d tdclosetag d ε
+tdcontent < < tdclosetag < ε
+tdclosetag / / tdclosetag / ε
+tdclosetag t t tdclosetag t ε
+tdclosetag d d tdclosetag d ε
 tdclosetag % > tdclosetag ε ε
 tdclosetag $ > tdclosetag ε ε
 tdclosetag > > trcontent > <
