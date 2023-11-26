@@ -4,6 +4,11 @@ def readHtml(filename):
     f.close
     return lines
 
+def readHtmlList(filepath):
+    with open(filepath, 'r', encoding="utf-8") as file:
+        content = file.readlines()
+        return content
+
 def main():
     html = readHtml("html/input.html")
     print(html)
