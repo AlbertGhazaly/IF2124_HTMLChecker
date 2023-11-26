@@ -481,6 +481,8 @@ bodyopendone < < bodyacctag < ε
 bodyacctag / / bodyclosetag / ε
 bodyclosetag b b bodyclose b ε
 bodyclosetag f f formclosetag f ε
+bodyclosetag d d divclosetag d ε
+
 - comment on body
 bodyacctag ! / bodycommentopen ε ----><
 bodycommentopen - - bodycommentopen-1 - ε
@@ -697,7 +699,11 @@ formopentag o o formopentag o ε
 formopentag r r formopentag e ε
 formopentag m m formopentag m ε
 formopentag % > formtagatr ε ε
+formopentag $ > formtagatr ε ε
+formtagatr $ > formtagatr ε ε
+formtagatr % > formtagatr ε ε
 formopentag > > bodyopendone > ε
+formtagatr > > bodyopendone > ε
 formclosetag o o formclosetag o ε
 formclosetag r r formclosetag r ε
 formclosetag m m formclosetag m ε
@@ -1180,3 +1186,48 @@ brtagstyle = = brtagstyle = ε
 brtagstyle " " brtagtext " ε
 brtagtext any " brtagtext ε ε
 brtagtext " " brtag " ε
+
+-div tag
+bodyacctag d / divopen ε iv></div><
+divopen i i divopen i ε
+divopen v v divopen v ε
+divopen $ > divatr ε ε
+divopen % > divatr ε ε
+divatr % > divatr ε ε
+divatr $ > divatr ε ε
+
+- termination divopen
+divatr > > bodyopendone > ε
+divopen > > bodyopendone > ε
+- divtext
+divtext any " divtext ε ε
+divtext " " divopen " ε
+
+- div id
+divatr i > divid ε d=""
+divid d d divid d ε
+divid = = divid = ε
+divid " " divtext " ε
+
+- div class 
+divatr c > divclass ε lass=""
+divclass l l divclass l ε
+divclass a a divclass a ε
+divclass s s divclass s ε
+divclass s s divclass s ε
+divclass = = divclass = ε
+divclass " " divtext " ε
+
+- div style 
+divatr s > divstyle ε tyle=""
+divstyle t t divstyle t ε
+divstyle y y divstyle y ε
+divstyle l l divstyle l ε
+divstyle e e divstyle e ε
+divstyle = = divstyle = ε
+divstyle " " divtext " ε
+
+- div close tag
+divclosetag i i divclosetag i ε
+divclosetag v v divclosetag v ε
+divclosetag > > bodyopendone > ε
