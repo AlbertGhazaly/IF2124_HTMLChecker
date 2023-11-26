@@ -481,6 +481,8 @@ bodyopendone < < bodyacctag < ε
 bodyacctag / / bodyclosetag / ε
 bodyacctag a / abodytag ε ε
 bodyclosetag a a aclose a ε
+bodyclosetag s s bodyclosetags s ε
+bodyclosetags c c scriptbodyclose c ε
 bodyclosetag f f formclosetag f ε
 bodyclosetag t t tableclosetag t ε
 bodyclosetag b b bodyclosetagb b ε
@@ -1324,7 +1326,7 @@ scriptbodyopen t t scriptbodyopen t ε
 scriptbodyopen $ > scriptbodyopenatr ε ε
 scriptbodyopen % > scriptbodyopenatr ε ε
 scriptbodyopenatr % > scriptbodyopenatr ε ε
-scriptbodyopenatr > > scriptbodyopendone > ε
+scriptbodyopenatr > > bodyopendone > ε
 
 - id scriptbody 
 scriptbodyopenatr i > scriptbodyid ε d=""
@@ -1335,10 +1337,10 @@ scriptbodytext any " scriptbodytext ε ε
 scriptbodytext " " scriptbodyatrdone " ε
 scriptbodyatrdone % > scriptbodyopenatr ε ε
 scriptbodyatrdone $ > scriptbodyopenatr ε ε
-scriptbodyatrdone > > scriptbodyopendone > ε
-scriptbodyopen > > scriptbodyopendone > ε
-scriptbodyopendone $ < scriptbodyopendone ε ε
-scriptbodyopendone % < scriptbodyopendone ε ε
+scriptbodyatrdone > > bodyopendone > ε
+scriptbodyopen > > bodyopendone > ε
+bodyopendone $ < bodyopendone ε ε
+bodyopendone % < bodyopendone ε ε
 
 - class scriptbody 
 scriptbodyopenatr c > scriptbodyclass ε lass=""
@@ -1352,10 +1354,10 @@ scriptbodytext any " scriptbodytext ε ε
 scriptbodytext " " scriptbodyatrdone " ε
 scriptbodyatrdone % > scriptbodyopenatr ε ε
 scriptbodyatrdone $ > scriptbodyopenatr ε ε
-scriptbodyatrdone > > scriptbodyopendone > ε
-scriptbodyopen > > scriptbodyopendone > ε
-scriptbodyopendone $ < scriptbodyopendone ε ε
-scriptbodyopendone % < scriptbodyopendone ε ε
+scriptbodyatrdone > > bodyopendone > ε
+scriptbodyopen > > bodyopendone > ε
+bodyopendone $ < bodyopendone ε ε
+bodyopendone % < bodyopendone ε ε
 
 - style scriptbody
 scriptbodyopenatr s > scriptbodystyleorsrc ε ε
@@ -1369,11 +1371,8 @@ scriptbodytext any " scriptbodytext ε ε
 scriptbodytext " " scriptbodyatrdone " ε
 scriptbodyatrdone % > scriptbodyopenatr ε ε
 scriptbodyatrdone $ > scriptbodyopenatr ε ε
-scriptbodyatrdone > > scriptbodyopendone > ε
-scriptbodyopen > > scriptbodyopendone > ε
-scriptbodyopendone $ < scriptbodyopendone ε ε
-scriptbodyopendone % < scriptbodyopendone ε ε
-scriptbodyopendone any < scriptbodyopendone ε ε
+scriptbodyatrdone > > bodyopendone > ε
+scriptbodyopen > > bodyopendone > ε
 
 - src scriptbody 
 scriptbodyopenatr s > scriptbodystyleorsrc ε ε
@@ -1385,15 +1384,10 @@ scriptbodytext any " scriptbodytext ε ε
 scriptbodytext " " scriptbodyatrdone " ε
 scriptbodyatrdone % > scriptbodyopenatr ε ε
 scriptbodyatrdone $ > scriptbodyopenatr ε ε
-scriptbodyatrdone > > scriptbodyopendone > ε
-scriptbodyopen > > scriptbodyopendone > ε
-scriptbodyopendone $ < scriptbodyopendone ε ε
-scriptbodyopendone % < scriptbodyopendone ε ε
+scriptbodyatrdone > > bodyopendone > ε
+scriptbodyopen > > bodyopendone > ε
 
 - closing tag scriptbody
-scriptbodyopendone < < newtaginscriptbody < ε
-newtaginscriptbody / / scriptbodyclose / ε
-scriptbodyclose s s scriptbodyclose s ε
 scriptbodyclose c c scriptbodyclose c ε
 scriptbodyclose r r scriptbodyclose r ε
 scriptbodyclose i i scriptbodyclose i ε
