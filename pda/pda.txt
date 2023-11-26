@@ -817,12 +817,12 @@ formtagmethod h h formtagmethod h ε
 formtagmethod o o formtagmethod o ε
 formtagmethod d d formtagmethod d ε
 formtagmethod = = formtagmethod = ε
-formtagmethod " " formtagtext " ε
-formtagtext G " formtagacttextget ε ET
+formtagmethod " " formtagtextmethod " ε
+formtagtextmethod G " formtagacttextget ε ET
 formtagacttextget E E formtagacttextget E ε
 formtagacttextget T T formtagacttextget T ε
 formtagacttextget " " formopentag " ε
-formtagtext P " formtagacttextpost ε OST
+formtagtextmethod P " formtagacttextpost ε OST
 formtagacttextpost O O formtagacttextpost O ε
 formtagacttextpost S S formtagacttextpost S ε
 formtagacttextpost T T formtagacttextpost T ε
