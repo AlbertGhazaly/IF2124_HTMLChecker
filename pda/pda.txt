@@ -1958,3 +1958,433 @@ bodyacctag / / bodyclosetag / ε
 bodyclosetag e e embodyclose e ε
 embodyclose m m embodyclose m ε
 embodyclose > > bodyopendone > ε
+
+- opentag strongth
+thcontent < < thclosetag < ε
+thclosetag s / strong/smallopenth ε ε
+strong/smallopenth t / strongthopen ε rong></strong><
+strongthopen r r strongthopen r ε
+strongthopen o o strongthopen o ε
+strongthopen n n strongthopen n ε
+strongthopen g g strongthopen g ε
+
+- atribut strongth 
+strongthopen $ > strongthopenatr ε ε
+strongthopen % > strongthopenatr ε ε
+strongthopenatr % > strongthopenatr ε ε
+strongthopenatr > > thcontent > ε
+
+- id strongth 
+strongthopenatr i > strongthid ε d=""
+strongthid d d strongthid d ε
+strongthid = = strongthid = ε
+strongthid " " strongthtext " ε
+strongthtext any " strongthtext ε ε
+strongthtext " " strongthatrdone " ε
+strongthatrdone % > strongthopenatr ε ε
+strongthatrdone $ > strongthopenatr ε ε
+strongthatrdone > > thcontent > ε
+strongthopen > > thcontent > ε
+thcontent $ < thcontent ε ε
+thcontent % < thcontent ε ε
+
+- class strongth 
+strongthopenatr c > strongthclass ε lass=""
+strongthclass l l strongthclass l ε
+strongthclass a a strongthclass a ε
+strongthclass s s strongthclasss s ε
+strongthclasss s s strongthclass s ε
+strongthclass = = strongthclass = ε
+strongthclass " " strongthtext " ε
+strongthtext any " strongthtext ε ε
+strongthtext " " strongthatrdone " ε
+strongthatrdone % > strongthopenatr ε ε
+strongthatrdone $ > strongthopenatr ε ε
+strongthatrdone > > thcontent > ε
+strongthopen > > thcontent > ε
+thcontent $ < thcontent ε ε
+thcontent % < thcontent ε ε
+
+- style strongth
+strongthopenatr s > strongthstyleorsrc ε ε
+strongthstyleorsrc t > strongthstyle ε yle=""
+strongthstyle y y strongthstyle y ε
+strongthstyle l l strongthcstyle l ε
+strongthcstyle e e strongthstyle e ε
+strongthstyle = = strongthstyle = ε
+strongthstyle " " strongthtext " ε
+strongthtext any " strongthtext ε ε
+strongthtext " " strongthatrdone " ε
+strongthatrdone % > strongthopenatr ε ε
+strongthatrdone $ > strongthopenatr ε ε
+strongthatrdone > > thcontent > ε
+strongthopen > > thcontent > ε
+thcontent $ < thcontent ε ε
+thcontent % < thcontent ε ε
+thcontent any < thcontent ε ε
+
+- closing tag strongth
+thcontent < < thclosetag < ε
+thclosetag / / thclosetag / ε
+thclosetag s s strong/smallthclose s ε
+strong/smallthclose t t strongthclose t ε
+strongthclose r r strongthclose r ε
+strongthclose o o strongthclose o ε
+strongthclose n n strongthclose n ε
+strongthclose g g strongthclose g ε
+strongthclose > > thcontent > ε
+
+
+- opentag smallth
+thcontent < < thclosetag < ε
+thclosetag s / strong/smallopenth ε ε
+strong/smallopenth m / smallthopen ε all></small><
+smallthopen a a smallthopen a ε
+smallthopen l l smallthopen l ε
+
+- atribut smallth 
+smallthopen $ > smallthopenatr ε ε
+smallthopen % > smallthopenatr ε ε
+smallthopenatr % > smallthopenatr ε ε
+smallthopenatr > > thcontent > ε
+
+- id smallth 
+smallthopenatr i > smallthid ε d=""
+smallthid d d smallthid d ε
+smallthid = = smallthid = ε
+smallthid " " smallthtext " ε
+smallthtext any " smallthtext ε ε
+smallthtext " " smallthatrdone " ε
+smallthatrdone % > smallthopenatr ε ε
+smallthatrdone $ > smallthopenatr ε ε
+smallthatrdone > > thcontent > ε
+smallthopen > > thcontent > ε
+thcontent $ < thcontent ε ε
+thcontent % < thcontent ε ε
+
+- class smallth 
+smallthopenatr c > smallthclass ε lass=""
+smallthclass l l smallthclass l ε
+smallthclass a a smallthclass a ε
+smallthclass s s smallthclasss s ε
+smallthclasss s s smallthclass s ε
+smallthclass = = smallthclass = ε
+smallthclass " " smallthtext " ε
+smallthtext any " smallthtext ε ε
+smallthtext " " smallthatrdone " ε
+smallthatrdone % > smallthopenatr ε ε
+smallthatrdone $ > smallthopenatr ε ε
+smallthatrdone > > thcontent > ε
+smallthopen > > thcontent > ε
+thcontent $ < thcontent ε ε
+thcontent % < thcontent ε ε
+
+- style smallth
+smallthopenatr s > smallthstyleorsrc ε ε
+smallthstyleorsrc t > smallthstyle ε yle=""
+smallthstyle y y smallthstyle y ε
+smallthstyle l l smallthcstyle l ε
+smallthcstyle e e smallthstyle e ε
+smallthstyle = = smallthstyle = ε
+smallthstyle " " smallthtext " ε
+smallthtext any " smallthtext ε ε
+smallthtext " " smallthatrdone " ε
+smallthatrdone % > smallthopenatr ε ε
+smallthatrdone $ > smallthopenatr ε ε
+smallthatrdone > > thcontent > ε
+smallthopen > > thcontent > ε
+thcontent $ < thcontent ε ε
+thcontent % < thcontent ε ε
+thcontent any < thcontent ε ε
+
+- closing tag smallth
+thcontent < < thclosetag < ε
+thclosetag / / thclosetag / ε
+thclosetag s s strong/smallthclose s ε
+strong/smallthclose m m smallthclose m ε
+smallthclose a a smallthclose a ε
+smallthclose l l smallthclose l ε
+smallthclose > > thcontent > ε
+
+
+
+- opentag strongtd
+tdcontent < < tdclosetag < ε
+tdclosetag s / strong/smallopentd ε ε
+strong/smallopentd t / strongtdopen ε rong></strong><
+strongtdopen r r strongtdopen r ε
+strongtdopen o o strongtdopen o ε
+strongtdopen n n strongtdopen n ε
+strongtdopen g g strongtdopen g ε
+
+- atribut strongtd 
+strongtdopen $ > strongtdopenatr ε ε
+strongtdopen % > strongtdopenatr ε ε
+strongtdopenatr % > strongtdopenatr ε ε
+strongtdopenatr > > tdcontent > ε
+
+- id strongtd 
+strongtdopenatr i > strongtdid ε d=""
+strongtdid d d strongtdid d ε
+strongtdid = = strongtdid = ε
+strongtdid " " strongtdtext " ε
+strongtdtext any " strongtdtext ε ε
+strongtdtext " " strongtdatrdone " ε
+strongtdatrdone % > strongtdopenatr ε ε
+strongtdatrdone $ > strongtdopenatr ε ε
+strongtdatrdone > > tdcontent > ε
+strongtdopen > > tdcontent > ε
+tdcontent $ < tdcontent ε ε
+tdcontent % < tdcontent ε ε
+
+- class strongtd 
+strongtdopenatr c > strongtdclass ε lass=""
+strongtdclass l l strongtdclass l ε
+strongtdclass a a strongtdclass a ε
+strongtdclass s s strongtdclasss s ε
+strongtdclasss s s strongtdclass s ε
+strongtdclass = = strongtdclass = ε
+strongtdclass " " strongtdtext " ε
+strongtdtext any " strongtdtext ε ε
+strongtdtext " " strongtdatrdone " ε
+strongtdatrdone % > strongtdopenatr ε ε
+strongtdatrdone $ > strongtdopenatr ε ε
+strongtdatrdone > > tdcontent > ε
+strongtdopen > > tdcontent > ε
+tdcontent $ < tdcontent ε ε
+tdcontent % < tdcontent ε ε
+
+- style strongtd
+strongtdopenatr s > strongtdstyleorsrc ε ε
+strongtdstyleorsrc t > strongtdstyle ε yle=""
+strongtdstyle y y strongtdstyle y ε
+strongtdstyle l l strongtdcstyle l ε
+strongtdcstyle e e strongtdstyle e ε
+strongtdstyle = = strongtdstyle = ε
+strongtdstyle " " strongtdtext " ε
+strongtdtext any " strongtdtext ε ε
+strongtdtext " " strongtdatrdone " ε
+strongtdatrdone % > strongtdopenatr ε ε
+strongtdatrdone $ > strongtdopenatr ε ε
+strongtdatrdone > > tdcontent > ε
+strongtdopen > > tdcontent > ε
+tdcontent $ < tdcontent ε ε
+tdcontent % < tdcontent ε ε
+tdcontent any < tdcontent ε ε
+
+- closing tag strongtd
+tdcontent < < tdclosetag < ε
+tdclosetag / / tdclosetag / ε
+tdclosetag s s strong/smalltdclose s ε
+strong/smalltdclose t t strongtdclose t ε
+strongtdclose r r strongtdclose r ε
+strongtdclose o o strongtdclose o ε
+strongtdclose n n strongtdclose n ε
+strongtdclose g g strongtdclose g ε
+strongtdclose > > tdcontent > ε
+
+
+- opentag smalltd
+tdcontent < < tdclosetag < ε
+tdclosetag s / strong/smallopentd ε ε
+strong/smallopentd m / smalltdopen ε all></small><
+smalltdopen a a smalltdopen a ε
+smalltdopen l l smalltdopen l ε
+
+- atribut smalltd 
+smalltdopen $ > smalltdopenatr ε ε
+smalltdopen % > smalltdopenatr ε ε
+smalltdopenatr % > smalltdopenatr ε ε
+smalltdopenatr > > tdcontent > ε
+
+- id smalltd 
+smalltdopenatr i > smalltdid ε d=""
+smalltdid d d smalltdid d ε
+smalltdid = = smalltdid = ε
+smalltdid " " smalltdtext " ε
+smalltdtext any " smalltdtext ε ε
+smalltdtext " " smalltdatrdone " ε
+smalltdatrdone % > smalltdopenatr ε ε
+smalltdatrdone $ > smalltdopenatr ε ε
+smalltdatrdone > > tdcontent > ε
+smalltdopen > > tdcontent > ε
+tdcontent $ < tdcontent ε ε
+tdcontent % < tdcontent ε ε
+
+- class smalltd 
+smalltdopenatr c > smalltdclass ε lass=""
+smalltdclass l l smalltdclass l ε
+smalltdclass a a smalltdclass a ε
+smalltdclass s s smalltdclasss s ε
+smalltdclasss s s smalltdclass s ε
+smalltdclass = = smalltdclass = ε
+smalltdclass " " smalltdtext " ε
+smalltdtext any " smalltdtext ε ε
+smalltdtext " " smalltdatrdone " ε
+smalltdatrdone % > smalltdopenatr ε ε
+smalltdatrdone $ > smalltdopenatr ε ε
+smalltdatrdone > > tdcontent > ε
+smalltdopen > > tdcontent > ε
+tdcontent $ < tdcontent ε ε
+tdcontent % < tdcontent ε ε
+
+- style smalltd
+smalltdopenatr s > smalltdstyleorsrc ε ε
+smalltdstyleorsrc t > smalltdstyle ε yle=""
+smalltdstyle y y smalltdstyle y ε
+smalltdstyle l l smalltdcstyle l ε
+smalltdcstyle e e smalltdstyle e ε
+smalltdstyle = = smalltdstyle = ε
+smalltdstyle " " smalltdtext " ε
+smalltdtext any " smalltdtext ε ε
+smalltdtext " " smalltdatrdone " ε
+smalltdatrdone % > smalltdopenatr ε ε
+smalltdatrdone $ > smalltdopenatr ε ε
+smalltdatrdone > > tdcontent > ε
+smalltdopen > > tdcontent > ε
+tdcontent $ < tdcontent ε ε
+tdcontent % < tdcontent ε ε
+tdcontent any < tdcontent ε ε
+
+- closing tag smalltd
+tdcontent < < tdclosetag < ε
+tdclosetag / / tdclosetag / ε
+tdclosetag s s strong/smalltdclose s ε
+strong/smalltdclose m m smalltdclose m ε
+smalltdclose a a smalltdclose a ε
+smalltdclose l l smalltdclose l ε
+smalltdclose > > tdcontent > ε
+
+- opentag emth
+thcontent < < thclosetag < ε
+thclosetag e / emthopen ε m></em><
+emthopen m m emthopen m ε
+
+- atribut emth 
+emthopen $ > emthopenatr ε ε
+emthopen % > emthopenatr ε ε
+emthopenatr % > emthopenatr ε ε
+emthopenatr > > thcontent > ε
+
+- id emth 
+emthopenatr i > emthid ε d=""
+emthid d d emthid d ε
+emthid = = emthid = ε
+emthid " " emthtext " ε
+emthtext any " emthtext ε ε
+emthtext " " emthatrdone " ε
+emthatrdone % > emthopenatr ε ε
+emthatrdone $ > emthopenatr ε ε
+emthatrdone > > thcontent > ε
+emthopen > > thcontent > ε
+thcontent $ < thcontent ε ε
+thcontent % < thcontent ε ε
+
+- class emth 
+emthopenatr c > emthclass ε lass=""
+emthclass l l emthclass l ε
+emthclass a a emthclass a ε
+emthclass s s emthclasss s ε
+emthclasss s s emthclass s ε
+emthclass = = emthclass = ε
+emthclass " " emthtext " ε
+emthtext any " emthtext ε ε
+emthtext " " emthatrdone " ε
+emthatrdone % > emthopenatr ε ε
+emthatrdone $ > emthopenatr ε ε
+emthatrdone > > thcontent > ε
+emthopen > > thcontent > ε
+thcontent $ < thcontent ε ε
+thcontent % < thcontent ε ε
+
+- style emth
+emthopenatr s > emthstyleorsrc ε ε
+emthstyleorsrc t > emthstyle ε yle=""
+emthstyle y y emthstyle y ε
+emthstyle l l emthcstyle l ε
+emthcstyle e e emthstyle e ε
+emthstyle = = emthstyle = ε
+emthstyle " " emthtext " ε
+emthtext any " emthtext ε ε
+emthtext " " emthatrdone " ε
+emthatrdone % > emthopenatr ε ε
+emthatrdone $ > emthopenatr ε ε
+emthatrdone > > thcontent > ε
+emthopen > > thcontent > ε
+thcontent $ < thcontent ε ε
+thcontent % < thcontent ε ε
+thcontent any < thcontent ε ε
+
+- closing tag emth
+thcontent < < thclosetag < ε
+thclosetag / / thclosetag / ε
+thclosetag e e emthclose e ε
+emthclose m m emthclose m ε
+emthclose > > thcontent > ε
+
+- opentag emtd
+tdcontent < < tdclosetag < ε
+tdclosetag e / emtdopen ε m></em><
+emtdopen m m emtdopen m ε
+
+- atribut emtd 
+emtdopen $ > emtdopenatr ε ε
+emtdopen % > emtdopenatr ε ε
+emtdopenatr % > emtdopenatr ε ε
+emtdopenatr > > tdcontent > ε
+
+- id emtd 
+emtdopenatr i > emtdid ε d=""
+emtdid d d emtdid d ε
+emtdid = = emtdid = ε
+emtdid " " emtdtext " ε
+emtdtext any " emtdtext ε ε
+emtdtext " " emtdatrdone " ε
+emtdatrdone % > emtdopenatr ε ε
+emtdatrdone $ > emtdopenatr ε ε
+emtdatrdone > > tdcontent > ε
+emtdopen > > tdcontent > ε
+tdcontent $ < tdcontent ε ε
+tdcontent % < tdcontent ε ε
+
+- class emtd 
+emtdopenatr c > emtdclass ε lass=""
+emtdclass l l emtdclass l ε
+emtdclass a a emtdclass a ε
+emtdclass s s emtdclasss s ε
+emtdclasss s s emtdclass s ε
+emtdclass = = emtdclass = ε
+emtdclass " " emtdtext " ε
+emtdtext any " emtdtext ε ε
+emtdtext " " emtdatrdone " ε
+emtdatrdone % > emtdopenatr ε ε
+emtdatrdone $ > emtdopenatr ε ε
+emtdatrdone > > tdcontent > ε
+emtdopen > > tdcontent > ε
+tdcontent $ < tdcontent ε ε
+tdcontent % < tdcontent ε ε
+
+- style emtd
+emtdopenatr s > emtdstyleorsrc ε ε
+emtdstyleorsrc t > emtdstyle ε yle=""
+emtdstyle y y emtdstyle y ε
+emtdstyle l l emtdcstyle l ε
+emtdcstyle e e emtdstyle e ε
+emtdstyle = = emtdstyle = ε
+emtdstyle " " emtdtext " ε
+emtdtext any " emtdtext ε ε
+emtdtext " " emtdatrdone " ε
+emtdatrdone % > emtdopenatr ε ε
+emtdatrdone $ > emtdopenatr ε ε
+emtdatrdone > > tdcontent > ε
+emtdopen > > tdcontent > ε
+tdcontent $ < tdcontent ε ε
+tdcontent % < tdcontent ε ε
+tdcontent any < tdcontent ε ε
+
+- closing tag emtd
+tdcontent < < tdclosetag < ε
+tdclosetag / / tdclosetag / ε
+tdclosetag e e emtdclose e ε
+emtdclose m m emtdclose m ε
+emtdclose > > tdcontent > ε
