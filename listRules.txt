@@ -520,12 +520,12 @@
 520. formtagmethod o o <=> formtagmethod o ε
 521. formtagmethod d d <=> formtagmethod d ε
 522. formtagmethod = = <=> formtagmethod = ε
-523. formtagmethod " " <=> formtagtext " ε
-524. formtagtext G " <=> formtagacttextget ε TE
+523. formtagmethod " " <=> formtagtextmethod " ε
+524. formtagtextmethod G " <=> formtagacttextget ε TE
 525. formtagacttextget E E <=> formtagacttextget E ε
 526. formtagacttextget T T <=> formtagacttextget T ε
 527. formtagacttextget " " <=> formopentag " ε
-528. formtagtext P " <=> formtagacttextpost ε TSO
+528. formtagtextmethod P " <=> formtagacttextpost ε TSO
 529. formtagacttextpost O O <=> formtagacttextpost O ε
 530. formtagacttextpost S S <=> formtagacttextpost S ε
 531. formtagacttextpost T T <=> formtagacttextpost T ε
