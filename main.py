@@ -77,9 +77,12 @@ print(f"state: {stack.state}")
 if stack.top == "#" and len(html) == 0 and not(invalid):
     print("\nAccepted!\n")
 else:
-    print("")
+    # print(html_List)
+    print()
     print(f"  file \"{html_path}\", line {counterRow+1}")
     print(html_List[counterRow], end="")
+    if counterRow+1 == len(html_List):
+        print()
     for i in range(counterCol-1):
         print(" ", end="")
     print("^")
