@@ -15,7 +15,7 @@ f = open("listRules.txt", "w", encoding="utf-8")
 
 keys = pda.transition_rules.keys()
 for key in keys:
-    val = f"{counter}. {key[0]} {key[1]} {key[2]} <=> {pda.transition_rules[key][0]} {pda.transition_rules[key][1]} {pda.transition_rules[key][2]}\n"
+    val = f"{counter}. {key[0]} {key[1]} {key[2]} <=> {pda.transition_rules[key][0]} {pda.transition_rules[key][1]} {pda.transition_rules[key][2][::-1]}\n"
     states.add(key[0])
     counter += 1
     print(counter)
