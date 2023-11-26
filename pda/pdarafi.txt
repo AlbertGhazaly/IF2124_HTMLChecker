@@ -1690,3 +1690,71 @@ strong/smallbodyclose m m smallbodyclose m ε
 smallbodyclose a a smallbodyclose a ε
 smallbodyclose l l smallbodyclose l ε
 smallbodyclose > > bodyopendone > ε
+
+
+
+- opentag embody
+bodyacctag e / embodyopen ε m></em><
+embodyopen m m embodyopen m ε
+
+- atribut embody 
+embodyopen $ > embodyopenatr ε ε
+embodyopen % > embodyopenatr ε ε
+embodyopenatr % > embodyopenatr ε ε
+embodyopenatr > > bodyopendone > ε
+
+- id embody 
+embodyopenatr i > embodyid ε d=""
+embodyid d d embodyid d ε
+embodyid = = embodyid = ε
+embodyid " " embodytext " ε
+embodytext any " embodytext ε ε
+embodytext " " embodyatrdone " ε
+embodyatrdone % > embodyopenatr ε ε
+embodyatrdone $ > embodyopenatr ε ε
+embodyatrdone > > bodyopendone > ε
+embodyopen > > bodyopendone > ε
+bodyopendone $ < bodyopendone ε ε
+bodyopendone % < bodyopendone ε ε
+
+- class embody 
+embodyopenatr c > embodyclass ε lass=""
+embodyclass l l embodyclass l ε
+embodyclass a a embodyclass a ε
+embodyclass s s embodyclasss s ε
+embodyclasss s s embodyclass s ε
+embodyclass = = embodyclass = ε
+embodyclass " " embodytext " ε
+embodytext any " embodytext ε ε
+embodytext " " embodyatrdone " ε
+embodyatrdone % > embodyopenatr ε ε
+embodyatrdone $ > embodyopenatr ε ε
+embodyatrdone > > bodyopendone > ε
+embodyopen > > bodyopendone > ε
+bodyopendone $ < bodyopendone ε ε
+bodyopendone % < bodyopendone ε ε
+
+- style embody
+embodyopenatr s > embodystyleorsrc ε ε
+embodystyleorsrc t > embodystyle ε yle=""
+embodystyle y y embodystyle y ε
+embodystyle l l embodycstyle l ε
+embodycstyle e e embodystyle e ε
+embodystyle = = embodystyle = ε
+embodystyle " " embodytext " ε
+embodytext any " embodytext ε ε
+embodytext " " embodyatrdone " ε
+embodyatrdone % > embodyopenatr ε ε
+embodyatrdone $ > embodyopenatr ε ε
+embodyatrdone > > bodyopendone > ε
+embodyopen > > bodyopendone > ε
+bodyopendone $ < bodyopendone ε ε
+bodyopendone % < bodyopendone ε ε
+bodyopendone any < bodyopendone ε ε
+
+- closing tag embody
+bodyopendone < < bodyacctag < ε
+bodyacctag / / bodyclosetag / ε
+bodyclosetag e e embodyclose e ε
+embodyclose m m embodyclose m ε
+embodyclose > > bodyopendone > ε
