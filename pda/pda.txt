@@ -430,7 +430,11 @@ formopentag o o formopentag o ε
 formopentag r r formopentag e ε
 formopentag m m formopentag m ε
 formopentag % > formtagatr ε ε
+formopentag $ > formtagatr ε ε
+formtagatr $ > formtagatr ε ε
+formtagatr % > formtagatr ε ε
 formopentag > > bodyopendone > ε
+formtagatr > > bodyopendone > ε
 formclosetag o o formclosetag o ε
 formclosetag r r formclosetag r ε
 formclosetag m m formclosetag m ε
