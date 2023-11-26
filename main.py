@@ -78,9 +78,9 @@ if stack.top == "#" and len(html) == 0 and not(invalid):
     print("\nAccepted!\n")
 else:
     print("")
-    print(f"  file \"{html_path}\", line {counterRow}")
+    print(f"  file \"{html_path}\", line {counterRow+1}")
     print(html_List[counterRow], end="")
     for i in range(counterCol-1):
         print(" ", end="")
     print("^")
-    print(f"SyntaxError: kode kamu jelek (detected at line {counterRow})")
+    print(f"SyntaxError: kode kamu jelek (detected at line {counterRow+1})")

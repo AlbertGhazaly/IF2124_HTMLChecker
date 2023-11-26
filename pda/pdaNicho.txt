@@ -115,7 +115,6 @@ htmlclose > > htmlclosedone > ε
 newtag h / headopen ε ead></head><
 
 - opentag head
-headopen h h headopen h ε
 headopen e e headopen e ε
 headopen a a headopen a ε
 headopen d d headopen d ε
@@ -174,11 +173,279 @@ headopen > > headopendone > ε
 headopendone $ < headopendone ε ε
 headopendone % < headopendone ε ε
 
+- title 
+newtaginhead t / titleopen ε itle></title><
+
+- opentag title
+titleopen t t titleopen t ε
+titleopen i i titleopen i ε
+titleopen l l titleopen l ε
+titleopen e e titleopen e ε
+
+- atribut title 
+titleopen $ > titleopenatr ε ε
+titleopen % > titleopenatr ε ε
+titleopenatr % > titleopenatr ε ε
+titleopenatr > > titleopendone > ε
+
+- id title 
+titleopenatr i > titleid ε d=""
+titleid d d titleid d ε
+titleid = = titleid = ε
+titleid " " titletext " ε
+titletext any " titletext ε ε
+titletext " " titleatrdone " ε
+titleatrdone % > titleopenatr ε ε
+titleatrdone $ > titleopenatr ε ε
+titleatrdone > > titleopendone > ε
+titleopen > > titleopendone > ε
+titleopendone $ < titleopendone ε ε
+titleopendone % < titleopendone ε ε
+
+- class title 
+titleopenatr c > titleclass ε lass=""
+titleclass l l titleclass l ε
+titleclass a a titleclass a ε
+titleclass s s titleclasss s ε
+titleclasss s s titleclass s ε
+titleclass = = titleclass = ε
+titleclass " " titletext " ε
+titletext any " titletext ε ε
+titletext " " titleatrdone " ε
+titleatrdone % > titleopenatr ε ε
+titleatrdone $ > titleopenatr ε ε
+titleatrdone > > titleopendone > ε
+titleopen > > headopendone > ε
+headeopendone $ < titleopendone ε ε
+headeopendone % < titleopendone ε ε
+
+- style title
+titleopenatr s > titlestyle ε tyle=""
+titlestyle t t titlestyle t ε
+titlestyle y y titlestyle y ε
+titlestyle l l titlecstyle l ε
+titlecstyle e e titlestyle e ε
+titlestyle = = titlestyle = ε
+titlestyle " " titletext " ε
+titletext any " titletext ε ε
+titletext " " titleatrdone " ε
+titleatrdone % > titleopenatr ε ε
+titleatrdone $ > titleopenatr ε ε
+titleatrdone > > titleopendone > ε
+titleopen > > titleopendone > ε
+titleopendone $ < titleopendone ε ε
+titleopendone % < titleopendone ε ε
+
+titleopendone any < titleopendone ε ε
+
+- closing tag title
+titleopendone < < newtagintitle < ε
+newtagintitle / / titleclose / ε
+titleclose t t titleclose t ε
+titleclose i i titleclose i ε
+titleclose l l titleclose l ε
+titleclose e e titleclose e ε
+titleclose > > headopendone > ε
+
+- script 
+newtaginhead s / scriptopen ε cript></script><
+
+- opentag script
+scriptopen s s scriptopen s ε
+scriptopen c c scriptopen c ε
+scriptopen r r scriptopen r ε
+scriptopen i i scriptopen i ε
+scriptopen p p scriptopen t ε
+scriptopen t t scriptopen t ε
+
+- atribut script 
+scriptopen $ > scriptopenatr ε ε
+scriptopen % > scriptopenatr ε ε
+scriptopenatr % > scriptopenatr ε ε
+scriptopenatr > > scriptopendone > ε
+
+- id script 
+scriptopenatr i > scriptid ε d=""
+scriptid d d scriptid d ε
+scriptid = = scriptid = ε
+scriptid " " scripttext " ε
+scripttext any " scripttext ε ε
+scripttext " " scriptatrdone " ε
+scriptatrdone % > scriptopenatr ε ε
+scriptatrdone $ > scriptopenatr ε ε
+scriptatrdone > > scriptopendone > ε
+scriptopen > > scriptopendone > ε
+scriptopendone $ < scriptopendone ε ε
+scriptopendone % < scriptopendone ε ε
+
+- class script 
+scriptopenatr c > scriptclass ε lass=""
+scriptclass l l scriptclass l ε
+scriptclass a a scriptclass a ε
+scriptclass s s scriptclasss s ε
+scriptclasss s s scriptclass s ε
+scriptclass = = scriptclass = ε
+scriptclass " " scripttext " ε
+scripttext any " scripttext ε ε
+scripttext " " scriptatrdone " ε
+scriptatrdone % > scriptopenatr ε ε
+scriptatrdone $ > scriptopenatr ε ε
+scriptatrdone > > scriptopendone > ε
+scriptopen > > scriptopendone > ε
+scriptopendone $ < scriptopendone ε ε
+scriptopendone % < scriptopendone ε ε
+
+- style script
+scriptopenatr s > scriptstyleorsrc ε ε
+scriptstyleorsrc t > scriptstyle ε yle=""
+scriptstyle y y scriptstyle y ε
+scriptstyle l l scriptcstyle l ε
+scriptcstyle e e scriptstyle e ε
+scriptstyle = = scriptstyle = ε
+scriptstyle " " scripttext " ε
+scripttext any " scripttext ε ε
+scripttext " " scriptatrdone " ε
+scriptatrdone % > scriptopenatr ε ε
+scriptatrdone $ > scriptopenatr ε ε
+scriptatrdone > > scriptopendone > ε
+scriptopen > > scriptopendone > ε
+scriptopendone $ < scriptopendone ε ε
+scriptopendone % < scriptopendone ε ε
+scriptopendone any < scriptopendone ε ε
+
+- src script 
+scriptopenatr s > scriptstyleorsrc ε ε
+scriptstyleorsrc r > scriptsrc ε c=""
+scriptsrc c c scriptsrc c ε
+scriptsrc = = scriptsrc = ε
+scriptsrc " " scripttext " ε
+scripttext any " scripttext ε ε
+scripttext " " scriptatrdone " ε
+scriptatrdone % > scriptopenatr ε ε
+scriptatrdone $ > scriptopenatr ε ε
+scriptatrdone > > scriptopendone > ε
+scriptopen > > scriptopendone > ε
+scriptopendone $ < scriptopendone ε ε
+scriptopendone % < scriptopendone ε ε
+
+- closing tag script
+scriptopendone < < newtaginscript < ε
+newtaginscript / / scriptclose / ε
+scriptclose s s scriptclose s ε
+scriptclose c c scriptclose c ε
+scriptclose r r scriptclose r ε
+scriptclose i i scriptclose i ε
+scriptclose p p scriptclose p ε
+scriptclose t t scriptclose t ε
+scriptclose > > headopendone > ε
+
+- link
+newtaginhead l / link ε inkrel=""><
+
+link i i link i ε
+link n n link n ε
+link k k link k ε
+link $ > linkatr ε ε
+link % > linkatr ε ε
+link $ r linkatr ε ε
+link % r linkatr ε ε
+link > > headopendone > ε
+linkatr $ r linkatr ε ε
+linkatr % r linkatr ε ε
+linkatr $ > linkatr ε ε
+linkatr % > linkatr ε ε
+linkatr $ > linkatr ε ε
+linkatr > > headopendone > ε
+
+- rel link 
+linkatr r r linkrelwajib r ε
+linkrelwajib e e linkrelwajib e ε
+linkrelwajib l l linkrelwajib l ε
+linkrelwajib = = linkrelwajib = ε
+linkrelwajib " " linktext " ε
+linktext any " linktext ε ε
+linktext " " linkatrdone " ε
+linkatrdone % > linkatr ε ε
+linkatrdone $ > linkatr ε ε
+linkatrdone > > headopendone > ε
+
+- id link 
+linkatr i > linkid ε d=""
+linkid d d linkid d ε
+linkid = = linkid = ε
+linkid " " linktext " ε
+linktext any " linktext ε ε
+linktext " " linkatrdone " ε
+linkatrdone % > linkatr ε ε
+linkatrdone $ > linkatr ε ε
+linkatrdone > > headopendone > ε
+link > > headopendone > ε
+
+
+- class link 
+linkatr c > linkclass ε lass=""
+linkclass l l linkclass l ε
+linkclass a a linkclass a ε
+linkclass s s linkclasss s ε
+linkclasss s s linkclass s ε
+linkclass = = linkclass = ε
+linkclass " " linktext " ε
+linktext any " linktext ε ε
+linktext " " linkatrdone " ε
+linkatrdone % > linkatr ε ε
+linkatrdone $ > linkatr ε ε
+linkatrdone > > headopendone > ε
+link > > headopendone > ε
+
+
+- style link
+linkatr s > linkstyle ε tyle=""
+linkstyle t t linkstyle t ε
+linkstyle y y linkstyle y ε
+linkstyle l l linkcstyle l ε
+linkcstyle e e linkstyle e ε
+linkstyle = = linkstyle = ε
+linkstyle " " linktext " ε
+linktext any " linktext ε ε
+linktext " " linkatrdone " ε
+linkatrdone % > linkatr ε ε
+linkatrdone $ > linkatr ε ε
+linkatrdone > > headopendone > ε
+link > > headopendone > ε
+
+- rel link 
+linkatr r > linkrel ε el=""
+linkrel e e linkrel e ε
+linkrel l l linkrel l ε
+linkrel = = linkrel = ε
+linkrel " " linktext " ε
+linktext any " linktext ε ε
+linktext " " linkatrdone " ε
+linkatrdone % > linkatr ε ε
+linkatrdone $ > linkatr ε ε
+linkatrdone > > headopendone > ε
+link > > headopendone > ε
+
+- href link 
+linkatr h > linkhref ε ref=""
+linkhref r r linkhref r ε
+linkhref e e linkhref e ε
+linkhref f f linkhref f ε
+linkhref = = linkhref = ε
+linkhref " " linktext " ε
+linktext any " linktext ε ε
+linktext " " linkatrdone " ε
+linkatrdone % > linkatr ε ε
+linkatrdone $ > linkatr ε ε
+linkatrdone > > headopendone > ε
+link > > headopendone > ε
+
+
 - closing tag head 
-headopendone < < newtag < ε
-newtag / / closetag / ε
-closetag h h html/headclose h ε
-html/headclose e e headclose e ε
+headopendone < < newtaginhead < ε
+newtaginhead / / headclose / ε
+headclose h h headclose h ε
+headclose e e headclose e ε
 headclose a a headclose a ε
 headclose d d headclose d ε
 headclose > > headclosedone > ε
@@ -211,7 +478,12 @@ bodyopendone % < bodyopendone ε ε
 
 - accepts tag in body
 bodyopendone < < bodyacctag < ε
-bodyacctag / / bodyclose / ε
+bodyacctag / / bodyclosetag / ε
+bodyclosetag b b bodyclose b ε
+bodyclosetag f f formclosetag f ε
+bodyclosetag t t tableclosetag t ε
+
+bodyclosetag d d divclosetag d ε
 
 - comment on body
 bodyacctag ! / bodycommentopen ε ----><
@@ -225,7 +497,6 @@ bodycommentopen-4 any - bodycommentopen-2 ε --
 bodycommentopen-4 > > bodyopendone > ε
 
 - start closetag 
-bodyclose b b bodyclose b ε
 bodyclose o o bodyclose o ε
 bodyclose d d bodyclose d ε
 bodyclose y y bodyclose y ε
@@ -234,9 +505,11 @@ bodyclosedone $ < bodyclosedone ε ε
 bodyclosedone % < bodyclosedone ε ε
 bodyclosedone < < newtag < ε
 
+- i tag in body
+bodyacctag i / bodyitag ε <
+
 - img in body 
-bodyacctag i / imgopen ε mgsrc=""><
-imgopen m m imgopen m ε
+bodyitag m < imgopen ε gsrc="">
 imgopen g g imgopen g ε
 
 - img text 
@@ -296,74 +569,104 @@ imgalt " " imgtext " ε
 imgopen > > bodyopendone > ε
 imgopenatr > > bodyopendone > ε
 
-- img in body 
-bodyacctag i / imgopen ε mgsrc=""><
-imgopen m m imgopen m ε
-imgopen g g imgopen g ε
+- input tag in body
+bodyitag n < input ε put>
+input p p input p ε
+input u u input u ε
+input t t inputdone t ε
+inputdone % > inputatr ε ε
+inputdone $ > inputatr ε ε
+inputatr $ > inputatr ε ε
+inputatr % > inputatr ε ε
+inputatr t > inputatr ε ype=""
+inputatr y y inputatr y ε
+inputatr p p inputatr p ε
+inputatr e e inputatr e ε
+inputatr = = inputatr = ε
+inputatr " " inputtext " ε
 
-- img text 
-imgtext " " imgopen " ε
-imgtext any " imgtext ε ε
+- terimnation input
+inputdone > > bodyopendone > ε 
+inputatr > > bodyopendone > ε 
 
-- spasi di img 
-imgopen % s imgopenatr ε ε
-imgopen % > imgopenatr ε ε
-imgopenatr % s imgopenatr ε ε
-imgopenatr $ s imgopenatr ε ε
+- type in input
+- termination input
+inputedtext " " inputdone " ε 
+- text
+inputtext t " inputedtext ε ext
+inputedtext e e inputedtext e ε
+inputedtext x x inputedtext x ε
+inputedtext t t inputedtext t ε
+- password
+inputtext p " inputedtext ε assword
+inputedtext a a inputedtext a ε
+inputedtext s s inputedtext s ε
+inputedtext w w inputedtext w ε
+inputedtext o o inputedtext o ε
+inputedtext r r inputedtext r ε
+inputedtext d d inputedtext d ε
+- email
+inputtext e " inputedtext ε mail
+inputedtext m m inputedtext m ε
+inputedtext a a inputedtext a ε
+inputedtext i i inputedtext i ε
+inputedtext l l inputedtext l ε
+- number
+inputtext n " inputedtext ε umber
+inputedtext u u inputedtext u ε
+inputedtext m m inputedtext m ε
+inputedtext b b inputedtext b ε
+inputedtext e e inputedtext e ε
+inputedtext r r inputedtext r ε
 
-- id in img
-imgopenatr i s imgid ε d=""
-imgopenatr i > imgid ε d=""
-imgid d d imgid d ε
-imgid = = imgid = ε
-imgid " " imgtext " ε
+- checkbox
+inputtext c " inputedtext ε heckbox
+inputedtext h h inputedtext h ε
+inputedtext e e inputedtext e ε
+inputedtext c c inputedtext c ε
+inputedtext k k inputedtext k ε
+inputedtext b b inputedtext b ε
+inputedtext o o inputedtext o ε
+inputedtext x x inputedtext x ε
 
-- class in img
-imgopenatr c s imgclass ε lass=""
-imgopenatr c > imgclass ε lass=""
-imgclass l l imgclass l ε
-imgclass a a imgclass a ε
-imgclass s s imgclass s ε
-imgclass = = imgclass = ε
-imgclass " " imgtext " ε
+- input any text
+inputanytext any " inputanytext ε ε
+inputanytext " " inputdone " ε
 
-- s attribut in img 
-imgopenatr s s imgsattr s ε 
-imgopenatr s > imgsattr ε ε 
+- input id
+inputatr i > inputid ε d=""
+inputid d d inputid d ε
+inputid = = inputid = ε
+inputid " " inputanytext " ε
 
-- style in img
-imgsattr t r imgstyle ε yle=""s
-imgsattr t > imgstyle ε yle=""
-imgstyle y y imgstyle y ε
-imgstyle l l imgstyle l ε
-imgstyle e e imgstyle e ε
-imgstyle = = imgstyle = ε
-imgstyle " " imgtext " ε
 
-- src in img 
-imgsattr r r imgsrc r ε
-imgsrc c c imgsrc c ε
-imgsrc = = imgsrc = ε
-imgsrc " " imgtext " ε
+- input class 
+inputatr c > inputclass ε lass=""
+inputclass l l inputclass l ε
+inputclass a a inputclass a ε
+inputclass s s inputclass s ε
+inputclass s s inputclass s ε
+inputclass = = inputclass = ε
+inputclass " " inputanytext " ε
 
-- alt 
-imgopenatr a s imgalt ε lt=""
-imgopenatr a > imgalt ε lt=""
-imgalt l l imgalt l ε   
-imgalt t t imgalt t ε
-imgalt = = imgalt = ε
-imgalt " " imgtext " ε
+- input style 
+inputatr s > inputstyle ε tyle=""
+inputstyle t t inputstyle t ε
+inputstyle y y inputstyle y ε
+inputstyle l l inputstyle l ε
+inputstyle e e inputstyle e ε
+inputstyle = = inputstyle = ε
+inputstyle " " inputanytext " ε
 
-- close img tag
-imgopen > > bodyopendone > ε
-imgopenatr > > bodyopendone > ε
-
-- start hr html 
+- hr in body
 bodyacctag h / hopentag ε ε
-hopentag r / hrtag ε >
-hrtag % > hrtagatr ε ε
-hrtagatr % > hrtag ε ε
-hrtag > > bodyopendone > <
+hopentag r / hropentag ε >
+hropentag % > hrtagatr ε ε
+hropentag $ > hrtagatr ε ε
+hrtagatr % > hrtagatr ε ε
+hrtagatr $ > hrtagatr ε ε
+hrtagatr > > bodyopendone > <
+hropentag > > bodyopendone > <
 
 - hrtagatr id
 hrtagatr i > hrtagid ε d=""
@@ -371,7 +674,7 @@ hrtagid d d hrtagid d ε
 hrtagid = = hrtagid = ε
 hrtagid " " hrtagtext " ε
 hrtagtext any " hrtagtext ε ε
-hrtagtext " " hrtag " ε
+hrtagtext " " hropentag " ε
 
 - hrtagatr class 
 hrtagatr c > hrtagclass ε lass=""
@@ -382,7 +685,7 @@ hrtagclass s s hrtagclass s ε
 hrtagclass = = hrtagclass = ε
 hrtagclass " " hrtagtext " ε
 hrtagtext any " hrtagtext ε ε
-hrtagtext " " hrtag " ε
+hrtagtext " " hropentag " ε
 
 - hrtagatr style 
 hrtagatr s > hrtagstyle ε tyle=""
@@ -393,7 +696,7 @@ hrtagstyle e e hrtagstyle e ε
 hrtagstyle = = hrtagstyle = ε
 hrtagstyle " " hrtagtext " ε
 hrtagtext any " hrtagtext ε ε
-hrtagtext " " hrtag " ε
+hrtagtext " " hropentag " ε
 
 - form in body
 bodyacctag f / formopentag ε orm></form>
@@ -401,11 +704,11 @@ formopentag o o formopentag o ε
 formopentag r r formopentag e ε
 formopentag m m formopentag m ε
 formopentag % > formtagatr ε ε
-formopentag > > formcontent > ε
-formcontent any < formcontent ε ε
-formcontent < < formclosetag < ε
-formclosetag / / formclosetag / ε
-formclosetag f f formclosetag f ε
+formopentag $ > formtagatr ε ε
+formtagatr $ > formtagatr ε ε
+formtagatr % > formtagatr ε ε
+formopentag > > bodyopendone > ε
+formtagatr > > bodyopendone > ε
 formclosetag o o formclosetag o ε
 formclosetag r r formclosetag r ε
 formclosetag m m formclosetag m ε
@@ -454,14 +757,14 @@ formtagtext any " formtagtext ε ε
 formtagtext " " formopentag " ε
 
 - form atribut method
-formtagatr m > formtagmethod ε ethod=""
-formtagmethod e e formtagmethod e ε
-formtagmethod t t formtagmethod t ε
-formtagmethod h h formtagmethod h ε
-formtagmethod o o formtagmethod o ε
-formtagmethod d d formtagmethod d ε
-formtagmethod = = formtagmethod = ε
-formtagmethod " " formtagtext " ε
+formtagatr m > formtagaction ε ethod=""
+formtagaction e e formtagaction e ε
+formtagaction t t formtagaction t ε
+formtagaction h h formtagaction h ε
+formtagaction o o formtagaction o ε
+formtagaction d d formtagaction d ε
+formtagaction = = formtagaction = ε
+formtagaction " " formtagtext " ε
 formtagtext G " formtagacttextget ε ET
 formtagacttextget E E formtagacttextget E ε
 formtagacttextget T T formtagacttextget T ε
@@ -480,6 +783,9 @@ buttonopentag t t buttonopentag t ε
 buttonopentag o o buttonopentag o ε
 buttonopentag n n buttonopentag n ε
 buttonopentag % > buttontagatr ε ε
+buttonopentag $ > buttontagatr ε ε
+buttontagatr % > buttontagatr ε ε
+buttontagatr $ > buttontagatr ε ε
 buttonopentag > > buttoncontent > ε
 buttoncontent any < buttoncontent ε ε
 buttoncontent < < buttonclosetag < ε
@@ -556,6 +862,10 @@ bodyacctag h / hopentag ε ε
 - kasus h1
 hopentag 1 / h1opentag ε ></h1>
 h1opentag % > h1tagatr ε ε
+h1opentag $ > h1tagatr ε ε
+h1tagatr % > h1tagatr ε ε
+h1tagatr $ > h1tagatr ε ε
+h1tagatr > > h1content > ε
 h1opentag > > h1content > ε
 h1content any < h1content ε ε
 h1content < < h1closetag < ε
@@ -597,6 +907,10 @@ h1tagtext " " h1opentag " ε
 - kasus h2
 hopentag 2 / h2opentag ε ></h2>
 h2opentag % > h2tagatr ε ε
+h2opentag $ > h2tagatr ε ε
+h2tagatr % > h2tagatr ε ε
+h2tagatr $ > h2tagatr ε ε
+h2tagatr > > h2content > ε
 h2opentag > > h2content > ε
 h2content any < h2content ε ε
 h2content < < h2closetag < ε
@@ -638,6 +952,10 @@ h2tagtext " " h2opentag " ε
 - kasus h3
 hopentag 3 / h3opentag ε ></h3>
 h3opentag % > h3tagatr ε ε
+h3opentag $ > h3tagatr ε ε
+h3tagatr % > h3tagatr ε ε
+h3tagatr $ > h3tagatr ε ε
+h3tagatr > > h3content > ε
 h3opentag > > h3content > ε
 h3content any < h3content ε ε
 h3content < < h3closetag < ε
@@ -679,6 +997,10 @@ h3tagtext " " h3opentag " ε
 - kasus h4
 hopentag 4 / h4opentag ε ></h4>
 h4opentag % > h4tagatr ε ε
+h4opentag $ > h4tagatr ε ε
+h4tagatr % > h4tagatr ε ε
+h4tagatr $ > h4tagatr ε ε
+h4tagatr > > h4content > ε
 h4opentag > > h4content > ε
 h4content any < h4content ε ε
 h4content < < h4closetag < ε
@@ -720,6 +1042,10 @@ h4tagtext " " h4opentag " ε
 - kasus h5
 hopentag 5 / h5opentag ε ></h5>
 h5opentag % > h5tagatr ε ε
+h5opentag $ > h5tagatr ε ε
+h5tagatr % > h5tagatr ε ε
+h5tagatr $ > h5tagatr ε ε
+h5tagatr > > h5content > ε
 h5opentag > > h5content > ε
 h5content any < h5content ε ε
 h5content < < h5closetag < ε
@@ -761,6 +1087,10 @@ h5tagtext " " h5opentag " ε
 - kasus h6
 hopentag 6 / h6opentag ε ></h6>
 h6opentag % > h6tagatr ε ε
+h6opentag $ > h6tagatr ε ε
+h6tagatr % > h6tagatr ε ε
+h6tagatr $ > h6tagatr ε ε
+h6tagatr > > h6content > ε
 h6opentag > > h6content > ε
 h6content any < h6content ε ε
 h6content < < h6closetag < ε
@@ -799,11 +1129,67 @@ h6tagstyle " " h6tagtext " ε
 h6tagtext any " h6tagtext ε ε
 h6tagtext " " h6opentag " ε
 
-- start br html 
+- <a> tag
+bodyacctag a / aopen  ε ></a><
+aopen $ > aatr ε ε
+aopen % > aatr ε ε
+aatr % > aatr ε ε
+aatr $ > aatr ε ε
+- to inside a
+aopen > > acontent > ε 
+aatr > > acontent > ε
+- href 
+aatr h > ahref ε ref=""
+ahref r r ahref r ε
+ahref e e ahref e ε
+ahref f f ahref f ε
+ahref = = ahref = ε
+ahref " " atext " ε
+- atext
+atext any " atext ε ε
+atext " " aopen " ε
+- a id
+aatr i > aid ε d=""
+aid d d aid d ε
+aid = = aid = ε
+aid " " atext " ε
+
+- a class 
+aatr c > aclass ε lass=""
+aclass l l aclass l ε
+aclass a a aclass a ε
+aclass s s aclass s ε
+aclass s s aclass s ε
+aclass = = aclass = ε
+aclass " " atext " ε
+
+- a style 
+aatr s > astyle ε tyle=""
+astyle t t astyle t ε
+astyle y y astyle y ε
+astyle l l astyle l ε
+astyle e e astyle e ε
+astyle = = astyle = ε
+astyle " " atext " ε
+
+- acontent
+acontent any < acontent ε ε
+acontent < < aclose < ε
+
+- aclose
+aclose / / aclose / ε
+aclose a a aclose a ε
+aclose > > bodyopendone > ε
+
+
+- br in body
 bodyacctag b / bopentag ε ε
 bopentag r / brtag ε >
 brtag % > brtagatr ε ε
-brtagatr % > brtag ε ε
+brtag $ > brtagatr ε ε
+brtagatr % > brtagatr ε ε
+brtagatr $ > brtagatr ε ε
+brtagatr > > bodyopendone > <
 brtag > > bodyopendone > <
 
 - brtagatr id
@@ -835,3 +1221,189 @@ brtagstyle = = brtagstyle = ε
 brtagstyle " " brtagtext " ε
 brtagtext any " brtagtext ε ε
 brtagtext " " brtag " ε
+
+- tag yang ada t nya
+bodyacctag t / topentag ε ε
+
+- table dalam body
+topentag a / tableopentag ε ble></table>
+tableopentag b b tableopentag b ε
+tableopentag l l tableopentag l ε
+tableopentag e e tableopentag e ε
+tableopentag % > tabletagatr ε ε
+tableopentag $ > tabletagatr ε ε
+tabletagatr % > tabletagatr ε ε
+tabletagatr $ > tabletagatr ε ε
+tabletagatr > > bodyopendone > ε
+tableopentag > > bodyopendone > ε
+tableclosetag a a tableclosetag a ε
+tableclosetag b b tableclosetag b ε
+tableclosetag l l tableclosetag l ε
+tableclosetag e e tableclosetag e ε
+tableclosetag > > bodyopendone > <
+
+- table atribut id
+tabletagatr i > tabletagid ε d=""
+tabletagid d d tabletagid d ε
+tabletagid = = tabletagid = ε
+tabletagid " " tabletagtext " ε
+tabletagtext any " tabletagtext ε ε
+tabletagtext " " tableopentag " ε
+
+- table atribut class
+tabletagatr c > tabletagclass ε lass=""
+tabletagclass l l tabletagclass l ε
+tabletagclass a a tabletagclass a ε
+tabletagclass s s tabletagclass s ε
+tabletagclass s s tabletagclass s ε
+tabletagclass = = tabletagclass = ε
+tabletagclass " " tabletagtext " ε
+tabletagtext any " tabletagtext ε ε
+tabletagtext " " tableopentag " ε
+
+- table atribut style
+tabletagatr s > tabletagstyle ε tyle=""
+tabletagstyle t t tabletagstyle t ε
+tabletagstyle y y tabletagstyle y ε
+tabletagstyle l l tabletagstyle l ε
+tabletagstyle e e tabletagstyle e ε
+tabletagstyle = = tabletagstyle = ε
+tabletagstyle " " tabletagtext " ε
+tabletagtext any " tabletagtext ε ε
+tabletagtext " " tableopentag " ε
+
+-div tag
+bodyacctag d / divopen ε iv></div><
+divopen i i divopen i ε
+divopen v v divopen v ε
+divopen $ > divatr ε ε
+divopen % > divatr ε ε
+divatr % > divatr ε ε
+divatr $ > divatr ε ε
+
+- termination divopen
+divatr > > bodyopendone > ε
+divopen > > bodyopendone > ε
+- divtext
+divtext any " divtext ε ε
+divtext " " divopen " ε
+
+- div id
+divatr i > divid ε d=""
+divid d d divid d ε
+divid = = divid = ε
+divid " " divtext " ε
+
+- div class 
+divatr c > divclass ε lass=""
+divclass l l divclass l ε
+divclass a a divclass a ε
+divclass s s divclass s ε
+divclass s s divclass s ε
+divclass = = divclass = ε
+divclass " " divtext " ε
+
+- div style 
+divatr s > divstyle ε tyle=""
+divstyle t t divstyle t ε
+divstyle y y divstyle y ε
+divstyle l l divstyle l ε
+divstyle e e divstyle e ε
+divstyle = = divstyle = ε
+divstyle " " divtext " ε
+
+- div close tag
+divclosetag i i divclosetag i ε
+divclosetag v v divclosetag v ε
+divclosetag > > bodyopendone > ε
+
+- scriptbody 
+bodyacctag s / script/small/strong ε ε
+
+- opentag scriptbody
+script/small/strong c / scriptbody ε ript></script><
+scriptbody r r scriptbodyopen r ε
+scriptbodyopen i i scriptbodyopen i ε
+scriptbodyopen p p scriptbodyopen t ε
+scriptbodyopen t t scriptbodyopen t ε
+
+- atribut scriptbody 
+scriptbodyopen $ > scriptbodyopenatr ε ε
+scriptbodyopen % > scriptbodyopenatr ε ε
+scriptbodyopenatr % > scriptbodyopenatr ε ε
+scriptbodyopenatr > > scriptbodyopendone > ε
+
+- id scriptbody 
+scriptbodyopenatr i > scriptbodyid ε d=""
+scriptbodyid d d scriptbodyid d ε
+scriptbodyid = = scriptbodyid = ε
+scriptbodyid " " scriptbodytext " ε
+scriptbodytext any " scriptbodytext ε ε
+scriptbodytext " " scriptbodyatrdone " ε
+scriptbodyatrdone % > scriptbodyopenatr ε ε
+scriptbodyatrdone $ > scriptbodyopenatr ε ε
+scriptbodyatrdone > > scriptbodyopendone > ε
+scriptbodyopen > > scriptbodyopendone > ε
+scriptbodyopendone $ < scriptbodyopendone ε ε
+scriptbodyopendone % < scriptbodyopendone ε ε
+
+- class scriptbody 
+scriptbodyopenatr c > scriptbodyclass ε lass=""
+scriptbodyclass l l scriptbodyclass l ε
+scriptbodyclass a a scriptbodyclass a ε
+scriptbodyclass s s scriptbodyclasss s ε
+scriptbodyclasss s s scriptbodyclass s ε
+scriptbodyclass = = scriptbodyclass = ε
+scriptbodyclass " " scriptbodytext " ε
+scriptbodytext any " scriptbodytext ε ε
+scriptbodytext " " scriptbodyatrdone " ε
+scriptbodyatrdone % > scriptbodyopenatr ε ε
+scriptbodyatrdone $ > scriptbodyopenatr ε ε
+scriptbodyatrdone > > scriptbodyopendone > ε
+scriptbodyopen > > scriptbodyopendone > ε
+scriptbodyopendone $ < scriptbodyopendone ε ε
+scriptbodyopendone % < scriptbodyopendone ε ε
+
+- style scriptbody
+scriptbodyopenatr s > scriptbodystyleorsrc ε ε
+scriptbodystyleorsrc t > scriptbodystyle ε yle=""
+scriptbodystyle y y scriptbodystyle y ε
+scriptbodystyle l l scriptbodycstyle l ε
+scriptbodycstyle e e scriptbodystyle e ε
+scriptbodystyle = = scriptbodystyle = ε
+scriptbodystyle " " scriptbodytext " ε
+scriptbodytext any " scriptbodytext ε ε
+scriptbodytext " " scriptbodyatrdone " ε
+scriptbodyatrdone % > scriptbodyopenatr ε ε
+scriptbodyatrdone $ > scriptbodyopenatr ε ε
+scriptbodyatrdone > > scriptbodyopendone > ε
+scriptbodyopen > > scriptbodyopendone > ε
+scriptbodyopendone $ < scriptbodyopendone ε ε
+scriptbodyopendone % < scriptbodyopendone ε ε
+scriptbodyopendone any < scriptbodyopendone ε ε
+
+- src scriptbody 
+scriptbodyopenatr s > scriptbodystyleorsrc ε ε
+scriptbodystyleorsrc r > scriptbodysrc ε c=""
+scriptbodysrc c c scriptbodysrc c ε
+scriptbodysrc = = scriptbodysrc = ε
+scriptbodysrc " " scriptbodytext " ε
+scriptbodytext any " scriptbodytext ε ε
+scriptbodytext " " scriptbodyatrdone " ε
+scriptbodyatrdone % > scriptbodyopenatr ε ε
+scriptbodyatrdone $ > scriptbodyopenatr ε ε
+scriptbodyatrdone > > scriptbodyopendone > ε
+scriptbodyopen > > scriptbodyopendone > ε
+scriptbodyopendone $ < scriptbodyopendone ε ε
+scriptbodyopendone % < scriptbodyopendone ε ε
+
+- closing tag scriptbody
+scriptbodyopendone < < newtaginscriptbody < ε
+newtaginscriptbody / / scriptbodyclose / ε
+scriptbodyclose s s scriptbodyclose s ε
+scriptbodyclose c c scriptbodyclose c ε
+scriptbodyclose r r scriptbodyclose r ε
+scriptbodyclose i i scriptbodyclose i ε
+scriptbodyclose p p scriptbodyclose p ε
+scriptbodyclose t t scriptbodyclose t ε
+scriptbodyclose > > bodyopendone > ε
