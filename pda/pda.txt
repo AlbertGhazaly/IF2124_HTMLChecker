@@ -1407,3 +1407,104 @@ scriptbodyclose i i scriptbodyclose i ε
 scriptbodyclose p p scriptbodyclose p ε
 scriptbodyclose t t scriptbodyclose t ε
 scriptbodyclose > > bodyopendone > ε
+
+- linkbody
+bodyacctag l / linkbody ε inkrel=""><
+
+linkbody i i linkbody i ε
+linkbody n n linkbody n ε
+linkbody k k linkbody k ε
+linkbody $ > linkbodyatr ε ε
+linkbody % > linkbodyatr ε ε
+linkbody $ r linkbodyatr ε ε
+linkbody % r linkbodyatr ε ε
+linkbody > > bodyopendone > ε
+linkbodyatr $ r linkbodyatr ε ε
+linkbodyatr % r linkbodyatr ε ε
+linkbodyatr $ > linkbodyatr ε ε
+linkbodyatr % > linkbodyatr ε ε
+linkbodyatr $ > linkbodyatr ε ε
+linkbodyatr > > bodyopendone > ε
+
+- rel linkbody 
+linkbodyatr r r linkbodyrelwajib r ε
+linkbodyrelwajib e e linkbodyrelwajib e ε
+linkbodyrelwajib l l linkbodyrelwajib l ε
+linkbodyrelwajib = = linkbodyrelwajib = ε
+linkbodyrelwajib " " linkbodytext " ε
+linkbodytext any " linkbodytext ε ε
+linkbodytext " " linkbodyatrdone " ε
+linkbodyatrdone % > linkbodyatr ε ε
+linkbodyatrdone $ > linkbodyatr ε ε
+linkbodyatrdone > > bodyopendone > ε
+
+- id linkbody 
+linkbodyatr i > linkbodyid ε d=""
+linkbodyid d d linkbodyid d ε
+linkbodyid = = linkbodyid = ε
+linkbodyid " " linkbodytext " ε
+linkbodytext any " linkbodytext ε ε
+linkbodytext " " linkbodyatrdone " ε
+linkbodyatrdone % > linkbodyatr ε ε
+linkbodyatrdone $ > linkbodyatr ε ε
+linkbodyatrdone > > bodyopendone > ε
+linkbody > > bodyopendone > ε
+
+
+- class linkbody 
+linkbodyatr c > linkbodyclass ε lass=""
+linkbodyclass l l linkbodyclass l ε
+linkbodyclass a a linkbodyclass a ε
+linkbodyclass s s linkbodyclasss s ε
+linkbodyclasss s s linkbodyclass s ε
+linkbodyclass = = linkbodyclass = ε
+linkbodyclass " " linkbodytext " ε
+linkbodytext any " linkbodytext ε ε
+linkbodytext " " linkbodyatrdone " ε
+linkbodyatrdone % > linkbodyatr ε ε
+linkbodyatrdone $ > linkbodyatr ε ε
+linkbodyatrdone > > bodyopendone > ε
+linkbody > > bodyopendone > ε
+
+
+- style linkbody
+linkbodyatr s > linkbodystyle ε tyle=""
+linkbodystyle t t linkbodystyle t ε
+linkbodystyle y y linkbodystyle y ε
+linkbodystyle l l linkbodycstyle l ε
+linkbodycstyle e e linkbodystyle e ε
+linkbodystyle = = linkbodystyle = ε
+linkbodystyle " " linkbodytext " ε
+linkbodytext any " linkbodytext ε ε
+linkbodytext " " linkbodyatrdone " ε
+linkbodyatrdone % > linkbodyatr ε ε
+linkbodyatrdone $ > linkbodyatr ε ε
+linkbodyatrdone > > bodyopendone > ε
+linkbody > > bodyopendone > ε
+
+- rel linkbody 
+linkbodyatr r > linkbodyrel ε el=""
+linkbodyrel e e linkbodyrel e ε
+linkbodyrel l l linkbodyrel l ε
+linkbodyrel = = linkbodyrel = ε
+linkbodyrel " " linkbodytext " ε
+linkbodytext any " linkbodytext ε ε
+linkbodytext " " linkbodyatrdone " ε
+linkbodyatrdone % > linkbodyatr ε ε
+linkbodyatrdone $ > linkbodyatr ε ε
+linkbodyatrdone > > bodyopendone > ε
+linkbody > > bodyopendone > ε
+
+- href linkbody 
+linkbodyatr h > linkbodyhref ε ref=""
+linkbodyhref r r linkbodyhref r ε
+linkbodyhref e e linkbodyhref e ε
+linkbodyhref f f linkbodyhref f ε
+linkbodyhref = = linkbodyhref = ε
+linkbodyhref " " linkbodytext " ε
+linkbodytext any " linkbodytext ε ε
+linkbodytext " " linkbodyatrdone " ε
+linkbodyatrdone % > linkbodyatr ε ε
+linkbodyatrdone $ > linkbodyatr ε ε
+linkbodyatrdone > > bodyopendone > ε
+linkbody > > bodyopendone > ε
