@@ -1,1601 +1,1632 @@
-('q0', '<', '#') -> ('newtagbeforehtml', 'ε', 'ε')
-('q0', '%', '#') -> ('q0', 'ε', 'ε')
-('q0', '$', '#') -> ('q0', 'ε', 'ε')
-('htmlclosedone', '%', '#') -> ('htmlclosedone', 'ε', 'ε')
-('htmlclosedone', '$', '#') -> ('htmlclosedone', 'ε', 'ε')
-('newtagbeforehtml', '!', '#') -> ('comment', 'ε', '>----')
-('comment', '-', '-') -> ('comment-1', '-', 'ε')
-('comment-1', '-', '-') -> ('comment-2', '-', 'ε')
-('comment-2', '-', '-') -> ('comment-3', '-', 'ε')
-('comment-2', 'any', '-') -> ('comment-2', 'ε', 'ε')
-('comment-3', '-', '-') -> ('comment-4', '-', 'ε')
-('comment-3', 'any', '-') -> ('comment-2', 'ε', '-')
-('comment-4', 'any', '-') -> ('comment-2', 'ε', '--')
-('comment-4', '>', '>') -> ('q0', '>', 'ε')
-('htmlclosedone', '<', '#') -> ('newtagafterhtml', 'ε', 'ε')
-('newtagafterhtml', '!', '#') -> ('commenta', 'ε', '>----')
-('commenta', '-', '-') -> ('comment-1a', '-', 'ε')
-('comment-1a', '-', '-') -> ('comment-2a', '-', 'ε')
-('comment-2a', '-', '-') -> ('comment-3a', '-', 'ε')
-('comment-2a', 'any', '-') -> ('comment-2a', 'ε', 'ε')
-('comment-3a', '-', '-') -> ('comment-4a', '-', 'ε')
-('comment-3a', 'any', '-') -> ('comment-2a', 'ε', '-')
-('comment-4a', 'any', '-') -> ('comment-2a', 'ε', '--')
-('comment-4a', '>', '>') -> ('htmlclosedone', '>', 'ε')
-('newtag', '!', '/') -> ('commenth', 'ε', '>----')
-('commenth', '-', '-') -> ('commenth-1', '-', 'ε')
-('commenth-1', '-', '-') -> ('commenth-2', '-', 'ε')
-('commenth-2', '-', '-') -> ('commenth-3', '-', 'ε')
-('commenth-2', 'any', '-') -> ('commenth-2', 'ε', 'ε')
-('commenth-3', '-', '-') -> ('commenth-4', '-', 'ε')
-('commenth-3', 'any', '-') -> ('commenth-2', 'ε', '-')
-('commenth-4', 'any', '-') -> ('commenth-2', 'ε', '--')
-('commenth-4', '>', '>') -> ('htmlopendone', '>', '<')
-('bodyacctag', '!', '/') -> ('bodycommentopen', 'ε', '<>----')
-('bodycommentopen', '-', '-') -> ('bodycommentopen-1', '-', 'ε')
-('bodycommentopen-1', '-', '-') -> ('bodycommentopen-2', '-', 'ε')
-('bodycommentopen-2', '-', '-') -> ('bodycommentopen-3', '-', 'ε')
-('bodycommentopen-2', 'any', '-') -> ('bodycommentopen-2', 'ε', 'ε')
-('bodycommentopen-3', '-', '-') -> ('bodycommentopen-4', '-', 'ε')
-('bodycommentopen-3', 'any', '-') -> ('bodycommentopen-2', 'ε', '-')
-('bodycommentopen-4', 'any', '-') -> ('bodycommentopen-2', 'ε', '--')
-('bodycommentopen-4', '>', '>') -> ('bodyopendone', '>', 'ε')
-('newtagbeforehtml', 'h', '#') -> ('htmlopen', 'ε', '>lmth/<>lmt')
-('htmlopen', 't', 't') -> ('htmlopen', 't', 'ε')
-('htmlopen', 'm', 'm') -> ('htmlopen', 'm', 'ε')
-('htmlopen', 'l', 'l') -> ('htmlopen', 'l', 'ε')
-('htmlopen', '$', '>') -> ('htmlopenatr', 'ε', 'ε')
-('htmlopen', '%', '>') -> ('htmlopenatr', 'ε', 'ε')
-('htmlopenatr', '%', '>') -> ('htmlopenatr', 'ε', 'ε')
-('htmlopenatr', '>', '>') -> ('htmlopendone', '>', 'ε')
-('htmlopenatr', 'i', '>') -> ('htmlid', 'ε', '""=d')
-('htmlid', 'd', 'd') -> ('htmlid', 'd', 'ε')
-('htmlid', '=', '=') -> ('htmlid', '=', 'ε')
-('htmlid', '"', '"') -> ('htmltext', '"', 'ε')
-('htmltext', 'any', '"') -> ('htmltext', 'ε', 'ε')
-('htmltext', '"', '"') -> ('htmlatrdone', '"', 'ε')
-('htmlatrdone', '%', '>') -> ('htmlopenatr', 'ε', 'ε')
-('htmlatrdone', '$', '>') -> ('htmlopenatr', 'ε', 'ε')
-('htmlatrdone', '>', '>') -> ('htmlopendone', '>', 'ε')
-('htmlopen', '>', '>') -> ('htmlopendone', '>', 'ε')
-('htmlopendone', '$', '<') -> ('htmlopendone', 'ε', 'ε')
-('htmlopendone', '%', '<') -> ('htmlopendone', 'ε', 'ε')
-('htmlopenatr', 'c', '>') -> ('htmlclass', 'ε', '""=ssal')
-('htmlclass', 'l', 'l') -> ('htmlclass', 'l', 'ε')
-('htmlclass', 'a', 'a') -> ('htmlclass', 'a', 'ε')
-('htmlclass', 's', 's') -> ('htmlclasss', 's', 'ε')
-('htmlclasss', 's', 's') -> ('htmlclass', 's', 'ε')
-('htmlclass', '=', '=') -> ('htmlclass', '=', 'ε')
-('htmlclass', '"', '"') -> ('htmltext', '"', 'ε')
-('htmlopenatr', 's', '>') -> ('htmlstyle', 'ε', '""=elyt')
-('htmlstyle', 't', 't') -> ('htmlstyle', 't', 'ε')
-('htmlstyle', 'y', 'y') -> ('htmlstyle', 'y', 'ε')
-('htmlstyle', 'l', 'l') -> ('htmlcstyle', 'l', 'ε')
-('htmlcstyle', 'e', 'e') -> ('htmlstyle', 'e', 'ε')
-('htmlstyle', '=', '=') -> ('htmlstyle', '=', 'ε')
-('htmlstyle', '"', '"') -> ('htmlstyletext', '"', 'ε')
-('htmlopendone', '<', '<') -> ('newtag', '<', 'ε')
-('newtag', '/', '/') -> ('closetag', '/', 'ε')
-('closetag', 'h', 'h') -> ('html/headclose', 'h', 'ε')
-('html/headclose', 't', 't') -> ('htmlclose', 't', 'ε')
-('htmlclose', 'm', 'm') -> ('htmlclose', 'm', 'ε')
-('htmlclose', 'l', 'l') -> ('htmlclose', 'l', 'ε')
-('htmlclose', '>', '>') -> ('htmlclosedone', '>', 'ε')
-('newtag', 'h', '/') -> ('headopen', 'ε', '<>daeh/<>dae')
-('headopen', 'e', 'e') -> ('headopen', 'e', 'ε')
-('headopen', 'a', 'a') -> ('headopen', 'a', 'ε')
-('headopen', 'd', 'd') -> ('headopen', 'd', 'ε')
-('headopen', '$', '>') -> ('headopenatr', 'ε', 'ε')
-('headopen', '%', '>') -> ('headopenatr', 'ε', 'ε')
-('headopenatr', '%', '>') -> ('headopenatr', 'ε', 'ε')
-('headopenatr', '>', '>') -> ('headopendone', '>', 'ε')
-('headopenatr', 'i', '>') -> ('headid', 'ε', '""=d')
-('headid', 'd', 'd') -> ('headid', 'd', 'ε')
-('headid', '=', '=') -> ('headid', '=', 'ε')
-('headid', '"', '"') -> ('headtext', '"', 'ε')
-('headtext', 'any', '"') -> ('headtext', 'ε', 'ε')
-('headtext', '"', '"') -> ('headatrdone', '"', 'ε')
-('headatrdone', '%', '>') -> ('headopenatr', 'ε', 'ε')
-('headatrdone', '$', '>') -> ('headopenatr', 'ε', 'ε')
-('headatrdone', '>', '>') -> ('headopendone', '>', 'ε')
-('headopen', '>', '>') -> ('headopendone', '>', 'ε')
-('headopendone', '$', '<') -> ('headopendone', 'ε', 'ε')
-('headopendone', '%', '<') -> ('headopendone', 'ε', 'ε')
-('headopenatr', 'c', '>') -> ('headclass', 'ε', '""=ssal')
-('headclass', 'l', 'l') -> ('headclass', 'l', 'ε')
-('headclass', 'a', 'a') -> ('headclass', 'a', 'ε')
-('headclass', 's', 's') -> ('headclasss', 's', 'ε')
-('headclasss', 's', 's') -> ('headclass', 's', 'ε')
-('headclass', '=', '=') -> ('headclass', '=', 'ε')
-('headclass', '"', '"') -> ('headtext', '"', 'ε')
-('headopenatr', 's', '>') -> ('headstyle', 'ε', '""=elyt')
-('headstyle', 't', 't') -> ('headstyle', 't', 'ε')
-('headstyle', 'y', 'y') -> ('headstyle', 'y', 'ε')
-('headstyle', 'l', 'l') -> ('headcstyle', 'l', 'ε')
-('headcstyle', 'e', 'e') -> ('headstyle', 'e', 'ε')
-('headstyle', '=', '=') -> ('headstyle', '=', 'ε')
-('headstyle', '"', '"') -> ('headtext', '"', 'ε')
-('newtaginhead', 't', '/') -> ('titleopen', 'ε', '<>eltit/<>elti')
-('titleopen', 't', 't') -> ('titleopen', 't', 'ε')
-('titleopen', 'i', 'i') -> ('titleopen', 'i', 'ε')
-('titleopen', 'l', 'l') -> ('titleopen', 'l', 'ε')
-('titleopen', 'e', 'e') -> ('titleopen', 'e', 'ε')
-('titleopen', '$', '>') -> ('titleopenatr', 'ε', 'ε')
-('titleopen', '%', '>') -> ('titleopenatr', 'ε', 'ε')
-('titleopenatr', '%', '>') -> ('titleopenatr', 'ε', 'ε')
-('titleopenatr', '>', '>') -> ('titleopendone', '>', 'ε')
-('titleopenatr', 'i', '>') -> ('titleid', 'ε', '""=d')
-('titleid', 'd', 'd') -> ('titleid', 'd', 'ε')
-('titleid', '=', '=') -> ('titleid', '=', 'ε')
-('titleid', '"', '"') -> ('titletext', '"', 'ε')
-('titletext', 'any', '"') -> ('titletext', 'ε', 'ε')
-('titletext', '"', '"') -> ('titleatrdone', '"', 'ε')
-('titleatrdone', '%', '>') -> ('titleopenatr', 'ε', 'ε')
-('titleatrdone', '$', '>') -> ('titleopenatr', 'ε', 'ε')
-('titleatrdone', '>', '>') -> ('titleopendone', '>', 'ε')
-('titleopen', '>', '>') -> ('titleopendone', '>', 'ε')
-('titleopendone', '$', '<') -> ('titleopendone', 'ε', 'ε')
-('titleopendone', '%', '<') -> ('titleopendone', 'ε', 'ε')
-('titleopenatr', 'c', '>') -> ('titleclass', 'ε', '""=ssal')
-('titleclass', 'l', 'l') -> ('titleclass', 'l', 'ε')
-('titleclass', 'a', 'a') -> ('titleclass', 'a', 'ε')
-('titleclass', 's', 's') -> ('titleclasss', 's', 'ε')
-('titleclasss', 's', 's') -> ('titleclass', 's', 'ε')
-('titleclass', '=', '=') -> ('titleclass', '=', 'ε')
-('titleclass', '"', '"') -> ('titletext', '"', 'ε')
-('headeopendone', '$', '<') -> ('titleopendone', 'ε', 'ε')
-('headeopendone', '%', '<') -> ('titleopendone', 'ε', 'ε')
-('titleopenatr', 's', '>') -> ('titlestyle', 'ε', '""=elyt')
-('titlestyle', 't', 't') -> ('titlestyle', 't', 'ε')
-('titlestyle', 'y', 'y') -> ('titlestyle', 'y', 'ε')
-('titlestyle', 'l', 'l') -> ('titlecstyle', 'l', 'ε')
-('titlecstyle', 'e', 'e') -> ('titlestyle', 'e', 'ε')
-('titlestyle', '=', '=') -> ('titlestyle', '=', 'ε')
-('titlestyle', '"', '"') -> ('titletext', '"', 'ε')
-('titleopendone', 'any', '<') -> ('titleopendone', 'ε', 'ε')
-('titleopendone', '<', '<') -> ('newtagintitle', '<', 'ε')
-('newtagintitle', '/', '/') -> ('titleclose', '/', 'ε')
-('titleclose', 't', 't') -> ('titleclose', 't', 'ε')
-('titleclose', 'i', 'i') -> ('titleclose', 'i', 'ε')
-('titleclose', 'l', 'l') -> ('titleclose', 'l', 'ε')
-('titleclose', 'e', 'e') -> ('titleclose', 'e', 'ε')
-('titleclose', '>', '>') -> ('headopendone', '>', 'ε')
-('newtaginhead', 's', '/') -> ('scriptopen', 'ε', '<>tpircs/<>tpirc')
-('scriptopen', 's', 's') -> ('scriptopen', 's', 'ε')
-('scriptopen', 'c', 'c') -> ('scriptopen', 'c', 'ε')
-('scriptopen', 'r', 'r') -> ('scriptopen', 'r', 'ε')
-('scriptopen', 'i', 'i') -> ('scriptopen', 'i', 'ε')
-('scriptopen', 'p', 'p') -> ('scriptopen', 't', 'ε')
-('scriptopen', 't', 't') -> ('scriptopen', 't', 'ε')
-('scriptopen', '$', '>') -> ('scriptopenatr', 'ε', 'ε')
-('scriptopen', '%', '>') -> ('scriptopenatr', 'ε', 'ε')
-('scriptopenatr', '%', '>') -> ('scriptopenatr', 'ε', 'ε')
-('scriptopenatr', '>', '>') -> ('scriptopendone', '>', 'ε')
-('scriptopenatr', 'i', '>') -> ('scriptid', 'ε', '""=d')
-('scriptid', 'd', 'd') -> ('scriptid', 'd', 'ε')
-('scriptid', '=', '=') -> ('scriptid', '=', 'ε')
-('scriptid', '"', '"') -> ('scripttext', '"', 'ε')
-('scripttext', 'any', '"') -> ('scripttext', 'ε', 'ε')
-('scripttext', '"', '"') -> ('scriptatrdone', '"', 'ε')
-('scriptatrdone', '%', '>') -> ('scriptopenatr', 'ε', 'ε')
-('scriptatrdone', '$', '>') -> ('scriptopenatr', 'ε', 'ε')
-('scriptatrdone', '>', '>') -> ('scriptopendone', '>', 'ε')
-('scriptopen', '>', '>') -> ('scriptopendone', '>', 'ε')
-('scriptopendone', '$', '<') -> ('scriptopendone', 'ε', 'ε')
-('scriptopendone', '%', '<') -> ('scriptopendone', 'ε', 'ε')
-('scriptopenatr', 'c', '>') -> ('scriptclass', 'ε', '""=ssal')
-('scriptclass', 'l', 'l') -> ('scriptclass', 'l', 'ε')
-('scriptclass', 'a', 'a') -> ('scriptclass', 'a', 'ε')
-('scriptclass', 's', 's') -> ('scriptclasss', 's', 'ε')
-('scriptclasss', 's', 's') -> ('scriptclass', 's', 'ε')
-('scriptclass', '=', '=') -> ('scriptclass', '=', 'ε')
-('scriptclass', '"', '"') -> ('scripttext', '"', 'ε')
-('scriptopenatr', 's', '>') -> ('scriptstyleorsrc', 'ε', 'ε')
-('scriptstyleorsrc', 't', '>') -> ('scriptstyle', 'ε', '""=ely')
-('scriptstyle', 'y', 'y') -> ('scriptstyle', 'y', 'ε')
-('scriptstyle', 'l', 'l') -> ('scriptcstyle', 'l', 'ε')
-('scriptcstyle', 'e', 'e') -> ('scriptstyle', 'e', 'ε')
-('scriptstyle', '=', '=') -> ('scriptstyle', '=', 'ε')
-('scriptstyle', '"', '"') -> ('scripttext', '"', 'ε')
-('scriptopendone', 'any', '<') -> ('scriptopendone', 'ε', 'ε')
-('scriptstyleorsrc', 'r', '>') -> ('scriptsrc', 'ε', '""=c')
-('scriptsrc', 'c', 'c') -> ('scriptsrc', 'c', 'ε')
-('scriptsrc', '=', '=') -> ('scriptsrc', '=', 'ε')
-('scriptsrc', '"', '"') -> ('scripttext', '"', 'ε')
-('scriptopendone', '<', '<') -> ('newtaginscript', '<', 'ε')
-('newtaginscript', '/', '/') -> ('scriptclose', '/', 'ε')
-('scriptclose', 's', 's') -> ('scriptclose', 's', 'ε')
-('scriptclose', 'c', 'c') -> ('scriptclose', 'c', 'ε')
-('scriptclose', 'r', 'r') -> ('scriptclose', 'r', 'ε')
-('scriptclose', 'i', 'i') -> ('scriptclose', 'i', 'ε')
-('scriptclose', 'p', 'p') -> ('scriptclose', 'p', 'ε')
-('scriptclose', 't', 't') -> ('scriptclose', 't', 'ε')
-('scriptclose', '>', '>') -> ('headopendone', '>', 'ε')
-('newtaginhead', 'l', '/') -> ('link', 'ε', '<>""=lerkni')
-('link', 'i', 'i') -> ('link', 'i', 'ε')
-('link', 'n', 'n') -> ('link', 'n', 'ε')
-('link', 'k', 'k') -> ('link', 'k', 'ε')
-('link', '$', '>') -> ('linkatr', 'ε', 'ε')
-('link', '%', '>') -> ('linkatr', 'ε', 'ε')
-('link', '$', 'r') -> ('linkatr', 'ε', 'ε')
-('link', '%', 'r') -> ('linkatr', 'ε', 'ε')
-('link', '>', '>') -> ('headopendone', '>', 'ε')
-('linkatr', '$', 'r') -> ('linkatr', 'ε', 'ε')
-('linkatr', '%', 'r') -> ('linkatr', 'ε', 'ε')
-('linkatr', '$', '>') -> ('linkatr', 'ε', 'ε')
-('linkatr', '%', '>') -> ('linkatr', 'ε', 'ε')
-('linkatr', '>', '>') -> ('headopendone', '>', 'ε')
-('linkatr', 'r', 'r') -> ('linkrelwajib', 'r', 'ε')
-('linkrelwajib', 'e', 'e') -> ('linkrelwajib', 'e', 'ε')
-('linkrelwajib', 'l', 'l') -> ('linkrelwajib', 'l', 'ε')
-('linkrelwajib', '=', '=') -> ('linkrelwajib', '=', 'ε')
-('linkrelwajib', '"', '"') -> ('linktext', '"', 'ε')
-('linktext', 'any', '"') -> ('linktext', 'ε', 'ε')
-('linktext', '"', '"') -> ('linkatrdone', '"', 'ε')
-('linkatrdone', '%', '>') -> ('linkatr', 'ε', 'ε')
-('linkatrdone', '$', '>') -> ('linkatr', 'ε', 'ε')
-('linkatrdone', '>', '>') -> ('headopendone', '>', 'ε')
-('linkatr', 'i', '>') -> ('linkid', 'ε', '""=d')
-('linkid', 'd', 'd') -> ('linkid', 'd', 'ε')
-('linkid', '=', '=') -> ('linkid', '=', 'ε')
-('linkid', '"', '"') -> ('linktext', '"', 'ε')
-('linkatr', 'c', '>') -> ('linkclass', 'ε', '""=ssal')
-('linkclass', 'l', 'l') -> ('linkclass', 'l', 'ε')
-('linkclass', 'a', 'a') -> ('linkclass', 'a', 'ε')
-('linkclass', 's', 's') -> ('linkclasss', 's', 'ε')
-('linkclasss', 's', 's') -> ('linkclass', 's', 'ε')
-('linkclass', '=', '=') -> ('linkclass', '=', 'ε')
-('linkclass', '"', '"') -> ('linktext', '"', 'ε')
-('linkatr', 's', '>') -> ('linkstyle', 'ε', '""=elyt')
-('linkstyle', 't', 't') -> ('linkstyle', 't', 'ε')
-('linkstyle', 'y', 'y') -> ('linkstyle', 'y', 'ε')
-('linkstyle', 'l', 'l') -> ('linkcstyle', 'l', 'ε')
-('linkcstyle', 'e', 'e') -> ('linkstyle', 'e', 'ε')
-('linkstyle', '=', '=') -> ('linkstyle', '=', 'ε')
-('linkstyle', '"', '"') -> ('linktext', '"', 'ε')
-('linkatr', 'r', '>') -> ('linkrel', 'ε', '""=le')
-('linkrel', 'e', 'e') -> ('linkrel', 'e', 'ε')
-('linkrel', 'l', 'l') -> ('linkrel', 'l', 'ε')
-('linkrel', '=', '=') -> ('linkrel', '=', 'ε')
-('linkrel', '"', '"') -> ('linktext', '"', 'ε')
-('linkatr', 'h', '>') -> ('linkhref', 'ε', '""=fer')
-('linkhref', 'r', 'r') -> ('linkhref', 'r', 'ε')
-('linkhref', 'e', 'e') -> ('linkhref', 'e', 'ε')
-('linkhref', 'f', 'f') -> ('linkhref', 'f', 'ε')
-('linkhref', '=', '=') -> ('linkhref', '=', 'ε')
-('linkhref', '"', '"') -> ('linktext', '"', 'ε')
-('headopendone', '<', '<') -> ('newtaginhead', '<', 'ε')
-('newtaginhead', '/', '/') -> ('headclose', '/', 'ε')
-('headclose', 'h', 'h') -> ('headclose', 'h', 'ε')
-('headclose', 'e', 'e') -> ('headclose', 'e', 'ε')
-('headclose', 'a', 'a') -> ('headclose', 'a', 'ε')
-('headclose', 'd', 'd') -> ('headclose', 'd', 'ε')
-('headclose', '>', '>') -> ('headclosedone', '>', 'ε')
-('headclosedone', '$', '<') -> ('headclosedone', 'ε', 'ε')
-('headclosedone', '%', '<') -> ('headclosedone', 'ε', 'ε')
-('headclosedone', '<', '<') -> ('newtag', '/', 'ε')
-('newtag', 'b', '/') -> ('bodyopen', 'ε', '<>ydob/<>ydo')
-('bodyopen', 'o', 'o') -> ('bodyopen', 'o', 'ε')
-('bodyopen', 'd', 'd') -> ('bodyopen', 'd', 'ε')
-('bodyopen', 'y', 'y') -> ('bodyopen', 'y', 'ε')
-('bodyopen', '%', '>') -> ('bodyopenatr', 'ε', 'ε')
-('bodyopenatr', '%', '>') -> ('bodyopenatr', 'ε', 'ε')
-('bodyopenatr', 'i', '>') -> ('bodyid', 'ε', '""=d')
-('bodyid', 'd', 'd') -> ('bodyid', 'd', 'ε')
-('bodyid', '=', '=') -> ('bodyid', '=', 'ε')
-('bodyid', '"', '"') -> ('bodyidtext', '"', 'ε')
-('bodyidtext', 'any', '"') -> ('bodyidtext', 'ε', 'ε')
-('bodyidtext', '"', '"') -> ('bodyatrdone', '"', 'ε')
-('bodyatrdone', '%', '>') -> ('bodyatrdone', 'ε', 'ε')
-('bodyatrdone', '>', '>') -> ('bodyopendone', '>', 'ε')
-('bodyopen', '>', '>') -> ('bodyopendone', '>', 'ε')
-('bodyopendone', 'any', '<') -> ('bodyopendone', 'ε', 'ε')
-('bodyopendone', '%', '<') -> ('bodyopendone', 'ε', 'ε')
-('bodyopendone', '<', '<') -> ('bodyacctag', '<', 'ε')
-('bodyacctag', '/', '/') -> ('bodyclosetag', '/', 'ε')
-('bodyacctag', 'a', '/') -> ('abodytag', 'ε', 'ε')
-('bodyclosetag', 'a', 'a') -> ('aclose', 'a', 'ε')
-('bodyclosetag', 's', 's') -> ('strong/smallbodyclose', 's', 'ε')
-('bodyclosetags', 'c', 'c') -> ('scriptbodyclose', 'c', 'ε')
-('bodyclosetag', 'f', 'f') -> ('formclosetag', 'f', 'ε')
-('bodyclosetag', 't', 't') -> ('tableclosetag', 't', 'ε')
-('bodyclosetag', 'b', 'b') -> ('bodyclosetagb', 'b', 'ε')
-('bodyclosetagb', 'u', 'u') -> ('buttonclosetag', 'u', 'ε')
-('bodyclosetagb', 'o', 'o') -> ('bodyclose', 'o', 'ε')
-('bodyclosetag', 'd', 'd') -> ('divclosetag', 'd', 'ε')
-('bodyclosetag', 'h', 'h') -> ('hclosetag', 'h', 'ε')
-('hclosetag', '1', '1') -> ('hclosetag', '1', 'ε')
-('hclosetag', '2', '2') -> ('hclosetag', '2', 'ε')
-('hclosetag', '3', '3') -> ('hclosetag', '3', 'ε')
-('hclosetag', '4', '4') -> ('hclosetag', '4', 'ε')
-('hclosetag', '5', '5') -> ('hclosetag', '5', 'ε')
-('hclosetag', '6', '6') -> ('hclosetag', '6', 'ε')
-('hclosetag', '>', '>') -> ('bodyopendone', '>', '<')
-('bodyclose', 'o', 'o') -> ('bodyclose', 'o', 'ε')
-('bodyclose', 'd', 'd') -> ('bodyclose', 'd', 'ε')
-('bodyclose', 'y', 'y') -> ('bodyclose', 'y', 'ε')
-('bodyclose', '>', '>') -> ('bodyclosedone', '>', 'ε')
-('bodyclosedone', '$', '<') -> ('bodyclosedone', 'ε', 'ε')
-('bodyclosedone', '%', '<') -> ('bodyclosedone', 'ε', 'ε')
-('bodyclosedone', '<', '<') -> ('newtag', '<', 'ε')
-('bodyacctag', 'i', '/') -> ('bodyitag', 'ε', '<')
-('bodyitag', 'm', '<') -> ('imgopen', 'ε', '>""=crsg')
-('imgopen', 'g', 'g') -> ('imgopen', 'g', 'ε')
-('imgtext', '"', '"') -> ('imgopen', '"', 'ε')
-('imgtext', 'any', '"') -> ('imgtext', 'ε', 'ε')
-('imgopen', '%', 's') -> ('imgopenatr', 'ε', 'ε')
-('imgopen', '%', '>') -> ('imgopenatr', 'ε', 'ε')
-('imgopenatr', '%', 's') -> ('imgopenatr', 'ε', 'ε')
-('imgopenatr', '$', 's') -> ('imgopenatr', 'ε', 'ε')
-('imgopenatr', 'i', 's') -> ('imgid', 'ε', '""=d')
-('imgopenatr', 'i', '>') -> ('imgid', 'ε', '""=d')
-('imgid', 'd', 'd') -> ('imgid', 'd', 'ε')
-('imgid', '=', '=') -> ('imgid', '=', 'ε')
-('imgid', '"', '"') -> ('imgtext', '"', 'ε')
-('imgopenatr', 'c', 's') -> ('imgclass', 'ε', '""=ssal')
-('imgopenatr', 'c', '>') -> ('imgclass', 'ε', '""=ssal')
-('imgclass', 'l', 'l') -> ('imgclass', 'l', 'ε')
-('imgclass', 'a', 'a') -> ('imgclass', 'a', 'ε')
-('imgclass', 's', 's') -> ('imgclass', 's', 'ε')
-('imgclass', '=', '=') -> ('imgclass', '=', 'ε')
-('imgclass', '"', '"') -> ('imgtext', '"', 'ε')
-('imgopenatr', 's', 's') -> ('imgsattr', 's', 'ε')
-('imgopenatr', 's', '>') -> ('imgsattr', 'ε', 'ε')
-('imgsattr', 't', 'r') -> ('imgstyle', 'ε', 's""=ely')
-('imgsattr', 't', '>') -> ('imgstyle', 'ε', '""=ely')
-('imgstyle', 'y', 'y') -> ('imgstyle', 'y', 'ε')
-('imgstyle', 'l', 'l') -> ('imgstyle', 'l', 'ε')
-('imgstyle', 'e', 'e') -> ('imgstyle', 'e', 'ε')
-('imgstyle', '=', '=') -> ('imgstyle', '=', 'ε')
-('imgstyle', '"', '"') -> ('imgtext', '"', 'ε')
-('imgsattr', 'r', 'r') -> ('imgsrc', 'r', 'ε')
-('imgsrc', 'c', 'c') -> ('imgsrc', 'c', 'ε')
-('imgsrc', '=', '=') -> ('imgsrc', '=', 'ε')
-('imgsrc', '"', '"') -> ('imgtext', '"', 'ε')
-('imgopenatr', 'a', 's') -> ('imgalt', 'ε', '""=tl')
-('imgopenatr', 'a', '>') -> ('imgalt', 'ε', '""=tl')
-('imgalt', 'l', 'l') -> ('imgalt', 'l', 'ε')
-('imgalt', 't', 't') -> ('imgalt', 't', 'ε')
-('imgalt', '=', '=') -> ('imgalt', '=', 'ε')
-('imgalt', '"', '"') -> ('imgtext', '"', 'ε')
-('imgopen', '>', '>') -> ('bodyopendone', '>', 'ε')
-('imgopenatr', '>', '>') -> ('bodyopendone', '>', 'ε')
-('bodyitag', 'n', '<') -> ('input', 'ε', '>tup')
-('input', 'p', 'p') -> ('input', 'p', 'ε')
-('input', 'u', 'u') -> ('input', 'u', 'ε')
-('input', 't', 't') -> ('inputdone', 't', 'ε')
-('inputdone', '%', '>') -> ('inputatr', 'ε', 'ε')
-('inputdone', '$', '>') -> ('inputatr', 'ε', 'ε')
-('inputatr', '$', '>') -> ('inputatr', 'ε', 'ε')
-('inputatr', '%', '>') -> ('inputatr', 'ε', 'ε')
-('inputatr', 't', '>') -> ('inputatr', 'ε', '""=epy')
-('inputatr', 'y', 'y') -> ('inputatr', 'y', 'ε')
-('inputatr', 'p', 'p') -> ('inputatr', 'p', 'ε')
-('inputatr', 'e', 'e') -> ('inputatr', 'e', 'ε')
-('inputatr', '=', '=') -> ('inputatr', '=', 'ε')
-('inputatr', '"', '"') -> ('inputtext', '"', 'ε')
-('inputdone', '>', '>') -> ('bodyopendone', '>', 'ε')
-('inputatr', '>', '>') -> ('bodyopendone', '>', 'ε')
-('inputedtext', '"', '"') -> ('inputdone', '"', 'ε')
-('inputtext', 't', '"') -> ('inputedtext', 'ε', 'txe')
-('inputedtext', 'e', 'e') -> ('inputedtext', 'e', 'ε')
-('inputedtext', 'x', 'x') -> ('inputedtext', 'x', 'ε')
-('inputedtext', 't', 't') -> ('inputedtext', 't', 'ε')
-('inputtext', 'p', '"') -> ('inputedtext', 'ε', 'drowssa')
-('inputedtext', 'a', 'a') -> ('inputedtext', 'a', 'ε')
-('inputedtext', 's', 's') -> ('inputedtext', 's', 'ε')
-('inputedtext', 'w', 'w') -> ('inputedtext', 'w', 'ε')
-('inputedtext', 'o', 'o') -> ('inputedtext', 'o', 'ε')
-('inputedtext', 'r', 'r') -> ('inputedtext', 'r', 'ε')
-('inputedtext', 'd', 'd') -> ('inputedtext', 'd', 'ε')
-('inputtext', 'e', '"') -> ('inputedtext', 'ε', 'liam')
-('inputedtext', 'm', 'm') -> ('inputedtext', 'm', 'ε')
-('inputedtext', 'i', 'i') -> ('inputedtext', 'i', 'ε')
-('inputedtext', 'l', 'l') -> ('inputedtext', 'l', 'ε')
-('inputtext', 'n', '"') -> ('inputedtext', 'ε', 'rebmu')
-('inputedtext', 'u', 'u') -> ('inputedtext', 'u', 'ε')
-('inputedtext', 'b', 'b') -> ('inputedtext', 'b', 'ε')
-('inputtext', 'c', '"') -> ('inputedtext', 'ε', 'xobkceh')
-('inputedtext', 'h', 'h') -> ('inputedtext', 'h', 'ε')
-('inputedtext', 'c', 'c') -> ('inputedtext', 'c', 'ε')
-('inputedtext', 'k', 'k') -> ('inputedtext', 'k', 'ε')
-('inputanytext', 'any', '"') -> ('inputanytext', 'ε', 'ε')
-('inputanytext', '"', '"') -> ('inputdone', '"', 'ε')
-('inputatr', 'i', '>') -> ('inputid', 'ε', '""=d')
-('inputid', 'd', 'd') -> ('inputid', 'd', 'ε')
-('inputid', '=', '=') -> ('inputid', '=', 'ε')
-('inputid', '"', '"') -> ('inputanytext', '"', 'ε')
-('inputatr', 'c', '>') -> ('inputclass', 'ε', '""=ssal')
-('inputclass', 'l', 'l') -> ('inputclass', 'l', 'ε')
-('inputclass', 'a', 'a') -> ('inputclass', 'a', 'ε')
-('inputclass', 's', 's') -> ('inputclass', 's', 'ε')
-('inputclass', '=', '=') -> ('inputclass', '=', 'ε')
-('inputclass', '"', '"') -> ('inputanytext', '"', 'ε')
-('inputatr', 's', '>') -> ('inputstyle', 'ε', '""=elyt')
-('inputstyle', 't', 't') -> ('inputstyle', 't', 'ε')
-('inputstyle', 'y', 'y') -> ('inputstyle', 'y', 'ε')
-('inputstyle', 'l', 'l') -> ('inputstyle', 'l', 'ε')
-('inputstyle', 'e', 'e') -> ('inputstyle', 'e', 'ε')
-('inputstyle', '=', '=') -> ('inputstyle', '=', 'ε')
-('inputstyle', '"', '"') -> ('inputanytext', '"', 'ε')
-('bodyacctag', 'h', '/') -> ('hopentag', 'ε', 'ε')
-('hopentag', 'r', '/') -> ('hropentag', 'ε', '>')
-('hropentag', '%', '>') -> ('hrtagatr', 'ε', 'ε')
-('hropentag', '$', '>') -> ('hrtagatr', 'ε', 'ε')
-('hrtagatr', '%', '>') -> ('hrtagatr', 'ε', 'ε')
-('hrtagatr', '$', '>') -> ('hrtagatr', 'ε', 'ε')
-('hrtagatr', '>', '>') -> ('bodyopendone', '>', '<')
-('hropentag', '>', '>') -> ('bodyopendone', '>', '<')
-('hrtagatr', 'i', '>') -> ('hrtagid', 'ε', '""=d')
-('hrtagid', 'd', 'd') -> ('hrtagid', 'd', 'ε')
-('hrtagid', '=', '=') -> ('hrtagid', '=', 'ε')
-('hrtagid', '"', '"') -> ('hrtagtext', '"', 'ε')
-('hrtagtext', 'any', '"') -> ('hrtagtext', 'ε', 'ε')
-('hrtagtext', '"', '"') -> ('hropentag', '"', 'ε')
-('hrtagatr', 'c', '>') -> ('hrtagclass', 'ε', '""=ssal')
-('hrtagclass', 'l', 'l') -> ('hrtagclass', 'l', 'ε')
-('hrtagclass', 'a', 'a') -> ('hrtagclass', 'a', 'ε')
-('hrtagclass', 's', 's') -> ('hrtagclass', 's', 'ε')
-('hrtagclass', '=', '=') -> ('hrtagclass', '=', 'ε')
-('hrtagclass', '"', '"') -> ('hrtagtext', '"', 'ε')
-('hrtagatr', 's', '>') -> ('hrtagstyle', 'ε', '""=elyt')
-('hrtagstyle', 't', 't') -> ('hrtagstyle', 't', 'ε')
-('hrtagstyle', 'y', 'y') -> ('hrtagstyle', 'y', 'ε')
-('hrtagstyle', 'l', 'l') -> ('hrtagstyle', 'l', 'ε')
-('hrtagstyle', 'e', 'e') -> ('hrtagstyle', 'e', 'ε')
-('hrtagstyle', '=', '=') -> ('hrtagstyle', '=', 'ε')
-('hrtagstyle', '"', '"') -> ('hrtagtext', '"', 'ε')
-('bodyacctag', 'f', '/') -> ('formopentag', 'ε', '>mrof/<>mro')
-('formopentag', 'o', 'o') -> ('formopentag', 'o', 'ε')
-('formopentag', 'r', 'r') -> ('formopentag', 'e', 'ε')
-('formopentag', 'm', 'm') -> ('formopentag', 'm', 'ε')
-('formopentag', '%', '>') -> ('formtagatr', 'ε', 'ε')
-('formopentag', '$', '>') -> ('formtagatr', 'ε', 'ε')
-('formtagatr', '$', '>') -> ('formtagatr', 'ε', 'ε')
-('formtagatr', '%', '>') -> ('formtagatr', 'ε', 'ε')
-('formopentag', '>', '>') -> ('bodyopendone', '>', 'ε')
-('formtagatr', '>', '>') -> ('bodyopendone', '>', 'ε')
-('formclosetag', 'o', 'o') -> ('formclosetag', 'o', 'ε')
-('formclosetag', 'r', 'r') -> ('formclosetag', 'r', 'ε')
-('formclosetag', 'm', 'm') -> ('formclosetag', 'm', 'ε')
-('formclosetag', '>', '>') -> ('bodyopendone', '>', '<')
-('formtagatr', 'i', '>') -> ('formtagid', 'ε', '""=d')
-('formtagid', 'd', 'd') -> ('formtagid', 'd', 'ε')
-('formtagid', '=', '=') -> ('formtagid', '=', 'ε')
-('formtagid', '"', '"') -> ('formtagtext', '"', 'ε')
-('formtagtext', 'any', '"') -> ('formtagtext', 'ε', 'ε')
-('formtagtext', '"', '"') -> ('formopentag', '"', 'ε')
-('formtagatr', 'c', '>') -> ('formtagclass', 'ε', '""=ssal')
-('formtagclass', 'l', 'l') -> ('formtagclass', 'l', 'ε')
-('formtagclass', 'a', 'a') -> ('formtagclass', 'a', 'ε')
-('formtagclass', 's', 's') -> ('formtagclass', 's', 'ε')
-('formtagclass', '=', '=') -> ('formtagclass', '=', 'ε')
-('formtagclass', '"', '"') -> ('formtagtext', '"', 'ε')
-('formtagatr', 's', '>') -> ('formtagstyle', 'ε', '""=elyt')
-('formtagstyle', 't', 't') -> ('formtagstyle', 't', 'ε')
-('formtagstyle', 'y', 'y') -> ('formtagstyle', 'y', 'ε')
-('formtagstyle', 'l', 'l') -> ('formtagstyle', 'l', 'ε')
-('formtagstyle', 'e', 'e') -> ('formtagstyle', 'e', 'ε')
-('formtagstyle', '=', '=') -> ('formtagstyle', '=', 'ε')
-('formtagstyle', '"', '"') -> ('formtagtext', '"', 'ε')
-('formtagatr', 'a', '>') -> ('formtagaction', 'ε', '""=noitc')
-('formtagaction', 'c', 'c') -> ('formtagaction', 'c', 'ε')
-('formtagaction', 't', 't') -> ('formtagaction', 't', 'ε')
-('formtagaction', 'i', 'i') -> ('formtagaction', 'i', 'ε')
-('formtagaction', 'o', 'o') -> ('formtagaction', 'o', 'ε')
-('formtagaction', 'n', 'n') -> ('formtagaction', 'n', 'ε')
-('formtagaction', '=', '=') -> ('formtagaction', '=', 'ε')
-('formtagaction', '"', '"') -> ('formtagtext', '"', 'ε')
-('formtagatr', 'm', '>') -> ('formtagaction', 'ε', '""=dohte')
-('formtagaction', 'e', 'e') -> ('formtagaction', 'e', 'ε')
-('formtagaction', 'h', 'h') -> ('formtagaction', 'h', 'ε')
-('formtagaction', 'd', 'd') -> ('formtagaction', 'd', 'ε')
-('formtagtext', 'G', '"') -> ('formtagacttextget', 'ε', 'TE')
-('formtagacttextget', 'E', 'E') -> ('formtagacttextget', 'E', 'ε')
-('formtagacttextget', 'T', 'T') -> ('formtagacttextget', 'T', 'ε')
-('formtagacttextget', '"', '"') -> ('formopentag', '"', 'ε')
-('formtagtext', 'P', '"') -> ('formtagacttextpost', 'ε', 'TSO')
-('formtagacttextpost', 'O', 'O') -> ('formtagacttextpost', 'O', 'ε')
-('formtagacttextpost', 'S', 'S') -> ('formtagacttextpost', 'S', 'ε')
-('formtagacttextpost', 'T', 'T') -> ('formtagacttextpost', 'T', 'ε')
-('formtagacttextpost', '"', '"') -> ('formopentag', '"', 'ε')
-('bodyacctag', 'b', '/') -> ('bopentag', 'ε', 'ε')
-('bopentag', 'u', '/') -> ('buttonopentag', 'ε', '>nottub/<>nott')
-('buttonopentag', 't', 't') -> ('buttonopentag', 't', 'ε')
-('buttonopentag', 'o', 'o') -> ('buttonopentag', 'o', 'ε')
-('buttonopentag', 'n', 'n') -> ('buttonopentag', 'n', 'ε')
-('buttonopentag', '%', '>') -> ('buttontagatr', 'ε', 'ε')
-('buttonopentag', '$', '>') -> ('buttontagatr', 'ε', 'ε')
-('buttontagatr', '%', '>') -> ('buttontagatr', 'ε', 'ε')
-('buttontagatr', '$', '>') -> ('buttontagatr', 'ε', 'ε')
-('buttonopentag', '>', '>') -> ('bodyopendone', '>', 'ε')
-('buttonclosetag', 't', 't') -> ('buttonclosetag', 't', 'ε')
-('buttonclosetag', 'o', 'o') -> ('buttonclosetag', 'o', 'ε')
-('buttonclosetag', 'n', 'n') -> ('buttonclosetag', 'n', 'ε')
-('buttonclosetag', '>', '>') -> ('bodyopendone', '>', '<')
-('buttontagatr', 'i', '>') -> ('buttontagid', 'ε', '""=d')
-('buttontagid', 'd', 'd') -> ('buttontagid', 'd', 'ε')
-('buttontagid', '=', '=') -> ('buttontagid', '=', 'ε')
-('buttontagid', '"', '"') -> ('buttontagtext', '"', 'ε')
-('buttontagtext', 'any', '"') -> ('buttontagtext', 'ε', 'ε')
-('buttontagtext', '"', '"') -> ('buttonopentag', '"', 'ε')
-('buttontagatr', 'c', '>') -> ('buttontagclass', 'ε', '""=ssal')
-('buttontagclass', 'l', 'l') -> ('buttontagclass', 'l', 'ε')
-('buttontagclass', 'a', 'a') -> ('buttontagclass', 'a', 'ε')
-('buttontagclass', 's', 's') -> ('buttontagclass', 's', 'ε')
-('buttontagclass', '=', '=') -> ('buttontagclass', '=', 'ε')
-('buttontagclass', '"', '"') -> ('buttontagtext', '"', 'ε')
-('buttontagatr', 's', '>') -> ('buttontagstyle', 'ε', '""=elyt')
-('buttontagstyle', 't', 't') -> ('buttontagstyle', 't', 'ε')
-('buttontagstyle', 'y', 'y') -> ('buttontagstyle', 'y', 'ε')
-('buttontagstyle', 'l', 'l') -> ('buttontagstyle', 'l', 'ε')
-('buttontagstyle', 'e', 'e') -> ('buttontagstyle', 'e', 'ε')
-('buttontagstyle', '=', '=') -> ('buttontagstyle', '=', 'ε')
-('buttontagstyle', '"', '"') -> ('buttontagtext', '"', 'ε')
-('buttontagatr', 't', '>') -> ('buttontagtype', 'ε', '""=epy')
-('buttontagtype', 'y', 'y') -> ('buttontagtype', 'y', 'ε')
-('buttontagtype', 'p', 'p') -> ('buttontagtype', 'p', 'ε')
-('buttontagtype', 'e', 'e') -> ('buttontagtype', 'e', 'ε')
-('buttontagtype', '=', '=') -> ('buttontagtype', '=', 'ε')
-('buttontagtype', '"', '"') -> ('buttontagtext', '"', 'ε')
-('buttontagtext', 'S', '"') -> ('buttontagtypetextsubmit', 'ε', 'TIMBU')
-('buttontagtypetextsubmit', 'U', 'U') -> ('buttontagtypetextsubmit', 'U', 'ε')
-('buttontagtypetextsubmit', 'B', 'B') -> ('buttontagtypetextsubmit', 'B', 'ε')
-('buttontagtypetextsubmit', 'M', 'M') -> ('buttontagtypetextsubmit', 'M', 'ε')
-('buttontagtypetextsubmit', 'I', 'I') -> ('buttontagtypetextsubmit', 'I', 'ε')
-('buttontagtypetextsubmit', 'T', 'T') -> ('buttontagtypetextsubmit', 'T', 'ε')
-('buttontagtypetextsubmit', '"', '"') -> ('buttonopentag', '"', 'ε')
-('buttontagtext', 'R', '"') -> ('buttontagtypetextreset', 'ε', 'TESE')
-('buttontagtypetextreset', 'E', 'E') -> ('buttontagtypetextreset', 'E', 'ε')
-('buttontagtypetextreset', 'S', 'S') -> ('buttontagtypetextreset', 'S', 'ε')
-('buttontagtypetextreset', 'T', 'T') -> ('buttontagtypetextreset', 'T', 'ε')
-('buttontagtypetextreset', '"', '"') -> ('buttonopentag', '"', 'ε')
-('buttontagtext', 'B', '"') -> ('buttontagtypetextbutton', 'ε', 'NOTTU')
-('buttontagtypetextbutton', 'U', 'U') -> ('buttontagtypetextbutton', 'U', 'ε')
-('buttontagtypetextbutton', 'T', 'T') -> ('buttontagtypetextbutton', 'T', 'ε')
-('buttontagtypetextbutton', 'O', 'O') -> ('buttontagtypetextbutton', 'O', 'ε')
-('buttontagtypetextbutton', 'N', 'N') -> ('buttontagtypetextbutton', 'N', 'ε')
-('buttontagtypetextbutton', '"', '"') -> ('buttonopentag', '"', 'ε')
-('hopentag', '1', '/') -> ('h1opentag', 'ε', '>1h/<>')
-('h1opentag', '%', '>') -> ('h1tagatr', 'ε', 'ε')
-('h1opentag', '$', '>') -> ('h1tagatr', 'ε', 'ε')
-('h1tagatr', '%', '>') -> ('h1tagatr', 'ε', 'ε')
-('h1tagatr', '$', '>') -> ('h1tagatr', 'ε', 'ε')
-('h1tagatr', '>', '>') -> ('bodyopendone', '>', 'ε')
-('h1opentag', '>', '>') -> ('bodyopendone', '>', 'ε')
-('h1tagatr', 'i', '>') -> ('h1tagid', 'ε', '""=d')
-('h1tagid', 'd', 'd') -> ('h1tagid', 'd', 'ε')
-('h1tagid', '=', '=') -> ('h1tagid', '=', 'ε')
-('h1tagid', '"', '"') -> ('h1tagtext', '"', 'ε')
-('h1tagtext', 'any', '"') -> ('h1tagtext', 'ε', 'ε')
-('h1tagtext', '"', '"') -> ('h1opentag', '"', 'ε')
-('h1tagatr', 'c', '>') -> ('h1tagclass', 'ε', '""=ssal')
-('h1tagclass', 'l', 'l') -> ('h1tagclass', 'l', 'ε')
-('h1tagclass', 'a', 'a') -> ('h1tagclass', 'a', 'ε')
-('h1tagclass', 's', 's') -> ('h1tagclass', 's', 'ε')
-('h1tagclass', '=', '=') -> ('h1tagclass', '=', 'ε')
-('h1tagclass', '"', '"') -> ('h1tagtext', '"', 'ε')
-('h1tagatr', 's', '>') -> ('h1tagstyle', 'ε', '""=elyt')
-('h1tagstyle', 't', 't') -> ('h1tagstyle', 't', 'ε')
-('h1tagstyle', 'y', 'y') -> ('h1tagstyle', 'y', 'ε')
-('h1tagstyle', 'l', 'l') -> ('h1tagstyle', 'l', 'ε')
-('h1tagstyle', 'e', 'e') -> ('h1tagstyle', 'e', 'ε')
-('h1tagstyle', '=', '=') -> ('h1tagstyle', '=', 'ε')
-('h1tagstyle', '"', '"') -> ('h1tagtext', '"', 'ε')
-('hopentag', '2', '/') -> ('h2opentag', 'ε', '>2h/<>')
-('h2opentag', '%', '>') -> ('h2tagatr', 'ε', 'ε')
-('h2opentag', '$', '>') -> ('h2tagatr', 'ε', 'ε')
-('h2tagatr', '%', '>') -> ('h2tagatr', 'ε', 'ε')
-('h2tagatr', '$', '>') -> ('h2tagatr', 'ε', 'ε')
-('h2tagatr', '>', '>') -> ('bodyopendone', '>', 'ε')
-('h2opentag', '>', '>') -> ('bodyopendone', '>', 'ε')
-('h2tagatr', 'i', '>') -> ('h2tagid', 'ε', '""=d')
-('h2tagid', 'd', 'd') -> ('h2tagid', 'd', 'ε')
-('h2tagid', '=', '=') -> ('h2tagid', '=', 'ε')
-('h2tagid', '"', '"') -> ('h2tagtext', '"', 'ε')
-('h2tagtext', 'any', '"') -> ('h2tagtext', 'ε', 'ε')
-('h2tagtext', '"', '"') -> ('h2opentag', '"', 'ε')
-('h2tagatr', 'c', '>') -> ('h2tagclass', 'ε', '""=ssal')
-('h2tagclass', 'l', 'l') -> ('h2tagclass', 'l', 'ε')
-('h2tagclass', 'a', 'a') -> ('h2tagclass', 'a', 'ε')
-('h2tagclass', 's', 's') -> ('h2tagclass', 's', 'ε')
-('h2tagclass', '=', '=') -> ('h2tagclass', '=', 'ε')
-('h2tagclass', '"', '"') -> ('h2tagtext', '"', 'ε')
-('h2tagatr', 's', '>') -> ('h2tagstyle', 'ε', '""=elyt')
-('h2tagstyle', 't', 't') -> ('h2tagstyle', 't', 'ε')
-('h2tagstyle', 'y', 'y') -> ('h2tagstyle', 'y', 'ε')
-('h2tagstyle', 'l', 'l') -> ('h2tagstyle', 'l', 'ε')
-('h2tagstyle', 'e', 'e') -> ('h2tagstyle', 'e', 'ε')
-('h2tagstyle', '=', '=') -> ('h2tagstyle', '=', 'ε')
-('h2tagstyle', '"', '"') -> ('h2tagtext', '"', 'ε')
-('hopentag', '3', '/') -> ('h3opentag', 'ε', '>3h/<>')
-('h3opentag', '%', '>') -> ('h3tagatr', 'ε', 'ε')
-('h3opentag', '$', '>') -> ('h3tagatr', 'ε', 'ε')
-('h3tagatr', '%', '>') -> ('h3tagatr', 'ε', 'ε')
-('h3tagatr', '$', '>') -> ('h3tagatr', 'ε', 'ε')
-('h3tagatr', '>', '>') -> ('bodyopendone', '>', 'ε')
-('h3opentag', '>', '>') -> ('bodyopendone', '>', 'ε')
-('h3tagatr', 'i', '>') -> ('h3tagid', 'ε', '""=d')
-('h3tagid', 'd', 'd') -> ('h3tagid', 'd', 'ε')
-('h3tagid', '=', '=') -> ('h3tagid', '=', 'ε')
-('h3tagid', '"', '"') -> ('h3tagtext', '"', 'ε')
-('h3tagtext', 'any', '"') -> ('h3tagtext', 'ε', 'ε')
-('h3tagtext', '"', '"') -> ('h3opentag', '"', 'ε')
-('h3tagatr', 'c', '>') -> ('h3tagclass', 'ε', '""=ssal')
-('h3tagclass', 'l', 'l') -> ('h3tagclass', 'l', 'ε')
-('h3tagclass', 'a', 'a') -> ('h3tagclass', 'a', 'ε')
-('h3tagclass', 's', 's') -> ('h3tagclass', 's', 'ε')
-('h3tagclass', '=', '=') -> ('h3tagclass', '=', 'ε')
-('h3tagclass', '"', '"') -> ('h3tagtext', '"', 'ε')
-('h3tagatr', 's', '>') -> ('h3tagstyle', 'ε', '""=elyt')
-('h3tagstyle', 't', 't') -> ('h3tagstyle', 't', 'ε')
-('h3tagstyle', 'y', 'y') -> ('h3tagstyle', 'y', 'ε')
-('h3tagstyle', 'l', 'l') -> ('h3tagstyle', 'l', 'ε')
-('h3tagstyle', 'e', 'e') -> ('h3tagstyle', 'e', 'ε')
-('h3tagstyle', '=', '=') -> ('h3tagstyle', '=', 'ε')
-('h3tagstyle', '"', '"') -> ('h3tagtext', '"', 'ε')
-('hopentag', '4', '/') -> ('h4opentag', 'ε', '>4h/<>')
-('h4opentag', '%', '>') -> ('h4tagatr', 'ε', 'ε')
-('h4opentag', '$', '>') -> ('h4tagatr', 'ε', 'ε')
-('h4tagatr', '%', '>') -> ('h4tagatr', 'ε', 'ε')
-('h4tagatr', '$', '>') -> ('h4tagatr', 'ε', 'ε')
-('h4tagatr', '>', '>') -> ('bodyopendone', '>', 'ε')
-('h4opentag', '>', '>') -> ('bodyopendone', '>', 'ε')
-('h4tagatr', 'i', '>') -> ('h4tagid', 'ε', '""=d')
-('h4tagid', 'd', 'd') -> ('h4tagid', 'd', 'ε')
-('h4tagid', '=', '=') -> ('h4tagid', '=', 'ε')
-('h4tagid', '"', '"') -> ('h4tagtext', '"', 'ε')
-('h4tagtext', 'any', '"') -> ('h4tagtext', 'ε', 'ε')
-('h4tagtext', '"', '"') -> ('h4opentag', '"', 'ε')
-('h4tagatr', 'c', '>') -> ('h4tagclass', 'ε', '""=ssal')
-('h4tagclass', 'l', 'l') -> ('h4tagclass', 'l', 'ε')
-('h4tagclass', 'a', 'a') -> ('h4tagclass', 'a', 'ε')
-('h4tagclass', 's', 's') -> ('h4tagclass', 's', 'ε')
-('h4tagclass', '=', '=') -> ('h4tagclass', '=', 'ε')
-('h4tagclass', '"', '"') -> ('h4tagtext', '"', 'ε')
-('h4tagatr', 's', '>') -> ('h4tagstyle', 'ε', '""=elyt')
-('h4tagstyle', 't', 't') -> ('h4tagstyle', 't', 'ε')
-('h4tagstyle', 'y', 'y') -> ('h4tagstyle', 'y', 'ε')
-('h4tagstyle', 'l', 'l') -> ('h4tagstyle', 'l', 'ε')
-('h4tagstyle', 'e', 'e') -> ('h4tagstyle', 'e', 'ε')
-('h4tagstyle', '=', '=') -> ('h4tagstyle', '=', 'ε')
-('h4tagstyle', '"', '"') -> ('h4tagtext', '"', 'ε')
-('hopentag', '5', '/') -> ('h5opentag', 'ε', '>5h/<>')
-('h5opentag', '%', '>') -> ('h5tagatr', 'ε', 'ε')
-('h5opentag', '$', '>') -> ('h5tagatr', 'ε', 'ε')
-('h5tagatr', '%', '>') -> ('h5tagatr', 'ε', 'ε')
-('h5tagatr', '$', '>') -> ('h5tagatr', 'ε', 'ε')
-('h5tagatr', '>', '>') -> ('bodyopendone', '>', 'ε')
-('h5opentag', '>', '>') -> ('bodyopendone', '>', 'ε')
-('h5tagatr', 'i', '>') -> ('h5tagid', 'ε', '""=d')
-('h5tagid', 'd', 'd') -> ('h5tagid', 'd', 'ε')
-('h5tagid', '=', '=') -> ('h5tagid', '=', 'ε')
-('h5tagid', '"', '"') -> ('h5tagtext', '"', 'ε')
-('h5tagtext', 'any', '"') -> ('h5tagtext', 'ε', 'ε')
-('h5tagtext', '"', '"') -> ('h5opentag', '"', 'ε')
-('h5tagatr', 'c', '>') -> ('h5tagclass', 'ε', '""=ssal')
-('h5tagclass', 'l', 'l') -> ('h5tagclass', 'l', 'ε')
-('h5tagclass', 'a', 'a') -> ('h5tagclass', 'a', 'ε')
-('h5tagclass', 's', 's') -> ('h5tagclass', 's', 'ε')
-('h5tagclass', '=', '=') -> ('h5tagclass', '=', 'ε')
-('h5tagclass', '"', '"') -> ('h5tagtext', '"', 'ε')
-('h5tagatr', 's', '>') -> ('h5tagstyle', 'ε', '""=elyt')
-('h5tagstyle', 't', 't') -> ('h5tagstyle', 't', 'ε')
-('h5tagstyle', 'y', 'y') -> ('h5tagstyle', 'y', 'ε')
-('h5tagstyle', 'l', 'l') -> ('h5tagstyle', 'l', 'ε')
-('h5tagstyle', 'e', 'e') -> ('h5tagstyle', 'e', 'ε')
-('h5tagstyle', '=', '=') -> ('h5tagstyle', '=', 'ε')
-('h5tagstyle', '"', '"') -> ('h5tagtext', '"', 'ε')
-('hopentag', '6', '/') -> ('h6opentag', 'ε', '>6h/<>')
-('h6opentag', '%', '>') -> ('h6tagatr', 'ε', 'ε')
-('h6opentag', '$', '>') -> ('h6tagatr', 'ε', 'ε')
-('h6tagatr', '%', '>') -> ('h6tagatr', 'ε', 'ε')
-('h6tagatr', '$', '>') -> ('h6tagatr', 'ε', 'ε')
-('h6tagatr', '>', '>') -> ('bodyopendone', '>', 'ε')
-('h6opentag', '>', '>') -> ('bodyopendone', '>', 'ε')
-('h6tagatr', 'i', '>') -> ('h6tagid', 'ε', '""=d')
-('h6tagid', 'd', 'd') -> ('h6tagid', 'd', 'ε')
-('h6tagid', '=', '=') -> ('h6tagid', '=', 'ε')
-('h6tagid', '"', '"') -> ('h6tagtext', '"', 'ε')
-('h6tagtext', 'any', '"') -> ('h6tagtext', 'ε', 'ε')
-('h6tagtext', '"', '"') -> ('h6opentag', '"', 'ε')
-('h6tagatr', 'c', '>') -> ('h6tagclass', 'ε', '""=ssal')
-('h6tagclass', 'l', 'l') -> ('h6tagclass', 'l', 'ε')
-('h6tagclass', 'a', 'a') -> ('h6tagclass', 'a', 'ε')
-('h6tagclass', 's', 's') -> ('h6tagclass', 's', 'ε')
-('h6tagclass', '=', '=') -> ('h6tagclass', '=', 'ε')
-('h6tagclass', '"', '"') -> ('h6tagtext', '"', 'ε')
-('h6tagatr', 's', '>') -> ('h6tagstyle', 'ε', '""=elyt')
-('h6tagstyle', 't', 't') -> ('h6tagstyle', 't', 'ε')
-('h6tagstyle', 'y', 'y') -> ('h6tagstyle', 'y', 'ε')
-('h6tagstyle', 'l', 'l') -> ('h6tagstyle', 'l', 'ε')
-('h6tagstyle', 'e', 'e') -> ('h6tagstyle', 'e', 'ε')
-('h6tagstyle', '=', '=') -> ('h6tagstyle', '=', 'ε')
-('h6tagstyle', '"', '"') -> ('h6tagtext', '"', 'ε')
-('abodytag', '>', '/') -> ('bodyopendone', 'ε', '<>a/<')
-('abodytag', '$', '/') -> ('aatr', 'ε', 'ε')
-('abodytag', '%', '/') -> ('aatr', 'ε', 'ε')
-('aatr', '%', '/') -> ('aatr', 'ε', 'ε')
-('aatr', '$', '/') -> ('aatr', 'ε', 'ε')
-('aopen', '$', '/') -> ('aatr', 'ε', 'ε')
-('aopen', '%', '/') -> ('aatr', 'ε', 'ε')
-('aopen', '>', '/') -> ('bodyopendone', 'ε', '<>a/<')
-('aatr', '>', '/') -> ('bodyopendone', 'ε', '<>a/<')
-('aatr', 'h', '/') -> ('ahref', 'ε', '""=fer')
-('ahref', 'r', 'r') -> ('ahref', 'r', 'ε')
-('ahref', 'e', 'e') -> ('ahref', 'e', 'ε')
-('ahref', 'f', 'f') -> ('ahref', 'f', 'ε')
-('ahref', '=', '=') -> ('ahref', '=', 'ε')
-('ahref', '"', '"') -> ('atext', '"', 'ε')
-('atext', 'any', '"') -> ('atext', 'ε', 'ε')
-('atext', '"', '"') -> ('aopen', '"', 'ε')
-('aatr', 'i', '/') -> ('aid', 'ε', '""=d')
-('aid', 'd', 'd') -> ('aid', 'd', 'ε')
-('aid', '=', '=') -> ('aid', '=', 'ε')
-('aid', '"', '"') -> ('atext', '"', 'ε')
-('aatr', 'c', '/') -> ('aclass', 'ε', '""=ssal')
-('aclass', 'l', 'l') -> ('aclass', 'l', 'ε')
-('aclass', 'a', 'a') -> ('aclass', 'a', 'ε')
-('aclass', 's', 's') -> ('aclass', 's', 'ε')
-('aclass', '=', '=') -> ('aclass', '=', 'ε')
-('aclass', '"', '"') -> ('atext', '"', 'ε')
-('aatr', 's', '/') -> ('astyle', 'ε', '""=elyt')
-('astyle', 't', 't') -> ('astyle', 't', 'ε')
-('astyle', 'y', 'y') -> ('astyle', 'y', 'ε')
-('astyle', 'l', 'l') -> ('astyle', 'l', 'ε')
-('astyle', 'e', 'e') -> ('astyle', 'e', 'ε')
-('astyle', '=', '=') -> ('astyle', '=', 'ε')
-('astyle', '"', '"') -> ('atext', '"', 'ε')
-('aclose', '>', '>') -> ('bodyopendone', '>', 'ε')
-('bopentag', 'r', '/') -> ('brtag', 'ε', '>')
-('brtag', '%', '>') -> ('brtagatr', 'ε', 'ε')
-('brtag', '$', '>') -> ('brtagatr', 'ε', 'ε')
-('brtagatr', '%', '>') -> ('brtagatr', 'ε', 'ε')
-('brtagatr', '$', '>') -> ('brtagatr', 'ε', 'ε')
-('brtagatr', '>', '>') -> ('bodyopendone', '>', '<')
-('brtag', '>', '>') -> ('bodyopendone', '>', '<')
-('brtagatr', 'i', '>') -> ('brtagid', 'ε', '""=d')
-('brtagid', 'd', 'd') -> ('brtagid', 'd', 'ε')
-('brtagid', '=', '=') -> ('brtagid', '=', 'ε')
-('brtagid', '"', '"') -> ('brtagtext', '"', 'ε')
-('brtagtext', 'any', '"') -> ('brtagtext', 'ε', 'ε')
-('brtagtext', '"', '"') -> ('brtag', '"', 'ε')
-('brtagatr', 'c', '>') -> ('brtagclass', 'ε', '""=ssal')
-('brtagclass', 'l', 'l') -> ('brtagclass', 'l', 'ε')
-('brtagclass', 'a', 'a') -> ('brtagclass', 'a', 'ε')
-('brtagclass', 's', 's') -> ('brtagclass', 's', 'ε')
-('brtagclass', '=', '=') -> ('brtagclass', '=', 'ε')
-('brtagclass', '"', '"') -> ('brtagtext', '"', 'ε')
-('brtagatr', 's', '>') -> ('brtagstyle', 'ε', '""=elyt')
-('brtagstyle', 't', 't') -> ('brtagstyle', 't', 'ε')
-('brtagstyle', 'y', 'y') -> ('brtagstyle', 'y', 'ε')
-('brtagstyle', 'l', 'l') -> ('brtagstyle', 'l', 'ε')
-('brtagstyle', 'e', 'e') -> ('brtagstyle', 'e', 'ε')
-('brtagstyle', '=', '=') -> ('brtagstyle', '=', 'ε')
-('brtagstyle', '"', '"') -> ('brtagtext', '"', 'ε')
-('bodyacctag', 't', '/') -> ('topentag', 'ε', 'ε')
-('topentag', 'a', '/') -> ('tableopentag', 'ε', '>elbat/<>elb')
-('tableopentag', 'b', 'b') -> ('tableopentag', 'b', 'ε')
-('tableopentag', 'l', 'l') -> ('tableopentag', 'l', 'ε')
-('tableopentag', 'e', 'e') -> ('tableopentag', 'e', 'ε')
-('tableopentag', '%', '>') -> ('tabletagatr', 'ε', 'ε')
-('tableopentag', '$', '>') -> ('tabletagatr', 'ε', 'ε')
-('tabletagatr', '%', '>') -> ('tabletagatr', 'ε', 'ε')
-('tabletagatr', '$', '>') -> ('tabletagatr', 'ε', 'ε')
-('tabletagatr', '>', '>') -> ('tablecontent', '>', 'ε')
-('tableopentag', '>', '>') -> ('tablecontent', '>', 'ε')
-('tableclosetag', 'a', 'a') -> ('tableclosetag', 'a', 'ε')
-('tableclosetag', 'b', 'b') -> ('tableclosetag', 'b', 'ε')
-('tableclosetag', 'l', 'l') -> ('tableclosetag', 'l', 'ε')
-('tableclosetag', 'e', 'e') -> ('tableclosetag', 'e', 'ε')
-('tableclosetag', '>', '>') -> ('bodyopendone', '>', '<')
-('tabletagatr', 'i', '>') -> ('tabletagid', 'ε', '""=d')
-('tabletagid', 'd', 'd') -> ('tabletagid', 'd', 'ε')
-('tabletagid', '=', '=') -> ('tabletagid', '=', 'ε')
-('tabletagid', '"', '"') -> ('tabletagtext', '"', 'ε')
-('tabletagtext', 'any', '"') -> ('tabletagtext', 'ε', 'ε')
-('tabletagtext', '"', '"') -> ('tableopentag', '"', 'ε')
-('tabletagatr', 'c', '>') -> ('tabletagclass', 'ε', '""=ssal')
-('tabletagclass', 'l', 'l') -> ('tabletagclass', 'l', 'ε')
-('tabletagclass', 'a', 'a') -> ('tabletagclass', 'a', 'ε')
-('tabletagclass', 's', 's') -> ('tabletagclass', 's', 'ε')
-('tabletagclass', '=', '=') -> ('tabletagclass', '=', 'ε')
-('tabletagclass', '"', '"') -> ('tabletagtext', '"', 'ε')
-('tabletagatr', 's', '>') -> ('tabletagstyle', 'ε', '""=elyt')
-('tabletagstyle', 't', 't') -> ('tabletagstyle', 't', 'ε')
-('tabletagstyle', 'y', 'y') -> ('tabletagstyle', 'y', 'ε')
-('tabletagstyle', 'l', 'l') -> ('tabletagstyle', 'l', 'ε')
-('tabletagstyle', 'e', 'e') -> ('tabletagstyle', 'e', 'ε')
-('tabletagstyle', '=', '=') -> ('tabletagstyle', '=', 'ε')
-('tabletagstyle', '"', '"') -> ('tabletagtext', '"', 'ε')
-('tablecontent', '%', '<') -> ('tablecontent', 'ε', 'ε')
-('tablecontent', '$', '<') -> ('tablecontent', 'ε', 'ε')
-('tablecontent', '<', '<') -> ('tableprop', '<', 'ε')
-('tableprop', '/', '/') -> ('tableclosetag', '/', 'ε')
-('tableclosetag', 't', 't') -> ('tableclosetag', 't', 'ε')
-('tableclosetag', 'r', 'r') -> ('trclosetag', 'r', 'ε')
-('tableprop', 't', '/') -> ('tropentag', 'ε', '>rt/<>r')
-('tropentag', 'r', 'r') -> ('tropentag', 'r', 'ε')
-('tropentag', '%', '>') -> ('trtagatr', 'ε', 'ε')
-('tropentag', '$', '>') -> ('trtagatr', 'ε', 'ε')
-('tropentag', '>', '>') -> ('trcontent', '>', 'ε')
-('trtagatr', '%', '>') -> ('trtagatr', 'ε', 'ε')
-('trtagatr', '$', '>') -> ('trtagatr', 'ε', 'ε')
-('trtagatr', '>', '>') -> ('trcontent', '>', 'ε')
-('trcontent', '%', '<') -> ('trcontent', 'ε', 'ε')
-('trcontent', '$', '<') -> ('trcontent', 'ε', 'ε')
-('trcontent', '<', '<') -> ('trprop', '<', 'ε')
-('trprop', '/', '/') -> ('trclosetag', '/', 'ε')
-('trclosetag', 't', 't') -> ('trclosetag', 't', 'ε')
-('trclosetag', 'r', 'r') -> ('trclosetag', 'r', 'ε')
-('trclosetag', '>', '>') -> ('tablecontent', '>', '<')
-('trtagatr', 'i', '>') -> ('trtagid', 'ε', '""=d')
-('trtagid', 'd', 'd') -> ('trtagid', 'd', 'ε')
-('trtagid', '=', '=') -> ('trtagid', '=', 'ε')
-('trtagid', '"', '"') -> ('trtagtext', '"', 'ε')
-('trtagtext', 'any', '"') -> ('trtagtext', 'ε', 'ε')
-('trtagtext', '"', '"') -> ('tropentag', '"', 'ε')
-('trtagatr', 'c', '>') -> ('trtagclass', 'ε', '""=ssal')
-('trtagclass', 'l', 'l') -> ('trtagclass', 'l', 'ε')
-('trtagclass', 'a', 'a') -> ('trtagclass', 'a', 'ε')
-('trtagclass', 's', 's') -> ('trtagclass', 's', 'ε')
-('trtagclass', '=', '=') -> ('trtagclass', '=', 'ε')
-('trtagclass', '"', '"') -> ('trtagtext', '"', 'ε')
-('trtagatr', 's', '>') -> ('trtagstyle', 'ε', '""=elyt')
-('trtagstyle', 't', 't') -> ('trtagstyle', 't', 'ε')
-('trtagstyle', 'y', 'y') -> ('trtagstyle', 'y', 'ε')
-('trtagstyle', 'l', 'l') -> ('trtagstyle', 'l', 'ε')
-('trtagstyle', 'e', 'e') -> ('trtagstyle', 'e', 'ε')
-('trtagstyle', '=', '=') -> ('trtagstyle', '=', 'ε')
-('trtagstyle', '"', '"') -> ('trtagtext', '"', 'ε')
-('trprop', 't', '/') -> ('thdopentag', 'ε', 'ε')
-('thdopentag', 'h', '/') -> ('thopentag', 'ε', '>ht/<>')
-('thopentag', '%', '>') -> ('thtagatr', 'ε', 'ε')
-('thopentag', '$', '>') -> ('thtagatr', 'ε', 'ε')
-('thopentag', '>', '>') -> ('thcontent', '>', 'ε')
-('thtagatr', '%', '>') -> ('thtagatr', 'ε', 'ε')
-('thtagatr', '$', '>') -> ('thtagatr', 'ε', 'ε')
-('thtagatr', '>', '>') -> ('thcontent', '>', 'ε')
-('thcontent', '%', '<') -> ('thcontent', 'ε', 'ε')
-('thcontent', '$', '<') -> ('thcontent', 'ε', 'ε')
-('thcontent', 'any', '<') -> ('thcontent', 'ε', 'ε')
-('thcontent', '<', '<') -> ('thclosetag', '<', 'ε')
-('thclosetag', '/', '/') -> ('thclosetag', '/', 'ε')
-('thclosetag', 't', 't') -> ('thclosetag', 't', 'ε')
-('thclosetag', 'h', 'h') -> ('thclosetag', 'h', 'ε')
-('thclosetag', '%', '>') -> ('thclosetag', 'ε', 'ε')
-('thclosetag', '$', '>') -> ('thclosetag', 'ε', 'ε')
-('thclosetag', '>', '>') -> ('trcontent', '>', '<')
-('thtagatr', 'i', '>') -> ('thtagid', 'ε', '""=d')
-('thtagid', 'd', 'd') -> ('thtagid', 'd', 'ε')
-('thtagid', '=', '=') -> ('thtagid', '=', 'ε')
-('thtagid', '"', '"') -> ('thtagtext', '"', 'ε')
-('thtagtext', 'any', '"') -> ('thtagtext', 'ε', 'ε')
-('thtagtext', '"', '"') -> ('thopentag', '"', 'ε')
-('thtagatr', 'c', '>') -> ('thtagclass', 'ε', '""=ssal')
-('thtagclass', 'l', 'l') -> ('thtagclass', 'l', 'ε')
-('thtagclass', 'a', 'a') -> ('thtagclass', 'a', 'ε')
-('thtagclass', 's', 's') -> ('thtagclass', 's', 'ε')
-('thtagclass', '=', '=') -> ('thtagclass', '=', 'ε')
-('thtagclass', '"', '"') -> ('thtagtext', '"', 'ε')
-('thtagatr', 's', '>') -> ('thtagstyle', 'ε', '""=elyt')
-('thtagstyle', 't', 't') -> ('thtagstyle', 't', 'ε')
-('thtagstyle', 'y', 'y') -> ('thtagstyle', 'y', 'ε')
-('thtagstyle', 'l', 'l') -> ('thtagstyle', 'l', 'ε')
-('thtagstyle', 'e', 'e') -> ('thtagstyle', 'e', 'ε')
-('thtagstyle', '=', '=') -> ('thtagstyle', '=', 'ε')
-('thtagstyle', '"', '"') -> ('thtagtext', '"', 'ε')
-('thdopentag', 'd', '/') -> ('tdopentag', 'ε', '>dt/<>')
-('tdopentag', '%', '>') -> ('tdtagatr', 'ε', 'ε')
-('tdopentag', '$', '>') -> ('tdtagatr', 'ε', 'ε')
-('tdopentag', '>', '>') -> ('tdcontent', '>', 'ε')
-('tdtagatr', '%', '>') -> ('tdtagatr', 'ε', 'ε')
-('tdtagatr', '$', '>') -> ('tdtagatr', 'ε', 'ε')
-('tdtagatr', '>', '>') -> ('tdcontent', '>', 'ε')
-('tdcontent', '%', '<') -> ('tdcontent', 'ε', 'ε')
-('tdcontent', '$', '<') -> ('tdcontent', 'ε', 'ε')
-('tdcontent', 'any', '<') -> ('tdcontent', 'ε', 'ε')
-('tdcontent', '<', '<') -> ('tdclosetag', '<', 'ε')
-('tdclosetag', '/', '/') -> ('tdclosetag', '/', 'ε')
-('tdclosetag', 't', 't') -> ('tdclosetag', 't', 'ε')
-('tdclosetag', 'd', 'd') -> ('tdclosetag', 'd', 'ε')
-('tdclosetag', '%', '>') -> ('tdclosetag', 'ε', 'ε')
-('tdclosetag', '$', '>') -> ('tdclosetag', 'ε', 'ε')
-('tdclosetag', '>', '>') -> ('trcontent', '>', '<')
-('tdtagatr', 'i', '>') -> ('tdtagid', 'ε', '""=d')
-('tdtagid', 'd', 'd') -> ('tdtagid', 'd', 'ε')
-('tdtagid', '=', '=') -> ('tdtagid', '=', 'ε')
-('tdtagid', '"', '"') -> ('tdtagtext', '"', 'ε')
-('tdtagtext', 'any', '"') -> ('tdtagtext', 'ε', 'ε')
-('tdtagtext', '"', '"') -> ('tdopentag', '"', 'ε')
-('tdtagatr', 'c', '>') -> ('tdtagclass', 'ε', '""=ssal')
-('tdtagclass', 'l', 'l') -> ('tdtagclass', 'l', 'ε')
-('tdtagclass', 'a', 'a') -> ('tdtagclass', 'a', 'ε')
-('tdtagclass', 's', 's') -> ('tdtagclass', 's', 'ε')
-('tdtagclass', '=', '=') -> ('tdtagclass', '=', 'ε')
-('tdtagclass', '"', '"') -> ('tdtagtext', '"', 'ε')
-('tdtagatr', 's', '>') -> ('tdtagstyle', 'ε', '""=elyt')
-('tdtagstyle', 't', 't') -> ('tdtagstyle', 't', 'ε')
-('tdtagstyle', 'y', 'y') -> ('tdtagstyle', 'y', 'ε')
-('tdtagstyle', 'l', 'l') -> ('tdtagstyle', 'l', 'ε')
-('tdtagstyle', 'e', 'e') -> ('tdtagstyle', 'e', 'ε')
-('tdtagstyle', '=', '=') -> ('tdtagstyle', '=', 'ε')
-('tdtagstyle', '"', '"') -> ('tdtagtext', '"', 'ε')
-('bodyacctag', 'd', '/') -> ('divopen', 'ε', '<>vid/<>vi')
-('divopen', 'i', 'i') -> ('divopen', 'i', 'ε')
-('divopen', 'v', 'v') -> ('divopen', 'v', 'ε')
-('divopen', '$', '>') -> ('divatr', 'ε', 'ε')
-('divopen', '%', '>') -> ('divatr', 'ε', 'ε')
-('divatr', '%', '>') -> ('divatr', 'ε', 'ε')
-('divatr', '$', '>') -> ('divatr', 'ε', 'ε')
-('divatr', '>', '>') -> ('bodyopendone', '>', 'ε')
-('divopen', '>', '>') -> ('bodyopendone', '>', 'ε')
-('divtext', 'any', '"') -> ('divtext', 'ε', 'ε')
-('divtext', '"', '"') -> ('divopen', '"', 'ε')
-('divatr', 'i', '>') -> ('divid', 'ε', '""=d')
-('divid', 'd', 'd') -> ('divid', 'd', 'ε')
-('divid', '=', '=') -> ('divid', '=', 'ε')
-('divid', '"', '"') -> ('divtext', '"', 'ε')
-('divatr', 'c', '>') -> ('divclass', 'ε', '""=ssal')
-('divclass', 'l', 'l') -> ('divclass', 'l', 'ε')
-('divclass', 'a', 'a') -> ('divclass', 'a', 'ε')
-('divclass', 's', 's') -> ('divclass', 's', 'ε')
-('divclass', '=', '=') -> ('divclass', '=', 'ε')
-('divclass', '"', '"') -> ('divtext', '"', 'ε')
-('divatr', 's', '>') -> ('divstyle', 'ε', '""=elyt')
-('divstyle', 't', 't') -> ('divstyle', 't', 'ε')
-('divstyle', 'y', 'y') -> ('divstyle', 'y', 'ε')
-('divstyle', 'l', 'l') -> ('divstyle', 'l', 'ε')
-('divstyle', 'e', 'e') -> ('divstyle', 'e', 'ε')
-('divstyle', '=', '=') -> ('divstyle', '=', 'ε')
-('divstyle', '"', '"') -> ('divtext', '"', 'ε')
-('divclosetag', 'i', 'i') -> ('divclosetag', 'i', 'ε')
-('divclosetag', 'v', 'v') -> ('divclosetag', 'v', 'ε')
-('divclosetag', '>', '>') -> ('bodyopendone', '>', 'ε')
-('bodyacctag', 's', '/') -> ('script/small/strong', 'ε', 'ε')
-('script/small/strong', 'c', '/') -> ('scriptbody', 'ε', '<>tpircs/<>tpir')
-('scriptbody', 'r', 'r') -> ('scriptbodyopen', 'r', 'ε')
-('scriptbodyopen', 'i', 'i') -> ('scriptbodyopen', 'i', 'ε')
-('scriptbodyopen', 'p', 'p') -> ('scriptbodyopen', 't', 'ε')
-('scriptbodyopen', 't', 't') -> ('scriptbodyopen', 't', 'ε')
-('scriptbodyopen', '$', '>') -> ('scriptbodyopenatr', 'ε', 'ε')
-('scriptbodyopen', '%', '>') -> ('scriptbodyopenatr', 'ε', 'ε')
-('scriptbodyopenatr', '%', '>') -> ('scriptbodyopenatr', 'ε', 'ε')
-('scriptbodyopenatr', '>', '>') -> ('scriptbodyopendone', '>', 'ε')
-('scriptbodyopenatr', 'i', '>') -> ('scriptbodyid', 'ε', '""=d')
-('scriptbodyid', 'd', 'd') -> ('scriptbodyid', 'd', 'ε')
-('scriptbodyid', '=', '=') -> ('scriptbodyid', '=', 'ε')
-('scriptbodyid', '"', '"') -> ('scriptbodytext', '"', 'ε')
-('scriptbodytext', 'any', '"') -> ('scriptbodytext', 'ε', 'ε')
-('scriptbodytext', '"', '"') -> ('scriptbodyatrdone', '"', 'ε')
-('scriptbodyatrdone', '%', '>') -> ('scriptbodyopenatr', 'ε', 'ε')
-('scriptbodyatrdone', '$', '>') -> ('scriptbodyopenatr', 'ε', 'ε')
-('scriptbodyatrdone', '>', '>') -> ('scriptbodyopendone', '>', 'ε')
-('scriptbodyopen', '>', '>') -> ('scriptbodyopendone', '>', 'ε')
-('scriptbodyopendone', '$', '<') -> ('scriptbodyopendone', 'ε', 'ε')
-('scriptbodyopendone', '%', '<') -> ('scriptbodyopendone', 'ε', 'ε')
-('scriptbodyopenatr', 'c', '>') -> ('scriptbodyclass', 'ε', '""=ssal')
-('scriptbodyclass', 'l', 'l') -> ('scriptbodyclass', 'l', 'ε')
-('scriptbodyclass', 'a', 'a') -> ('scriptbodyclass', 'a', 'ε')
-('scriptbodyclass', 's', 's') -> ('scriptbodyclasss', 's', 'ε')
-('scriptbodyclasss', 's', 's') -> ('scriptbodyclass', 's', 'ε')
-('scriptbodyclass', '=', '=') -> ('scriptbodyclass', '=', 'ε')
-('scriptbodyclass', '"', '"') -> ('scriptbodytext', '"', 'ε')
-('scriptbodyopenatr', 's', '>') -> ('scriptbodystyleorsrc', 'ε', 'ε')
-('scriptbodystyleorsrc', 't', '>') -> ('scriptbodystyle', 'ε', '""=ely')
-('scriptbodystyle', 'y', 'y') -> ('scriptbodystyle', 'y', 'ε')
-('scriptbodystyle', 'l', 'l') -> ('scriptbodycstyle', 'l', 'ε')
-('scriptbodycstyle', 'e', 'e') -> ('scriptbodystyle', 'e', 'ε')
-('scriptbodystyle', '=', '=') -> ('scriptbodystyle', '=', 'ε')
-('scriptbodystyle', '"', '"') -> ('scriptbodytext', '"', 'ε')
-('scriptbodyopendone', 'any', '<') -> ('scriptbodyopendone', 'ε', 'ε')
-('scriptbodystyleorsrc', 'r', '>') -> ('scriptbodysrc', 'ε', '""=c')
-('scriptbodysrc', 'c', 'c') -> ('scriptbodysrc', 'c', 'ε')
-('scriptbodysrc', '=', '=') -> ('scriptbodysrc', '=', 'ε')
-('scriptbodysrc', '"', '"') -> ('scriptbodytext', '"', 'ε')
-('scriptbodyopendone', '<', '<') -> ('newtaginscriptbody', '<', 'ε')
-('newtaginscriptbody', '/', '/') -> ('scriptbodyclose', '/', 'ε')
-('scriptbodyclose', 's', 's') -> ('scriptbodyclose', 's', 'ε')
-('scriptbodyclose', 'c', 'c') -> ('scriptbodyclose', 'c', 'ε')
-('scriptbodyclose', 'r', 'r') -> ('scriptbodyclose', 'r', 'ε')
-('scriptbodyclose', 'i', 'i') -> ('scriptbodyclose', 'i', 'ε')
-('scriptbodyclose', 'p', 'p') -> ('scriptbodyclose', 'p', 'ε')
-('scriptbodyclose', 't', 't') -> ('scriptbodyclose', 't', 'ε')
-('scriptbodyclose', '>', '>') -> ('bodyopendone', '>', 'ε')
-('bodyacctag', 'l', '/') -> ('linkbody', 'ε', '<>""=lerkni')
-('linkbody', 'i', 'i') -> ('linkbody', 'i', 'ε')
-('linkbody', 'n', 'n') -> ('linkbody', 'n', 'ε')
-('linkbody', 'k', 'k') -> ('linkbody', 'k', 'ε')
-('linkbody', '$', '>') -> ('linkbodyatr', 'ε', 'ε')
-('linkbody', '%', '>') -> ('linkbodyatr', 'ε', 'ε')
-('linkbody', '$', 'r') -> ('linkbodyatr', 'ε', 'ε')
-('linkbody', '%', 'r') -> ('linkbodyatr', 'ε', 'ε')
-('linkbody', '>', '>') -> ('bodyopendone', '>', 'ε')
-('linkbodyatr', '$', 'r') -> ('linkbodyatr', 'ε', 'ε')
-('linkbodyatr', '%', 'r') -> ('linkbodyatr', 'ε', 'ε')
-('linkbodyatr', '$', '>') -> ('linkbodyatr', 'ε', 'ε')
-('linkbodyatr', '%', '>') -> ('linkbodyatr', 'ε', 'ε')
-('linkbodyatr', '>', '>') -> ('bodyopendone', '>', 'ε')
-('linkbodyatr', 'r', 'r') -> ('linkbodyrelwajib', 'r', 'ε')
-('linkbodyrelwajib', 'e', 'e') -> ('linkbodyrelwajib', 'e', 'ε')
-('linkbodyrelwajib', 'l', 'l') -> ('linkbodyrelwajib', 'l', 'ε')
-('linkbodyrelwajib', '=', '=') -> ('linkbodyrelwajib', '=', 'ε')
-('linkbodyrelwajib', '"', '"') -> ('linkbodytext', '"', 'ε')
-('linkbodytext', 'any', '"') -> ('linkbodytext', 'ε', 'ε')
-('linkbodytext', '"', '"') -> ('linkbodyatrdone', '"', 'ε')
-('linkbodyatrdone', '%', '>') -> ('linkbodyatr', 'ε', 'ε')
-('linkbodyatrdone', '$', '>') -> ('linkbodyatr', 'ε', 'ε')
-('linkbodyatrdone', '>', '>') -> ('bodyopendone', '>', 'ε')
-('linkbodyatr', 'i', '>') -> ('linkbodyid', 'ε', '""=d')
-('linkbodyid', 'd', 'd') -> ('linkbodyid', 'd', 'ε')
-('linkbodyid', '=', '=') -> ('linkbodyid', '=', 'ε')
-('linkbodyid', '"', '"') -> ('linkbodytext', '"', 'ε')
-('linkbodyatr', 'c', '>') -> ('linkbodyclass', 'ε', '""=ssal')
-('linkbodyclass', 'l', 'l') -> ('linkbodyclass', 'l', 'ε')
-('linkbodyclass', 'a', 'a') -> ('linkbodyclass', 'a', 'ε')
-('linkbodyclass', 's', 's') -> ('linkbodyclasss', 's', 'ε')
-('linkbodyclasss', 's', 's') -> ('linkbodyclass', 's', 'ε')
-('linkbodyclass', '=', '=') -> ('linkbodyclass', '=', 'ε')
-('linkbodyclass', '"', '"') -> ('linkbodytext', '"', 'ε')
-('linkbodyatr', 's', '>') -> ('linkbodystyle', 'ε', '""=elyt')
-('linkbodystyle', 't', 't') -> ('linkbodystyle', 't', 'ε')
-('linkbodystyle', 'y', 'y') -> ('linkbodystyle', 'y', 'ε')
-('linkbodystyle', 'l', 'l') -> ('linkbodycstyle', 'l', 'ε')
-('linkbodycstyle', 'e', 'e') -> ('linkbodystyle', 'e', 'ε')
-('linkbodystyle', '=', '=') -> ('linkbodystyle', '=', 'ε')
-('linkbodystyle', '"', '"') -> ('linkbodytext', '"', 'ε')
-('linkbodyatr', 'r', '>') -> ('linkbodyrel', 'ε', '""=le')
-('linkbodyrel', 'e', 'e') -> ('linkbodyrel', 'e', 'ε')
-('linkbodyrel', 'l', 'l') -> ('linkbodyrel', 'l', 'ε')
-('linkbodyrel', '=', '=') -> ('linkbodyrel', '=', 'ε')
-('linkbodyrel', '"', '"') -> ('linkbodytext', '"', 'ε')
-('linkbodyatr', 'h', '>') -> ('linkbodyhref', 'ε', '""=fer')
-('linkbodyhref', 'r', 'r') -> ('linkbodyhref', 'r', 'ε')
-('linkbodyhref', 'e', 'e') -> ('linkbodyhref', 'e', 'ε')
-('linkbodyhref', 'f', 'f') -> ('linkbodyhref', 'f', 'ε')
-('linkbodyhref', '=', '=') -> ('linkbodyhref', '=', 'ε')
-('linkbodyhref', '"', '"') -> ('linkbodytext', '"', 'ε')
-('bodyacctag', 'p', '/') -> ('p', 'ε', '<>p/<>')
-('p', '$', '>') -> ('patr', 'ε', 'ε')
-('p', '%', '>') -> ('patr', 'ε', 'ε')
-('patr', '%', '>') -> ('patr', 'ε', 'ε')
-('patr', '$', '>') -> ('patr', 'ε', 'ε')
-('patr', '>', '>') -> ('bodyopendone', '>', 'ε')
-('p', '>', '>') -> ('bodyopendone', '>', 'ε')
-('patr', 'i', '>') -> ('pid', 'ε', '""=d')
-('pid', 'd', 'd') -> ('pid', 'd', 'ε')
-('pid', '=', '=') -> ('pid', '=', 'ε')
-('pid', '"', '"') -> ('ptext', '"', 'ε')
-('patr', 'c', '>') -> ('pclass', 'ε', '""=ssal')
-('pclass', 'l', 'l') -> ('pclass', 'l', 'ε')
-('pclass', 'a', 'a') -> ('pclass', 'a', 'ε')
-('pclass', 's', 's') -> ('pclass', 's', 'ε')
-('pclass', '=', '=') -> ('pclass', '=', 'ε')
-('pclass', '"', '"') -> ('ptext', '"', 'ε')
-('patr', 's', '>') -> ('pstyle', 'ε', '""=elyt')
-('pstyle', 't', 't') -> ('pstyle', 't', 'ε')
-('pstyle', 'y', 'y') -> ('pstyle', 'y', 'ε')
-('pstyle', 'l', 'l') -> ('pstyle', 'l', 'ε')
-('pstyle', 'e', 'e') -> ('pstyle', 'e', 'ε')
-('pstyle', '=', '=') -> ('pstyle', '=', 'ε')
-('pstyle', '"', '"') -> ('ptext', '"', 'ε')
-('ptext', 'any', '"') -> ('ptext', 'ε', 'ε')
-('ptext', '"', '"') -> ('p', '"', 'ε')
-('bodyclosetag', 'p', 'p') -> ('pclosetag', 'p', 'ε')
-('pclosetag', '>', '>') -> ('bodyopendone', '>', 'ε')
-('bopentag', '%', '/') -> ('batr', 'ε', 'ε')
-('bopentag', '$', '/') -> ('batr', 'ε', 'ε')
-('batr', '$', '/') -> ('batr', 'ε', 'ε')
-('batr', '%', '/') -> ('batr', 'ε', 'ε')
-('bopentag', '>', '/') -> ('bodyopendone', 'ε', '<>b/<')
-('batr', '>', '/') -> ('bodyopendone', 'ε', '<>b/<')
-('btext', '"', '"') -> ('bopentag', '"', 'ε')
-('btext', 'any', '"') -> ('btext', 'ε', 'ε')
-('batr', 'i', '/') -> ('bid', 'ε', '""=d')
-('bid', 'd', 'd') -> ('bid', 'd', 'ε')
-('bid', '=', '=') -> ('bid', '=', 'ε')
-('bid', '"', '"') -> ('btext', '"', 'ε')
-('batr', 'c', '/') -> ('bclass', 'ε', '""=ssal')
-('bclass', 'l', 'l') -> ('bclass', 'l', 'ε')
-('bclass', 'a', 'a') -> ('bclass', 'a', 'ε')
-('bclass', 's', 's') -> ('bclass', 's', 'ε')
-('bclass', '=', '=') -> ('bclass', '=', 'ε')
-('bclass', '"', '"') -> ('btext', '"', 'ε')
-('batr', 's', '/') -> ('bstyle', 'ε', '""=elyt')
-('bstyle', 't', 't') -> ('bstyle', 't', 'ε')
-('bstyle', 'y', 'y') -> ('bstyle', 'y', 'ε')
-('bstyle', 'l', 'l') -> ('bstyle', 'l', 'ε')
-('bstyle', 'e', 'e') -> ('bstyle', 'e', 'ε')
-('bstyle', '=', '=') -> ('bstyle', '=', 'ε')
-('bstyle', '"', '"') -> ('btext', '"', 'ε')
-('bodyclosetagb', '>', '>') -> ('bodyopendone', '>', 'ε')
-('abodytag', 'b', '/') -> ('abbrtag', 'ε', '>rbba/<>rb')
-('abbrtag', 'b', 'b') -> ('abbrtag', 'b', 'ε')
-('abbrtag', 'r', 'r') -> ('abbrtag', 'r', 'ε')
-('abbrtag', '%', '>') -> ('abbratr', 'ε', 'ε')
-('abbrtag', '$', '>') -> ('abbratr', 'ε', 'ε')
-('abbratr', '%', '>') -> ('abbratr', 'ε', 'ε')
-('abbratr', '$', '>') -> ('abbratr', 'ε', 'ε')
-('abbrtag', '>', '>') -> ('bodyopendone', '>', 'ε')
-('abbratr', '>', '>') -> ('bodyopendone', '>', 'ε')
-('abbrtext', 'any', '"') -> ('abbrtext', 'ε', 'ε')
-('abbrtext', '"', '"') -> ('abbrtag', '"', 'ε')
-('abbratr', 'i', '>') -> ('abbrid', 'ε', '""=d')
-('abbrid', 'd', 'd') -> ('abbrid', 'd', 'ε')
-('abbrid', '=', '=') -> ('abbrid', '=', 'ε')
-('abbrid', '"', '"') -> ('abbrtext', '"', 'ε')
-('abbratr', 'c', '>') -> ('abbrclass', 'ε', '""=ssal')
-('abbrclass', 'l', 'l') -> ('abbrclass', 'l', 'ε')
-('abbrclass', 'a', 'a') -> ('abbrclass', 'a', 'ε')
-('abbrclass', 's', 's') -> ('abbrclass', 's', 'ε')
-('abbrclass', '=', '=') -> ('abbrclass', '=', 'ε')
-('abbrclass', '"', '"') -> ('abbrtext', '"', 'ε')
-('abbratr', 's', '>') -> ('abbrstyle', 'ε', '""=elyt')
-('abbrstyle', 't', 't') -> ('abbrstyle', 't', 'ε')
-('abbrstyle', 'y', 'y') -> ('abbrstyle', 'y', 'ε')
-('abbrstyle', 'l', 'l') -> ('abbrstyle', 'l', 'ε')
-('abbrstyle', 'e', 'e') -> ('abbrstyle', 'e', 'ε')
-('abbrstyle', '=', '=') -> ('abbrstyle', '=', 'ε')
-('abbrstyle', '"', '"') -> ('abbrtext', '"', 'ε')
-('aclose', 'b', 'b') -> ('abbrclose', 'b', 'ε')
-('abbrclose', 'b', 'b') -> ('abbrclose', 'b', 'ε')
-('abbrclose', 'r', 'r') -> ('abbrclose', 'r', 'ε')
-('abbrclose', '>', '>') -> ('bodyopendone', '>', '<')
-('script/small/strong', 't', '/') -> ('strongbody', 'ε', '<>gnorts/<>gnor')
-('strongbody', 'r', 'r') -> ('strongbodyopen', 'r', 'ε')
-('strongbodyopen', 'o', 'o') -> ('strongbodyopen', 'o', 'ε')
-('strongbodyopen', 'n', 'n') -> ('strongbodyopen', 'n', 'ε')
-('strongbodyopen', 'g', 'g') -> ('strongbodyopen', 'g', 'ε')
-('strongbodyopen', '$', '>') -> ('strongbodyopenatr', 'ε', 'ε')
-('strongbodyopen', '%', '>') -> ('strongbodyopenatr', 'ε', 'ε')
-('strongbodyopenatr', '%', '>') -> ('strongbodyopenatr', 'ε', 'ε')
-('strongbodyopenatr', '>', '>') -> ('bodyopendone', '>', 'ε')
-('strongbodyopenatr', 'i', '>') -> ('strongbodyid', 'ε', '""=d')
-('strongbodyid', 'd', 'd') -> ('strongbodyid', 'd', 'ε')
-('strongbodyid', '=', '=') -> ('strongbodyid', '=', 'ε')
-('strongbodyid', '"', '"') -> ('strongbodytext', '"', 'ε')
-('strongbodytext', 'any', '"') -> ('strongbodytext', 'ε', 'ε')
-('strongbodytext', '"', '"') -> ('strongbodyatrdone', '"', 'ε')
-('strongbodyatrdone', '%', '>') -> ('strongbodyopenatr', 'ε', 'ε')
-('strongbodyatrdone', '$', '>') -> ('strongbodyopenatr', 'ε', 'ε')
-('strongbodyatrdone', '>', '>') -> ('bodyopendone', '>', 'ε')
-('strongbodyopen', '>', '>') -> ('bodyopendone', '>', 'ε')
-('bodyopendone', '$', '<') -> ('bodyopendone', 'ε', 'ε')
-('strongbodyopenatr', 'c', '>') -> ('strongbodyclass', 'ε', '""=ssal')
-('strongbodyclass', 'l', 'l') -> ('strongbodyclass', 'l', 'ε')
-('strongbodyclass', 'a', 'a') -> ('strongbodyclass', 'a', 'ε')
-('strongbodyclass', 's', 's') -> ('strongbodyclasss', 's', 'ε')
-('strongbodyclasss', 's', 's') -> ('strongbodyclass', 's', 'ε')
-('strongbodyclass', '=', '=') -> ('strongbodyclass', '=', 'ε')
-('strongbodyclass', '"', '"') -> ('strongbodytext', '"', 'ε')
-('strongbodyopenatr', 's', '>') -> ('strongbodystyleorsrc', 'ε', 'ε')
-('strongbodystyleorsrc', 't', '>') -> ('strongbodystyle', 'ε', '""=ely')
-('strongbodystyle', 'y', 'y') -> ('strongbodystyle', 'y', 'ε')
-('strongbodystyle', 'l', 'l') -> ('strongbodycstyle', 'l', 'ε')
-('strongbodycstyle', 'e', 'e') -> ('strongbodystyle', 'e', 'ε')
-('strongbodystyle', '=', '=') -> ('strongbodystyle', '=', 'ε')
-('strongbodystyle', '"', '"') -> ('strongbodytext', '"', 'ε')
-('strong/smallbodyclose', 't', 't') -> ('strongbodyclose', 't', 'ε')
-('strongbodyclose', 'r', 'r') -> ('strongbodyclose', 'r', 'ε')
-('strongbodyclose', 'o', 'o') -> ('strongbodyclose', 'o', 'ε')
-('strongbodyclose', 'n', 'n') -> ('strongbodyclose', 'n', 'ε')
-('strongbodyclose', 'g', 'g') -> ('strongbodyclose', 'g', 'ε')
-('strongbodyclose', '>', '>') -> ('bodyopendone', '>', 'ε')
-('script/small/strong', 'm', '/') -> ('smallbody', 'ε', '<>llams/<>lla')
-('smallbody', 'a', 'a') -> ('smallbodyopen', 'a', 'ε')
-('smallbodyopen', 'l', 'l') -> ('smallbodyopen', 'l', 'ε')
-('smallbodyopen', '$', '>') -> ('smallbodyopenatr', 'ε', 'ε')
-('smallbodyopen', '%', '>') -> ('smallbodyopenatr', 'ε', 'ε')
-('smallbodyopenatr', '%', '>') -> ('smallbodyopenatr', 'ε', 'ε')
-('smallbodyopenatr', '>', '>') -> ('bodyopendone', '>', 'ε')
-('smallbodyopenatr', 'i', '>') -> ('smallbodyid', 'ε', '""=d')
-('smallbodyid', 'd', 'd') -> ('smallbodyid', 'd', 'ε')
-('smallbodyid', '=', '=') -> ('smallbodyid', '=', 'ε')
-('smallbodyid', '"', '"') -> ('smallbodytext', '"', 'ε')
-('smallbodytext', 'any', '"') -> ('smallbodytext', 'ε', 'ε')
-('smallbodytext', '"', '"') -> ('smallbodyatrdone', '"', 'ε')
-('smallbodyatrdone', '%', '>') -> ('smallbodyopenatr', 'ε', 'ε')
-('smallbodyatrdone', '$', '>') -> ('smallbodyopenatr', 'ε', 'ε')
-('smallbodyatrdone', '>', '>') -> ('bodyopendone', '>', 'ε')
-('smallbodyopen', '>', '>') -> ('bodyopendone', '>', 'ε')
-('smallbodyopenatr', 'c', '>') -> ('smallbodyclass', 'ε', '""=ssal')
-('smallbodyclass', 'l', 'l') -> ('smallbodyclass', 'l', 'ε')
-('smallbodyclass', 'a', 'a') -> ('smallbodyclass', 'a', 'ε')
-('smallbodyclass', 's', 's') -> ('smallbodyclasss', 's', 'ε')
-('smallbodyclasss', 's', 's') -> ('smallbodyclass', 's', 'ε')
-('smallbodyclass', '=', '=') -> ('smallbodyclass', '=', 'ε')
-('smallbodyclass', '"', '"') -> ('smallbodytext', '"', 'ε')
-('smallbodyopenatr', 's', '>') -> ('smallbodystyleorsrc', 'ε', 'ε')
-('smallbodystyleorsrc', 't', '>') -> ('smallbodystyle', 'ε', '""=ely')
-('smallbodystyle', 'y', 'y') -> ('smallbodystyle', 'y', 'ε')
-('smallbodystyle', 'l', 'l') -> ('smallbodycstyle', 'l', 'ε')
-('smallbodycstyle', 'e', 'e') -> ('smallbodystyle', 'e', 'ε')
-('smallbodystyle', '=', '=') -> ('smallbodystyle', '=', 'ε')
-('smallbodystyle', '"', '"') -> ('smallbodytext', '"', 'ε')
-('strong/smallbodyclose', 'm', 'm') -> ('smallbodyclose', 'm', 'ε')
-('smallbodyclose', 'a', 'a') -> ('smallbodyclose', 'a', 'ε')
-('smallbodyclose', 'l', 'l') -> ('smallbodyclose', 'l', 'ε')
-('smallbodyclose', '>', '>') -> ('bodyopendone', '>', 'ε')
-('bodyacctag', 'e', '/') -> ('embodyopen', 'ε', '<>me/<>m')
-('embodyopen', 'm', 'm') -> ('embodyopen', 'm', 'ε')
-('embodyopen', '$', '>') -> ('embodyopenatr', 'ε', 'ε')
-('embodyopen', '%', '>') -> ('embodyopenatr', 'ε', 'ε')
-('embodyopenatr', '%', '>') -> ('embodyopenatr', 'ε', 'ε')
-('embodyopenatr', '>', '>') -> ('bodyopendone', '>', 'ε')
-('embodyopenatr', 'i', '>') -> ('embodyid', 'ε', '""=d')
-('embodyid', 'd', 'd') -> ('embodyid', 'd', 'ε')
-('embodyid', '=', '=') -> ('embodyid', '=', 'ε')
-('embodyid', '"', '"') -> ('embodytext', '"', 'ε')
-('embodytext', 'any', '"') -> ('embodytext', 'ε', 'ε')
-('embodytext', '"', '"') -> ('embodyatrdone', '"', 'ε')
-('embodyatrdone', '%', '>') -> ('embodyopenatr', 'ε', 'ε')
-('embodyatrdone', '$', '>') -> ('embodyopenatr', 'ε', 'ε')
-('embodyatrdone', '>', '>') -> ('bodyopendone', '>', 'ε')
-('embodyopen', '>', '>') -> ('bodyopendone', '>', 'ε')
-('embodyopenatr', 'c', '>') -> ('embodyclass', 'ε', '""=ssal')
-('embodyclass', 'l', 'l') -> ('embodyclass', 'l', 'ε')
-('embodyclass', 'a', 'a') -> ('embodyclass', 'a', 'ε')
-('embodyclass', 's', 's') -> ('embodyclasss', 's', 'ε')
-('embodyclasss', 's', 's') -> ('embodyclass', 's', 'ε')
-('embodyclass', '=', '=') -> ('embodyclass', '=', 'ε')
-('embodyclass', '"', '"') -> ('embodytext', '"', 'ε')
-('embodyopenatr', 's', '>') -> ('embodystyleorsrc', 'ε', 'ε')
-('embodystyleorsrc', 't', '>') -> ('embodystyle', 'ε', '""=ely')
-('embodystyle', 'y', 'y') -> ('embodystyle', 'y', 'ε')
-('embodystyle', 'l', 'l') -> ('embodycstyle', 'l', 'ε')
-('embodycstyle', 'e', 'e') -> ('embodystyle', 'e', 'ε')
-('embodystyle', '=', '=') -> ('embodystyle', '=', 'ε')
-('embodystyle', '"', '"') -> ('embodytext', '"', 'ε')
-('bodyclosetag', 'e', 'e') -> ('embodyclose', 'e', 'ε')
-('embodyclose', 'm', 'm') -> ('embodyclose', 'm', 'ε')
-('embodyclose', '>', '>') -> ('bodyopendone', '>', 'ε')
-('thclosetag', 's', '/') -> ('strong/smallopenth', 'ε', 'ε')
-('strong/smallopenth', 't', '/') -> ('strongthopen', 'ε', '<>gnorts/<>gnor')
-('strongthopen', 'r', 'r') -> ('strongthopen', 'r', 'ε')
-('strongthopen', 'o', 'o') -> ('strongthopen', 'o', 'ε')
-('strongthopen', 'n', 'n') -> ('strongthopen', 'n', 'ε')
-('strongthopen', 'g', 'g') -> ('strongthopen', 'g', 'ε')
-('strongthopen', '$', '>') -> ('strongthopenatr', 'ε', 'ε')
-('strongthopen', '%', '>') -> ('strongthopenatr', 'ε', 'ε')
-('strongthopenatr', '%', '>') -> ('strongthopenatr', 'ε', 'ε')
-('strongthopenatr', '>', '>') -> ('thcontent', '>', 'ε')
-('strongthopenatr', 'i', '>') -> ('strongthid', 'ε', '""=d')
-('strongthid', 'd', 'd') -> ('strongthid', 'd', 'ε')
-('strongthid', '=', '=') -> ('strongthid', '=', 'ε')
-('strongthid', '"', '"') -> ('strongthtext', '"', 'ε')
-('strongthtext', 'any', '"') -> ('strongthtext', 'ε', 'ε')
-('strongthtext', '"', '"') -> ('strongthatrdone', '"', 'ε')
-('strongthatrdone', '%', '>') -> ('strongthopenatr', 'ε', 'ε')
-('strongthatrdone', '$', '>') -> ('strongthopenatr', 'ε', 'ε')
-('strongthatrdone', '>', '>') -> ('thcontent', '>', 'ε')
-('strongthopen', '>', '>') -> ('thcontent', '>', 'ε')
-('strongthopenatr', 'c', '>') -> ('strongthclass', 'ε', '""=ssal')
-('strongthclass', 'l', 'l') -> ('strongthclass', 'l', 'ε')
-('strongthclass', 'a', 'a') -> ('strongthclass', 'a', 'ε')
-('strongthclass', 's', 's') -> ('strongthclasss', 's', 'ε')
-('strongthclasss', 's', 's') -> ('strongthclass', 's', 'ε')
-('strongthclass', '=', '=') -> ('strongthclass', '=', 'ε')
-('strongthclass', '"', '"') -> ('strongthtext', '"', 'ε')
-('strongthopenatr', 's', '>') -> ('strongthstyleorsrc', 'ε', 'ε')
-('strongthstyleorsrc', 't', '>') -> ('strongthstyle', 'ε', '""=ely')
-('strongthstyle', 'y', 'y') -> ('strongthstyle', 'y', 'ε')
-('strongthstyle', 'l', 'l') -> ('strongthcstyle', 'l', 'ε')
-('strongthcstyle', 'e', 'e') -> ('strongthstyle', 'e', 'ε')
-('strongthstyle', '=', '=') -> ('strongthstyle', '=', 'ε')
-('strongthstyle', '"', '"') -> ('strongthtext', '"', 'ε')
-('thclosetag', 's', 's') -> ('strong/smallthclose', 's', 'ε')
-('strong/smallthclose', 't', 't') -> ('strongthclose', 't', 'ε')
-('strongthclose', 'r', 'r') -> ('strongthclose', 'r', 'ε')
-('strongthclose', 'o', 'o') -> ('strongthclose', 'o', 'ε')
-('strongthclose', 'n', 'n') -> ('strongthclose', 'n', 'ε')
-('strongthclose', 'g', 'g') -> ('strongthclose', 'g', 'ε')
-('strongthclose', '>', '>') -> ('thcontent', '>', 'ε')
-('strong/smallopenth', 'm', '/') -> ('smallthopen', 'ε', '<>llams/<>lla')
-('smallthopen', 'a', 'a') -> ('smallthopen', 'a', 'ε')
-('smallthopen', 'l', 'l') -> ('smallthopen', 'l', 'ε')
-('smallthopen', '$', '>') -> ('smallthopenatr', 'ε', 'ε')
-('smallthopen', '%', '>') -> ('smallthopenatr', 'ε', 'ε')
-('smallthopenatr', '%', '>') -> ('smallthopenatr', 'ε', 'ε')
-('smallthopenatr', '>', '>') -> ('thcontent', '>', 'ε')
-('smallthopenatr', 'i', '>') -> ('smallthid', 'ε', '""=d')
-('smallthid', 'd', 'd') -> ('smallthid', 'd', 'ε')
-('smallthid', '=', '=') -> ('smallthid', '=', 'ε')
-('smallthid', '"', '"') -> ('smallthtext', '"', 'ε')
-('smallthtext', 'any', '"') -> ('smallthtext', 'ε', 'ε')
-('smallthtext', '"', '"') -> ('smallthatrdone', '"', 'ε')
-('smallthatrdone', '%', '>') -> ('smallthopenatr', 'ε', 'ε')
-('smallthatrdone', '$', '>') -> ('smallthopenatr', 'ε', 'ε')
-('smallthatrdone', '>', '>') -> ('thcontent', '>', 'ε')
-('smallthopen', '>', '>') -> ('thcontent', '>', 'ε')
-('smallthopenatr', 'c', '>') -> ('smallthclass', 'ε', '""=ssal')
-('smallthclass', 'l', 'l') -> ('smallthclass', 'l', 'ε')
-('smallthclass', 'a', 'a') -> ('smallthclass', 'a', 'ε')
-('smallthclass', 's', 's') -> ('smallthclasss', 's', 'ε')
-('smallthclasss', 's', 's') -> ('smallthclass', 's', 'ε')
-('smallthclass', '=', '=') -> ('smallthclass', '=', 'ε')
-('smallthclass', '"', '"') -> ('smallthtext', '"', 'ε')
-('smallthopenatr', 's', '>') -> ('smallthstyleorsrc', 'ε', 'ε')
-('smallthstyleorsrc', 't', '>') -> ('smallthstyle', 'ε', '""=ely')
-('smallthstyle', 'y', 'y') -> ('smallthstyle', 'y', 'ε')
-('smallthstyle', 'l', 'l') -> ('smallthcstyle', 'l', 'ε')
-('smallthcstyle', 'e', 'e') -> ('smallthstyle', 'e', 'ε')
-('smallthstyle', '=', '=') -> ('smallthstyle', '=', 'ε')
-('smallthstyle', '"', '"') -> ('smallthtext', '"', 'ε')
-('strong/smallthclose', 'm', 'm') -> ('smallthclose', 'm', 'ε')
-('smallthclose', 'a', 'a') -> ('smallthclose', 'a', 'ε')
-('smallthclose', 'l', 'l') -> ('smallthclose', 'l', 'ε')
-('smallthclose', '>', '>') -> ('thcontent', '>', 'ε')
-('tdclosetag', 's', '/') -> ('strong/smallopentd', 'ε', 'ε')
-('strong/smallopentd', 't', '/') -> ('strongtdopen', 'ε', '<>gnorts/<>gnor')
-('strongtdopen', 'r', 'r') -> ('strongtdopen', 'r', 'ε')
-('strongtdopen', 'o', 'o') -> ('strongtdopen', 'o', 'ε')
-('strongtdopen', 'n', 'n') -> ('strongtdopen', 'n', 'ε')
-('strongtdopen', 'g', 'g') -> ('strongtdopen', 'g', 'ε')
-('strongtdopen', '$', '>') -> ('strongtdopenatr', 'ε', 'ε')
-('strongtdopen', '%', '>') -> ('strongtdopenatr', 'ε', 'ε')
-('strongtdopenatr', '%', '>') -> ('strongtdopenatr', 'ε', 'ε')
-('strongtdopenatr', '>', '>') -> ('tdcontent', '>', 'ε')
-('strongtdopenatr', 'i', '>') -> ('strongtdid', 'ε', '""=d')
-('strongtdid', 'd', 'd') -> ('strongtdid', 'd', 'ε')
-('strongtdid', '=', '=') -> ('strongtdid', '=', 'ε')
-('strongtdid', '"', '"') -> ('strongtdtext', '"', 'ε')
-('strongtdtext', 'any', '"') -> ('strongtdtext', 'ε', 'ε')
-('strongtdtext', '"', '"') -> ('strongtdatrdone', '"', 'ε')
-('strongtdatrdone', '%', '>') -> ('strongtdopenatr', 'ε', 'ε')
-('strongtdatrdone', '$', '>') -> ('strongtdopenatr', 'ε', 'ε')
-('strongtdatrdone', '>', '>') -> ('tdcontent', '>', 'ε')
-('strongtdopen', '>', '>') -> ('tdcontent', '>', 'ε')
-('strongtdopenatr', 'c', '>') -> ('strongtdclass', 'ε', '""=ssal')
-('strongtdclass', 'l', 'l') -> ('strongtdclass', 'l', 'ε')
-('strongtdclass', 'a', 'a') -> ('strongtdclass', 'a', 'ε')
-('strongtdclass', 's', 's') -> ('strongtdclasss', 's', 'ε')
-('strongtdclasss', 's', 's') -> ('strongtdclass', 's', 'ε')
-('strongtdclass', '=', '=') -> ('strongtdclass', '=', 'ε')
-('strongtdclass', '"', '"') -> ('strongtdtext', '"', 'ε')
-('strongtdopenatr', 's', '>') -> ('strongtdstyleorsrc', 'ε', 'ε')
-('strongtdstyleorsrc', 't', '>') -> ('strongtdstyle', 'ε', '""=ely')
-('strongtdstyle', 'y', 'y') -> ('strongtdstyle', 'y', 'ε')
-('strongtdstyle', 'l', 'l') -> ('strongtdcstyle', 'l', 'ε')
-('strongtdcstyle', 'e', 'e') -> ('strongtdstyle', 'e', 'ε')
-('strongtdstyle', '=', '=') -> ('strongtdstyle', '=', 'ε')
-('strongtdstyle', '"', '"') -> ('strongtdtext', '"', 'ε')
-('tdclosetag', 's', 's') -> ('strong/smalltdclose', 's', 'ε')
-('strong/smalltdclose', 't', 't') -> ('strongtdclose', 't', 'ε')
-('strongtdclose', 'r', 'r') -> ('strongtdclose', 'r', 'ε')
-('strongtdclose', 'o', 'o') -> ('strongtdclose', 'o', 'ε')
-('strongtdclose', 'n', 'n') -> ('strongtdclose', 'n', 'ε')
-('strongtdclose', 'g', 'g') -> ('strongtdclose', 'g', 'ε')
-('strongtdclose', '>', '>') -> ('tdcontent', '>', 'ε')
-('strong/smallopentd', 'm', '/') -> ('smalltdopen', 'ε', '<>llams/<>lla')
-('smalltdopen', 'a', 'a') -> ('smalltdopen', 'a', 'ε')
-('smalltdopen', 'l', 'l') -> ('smalltdopen', 'l', 'ε')
-('smalltdopen', '$', '>') -> ('smalltdopenatr', 'ε', 'ε')
-('smalltdopen', '%', '>') -> ('smalltdopenatr', 'ε', 'ε')
-('smalltdopenatr', '%', '>') -> ('smalltdopenatr', 'ε', 'ε')
-('smalltdopenatr', '>', '>') -> ('tdcontent', '>', 'ε')
-('smalltdopenatr', 'i', '>') -> ('smalltdid', 'ε', '""=d')
-('smalltdid', 'd', 'd') -> ('smalltdid', 'd', 'ε')
-('smalltdid', '=', '=') -> ('smalltdid', '=', 'ε')
-('smalltdid', '"', '"') -> ('smalltdtext', '"', 'ε')
-('smalltdtext', 'any', '"') -> ('smalltdtext', 'ε', 'ε')
-('smalltdtext', '"', '"') -> ('smalltdatrdone', '"', 'ε')
-('smalltdatrdone', '%', '>') -> ('smalltdopenatr', 'ε', 'ε')
-('smalltdatrdone', '$', '>') -> ('smalltdopenatr', 'ε', 'ε')
-('smalltdatrdone', '>', '>') -> ('tdcontent', '>', 'ε')
-('smalltdopen', '>', '>') -> ('tdcontent', '>', 'ε')
-('smalltdopenatr', 'c', '>') -> ('smalltdclass', 'ε', '""=ssal')
-('smalltdclass', 'l', 'l') -> ('smalltdclass', 'l', 'ε')
-('smalltdclass', 'a', 'a') -> ('smalltdclass', 'a', 'ε')
-('smalltdclass', 's', 's') -> ('smalltdclasss', 's', 'ε')
-('smalltdclasss', 's', 's') -> ('smalltdclass', 's', 'ε')
-('smalltdclass', '=', '=') -> ('smalltdclass', '=', 'ε')
-('smalltdclass', '"', '"') -> ('smalltdtext', '"', 'ε')
-('smalltdopenatr', 's', '>') -> ('smalltdstyleorsrc', 'ε', 'ε')
-('smalltdstyleorsrc', 't', '>') -> ('smalltdstyle', 'ε', '""=ely')
-('smalltdstyle', 'y', 'y') -> ('smalltdstyle', 'y', 'ε')
-('smalltdstyle', 'l', 'l') -> ('smalltdcstyle', 'l', 'ε')
-('smalltdcstyle', 'e', 'e') -> ('smalltdstyle', 'e', 'ε')
-('smalltdstyle', '=', '=') -> ('smalltdstyle', '=', 'ε')
-('smalltdstyle', '"', '"') -> ('smalltdtext', '"', 'ε')
-('strong/smalltdclose', 'm', 'm') -> ('smalltdclose', 'm', 'ε')
-('smalltdclose', 'a', 'a') -> ('smalltdclose', 'a', 'ε')
-('smalltdclose', 'l', 'l') -> ('smalltdclose', 'l', 'ε')
-('smalltdclose', '>', '>') -> ('tdcontent', '>', 'ε')
-('thclosetag', 'e', '/') -> ('emthopen', 'ε', '<>me/<>m')
-('emthopen', 'm', 'm') -> ('emthopen', 'm', 'ε')
-('emthopen', '$', '>') -> ('emthopenatr', 'ε', 'ε')
-('emthopen', '%', '>') -> ('emthopenatr', 'ε', 'ε')
-('emthopenatr', '%', '>') -> ('emthopenatr', 'ε', 'ε')
-('emthopenatr', '>', '>') -> ('thcontent', '>', 'ε')
-('emthopenatr', 'i', '>') -> ('emthid', 'ε', '""=d')
-('emthid', 'd', 'd') -> ('emthid', 'd', 'ε')
-('emthid', '=', '=') -> ('emthid', '=', 'ε')
-('emthid', '"', '"') -> ('emthtext', '"', 'ε')
-('emthtext', 'any', '"') -> ('emthtext', 'ε', 'ε')
-('emthtext', '"', '"') -> ('emthatrdone', '"', 'ε')
-('emthatrdone', '%', '>') -> ('emthopenatr', 'ε', 'ε')
-('emthatrdone', '$', '>') -> ('emthopenatr', 'ε', 'ε')
-('emthatrdone', '>', '>') -> ('thcontent', '>', 'ε')
-('emthopen', '>', '>') -> ('thcontent', '>', 'ε')
-('emthopenatr', 'c', '>') -> ('emthclass', 'ε', '""=ssal')
-('emthclass', 'l', 'l') -> ('emthclass', 'l', 'ε')
-('emthclass', 'a', 'a') -> ('emthclass', 'a', 'ε')
-('emthclass', 's', 's') -> ('emthclasss', 's', 'ε')
-('emthclasss', 's', 's') -> ('emthclass', 's', 'ε')
-('emthclass', '=', '=') -> ('emthclass', '=', 'ε')
-('emthclass', '"', '"') -> ('emthtext', '"', 'ε')
-('emthopenatr', 's', '>') -> ('emthstyleorsrc', 'ε', 'ε')
-('emthstyleorsrc', 't', '>') -> ('emthstyle', 'ε', '""=ely')
-('emthstyle', 'y', 'y') -> ('emthstyle', 'y', 'ε')
-('emthstyle', 'l', 'l') -> ('emthcstyle', 'l', 'ε')
-('emthcstyle', 'e', 'e') -> ('emthstyle', 'e', 'ε')
-('emthstyle', '=', '=') -> ('emthstyle', '=', 'ε')
-('emthstyle', '"', '"') -> ('emthtext', '"', 'ε')
-('thclosetag', 'e', 'e') -> ('emthclose', 'e', 'ε')
-('emthclose', 'm', 'm') -> ('emthclose', 'm', 'ε')
-('emthclose', '>', '>') -> ('thcontent', '>', 'ε')
-('tdclosetag', 'e', '/') -> ('emtdopen', 'ε', '<>me/<>m')
-('emtdopen', 'm', 'm') -> ('emtdopen', 'm', 'ε')
-('emtdopen', '$', '>') -> ('emtdopenatr', 'ε', 'ε')
-('emtdopen', '%', '>') -> ('emtdopenatr', 'ε', 'ε')
-('emtdopenatr', '%', '>') -> ('emtdopenatr', 'ε', 'ε')
-('emtdopenatr', '>', '>') -> ('tdcontent', '>', 'ε')
-('emtdopenatr', 'i', '>') -> ('emtdid', 'ε', '""=d')
-('emtdid', 'd', 'd') -> ('emtdid', 'd', 'ε')
-('emtdid', '=', '=') -> ('emtdid', '=', 'ε')
-('emtdid', '"', '"') -> ('emtdtext', '"', 'ε')
-('emtdtext', 'any', '"') -> ('emtdtext', 'ε', 'ε')
-('emtdtext', '"', '"') -> ('emtdatrdone', '"', 'ε')
-('emtdatrdone', '%', '>') -> ('emtdopenatr', 'ε', 'ε')
-('emtdatrdone', '$', '>') -> ('emtdopenatr', 'ε', 'ε')
-('emtdatrdone', '>', '>') -> ('tdcontent', '>', 'ε')
-('emtdopen', '>', '>') -> ('tdcontent', '>', 'ε')
-('emtdopenatr', 'c', '>') -> ('emtdclass', 'ε', '""=ssal')
-('emtdclass', 'l', 'l') -> ('emtdclass', 'l', 'ε')
-('emtdclass', 'a', 'a') -> ('emtdclass', 'a', 'ε')
-('emtdclass', 's', 's') -> ('emtdclasss', 's', 'ε')
-('emtdclasss', 's', 's') -> ('emtdclass', 's', 'ε')
-('emtdclass', '=', '=') -> ('emtdclass', '=', 'ε')
-('emtdclass', '"', '"') -> ('emtdtext', '"', 'ε')
-('emtdopenatr', 's', '>') -> ('emtdstyleorsrc', 'ε', 'ε')
-('emtdstyleorsrc', 't', '>') -> ('emtdstyle', 'ε', '""=ely')
-('emtdstyle', 'y', 'y') -> ('emtdstyle', 'y', 'ε')
-('emtdstyle', 'l', 'l') -> ('emtdcstyle', 'l', 'ε')
-('emtdcstyle', 'e', 'e') -> ('emtdstyle', 'e', 'ε')
-('emtdstyle', '=', '=') -> ('emtdstyle', '=', 'ε')
-('emtdstyle', '"', '"') -> ('emtdtext', '"', 'ε')
-('tdclosetag', 'e', 'e') -> ('emtdclose', 'e', 'ε')
-('emtdclose', 'm', 'm') -> ('emtdclose', 'm', 'ε')
-('emtdclose', '>', '>') -> ('tdcontent', '>', 'ε')
-('thclosetag', 'b', '/') -> ('bthopen', 'ε', '<>b/<>')
-('bthopen', '$', '>') -> ('bthopenatr', 'ε', 'ε')
-('bthopen', '%', '>') -> ('bthopenatr', 'ε', 'ε')
-('bthopenatr', '%', '>') -> ('bthopenatr', 'ε', 'ε')
-('bthopenatr', '>', '>') -> ('thcontent', '>', 'ε')
-('bthopenatr', 'i', '>') -> ('bthid', 'ε', '""=d')
-('bthid', 'd', 'd') -> ('bthid', 'd', 'ε')
-('bthid', '=', '=') -> ('bthid', '=', 'ε')
-('bthid', '"', '"') -> ('bthtext', '"', 'ε')
-('bthtext', 'any', '"') -> ('bthtext', 'ε', 'ε')
-('bthtext', '"', '"') -> ('bthatrdone', '"', 'ε')
-('bthatrdone', '%', '>') -> ('bthopenatr', 'ε', 'ε')
-('bthatrdone', '$', '>') -> ('bthopenatr', 'ε', 'ε')
-('bthatrdone', '>', '>') -> ('thcontent', '>', 'ε')
-('bthopen', '>', '>') -> ('thcontent', '>', 'ε')
-('bthopenatr', 'c', '>') -> ('bthclass', 'ε', '""=ssal')
-('bthclass', 'l', 'l') -> ('bthclass', 'l', 'ε')
-('bthclass', 'a', 'a') -> ('bthclass', 'a', 'ε')
-('bthclass', 's', 's') -> ('bthclasss', 's', 'ε')
-('bthclasss', 's', 's') -> ('bthclass', 's', 'ε')
-('bthclass', '=', '=') -> ('bthclass', '=', 'ε')
-('bthclass', '"', '"') -> ('bthtext', '"', 'ε')
-('bthopenatr', 's', '>') -> ('bthstyleorsrc', 'ε', 'ε')
-('bthstyleorsrc', 't', '>') -> ('bthstyle', 'ε', '""=ely')
-('bthstyle', 'y', 'y') -> ('bthstyle', 'y', 'ε')
-('bthstyle', 'l', 'l') -> ('bthcstyle', 'l', 'ε')
-('bthcstyle', 'e', 'e') -> ('bthstyle', 'e', 'ε')
-('bthstyle', '=', '=') -> ('bthstyle', '=', 'ε')
-('bthstyle', '"', '"') -> ('bthtext', '"', 'ε')
-('thclosetag', 'b', 'b') -> ('bthclose', 's', 'ε')
-('bthclose', '>', '>') -> ('thcontent', '>', 'ε')
-('thclosetag', 'a', '/') -> ('abbrthopen', 'ε', '<>rbba/<>rbb')
-('abbrthopen', 'b', 'b') -> ('abbrthopen', 'b', 'ε')
-('abbrthopen', 'r', 'r') -> ('abbrthopen', 'r', 'ε')
-('abbrthopen', '$', '>') -> ('abbrthopenatr', 'ε', 'ε')
-('abbrthopen', '%', '>') -> ('abbrthopenatr', 'ε', 'ε')
-('abbrthopenatr', '%', '>') -> ('abbrthopenatr', 'ε', 'ε')
-('abbrthopenatr', '>', '>') -> ('thcontent', '>', 'ε')
-('abbrthopenatr', 'i', '>') -> ('abbrthid', 'ε', '""=d')
-('abbrthid', 'd', 'd') -> ('abbrthid', 'd', 'ε')
-('abbrthid', '=', '=') -> ('abbrthid', '=', 'ε')
-('abbrthid', '"', '"') -> ('abbrthtext', '"', 'ε')
-('abbrthtext', 'any', '"') -> ('abbrthtext', 'ε', 'ε')
-('abbrthtext', '"', '"') -> ('abbrthatrdone', '"', 'ε')
-('abbrthatrdone', '%', '>') -> ('abbrthopenatr', 'ε', 'ε')
-('abbrthatrdone', '$', '>') -> ('abbrthopenatr', 'ε', 'ε')
-('abbrthatrdone', '>', '>') -> ('thcontent', '>', 'ε')
-('abbrthopen', '>', '>') -> ('thcontent', '>', 'ε')
-('abbrthopenatr', 'c', '>') -> ('abbrthclass', 'ε', '""=ssal')
-('abbrthclass', 'l', 'l') -> ('abbrthclass', 'l', 'ε')
-('abbrthclass', 'a', 'a') -> ('abbrthclass', 'a', 'ε')
-('abbrthclass', 's', 's') -> ('abbrthclasss', 's', 'ε')
-('abbrthclasss', 's', 's') -> ('abbrthclass', 's', 'ε')
-('abbrthclass', '=', '=') -> ('abbrthclass', '=', 'ε')
-('abbrthclass', '"', '"') -> ('abbrthtext', '"', 'ε')
-('abbrthopenatr', 's', '>') -> ('abbrthstyleorsrc', 'ε', 'ε')
-('abbrthstyleorsrc', 't', '>') -> ('abbrthstyle', 'ε', '""=ely')
-('abbrthstyle', 'y', 'y') -> ('abbrthstyle', 'y', 'ε')
-('abbrthstyle', 'l', 'l') -> ('abbrthcstyle', 'l', 'ε')
-('abbrthcstyle', 'e', 'e') -> ('abbrthstyle', 'e', 'ε')
-('abbrthstyle', '=', '=') -> ('abbrthstyle', '=', 'ε')
-('abbrthstyle', '"', '"') -> ('abbrthtext', '"', 'ε')
-('thclosetag', 'a', 'a') -> ('abbrthclose', 'a', 'ε')
-('abbrthclose', 'b', 'b') -> ('abbrthclose', 'a', 'ε')
-('abbrthclose', 'r', 'r') -> ('abbrthclose', 'r', 'ε')
-('abbrthclose', '>', '>') -> ('thcontent', '>', 'ε')
-('tdclosetag', 'b', '/') -> ('btdopen', 'ε', '<>b/<>')
-('btdopen', '$', '>') -> ('btdopenatr', 'ε', 'ε')
-('btdopen', '%', '>') -> ('btdopenatr', 'ε', 'ε')
-('btdopenatr', '%', '>') -> ('btdopenatr', 'ε', 'ε')
-('btdopenatr', '>', '>') -> ('tdcontent', '>', 'ε')
-('btdopenatr', 'i', '>') -> ('btdid', 'ε', '""=d')
-('btdid', 'd', 'd') -> ('btdid', 'd', 'ε')
-('btdid', '=', '=') -> ('btdid', '=', 'ε')
-('btdid', '"', '"') -> ('btdtext', '"', 'ε')
-('btdtext', 'any', '"') -> ('btdtext', 'ε', 'ε')
-('btdtext', '"', '"') -> ('btdatrdone', '"', 'ε')
-('btdatrdone', '%', '>') -> ('btdopenatr', 'ε', 'ε')
-('btdatrdone', '$', '>') -> ('btdopenatr', 'ε', 'ε')
-('btdatrdone', '>', '>') -> ('tdcontent', '>', 'ε')
-('btdopen', '>', '>') -> ('tdcontent', '>', 'ε')
-('btdopenatr', 'c', '>') -> ('btdclass', 'ε', '""=ssal')
-('btdclass', 'l', 'l') -> ('btdclass', 'l', 'ε')
-('btdclass', 'a', 'a') -> ('btdclass', 'a', 'ε')
-('btdclass', 's', 's') -> ('btdclasss', 's', 'ε')
-('btdclasss', 's', 's') -> ('btdclass', 's', 'ε')
-('btdclass', '=', '=') -> ('btdclass', '=', 'ε')
-('btdclass', '"', '"') -> ('btdtext', '"', 'ε')
-('btdopenatr', 's', '>') -> ('btdstyleorsrc', 'ε', 'ε')
-('btdstyleorsrc', 't', '>') -> ('btdstyle', 'ε', '""=ely')
-('btdstyle', 'y', 'y') -> ('btdstyle', 'y', 'ε')
-('btdstyle', 'l', 'l') -> ('btdcstyle', 'l', 'ε')
-('btdcstyle', 'e', 'e') -> ('btdstyle', 'e', 'ε')
-('btdstyle', '=', '=') -> ('btdstyle', '=', 'ε')
-('btdstyle', '"', '"') -> ('btdtext', '"', 'ε')
-('tdclosetag', 'b', 'b') -> ('btdclose', 's', 'ε')
-('btdclose', '>', '>') -> ('tdcontent', '>', 'ε')
-('tdclosetag', 'a', '/') -> ('abbrtdopen', 'ε', '<>rbba/<>rbb')
-('abbrtdopen', 'b', 'b') -> ('abbrtdopen', 'b', 'ε')
-('abbrtdopen', 'r', 'r') -> ('abbrtdopen', 'r', 'ε')
-('abbrtdopen', '$', '>') -> ('abbrtdopenatr', 'ε', 'ε')
-('abbrtdopen', '%', '>') -> ('abbrtdopenatr', 'ε', 'ε')
-('abbrtdopenatr', '%', '>') -> ('abbrtdopenatr', 'ε', 'ε')
-('abbrtdopenatr', '>', '>') -> ('tdcontent', '>', 'ε')
-('abbrtdopenatr', 'i', '>') -> ('abbrtdid', 'ε', '""=d')
-('abbrtdid', 'd', 'd') -> ('abbrtdid', 'd', 'ε')
-('abbrtdid', '=', '=') -> ('abbrtdid', '=', 'ε')
-('abbrtdid', '"', '"') -> ('abbrtdtext', '"', 'ε')
-('abbrtdtext', 'any', '"') -> ('abbrtdtext', 'ε', 'ε')
-('abbrtdtext', '"', '"') -> ('abbrtdatrdone', '"', 'ε')
-('abbrtdatrdone', '%', '>') -> ('abbrtdopenatr', 'ε', 'ε')
-('abbrtdatrdone', '$', '>') -> ('abbrtdopenatr', 'ε', 'ε')
-('abbrtdatrdone', '>', '>') -> ('tdcontent', '>', 'ε')
-('abbrtdopen', '>', '>') -> ('tdcontent', '>', 'ε')
-('abbrtdopenatr', 'c', '>') -> ('abbrtdclass', 'ε', '""=ssal')
-('abbrtdclass', 'l', 'l') -> ('abbrtdclass', 'l', 'ε')
-('abbrtdclass', 'a', 'a') -> ('abbrtdclass', 'a', 'ε')
-('abbrtdclass', 's', 's') -> ('abbrtdclasss', 's', 'ε')
-('abbrtdclasss', 's', 's') -> ('abbrtdclass', 's', 'ε')
-('abbrtdclass', '=', '=') -> ('abbrtdclass', '=', 'ε')
-('abbrtdclass', '"', '"') -> ('abbrtdtext', '"', 'ε')
-('abbrtdopenatr', 's', '>') -> ('abbrtdstyleorsrc', 'ε', 'ε')
-('abbrtdstyleorsrc', 't', '>') -> ('abbrtdstyle', 'ε', '""=ely')
-('abbrtdstyle', 'y', 'y') -> ('abbrtdstyle', 'y', 'ε')
-('abbrtdstyle', 'l', 'l') -> ('abbrtdcstyle', 'l', 'ε')
-('abbrtdcstyle', 'e', 'e') -> ('abbrtdstyle', 'e', 'ε')
-('abbrtdstyle', '=', '=') -> ('abbrtdstyle', '=', 'ε')
-('abbrtdstyle', '"', '"') -> ('abbrtdtext', '"', 'ε')
-('tdclosetag', 'a', 'a') -> ('abbrtdclose', 'a', 'ε')
-('abbrtdclose', 'b', 'b') -> ('abbrtdclose', 'a', 'ε')
-('abbrtdclose', 'r', 'r') -> ('abbrtdclose', 'r', 'ε')
-('abbrtdclose', '>', '>') -> ('tdcontent', '>', 'ε')
+1. q0 < # <=> newtagbeforehtml ε ε
+2. q0 % # <=> q0 ε ε
+3. q0 $ # <=> q0 ε ε
+4. htmlclosedone % # <=> htmlclosedone ε ε
+5. htmlclosedone $ # <=> htmlclosedone ε ε
+6. newtagbeforehtml ! # <=> comment ε >----
+7. comment - - <=> comment-1 - ε
+8. comment-1 - - <=> comment-2 - ε
+9. comment-2 - - <=> comment-3 - ε
+10. comment-2 any - <=> comment-2 ε ε
+11. comment-3 - - <=> comment-4 - ε
+12. comment-3 any - <=> comment-2 ε -
+13. comment-4 any - <=> comment-2 ε --
+14. comment-4 > > <=> q0 > ε
+15. htmlclosedone < # <=> newtagafterhtml ε ε
+16. newtagafterhtml ! # <=> commenta ε >----
+17. commenta - - <=> comment-1a - ε
+18. comment-1a - - <=> comment-2a - ε
+19. comment-2a - - <=> comment-3a - ε
+20. comment-2a any - <=> comment-2a ε ε
+21. comment-3a - - <=> comment-4a - ε
+22. comment-3a any - <=> comment-2a ε -
+23. comment-4a any - <=> comment-2a ε --
+24. comment-4a > > <=> htmlclosedone > ε
+25. newtaghtmlopendone ! / <=> commentb ε <>----
+26. commentb - - <=> comment-1b - ε
+27. comment-1b - - <=> comment-2b - ε
+28. comment-2b - - <=> comment-3b - ε
+29. comment-2b any - <=> comment-2b ε ε
+30. comment-3b - - <=> comment-4b - ε
+31. comment-3b any - <=> comment-2b ε -
+32. comment-4b any - <=> comment-2b ε --
+33. comment-4b > > <=> htmlopendone > ε
+34. newtaginhead ! / <=> commentc ε <>----
+35. commentc - - <=> comment-1c - ε
+36. comment-1c - - <=> comment-2c - ε
+37. comment-2c - - <=> comment-3c - ε
+38. comment-2c any - <=> comment-2c ε ε
+39. comment-3c - - <=> comment-4c - ε
+40. comment-3c any - <=> comment-2c ε -
+41. comment-4c any - <=> comment-2c ε --
+42. comment-4c > > <=> headopendone > ε
+43. newtagheaddone ! / <=> commentd ε <>----
+44. commentd - - <=> comment-1d - ε
+45. comment-1d - - <=> comment-2d - ε
+46. comment-2d - - <=> comment-3d - ε
+47. comment-2d any - <=> comment-2d ε ε
+48. comment-3d - - <=> comment-4d - ε
+49. comment-3d any - <=> comment-2d ε -
+50. comment-4d any - <=> comment-2d ε --
+51. comment-4d > > <=> headclosedone > ε
+52. bodyacctag ! / <=> commente ε <>----
+53. commente - - <=> comment-1e - ε
+54. comment-1e - - <=> comment-2e - ε
+55. comment-2e - - <=> comment-3e - ε
+56. comment-2e any - <=> comment-2e ε ε
+57. comment-3e - - <=> comment-4e - ε
+58. comment-3e any - <=> comment-2e ε -
+59. comment-4e any - <=> comment-2e ε --
+60. comment-4e > > <=> bodyopendone > ε
+61. newtagbodydone ! / <=> commentf ε <>----
+62. commentf - - <=> comment-1f - ε
+63. comment-1f - - <=> comment-2f - ε
+64. comment-2f - - <=> comment-3f - ε
+65. comment-2f any - <=> comment-2f ε ε
+66. comment-3f - - <=> comment-4f - ε
+67. comment-3f any - <=> comment-2f ε -
+68. comment-4f any - <=> comment-2f ε --
+69. comment-4f > > <=> bodyclosedone > ε
+70. newtagbeforehtml h # <=> htmlopen ε >lmth/<>lmt
+71. htmlopen t t <=> htmlopen t ε
+72. htmlopen m m <=> htmlopen m ε
+73. htmlopen l l <=> htmlopen l ε
+74. htmlopen $ > <=> htmlopenatr ε ε
+75. htmlopen % > <=> htmlopenatr ε ε
+76. htmlopenatr % > <=> htmlopenatr ε ε
+77. htmlopenatr > > <=> htmlopendone > ε
+78. htmlopenatr i > <=> htmlid ε ""=d
+79. htmlid d d <=> htmlid d ε
+80. htmlid = = <=> htmlid = ε
+81. htmlid " " <=> htmltext " ε
+82. htmltext any " <=> htmltext ε ε
+83. htmltext " " <=> htmlatrdone " ε
+84. htmlatrdone % > <=> htmlopenatr ε ε
+85. htmlatrdone $ > <=> htmlopenatr ε ε
+86. htmlatrdone > > <=> htmlopendone > ε
+87. htmlopen > > <=> htmlopendone > ε
+88. htmlopendone $ < <=> htmlopendone ε ε
+89. htmlopendone % < <=> htmlopendone ε ε
+90. htmlopenatr c > <=> htmlclass ε ""=ssal
+91. htmlclass l l <=> htmlclass l ε
+92. htmlclass a a <=> htmlclass a ε
+93. htmlclass s s <=> htmlclasss s ε
+94. htmlclasss s s <=> htmlclass s ε
+95. htmlclass = = <=> htmlclass = ε
+96. htmlclass " " <=> htmltext " ε
+97. htmlopenatr s > <=> htmlstyle ε ""=elyt
+98. htmlstyle t t <=> htmlstyle t ε
+99. htmlstyle y y <=> htmlstyle y ε
+100. htmlstyle l l <=> htmlcstyle l ε
+101. htmlcstyle e e <=> htmlstyle e ε
+102. htmlstyle = = <=> htmlstyle = ε
+103. htmlstyle " " <=> htmlstyletext " ε
+104. newtagbodydone / / <=> closetaghtml / ε
+105. closetaghtml h h <=> htmlclose h ε
+106. htmlclose t t <=> htmlclose t ε
+107. htmlclose m m <=> htmlclose m ε
+108. htmlclose l l <=> htmlclose l ε
+109. htmlclose > > <=> htmlclosedone > ε
+110. htmlopendone < < <=> newtaghtmlopendone < ε
+111. newtaghtmlopendone h / <=> headopen ε <>daeh/<>dae
+112. headopen e e <=> headopen e ε
+113. headopen a a <=> headopen a ε
+114. headopen d d <=> headopen d ε
+115. headopen $ > <=> headopenatr ε ε
+116. headopen % > <=> headopenatr ε ε
+117. headopenatr % > <=> headopenatr ε ε
+118. headopenatr > > <=> headopendone > ε
+119. headopenatr i > <=> headid ε ""=d
+120. headid d d <=> headid d ε
+121. headid = = <=> headid = ε
+122. headid " " <=> headtext " ε
+123. headtext any " <=> headtext ε ε
+124. headtext " " <=> headatrdone " ε
+125. headatrdone % > <=> headopenatr ε ε
+126. headatrdone $ > <=> headopenatr ε ε
+127. headatrdone > > <=> headopendone > ε
+128. headopen > > <=> headopendone > ε
+129. headopendone $ < <=> headopendone ε ε
+130. headopendone % < <=> headopendone ε ε
+131. headopenatr c > <=> headclass ε ""=ssal
+132. headclass l l <=> headclass l ε
+133. headclass a a <=> headclass a ε
+134. headclass s s <=> headclasss s ε
+135. headclasss s s <=> headclass s ε
+136. headclass = = <=> headclass = ε
+137. headclass " " <=> headtext " ε
+138. headopenatr s > <=> headstyle ε ""=elyt
+139. headstyle t t <=> headstyle t ε
+140. headstyle y y <=> headstyle y ε
+141. headstyle l l <=> headcstyle l ε
+142. headcstyle e e <=> headstyle e ε
+143. headstyle = = <=> headstyle = ε
+144. headstyle " " <=> headtext " ε
+145. newtaginhead t / <=> titleopen ε <>eltit/<>elti
+146. titleopen t t <=> titleopen t ε
+147. titleopen i i <=> titleopen i ε
+148. titleopen l l <=> titleopen l ε
+149. titleopen e e <=> titleopen e ε
+150. titleopen $ > <=> titleopenatr ε ε
+151. titleopen % > <=> titleopenatr ε ε
+152. titleopenatr % > <=> titleopenatr ε ε
+153. titleopenatr > > <=> titleopendone > ε
+154. titleopenatr i > <=> titleid ε ""=d
+155. titleid d d <=> titleid d ε
+156. titleid = = <=> titleid = ε
+157. titleid " " <=> titletext " ε
+158. titletext any " <=> titletext ε ε
+159. titletext " " <=> titleatrdone " ε
+160. titleatrdone % > <=> titleopenatr ε ε
+161. titleatrdone $ > <=> titleopenatr ε ε
+162. titleatrdone > > <=> titleopendone > ε
+163. titleopen > > <=> titleopendone > ε
+164. titleopendone $ < <=> titleopendone ε ε
+165. titleopendone % < <=> titleopendone ε ε
+166. titleopenatr c > <=> titleclass ε ""=ssal
+167. titleclass l l <=> titleclass l ε
+168. titleclass a a <=> titleclass a ε
+169. titleclass s s <=> titleclasss s ε
+170. titleclasss s s <=> titleclass s ε
+171. titleclass = = <=> titleclass = ε
+172. titleclass " " <=> titletext " ε
+173. headeopendone $ < <=> titleopendone ε ε
+174. headeopendone % < <=> titleopendone ε ε
+175. titleopenatr s > <=> titlestyle ε ""=elyt
+176. titlestyle t t <=> titlestyle t ε
+177. titlestyle y y <=> titlestyle y ε
+178. titlestyle l l <=> titlecstyle l ε
+179. titlecstyle e e <=> titlestyle e ε
+180. titlestyle = = <=> titlestyle = ε
+181. titlestyle " " <=> titletext " ε
+182. titleopendone any < <=> titleopendone ε ε
+183. titleopendone < < <=> newtagintitle < ε
+184. newtagintitle / / <=> titleclose / ε
+185. titleclose t t <=> titleclose t ε
+186. titleclose i i <=> titleclose i ε
+187. titleclose l l <=> titleclose l ε
+188. titleclose e e <=> titleclose e ε
+189. titleclose > > <=> headopendone > ε
+190. newtaginhead s / <=> scriptopen ε <>tpircs/<>tpirc
+191. scriptopen s s <=> scriptopen s ε
+192. scriptopen c c <=> scriptopen c ε
+193. scriptopen r r <=> scriptopen r ε
+194. scriptopen i i <=> scriptopen i ε
+195. scriptopen p p <=> scriptopen t ε
+196. scriptopen t t <=> scriptopen t ε
+197. scriptopen $ > <=> scriptopenatr ε ε
+198. scriptopen % > <=> scriptopenatr ε ε
+199. scriptopenatr % > <=> scriptopenatr ε ε
+200. scriptopenatr > > <=> scriptopendone > ε
+201. scriptopenatr i > <=> scriptid ε ""=d
+202. scriptid d d <=> scriptid d ε
+203. scriptid = = <=> scriptid = ε
+204. scriptid " " <=> scripttext " ε
+205. scripttext any " <=> scripttext ε ε
+206. scripttext " " <=> scriptatrdone " ε
+207. scriptatrdone % > <=> scriptopenatr ε ε
+208. scriptatrdone $ > <=> scriptopenatr ε ε
+209. scriptatrdone > > <=> scriptopendone > ε
+210. scriptopen > > <=> scriptopendone > ε
+211. scriptopendone $ < <=> scriptopendone ε ε
+212. scriptopendone % < <=> scriptopendone ε ε
+213. scriptopenatr c > <=> scriptclass ε ""=ssal
+214. scriptclass l l <=> scriptclass l ε
+215. scriptclass a a <=> scriptclass a ε
+216. scriptclass s s <=> scriptclasss s ε
+217. scriptclasss s s <=> scriptclass s ε
+218. scriptclass = = <=> scriptclass = ε
+219. scriptclass " " <=> scripttext " ε
+220. scriptopenatr s > <=> scriptstyleorsrc ε ε
+221. scriptstyleorsrc t > <=> scriptstyle ε ""=ely
+222. scriptstyle y y <=> scriptstyle y ε
+223. scriptstyle l l <=> scriptcstyle l ε
+224. scriptcstyle e e <=> scriptstyle e ε
+225. scriptstyle = = <=> scriptstyle = ε
+226. scriptstyle " " <=> scripttext " ε
+227. scriptopendone any < <=> scriptopendone ε ε
+228. scriptstyleorsrc r > <=> scriptsrc ε ""=c
+229. scriptsrc c c <=> scriptsrc c ε
+230. scriptsrc = = <=> scriptsrc = ε
+231. scriptsrc " " <=> scripttext " ε
+232. scriptopendone < < <=> newtaginscript < ε
+233. newtaginscript / / <=> scriptclose / ε
+234. scriptclose s s <=> scriptclose s ε
+235. scriptclose c c <=> scriptclose c ε
+236. scriptclose r r <=> scriptclose r ε
+237. scriptclose i i <=> scriptclose i ε
+238. scriptclose p p <=> scriptclose p ε
+239. scriptclose t t <=> scriptclose t ε
+240. scriptclose > > <=> headopendone > ε
+241. newtaginhead l / <=> link ε <>""=lerkni
+242. link i i <=> link i ε
+243. link n n <=> link n ε
+244. link k k <=> link k ε
+245. link $ > <=> linkatr ε ε
+246. link % > <=> linkatr ε ε
+247. link $ r <=> linkatr ε ε
+248. link % r <=> linkatr ε ε
+249. link > > <=> headopendone > ε
+250. linkatr $ r <=> linkatr ε ε
+251. linkatr % r <=> linkatr ε ε
+252. linkatr $ > <=> linkatr ε ε
+253. linkatr % > <=> linkatr ε ε
+254. linkatr > > <=> headopendone > ε
+255. linkatr r r <=> linkrelwajib r ε
+256. linkrelwajib e e <=> linkrelwajib e ε
+257. linkrelwajib l l <=> linkrelwajib l ε
+258. linkrelwajib = = <=> linkrelwajib = ε
+259. linkrelwajib " " <=> linktext " ε
+260. linktext any " <=> linktext ε ε
+261. linktext " " <=> linkatrdone " ε
+262. linkatrdone % > <=> linkatr ε ε
+263. linkatrdone $ > <=> linkatr ε ε
+264. linkatrdone > > <=> headopendone > ε
+265. linkatr i > <=> linkid ε ""=d
+266. linkid d d <=> linkid d ε
+267. linkid = = <=> linkid = ε
+268. linkid " " <=> linktext " ε
+269. linkatr c > <=> linkclass ε ""=ssal
+270. linkclass l l <=> linkclass l ε
+271. linkclass a a <=> linkclass a ε
+272. linkclass s s <=> linkclasss s ε
+273. linkclasss s s <=> linkclass s ε
+274. linkclass = = <=> linkclass = ε
+275. linkclass " " <=> linktext " ε
+276. linkatr s > <=> linkstyle ε ""=elyt
+277. linkstyle t t <=> linkstyle t ε
+278. linkstyle y y <=> linkstyle y ε
+279. linkstyle l l <=> linkcstyle l ε
+280. linkcstyle e e <=> linkstyle e ε
+281. linkstyle = = <=> linkstyle = ε
+282. linkstyle " " <=> linktext " ε
+283. linkatr r > <=> linkrel ε ""=le
+284. linkrel e e <=> linkrel e ε
+285. linkrel l l <=> linkrel l ε
+286. linkrel = = <=> linkrel = ε
+287. linkrel " " <=> linktext " ε
+288. linkatr h > <=> linkhref ε ""=fer
+289. linkhref r r <=> linkhref r ε
+290. linkhref e e <=> linkhref e ε
+291. linkhref f f <=> linkhref f ε
+292. linkhref = = <=> linkhref = ε
+293. linkhref " " <=> linktext " ε
+294. headopendone < < <=> newtaginhead < ε
+295. newtaginhead / / <=> headclose / ε
+296. headclose h h <=> headclose h ε
+297. headclose e e <=> headclose e ε
+298. headclose a a <=> headclose a ε
+299. headclose d d <=> headclose d ε
+300. headclose > > <=> headclosedone > ε
+301. headclosedone $ < <=> headclosedone ε ε
+302. headclosedone % < <=> headclosedone ε ε
+303. headclosedone < < <=> newtagheaddone / ε
+304. newtagheaddone b / <=> bodyopen ε <>ydob/<>ydo
+305. bodyopen o o <=> bodyopen o ε
+306. bodyopen d d <=> bodyopen d ε
+307. bodyopen y y <=> bodyopen y ε
+308. bodyopen % > <=> bodyopenatr ε ε
+309. bodyopenatr % > <=> bodyopenatr ε ε
+310. bodyopenatr i > <=> bodyid ε ""=d
+311. bodyid d d <=> bodyid d ε
+312. bodyid = = <=> bodyid = ε
+313. bodyid " " <=> bodyidtext " ε
+314. bodyidtext any " <=> bodyidtext ε ε
+315. bodyidtext " " <=> bodyatrdone " ε
+316. bodyatrdone % > <=> bodyatrdone ε ε
+317. bodyatrdone > > <=> bodyopendone > ε
+318. bodyopen > > <=> bodyopendone > ε
+319. bodyopendone any < <=> bodyopendone ε ε
+320. bodyopendone % < <=> bodyopendone ε ε
+321. bodyopendone < < <=> bodyacctag < ε
+322. bodyacctag / / <=> bodyclosetag / ε
+323. bodyacctag a / <=> abodytag ε ε
+324. bodyclosetag a a <=> aclose a ε
+325. bodyclosetag s s <=> strong/smallbodyclose s ε
+326. bodyclosetags c c <=> scriptbodyclose c ε
+327. bodyclosetag f f <=> formclosetag f ε
+328. bodyclosetag t t <=> tableclosetag t ε
+329. bodyclosetag b b <=> bodyclosetagb b ε
+330. bodyclosetagb u u <=> buttonclosetag u ε
+331. bodyclosetagb o o <=> bodyclose o ε
+332. bodyclosetag d d <=> divclosetag d ε
+333. bodyclosetag h h <=> hclosetag h ε
+334. hclosetag 1 1 <=> hclosetag 1 ε
+335. hclosetag 2 2 <=> hclosetag 2 ε
+336. hclosetag 3 3 <=> hclosetag 3 ε
+337. hclosetag 4 4 <=> hclosetag 4 ε
+338. hclosetag 5 5 <=> hclosetag 5 ε
+339. hclosetag 6 6 <=> hclosetag 6 ε
+340. hclosetag > > <=> bodyopendone > <
+341. bodyclose o o <=> bodyclose o ε
+342. bodyclose d d <=> bodyclose d ε
+343. bodyclose y y <=> bodyclose y ε
+344. bodyclose > > <=> bodyclosedone > ε
+345. bodyclosedone $ < <=> bodyclosedone ε ε
+346. bodyclosedone % < <=> bodyclosedone ε ε
+347. bodyclosedone < < <=> newtagbodydone < ε
+348. bodyacctag i / <=> bodyitag ε <
+349. bodyitag m < <=> imgopen ε >""=crsg
+350. imgopen g g <=> imgopen g ε
+351. imgtext " " <=> imgopen " ε
+352. imgtext any " <=> imgtext ε ε
+353. imgopen % s <=> imgopenatr ε ε
+354. imgopen % > <=> imgopenatr ε ε
+355. imgopenatr % s <=> imgopenatr ε ε
+356. imgopenatr $ s <=> imgopenatr ε ε
+357. imgopenatr i s <=> imgid ε ""=d
+358. imgopenatr i > <=> imgid ε ""=d
+359. imgid d d <=> imgid d ε
+360. imgid = = <=> imgid = ε
+361. imgid " " <=> imgtext " ε
+362. imgopenatr c s <=> imgclass ε ""=ssal
+363. imgopenatr c > <=> imgclass ε ""=ssal
+364. imgclass l l <=> imgclass l ε
+365. imgclass a a <=> imgclass a ε
+366. imgclass s s <=> imgclass s ε
+367. imgclass = = <=> imgclass = ε
+368. imgclass " " <=> imgtext " ε
+369. imgopenatr s s <=> imgsattr s ε
+370. imgopenatr s > <=> imgsattr ε ε
+371. imgsattr t r <=> imgstyle ε s""=ely
+372. imgsattr t > <=> imgstyle ε ""=ely
+373. imgstyle y y <=> imgstyle y ε
+374. imgstyle l l <=> imgstyle l ε
+375. imgstyle e e <=> imgstyle e ε
+376. imgstyle = = <=> imgstyle = ε
+377. imgstyle " " <=> imgtext " ε
+378. imgsattr r r <=> imgsrc r ε
+379. imgsrc c c <=> imgsrc c ε
+380. imgsrc = = <=> imgsrc = ε
+381. imgsrc " " <=> imgtext " ε
+382. imgopenatr a s <=> imgalt ε ""=tl
+383. imgopenatr a > <=> imgalt ε ""=tl
+384. imgalt l l <=> imgalt l ε
+385. imgalt t t <=> imgalt t ε
+386. imgalt = = <=> imgalt = ε
+387. imgalt " " <=> imgtext " ε
+388. imgopen > > <=> bodyopendone > ε
+389. imgopenatr > > <=> bodyopendone > ε
+390. bodyitag n < <=> input ε >tup
+391. input p p <=> input p ε
+392. input u u <=> input u ε
+393. input t t <=> inputdone t ε
+394. inputdone % > <=> inputatr ε ε
+395. inputdone $ > <=> inputatr ε ε
+396. inputatr $ > <=> inputatr ε ε
+397. inputatr % > <=> inputatr ε ε
+398. inputatr t > <=> inputatr ε ""=epy
+399. inputatr y y <=> inputatr y ε
+400. inputatr p p <=> inputatr p ε
+401. inputatr e e <=> inputatr e ε
+402. inputatr = = <=> inputatr = ε
+403. inputatr " " <=> inputtext " ε
+404. inputdone > > <=> bodyopendone > ε
+405. inputatr > > <=> bodyopendone > ε
+406. inputedtext " " <=> inputdone " ε
+407. inputtext t " <=> inputedtext ε txe
+408. inputedtext e e <=> inputedtext e ε
+409. inputedtext x x <=> inputedtext x ε
+410. inputedtext t t <=> inputedtext t ε
+411. inputtext p " <=> inputedtext ε drowssa
+412. inputedtext a a <=> inputedtext a ε
+413. inputedtext s s <=> inputedtext s ε
+414. inputedtext w w <=> inputedtext w ε
+415. inputedtext o o <=> inputedtext o ε
+416. inputedtext r r <=> inputedtext r ε
+417. inputedtext d d <=> inputedtext d ε
+418. inputtext e " <=> inputedtext ε liam
+419. inputedtext m m <=> inputedtext m ε
+420. inputedtext i i <=> inputedtext i ε
+421. inputedtext l l <=> inputedtext l ε
+422. inputtext n " <=> inputedtext ε rebmu
+423. inputedtext u u <=> inputedtext u ε
+424. inputedtext b b <=> inputedtext b ε
+425. inputtext c " <=> inputedtext ε xobkceh
+426. inputedtext h h <=> inputedtext h ε
+427. inputedtext c c <=> inputedtext c ε
+428. inputedtext k k <=> inputedtext k ε
+429. inputanytext any " <=> inputanytext ε ε
+430. inputanytext " " <=> inputdone " ε
+431. inputatr i > <=> inputid ε ""=d
+432. inputid d d <=> inputid d ε
+433. inputid = = <=> inputid = ε
+434. inputid " " <=> inputanytext " ε
+435. inputatr c > <=> inputclass ε ""=ssal
+436. inputclass l l <=> inputclass l ε
+437. inputclass a a <=> inputclass a ε
+438. inputclass s s <=> inputclass s ε
+439. inputclass = = <=> inputclass = ε
+440. inputclass " " <=> inputanytext " ε
+441. inputatr s > <=> inputstyle ε ""=elyt
+442. inputstyle t t <=> inputstyle t ε
+443. inputstyle y y <=> inputstyle y ε
+444. inputstyle l l <=> inputstyle l ε
+445. inputstyle e e <=> inputstyle e ε
+446. inputstyle = = <=> inputstyle = ε
+447. inputstyle " " <=> inputanytext " ε
+448. bodyacctag h / <=> hopentag ε ε
+449. hopentag r / <=> hropentag ε >
+450. hropentag % > <=> hrtagatr ε ε
+451. hropentag $ > <=> hrtagatr ε ε
+452. hrtagatr % > <=> hrtagatr ε ε
+453. hrtagatr $ > <=> hrtagatr ε ε
+454. hrtagatr > > <=> bodyopendone > <
+455. hropentag > > <=> bodyopendone > <
+456. hrtagatr i > <=> hrtagid ε ""=d
+457. hrtagid d d <=> hrtagid d ε
+458. hrtagid = = <=> hrtagid = ε
+459. hrtagid " " <=> hrtagtext " ε
+460. hrtagtext any " <=> hrtagtext ε ε
+461. hrtagtext " " <=> hropentag " ε
+462. hrtagatr c > <=> hrtagclass ε ""=ssal
+463. hrtagclass l l <=> hrtagclass l ε
+464. hrtagclass a a <=> hrtagclass a ε
+465. hrtagclass s s <=> hrtagclass s ε
+466. hrtagclass = = <=> hrtagclass = ε
+467. hrtagclass " " <=> hrtagtext " ε
+468. hrtagatr s > <=> hrtagstyle ε ""=elyt
+469. hrtagstyle t t <=> hrtagstyle t ε
+470. hrtagstyle y y <=> hrtagstyle y ε
+471. hrtagstyle l l <=> hrtagstyle l ε
+472. hrtagstyle e e <=> hrtagstyle e ε
+473. hrtagstyle = = <=> hrtagstyle = ε
+474. hrtagstyle " " <=> hrtagtext " ε
+475. bodyacctag f / <=> formopentag ε >mrof/<>mro
+476. formopentag o o <=> formopentag o ε
+477. formopentag r r <=> formopentag e ε
+478. formopentag m m <=> formopentag m ε
+479. formopentag % > <=> formtagatr ε ε
+480. formopentag $ > <=> formtagatr ε ε
+481. formtagatr $ > <=> formtagatr ε ε
+482. formtagatr % > <=> formtagatr ε ε
+483. formopentag > > <=> bodyopendone > ε
+484. formtagatr > > <=> bodyopendone > ε
+485. formclosetag o o <=> formclosetag o ε
+486. formclosetag r r <=> formclosetag r ε
+487. formclosetag m m <=> formclosetag m ε
+488. formclosetag > > <=> bodyopendone > <
+489. formtagatr i > <=> formtagid ε ""=d
+490. formtagid d d <=> formtagid d ε
+491. formtagid = = <=> formtagid = ε
+492. formtagid " " <=> formtagtext " ε
+493. formtagtext any " <=> formtagtext ε ε
+494. formtagtext " " <=> formopentag " ε
+495. formtagatr c > <=> formtagclass ε ""=ssal
+496. formtagclass l l <=> formtagclass l ε
+497. formtagclass a a <=> formtagclass a ε
+498. formtagclass s s <=> formtagclass s ε
+499. formtagclass = = <=> formtagclass = ε
+500. formtagclass " " <=> formtagtext " ε
+501. formtagatr s > <=> formtagstyle ε ""=elyt
+502. formtagstyle t t <=> formtagstyle t ε
+503. formtagstyle y y <=> formtagstyle y ε
+504. formtagstyle l l <=> formtagstyle l ε
+505. formtagstyle e e <=> formtagstyle e ε
+506. formtagstyle = = <=> formtagstyle = ε
+507. formtagstyle " " <=> formtagtext " ε
+508. formtagatr a > <=> formtagaction ε ""=noitc
+509. formtagaction c c <=> formtagaction c ε
+510. formtagaction t t <=> formtagaction t ε
+511. formtagaction i i <=> formtagaction i ε
+512. formtagaction o o <=> formtagaction o ε
+513. formtagaction n n <=> formtagaction n ε
+514. formtagaction = = <=> formtagaction = ε
+515. formtagaction " " <=> formtagtext " ε
+516. formtagatr m > <=> formtagmethod ε ""=dohte
+517. formtagmethod e e <=> formtagmethod e ε
+518. formtagmethod t t <=> formtagmethod t ε
+519. formtagmethod h h <=> formtagmethod h ε
+520. formtagmethod o o <=> formtagmethod o ε
+521. formtagmethod d d <=> formtagmethod d ε
+522. formtagmethod = = <=> formtagmethod = ε
+523. formtagmethod " " <=> formtagtext " ε
+524. formtagtext G " <=> formtagacttextget ε TE
+525. formtagacttextget E E <=> formtagacttextget E ε
+526. formtagacttextget T T <=> formtagacttextget T ε
+527. formtagacttextget " " <=> formopentag " ε
+528. formtagtext P " <=> formtagacttextpost ε TSO
+529. formtagacttextpost O O <=> formtagacttextpost O ε
+530. formtagacttextpost S S <=> formtagacttextpost S ε
+531. formtagacttextpost T T <=> formtagacttextpost T ε
+532. formtagacttextpost " " <=> formopentag " ε
+533. bodyacctag b / <=> bopentag ε ε
+534. bopentag u / <=> buttonopentag ε >nottub/<>nott
+535. buttonopentag t t <=> buttonopentag t ε
+536. buttonopentag o o <=> buttonopentag o ε
+537. buttonopentag n n <=> buttonopentag n ε
+538. buttonopentag % > <=> buttontagatr ε ε
+539. buttonopentag $ > <=> buttontagatr ε ε
+540. buttontagatr % > <=> buttontagatr ε ε
+541. buttontagatr $ > <=> buttontagatr ε ε
+542. buttonopentag > > <=> bodyopendone > ε
+543. buttonclosetag t t <=> buttonclosetag t ε
+544. buttonclosetag o o <=> buttonclosetag o ε
+545. buttonclosetag n n <=> buttonclosetag n ε
+546. buttonclosetag > > <=> bodyopendone > <
+547. buttontagatr i > <=> buttontagid ε ""=d
+548. buttontagid d d <=> buttontagid d ε
+549. buttontagid = = <=> buttontagid = ε
+550. buttontagid " " <=> buttontagtext " ε
+551. buttontagtext any " <=> buttontagtext ε ε
+552. buttontagtext " " <=> buttonopentag " ε
+553. buttontagatr c > <=> buttontagclass ε ""=ssal
+554. buttontagclass l l <=> buttontagclass l ε
+555. buttontagclass a a <=> buttontagclass a ε
+556. buttontagclass s s <=> buttontagclass s ε
+557. buttontagclass = = <=> buttontagclass = ε
+558. buttontagclass " " <=> buttontagtext " ε
+559. buttontagatr s > <=> buttontagstyle ε ""=elyt
+560. buttontagstyle t t <=> buttontagstyle t ε
+561. buttontagstyle y y <=> buttontagstyle y ε
+562. buttontagstyle l l <=> buttontagstyle l ε
+563. buttontagstyle e e <=> buttontagstyle e ε
+564. buttontagstyle = = <=> buttontagstyle = ε
+565. buttontagstyle " " <=> buttontagtext " ε
+566. buttontagatr t > <=> buttontagtype ε ""=epy
+567. buttontagtype y y <=> buttontagtype y ε
+568. buttontagtype p p <=> buttontagtype p ε
+569. buttontagtype e e <=> buttontagtype e ε
+570. buttontagtype = = <=> buttontagtype = ε
+571. buttontagtype " " <=> buttontagtext " ε
+572. buttontagtext S " <=> buttontagtypetextsubmit ε TIMBU
+573. buttontagtypetextsubmit U U <=> buttontagtypetextsubmit U ε
+574. buttontagtypetextsubmit B B <=> buttontagtypetextsubmit B ε
+575. buttontagtypetextsubmit M M <=> buttontagtypetextsubmit M ε
+576. buttontagtypetextsubmit I I <=> buttontagtypetextsubmit I ε
+577. buttontagtypetextsubmit T T <=> buttontagtypetextsubmit T ε
+578. buttontagtypetextsubmit " " <=> buttonopentag " ε
+579. buttontagtext R " <=> buttontagtypetextreset ε TESE
+580. buttontagtypetextreset E E <=> buttontagtypetextreset E ε
+581. buttontagtypetextreset S S <=> buttontagtypetextreset S ε
+582. buttontagtypetextreset T T <=> buttontagtypetextreset T ε
+583. buttontagtypetextreset " " <=> buttonopentag " ε
+584. buttontagtext B " <=> buttontagtypetextbutton ε NOTTU
+585. buttontagtypetextbutton U U <=> buttontagtypetextbutton U ε
+586. buttontagtypetextbutton T T <=> buttontagtypetextbutton T ε
+587. buttontagtypetextbutton O O <=> buttontagtypetextbutton O ε
+588. buttontagtypetextbutton N N <=> buttontagtypetextbutton N ε
+589. buttontagtypetextbutton " " <=> buttonopentag " ε
+590. hopentag 1 / <=> h1opentag ε >1h/<>
+591. h1opentag % > <=> h1tagatr ε ε
+592. h1opentag $ > <=> h1tagatr ε ε
+593. h1tagatr % > <=> h1tagatr ε ε
+594. h1tagatr $ > <=> h1tagatr ε ε
+595. h1tagatr > > <=> bodyopendone > ε
+596. h1opentag > > <=> bodyopendone > ε
+597. h1tagatr i > <=> h1tagid ε ""=d
+598. h1tagid d d <=> h1tagid d ε
+599. h1tagid = = <=> h1tagid = ε
+600. h1tagid " " <=> h1tagtext " ε
+601. h1tagtext any " <=> h1tagtext ε ε
+602. h1tagtext " " <=> h1opentag " ε
+603. h1tagatr c > <=> h1tagclass ε ""=ssal
+604. h1tagclass l l <=> h1tagclass l ε
+605. h1tagclass a a <=> h1tagclass a ε
+606. h1tagclass s s <=> h1tagclass s ε
+607. h1tagclass = = <=> h1tagclass = ε
+608. h1tagclass " " <=> h1tagtext " ε
+609. h1tagatr s > <=> h1tagstyle ε ""=elyt
+610. h1tagstyle t t <=> h1tagstyle t ε
+611. h1tagstyle y y <=> h1tagstyle y ε
+612. h1tagstyle l l <=> h1tagstyle l ε
+613. h1tagstyle e e <=> h1tagstyle e ε
+614. h1tagstyle = = <=> h1tagstyle = ε
+615. h1tagstyle " " <=> h1tagtext " ε
+616. hopentag 2 / <=> h2opentag ε >2h/<>
+617. h2opentag % > <=> h2tagatr ε ε
+618. h2opentag $ > <=> h2tagatr ε ε
+619. h2tagatr % > <=> h2tagatr ε ε
+620. h2tagatr $ > <=> h2tagatr ε ε
+621. h2tagatr > > <=> bodyopendone > ε
+622. h2opentag > > <=> bodyopendone > ε
+623. h2tagatr i > <=> h2tagid ε ""=d
+624. h2tagid d d <=> h2tagid d ε
+625. h2tagid = = <=> h2tagid = ε
+626. h2tagid " " <=> h2tagtext " ε
+627. h2tagtext any " <=> h2tagtext ε ε
+628. h2tagtext " " <=> h2opentag " ε
+629. h2tagatr c > <=> h2tagclass ε ""=ssal
+630. h2tagclass l l <=> h2tagclass l ε
+631. h2tagclass a a <=> h2tagclass a ε
+632. h2tagclass s s <=> h2tagclass s ε
+633. h2tagclass = = <=> h2tagclass = ε
+634. h2tagclass " " <=> h2tagtext " ε
+635. h2tagatr s > <=> h2tagstyle ε ""=elyt
+636. h2tagstyle t t <=> h2tagstyle t ε
+637. h2tagstyle y y <=> h2tagstyle y ε
+638. h2tagstyle l l <=> h2tagstyle l ε
+639. h2tagstyle e e <=> h2tagstyle e ε
+640. h2tagstyle = = <=> h2tagstyle = ε
+641. h2tagstyle " " <=> h2tagtext " ε
+642. hopentag 3 / <=> h3opentag ε >3h/<>
+643. h3opentag % > <=> h3tagatr ε ε
+644. h3opentag $ > <=> h3tagatr ε ε
+645. h3tagatr % > <=> h3tagatr ε ε
+646. h3tagatr $ > <=> h3tagatr ε ε
+647. h3tagatr > > <=> bodyopendone > ε
+648. h3opentag > > <=> bodyopendone > ε
+649. h3tagatr i > <=> h3tagid ε ""=d
+650. h3tagid d d <=> h3tagid d ε
+651. h3tagid = = <=> h3tagid = ε
+652. h3tagid " " <=> h3tagtext " ε
+653. h3tagtext any " <=> h3tagtext ε ε
+654. h3tagtext " " <=> h3opentag " ε
+655. h3tagatr c > <=> h3tagclass ε ""=ssal
+656. h3tagclass l l <=> h3tagclass l ε
+657. h3tagclass a a <=> h3tagclass a ε
+658. h3tagclass s s <=> h3tagclass s ε
+659. h3tagclass = = <=> h3tagclass = ε
+660. h3tagclass " " <=> h3tagtext " ε
+661. h3tagatr s > <=> h3tagstyle ε ""=elyt
+662. h3tagstyle t t <=> h3tagstyle t ε
+663. h3tagstyle y y <=> h3tagstyle y ε
+664. h3tagstyle l l <=> h3tagstyle l ε
+665. h3tagstyle e e <=> h3tagstyle e ε
+666. h3tagstyle = = <=> h3tagstyle = ε
+667. h3tagstyle " " <=> h3tagtext " ε
+668. hopentag 4 / <=> h4opentag ε >4h/<>
+669. h4opentag % > <=> h4tagatr ε ε
+670. h4opentag $ > <=> h4tagatr ε ε
+671. h4tagatr % > <=> h4tagatr ε ε
+672. h4tagatr $ > <=> h4tagatr ε ε
+673. h4tagatr > > <=> bodyopendone > ε
+674. h4opentag > > <=> bodyopendone > ε
+675. h4tagatr i > <=> h4tagid ε ""=d
+676. h4tagid d d <=> h4tagid d ε
+677. h4tagid = = <=> h4tagid = ε
+678. h4tagid " " <=> h4tagtext " ε
+679. h4tagtext any " <=> h4tagtext ε ε
+680. h4tagtext " " <=> h4opentag " ε
+681. h4tagatr c > <=> h4tagclass ε ""=ssal
+682. h4tagclass l l <=> h4tagclass l ε
+683. h4tagclass a a <=> h4tagclass a ε
+684. h4tagclass s s <=> h4tagclass s ε
+685. h4tagclass = = <=> h4tagclass = ε
+686. h4tagclass " " <=> h4tagtext " ε
+687. h4tagatr s > <=> h4tagstyle ε ""=elyt
+688. h4tagstyle t t <=> h4tagstyle t ε
+689. h4tagstyle y y <=> h4tagstyle y ε
+690. h4tagstyle l l <=> h4tagstyle l ε
+691. h4tagstyle e e <=> h4tagstyle e ε
+692. h4tagstyle = = <=> h4tagstyle = ε
+693. h4tagstyle " " <=> h4tagtext " ε
+694. hopentag 5 / <=> h5opentag ε >5h/<>
+695. h5opentag % > <=> h5tagatr ε ε
+696. h5opentag $ > <=> h5tagatr ε ε
+697. h5tagatr % > <=> h5tagatr ε ε
+698. h5tagatr $ > <=> h5tagatr ε ε
+699. h5tagatr > > <=> bodyopendone > ε
+700. h5opentag > > <=> bodyopendone > ε
+701. h5tagatr i > <=> h5tagid ε ""=d
+702. h5tagid d d <=> h5tagid d ε
+703. h5tagid = = <=> h5tagid = ε
+704. h5tagid " " <=> h5tagtext " ε
+705. h5tagtext any " <=> h5tagtext ε ε
+706. h5tagtext " " <=> h5opentag " ε
+707. h5tagatr c > <=> h5tagclass ε ""=ssal
+708. h5tagclass l l <=> h5tagclass l ε
+709. h5tagclass a a <=> h5tagclass a ε
+710. h5tagclass s s <=> h5tagclass s ε
+711. h5tagclass = = <=> h5tagclass = ε
+712. h5tagclass " " <=> h5tagtext " ε
+713. h5tagatr s > <=> h5tagstyle ε ""=elyt
+714. h5tagstyle t t <=> h5tagstyle t ε
+715. h5tagstyle y y <=> h5tagstyle y ε
+716. h5tagstyle l l <=> h5tagstyle l ε
+717. h5tagstyle e e <=> h5tagstyle e ε
+718. h5tagstyle = = <=> h5tagstyle = ε
+719. h5tagstyle " " <=> h5tagtext " ε
+720. hopentag 6 / <=> h6opentag ε >6h/<>
+721. h6opentag % > <=> h6tagatr ε ε
+722. h6opentag $ > <=> h6tagatr ε ε
+723. h6tagatr % > <=> h6tagatr ε ε
+724. h6tagatr $ > <=> h6tagatr ε ε
+725. h6tagatr > > <=> bodyopendone > ε
+726. h6opentag > > <=> bodyopendone > ε
+727. h6tagatr i > <=> h6tagid ε ""=d
+728. h6tagid d d <=> h6tagid d ε
+729. h6tagid = = <=> h6tagid = ε
+730. h6tagid " " <=> h6tagtext " ε
+731. h6tagtext any " <=> h6tagtext ε ε
+732. h6tagtext " " <=> h6opentag " ε
+733. h6tagatr c > <=> h6tagclass ε ""=ssal
+734. h6tagclass l l <=> h6tagclass l ε
+735. h6tagclass a a <=> h6tagclass a ε
+736. h6tagclass s s <=> h6tagclass s ε
+737. h6tagclass = = <=> h6tagclass = ε
+738. h6tagclass " " <=> h6tagtext " ε
+739. h6tagatr s > <=> h6tagstyle ε ""=elyt
+740. h6tagstyle t t <=> h6tagstyle t ε
+741. h6tagstyle y y <=> h6tagstyle y ε
+742. h6tagstyle l l <=> h6tagstyle l ε
+743. h6tagstyle e e <=> h6tagstyle e ε
+744. h6tagstyle = = <=> h6tagstyle = ε
+745. h6tagstyle " " <=> h6tagtext " ε
+746. abodytag > / <=> bodyopendone ε <>a/<
+747. abodytag $ / <=> aatr ε ε
+748. abodytag % / <=> aatr ε ε
+749. aatr % / <=> aatr ε ε
+750. aatr $ / <=> aatr ε ε
+751. aopen $ / <=> aatr ε ε
+752. aopen % / <=> aatr ε ε
+753. aopen > / <=> bodyopendone ε <>a/<
+754. aatr > / <=> bodyopendone ε <>a/<
+755. aatr h / <=> ahref ε ""=fer
+756. ahref r r <=> ahref r ε
+757. ahref e e <=> ahref e ε
+758. ahref f f <=> ahref f ε
+759. ahref = = <=> ahref = ε
+760. ahref " " <=> atext " ε
+761. atext any " <=> atext ε ε
+762. atext " " <=> aopen " ε
+763. aatr i / <=> aid ε ""=d
+764. aid d d <=> aid d ε
+765. aid = = <=> aid = ε
+766. aid " " <=> atext " ε
+767. aatr c / <=> aclass ε ""=ssal
+768. aclass l l <=> aclass l ε
+769. aclass a a <=> aclass a ε
+770. aclass s s <=> aclass s ε
+771. aclass = = <=> aclass = ε
+772. aclass " " <=> atext " ε
+773. aatr s / <=> astyle ε ""=elyt
+774. astyle t t <=> astyle t ε
+775. astyle y y <=> astyle y ε
+776. astyle l l <=> astyle l ε
+777. astyle e e <=> astyle e ε
+778. astyle = = <=> astyle = ε
+779. astyle " " <=> atext " ε
+780. aclose > > <=> bodyopendone > ε
+781. bopentag r / <=> brtag ε >
+782. brtag % > <=> brtagatr ε ε
+783. brtag $ > <=> brtagatr ε ε
+784. brtagatr % > <=> brtagatr ε ε
+785. brtagatr $ > <=> brtagatr ε ε
+786. brtagatr > > <=> bodyopendone > <
+787. brtag > > <=> bodyopendone > <
+788. brtagatr i > <=> brtagid ε ""=d
+789. brtagid d d <=> brtagid d ε
+790. brtagid = = <=> brtagid = ε
+791. brtagid " " <=> brtagtext " ε
+792. brtagtext any " <=> brtagtext ε ε
+793. brtagtext " " <=> brtag " ε
+794. brtagatr c > <=> brtagclass ε ""=ssal
+795. brtagclass l l <=> brtagclass l ε
+796. brtagclass a a <=> brtagclass a ε
+797. brtagclass s s <=> brtagclass s ε
+798. brtagclass = = <=> brtagclass = ε
+799. brtagclass " " <=> brtagtext " ε
+800. brtagatr s > <=> brtagstyle ε ""=elyt
+801. brtagstyle t t <=> brtagstyle t ε
+802. brtagstyle y y <=> brtagstyle y ε
+803. brtagstyle l l <=> brtagstyle l ε
+804. brtagstyle e e <=> brtagstyle e ε
+805. brtagstyle = = <=> brtagstyle = ε
+806. brtagstyle " " <=> brtagtext " ε
+807. bodyacctag t / <=> topentag ε ε
+808. topentag a / <=> tableopentag ε >elbat/<>elb
+809. tableopentag b b <=> tableopentag b ε
+810. tableopentag l l <=> tableopentag l ε
+811. tableopentag e e <=> tableopentag e ε
+812. tableopentag % > <=> tabletagatr ε ε
+813. tableopentag $ > <=> tabletagatr ε ε
+814. tabletagatr % > <=> tabletagatr ε ε
+815. tabletagatr $ > <=> tabletagatr ε ε
+816. tabletagatr > > <=> tablecontent > ε
+817. tableopentag > > <=> tablecontent > ε
+818. tableclosetag a a <=> tableclosetag a ε
+819. tableclosetag b b <=> tableclosetag b ε
+820. tableclosetag l l <=> tableclosetag l ε
+821. tableclosetag e e <=> tableclosetag e ε
+822. tableclosetag > > <=> bodyopendone > <
+823. tabletagatr i > <=> tabletagid ε ""=d
+824. tabletagid d d <=> tabletagid d ε
+825. tabletagid = = <=> tabletagid = ε
+826. tabletagid " " <=> tabletagtext " ε
+827. tabletagtext any " <=> tabletagtext ε ε
+828. tabletagtext " " <=> tableopentag " ε
+829. tabletagatr c > <=> tabletagclass ε ""=ssal
+830. tabletagclass l l <=> tabletagclass l ε
+831. tabletagclass a a <=> tabletagclass a ε
+832. tabletagclass s s <=> tabletagclass s ε
+833. tabletagclass = = <=> tabletagclass = ε
+834. tabletagclass " " <=> tabletagtext " ε
+835. tabletagatr s > <=> tabletagstyle ε ""=elyt
+836. tabletagstyle t t <=> tabletagstyle t ε
+837. tabletagstyle y y <=> tabletagstyle y ε
+838. tabletagstyle l l <=> tabletagstyle l ε
+839. tabletagstyle e e <=> tabletagstyle e ε
+840. tabletagstyle = = <=> tabletagstyle = ε
+841. tabletagstyle " " <=> tabletagtext " ε
+842. tablecontent % < <=> tablecontent ε ε
+843. tablecontent $ < <=> tablecontent ε ε
+844. tablecontent < < <=> tableprop < ε
+845. tableprop / / <=> tableclosetag / ε
+846. tableclosetag t t <=> tableclosetag t ε
+847. tableclosetag r r <=> trclosetag r ε
+848. tableprop t / <=> tropentag ε >rt/<>r
+849. tropentag r r <=> tropentag r ε
+850. tropentag % > <=> trtagatr ε ε
+851. tropentag $ > <=> trtagatr ε ε
+852. tropentag > > <=> trcontent > ε
+853. trtagatr % > <=> trtagatr ε ε
+854. trtagatr $ > <=> trtagatr ε ε
+855. trtagatr > > <=> trcontent > ε
+856. trcontent % < <=> trcontent ε ε
+857. trcontent $ < <=> trcontent ε ε
+858. trcontent < < <=> trprop < ε
+859. trprop / / <=> trclosetag / ε
+860. trclosetag t t <=> trclosetag t ε
+861. trclosetag r r <=> trclosetag r ε
+862. trclosetag > > <=> tablecontent > <
+863. trtagatr i > <=> trtagid ε ""=d
+864. trtagid d d <=> trtagid d ε
+865. trtagid = = <=> trtagid = ε
+866. trtagid " " <=> trtagtext " ε
+867. trtagtext any " <=> trtagtext ε ε
+868. trtagtext " " <=> tropentag " ε
+869. trtagatr c > <=> trtagclass ε ""=ssal
+870. trtagclass l l <=> trtagclass l ε
+871. trtagclass a a <=> trtagclass a ε
+872. trtagclass s s <=> trtagclass s ε
+873. trtagclass = = <=> trtagclass = ε
+874. trtagclass " " <=> trtagtext " ε
+875. trtagatr s > <=> trtagstyle ε ""=elyt
+876. trtagstyle t t <=> trtagstyle t ε
+877. trtagstyle y y <=> trtagstyle y ε
+878. trtagstyle l l <=> trtagstyle l ε
+879. trtagstyle e e <=> trtagstyle e ε
+880. trtagstyle = = <=> trtagstyle = ε
+881. trtagstyle " " <=> trtagtext " ε
+882. trprop t / <=> thdopentag ε ε
+883. thdopentag h / <=> thopentag ε >ht/<>
+884. thopentag % > <=> thtagatr ε ε
+885. thopentag $ > <=> thtagatr ε ε
+886. thopentag > > <=> thcontent > ε
+887. thtagatr % > <=> thtagatr ε ε
+888. thtagatr $ > <=> thtagatr ε ε
+889. thtagatr > > <=> thcontent > ε
+890. thcontent % < <=> thcontent ε ε
+891. thcontent $ < <=> thcontent ε ε
+892. thcontent any < <=> thcontent ε ε
+893. thcontent < < <=> thclosetag < ε
+894. thclosetag / / <=> thclosetag / ε
+895. thclosetag t t <=> thclosetag t ε
+896. thclosetag h h <=> thclosetag h ε
+897. thclosetag % > <=> thclosetag ε ε
+898. thclosetag $ > <=> thclosetag ε ε
+899. thclosetag > > <=> trcontent > <
+900. thtagatr i > <=> thtagid ε ""=d
+901. thtagid d d <=> thtagid d ε
+902. thtagid = = <=> thtagid = ε
+903. thtagid " " <=> thtagtext " ε
+904. thtagtext any " <=> thtagtext ε ε
+905. thtagtext " " <=> thopentag " ε
+906. thtagatr c > <=> thtagclass ε ""=ssal
+907. thtagclass l l <=> thtagclass l ε
+908. thtagclass a a <=> thtagclass a ε
+909. thtagclass s s <=> thtagclass s ε
+910. thtagclass = = <=> thtagclass = ε
+911. thtagclass " " <=> thtagtext " ε
+912. thtagatr s > <=> thtagstyle ε ""=elyt
+913. thtagstyle t t <=> thtagstyle t ε
+914. thtagstyle y y <=> thtagstyle y ε
+915. thtagstyle l l <=> thtagstyle l ε
+916. thtagstyle e e <=> thtagstyle e ε
+917. thtagstyle = = <=> thtagstyle = ε
+918. thtagstyle " " <=> thtagtext " ε
+919. thdopentag d / <=> tdopentag ε >dt/<>
+920. tdopentag % > <=> tdtagatr ε ε
+921. tdopentag $ > <=> tdtagatr ε ε
+922. tdopentag > > <=> tdcontent > ε
+923. tdtagatr % > <=> tdtagatr ε ε
+924. tdtagatr $ > <=> tdtagatr ε ε
+925. tdtagatr > > <=> tdcontent > ε
+926. tdcontent % < <=> tdcontent ε ε
+927. tdcontent $ < <=> tdcontent ε ε
+928. tdcontent any < <=> tdcontent ε ε
+929. tdcontent < < <=> tdclosetag < ε
+930. tdclosetag / / <=> tdclosetag / ε
+931. tdclosetag t t <=> tdclosetag t ε
+932. tdclosetag d d <=> tdclosetag d ε
+933. tdclosetag % > <=> tdclosetag ε ε
+934. tdclosetag $ > <=> tdclosetag ε ε
+935. tdclosetag > > <=> trcontent > <
+936. tdtagatr i > <=> tdtagid ε ""=d
+937. tdtagid d d <=> tdtagid d ε
+938. tdtagid = = <=> tdtagid = ε
+939. tdtagid " " <=> tdtagtext " ε
+940. tdtagtext any " <=> tdtagtext ε ε
+941. tdtagtext " " <=> tdopentag " ε
+942. tdtagatr c > <=> tdtagclass ε ""=ssal
+943. tdtagclass l l <=> tdtagclass l ε
+944. tdtagclass a a <=> tdtagclass a ε
+945. tdtagclass s s <=> tdtagclass s ε
+946. tdtagclass = = <=> tdtagclass = ε
+947. tdtagclass " " <=> tdtagtext " ε
+948. tdtagatr s > <=> tdtagstyle ε ""=elyt
+949. tdtagstyle t t <=> tdtagstyle t ε
+950. tdtagstyle y y <=> tdtagstyle y ε
+951. tdtagstyle l l <=> tdtagstyle l ε
+952. tdtagstyle e e <=> tdtagstyle e ε
+953. tdtagstyle = = <=> tdtagstyle = ε
+954. tdtagstyle " " <=> tdtagtext " ε
+955. bodyacctag d / <=> divopen ε <>vid/<>vi
+956. divopen i i <=> divopen i ε
+957. divopen v v <=> divopen v ε
+958. divopen $ > <=> divatr ε ε
+959. divopen % > <=> divatr ε ε
+960. divatr % > <=> divatr ε ε
+961. divatr $ > <=> divatr ε ε
+962. divatr > > <=> bodyopendone > ε
+963. divopen > > <=> bodyopendone > ε
+964. divtext any " <=> divtext ε ε
+965. divtext " " <=> divopen " ε
+966. divatr i > <=> divid ε ""=d
+967. divid d d <=> divid d ε
+968. divid = = <=> divid = ε
+969. divid " " <=> divtext " ε
+970. divatr c > <=> divclass ε ""=ssal
+971. divclass l l <=> divclass l ε
+972. divclass a a <=> divclass a ε
+973. divclass s s <=> divclass s ε
+974. divclass = = <=> divclass = ε
+975. divclass " " <=> divtext " ε
+976. divatr s > <=> divstyle ε ""=elyt
+977. divstyle t t <=> divstyle t ε
+978. divstyle y y <=> divstyle y ε
+979. divstyle l l <=> divstyle l ε
+980. divstyle e e <=> divstyle e ε
+981. divstyle = = <=> divstyle = ε
+982. divstyle " " <=> divtext " ε
+983. divclosetag i i <=> divclosetag i ε
+984. divclosetag v v <=> divclosetag v ε
+985. divclosetag > > <=> bodyopendone > ε
+986. bodyacctag s / <=> script/small/strong ε ε
+987. script/small/strong c / <=> scriptbody ε <>tpircs/<>tpir
+988. scriptbody r r <=> scriptbodyopen r ε
+989. scriptbodyopen i i <=> scriptbodyopen i ε
+990. scriptbodyopen p p <=> scriptbodyopen t ε
+991. scriptbodyopen t t <=> scriptbodyopen t ε
+992. scriptbodyopen $ > <=> scriptbodyopenatr ε ε
+993. scriptbodyopen % > <=> scriptbodyopenatr ε ε
+994. scriptbodyopenatr % > <=> scriptbodyopenatr ε ε
+995. scriptbodyopenatr > > <=> scriptbodyopendone > ε
+996. scriptbodyopenatr i > <=> scriptbodyid ε ""=d
+997. scriptbodyid d d <=> scriptbodyid d ε
+998. scriptbodyid = = <=> scriptbodyid = ε
+999. scriptbodyid " " <=> scriptbodytext " ε
+1000. scriptbodytext any " <=> scriptbodytext ε ε
+1001. scriptbodytext " " <=> scriptbodyatrdone " ε
+1002. scriptbodyatrdone % > <=> scriptbodyopenatr ε ε
+1003. scriptbodyatrdone $ > <=> scriptbodyopenatr ε ε
+1004. scriptbodyatrdone > > <=> scriptbodyopendone > ε
+1005. scriptbodyopen > > <=> scriptbodyopendone > ε
+1006. scriptbodyopendone $ < <=> scriptbodyopendone ε ε
+1007. scriptbodyopendone % < <=> scriptbodyopendone ε ε
+1008. scriptbodyopenatr c > <=> scriptbodyclass ε ""=ssal
+1009. scriptbodyclass l l <=> scriptbodyclass l ε
+1010. scriptbodyclass a a <=> scriptbodyclass a ε
+1011. scriptbodyclass s s <=> scriptbodyclasss s ε
+1012. scriptbodyclasss s s <=> scriptbodyclass s ε
+1013. scriptbodyclass = = <=> scriptbodyclass = ε
+1014. scriptbodyclass " " <=> scriptbodytext " ε
+1015. scriptbodyopenatr s > <=> scriptbodystyleorsrc ε ε
+1016. scriptbodystyleorsrc t > <=> scriptbodystyle ε ""=ely
+1017. scriptbodystyle y y <=> scriptbodystyle y ε
+1018. scriptbodystyle l l <=> scriptbodycstyle l ε
+1019. scriptbodycstyle e e <=> scriptbodystyle e ε
+1020. scriptbodystyle = = <=> scriptbodystyle = ε
+1021. scriptbodystyle " " <=> scriptbodytext " ε
+1022. scriptbodyopendone any < <=> scriptbodyopendone ε ε
+1023. scriptbodystyleorsrc r > <=> scriptbodysrc ε ""=c
+1024. scriptbodysrc c c <=> scriptbodysrc c ε
+1025. scriptbodysrc = = <=> scriptbodysrc = ε
+1026. scriptbodysrc " " <=> scriptbodytext " ε
+1027. scriptbodyopendone < < <=> newtaginscriptbody < ε
+1028. newtaginscriptbody / / <=> scriptbodyclose / ε
+1029. scriptbodyclose s s <=> scriptbodyclose s ε
+1030. scriptbodyclose c c <=> scriptbodyclose c ε
+1031. scriptbodyclose r r <=> scriptbodyclose r ε
+1032. scriptbodyclose i i <=> scriptbodyclose i ε
+1033. scriptbodyclose p p <=> scriptbodyclose p ε
+1034. scriptbodyclose t t <=> scriptbodyclose t ε
+1035. scriptbodyclose > > <=> bodyopendone > ε
+1036. bodyacctag l / <=> linkbody ε <>""=lerkni
+1037. linkbody i i <=> linkbody i ε
+1038. linkbody n n <=> linkbody n ε
+1039. linkbody k k <=> linkbody k ε
+1040. linkbody $ > <=> linkbodyatr ε ε
+1041. linkbody % > <=> linkbodyatr ε ε
+1042. linkbody $ r <=> linkbodyatr ε ε
+1043. linkbody % r <=> linkbodyatr ε ε
+1044. linkbody > > <=> bodyopendone > ε
+1045. linkbodyatr $ r <=> linkbodyatr ε ε
+1046. linkbodyatr % r <=> linkbodyatr ε ε
+1047. linkbodyatr $ > <=> linkbodyatr ε ε
+1048. linkbodyatr % > <=> linkbodyatr ε ε
+1049. linkbodyatr > > <=> bodyopendone > ε
+1050. linkbodyatr r r <=> linkbodyrelwajib r ε
+1051. linkbodyrelwajib e e <=> linkbodyrelwajib e ε
+1052. linkbodyrelwajib l l <=> linkbodyrelwajib l ε
+1053. linkbodyrelwajib = = <=> linkbodyrelwajib = ε
+1054. linkbodyrelwajib " " <=> linkbodytext " ε
+1055. linkbodytext any " <=> linkbodytext ε ε
+1056. linkbodytext " " <=> linkbodyatrdone " ε
+1057. linkbodyatrdone % > <=> linkbodyatr ε ε
+1058. linkbodyatrdone $ > <=> linkbodyatr ε ε
+1059. linkbodyatrdone > > <=> bodyopendone > ε
+1060. linkbodyatr i > <=> linkbodyid ε ""=d
+1061. linkbodyid d d <=> linkbodyid d ε
+1062. linkbodyid = = <=> linkbodyid = ε
+1063. linkbodyid " " <=> linkbodytext " ε
+1064. linkbodyatr c > <=> linkbodyclass ε ""=ssal
+1065. linkbodyclass l l <=> linkbodyclass l ε
+1066. linkbodyclass a a <=> linkbodyclass a ε
+1067. linkbodyclass s s <=> linkbodyclasss s ε
+1068. linkbodyclasss s s <=> linkbodyclass s ε
+1069. linkbodyclass = = <=> linkbodyclass = ε
+1070. linkbodyclass " " <=> linkbodytext " ε
+1071. linkbodyatr s > <=> linkbodystyle ε ""=elyt
+1072. linkbodystyle t t <=> linkbodystyle t ε
+1073. linkbodystyle y y <=> linkbodystyle y ε
+1074. linkbodystyle l l <=> linkbodycstyle l ε
+1075. linkbodycstyle e e <=> linkbodystyle e ε
+1076. linkbodystyle = = <=> linkbodystyle = ε
+1077. linkbodystyle " " <=> linkbodytext " ε
+1078. linkbodyatr r > <=> linkbodyrel ε ""=le
+1079. linkbodyrel e e <=> linkbodyrel e ε
+1080. linkbodyrel l l <=> linkbodyrel l ε
+1081. linkbodyrel = = <=> linkbodyrel = ε
+1082. linkbodyrel " " <=> linkbodytext " ε
+1083. linkbodyatr h > <=> linkbodyhref ε ""=fer
+1084. linkbodyhref r r <=> linkbodyhref r ε
+1085. linkbodyhref e e <=> linkbodyhref e ε
+1086. linkbodyhref f f <=> linkbodyhref f ε
+1087. linkbodyhref = = <=> linkbodyhref = ε
+1088. linkbodyhref " " <=> linkbodytext " ε
+1089. bodyacctag p / <=> p ε <>p/<>
+1090. p $ > <=> patr ε ε
+1091. p % > <=> patr ε ε
+1092. patr % > <=> patr ε ε
+1093. patr $ > <=> patr ε ε
+1094. patr > > <=> bodyopendone > ε
+1095. p > > <=> bodyopendone > ε
+1096. patr i > <=> pid ε ""=d
+1097. pid d d <=> pid d ε
+1098. pid = = <=> pid = ε
+1099. pid " " <=> ptext " ε
+1100. patr c > <=> pclass ε ""=ssal
+1101. pclass l l <=> pclass l ε
+1102. pclass a a <=> pclass a ε
+1103. pclass s s <=> pclass s ε
+1104. pclass = = <=> pclass = ε
+1105. pclass " " <=> ptext " ε
+1106. patr s > <=> pstyle ε ""=elyt
+1107. pstyle t t <=> pstyle t ε
+1108. pstyle y y <=> pstyle y ε
+1109. pstyle l l <=> pstyle l ε
+1110. pstyle e e <=> pstyle e ε
+1111. pstyle = = <=> pstyle = ε
+1112. pstyle " " <=> ptext " ε
+1113. ptext any " <=> ptext ε ε
+1114. ptext " " <=> p " ε
+1115. bodyclosetag p p <=> pclosetag p ε
+1116. pclosetag > > <=> bodyopendone > ε
+1117. bopentag % / <=> batr ε ε
+1118. bopentag $ / <=> batr ε ε
+1119. batr $ / <=> batr ε ε
+1120. batr % / <=> batr ε ε
+1121. bopentag > / <=> bodyopendone ε <>b/<
+1122. batr > / <=> bodyopendone ε <>b/<
+1123. btext " " <=> bopentag " ε
+1124. btext any " <=> btext ε ε
+1125. batr i / <=> bid ε ""=d
+1126. bid d d <=> bid d ε
+1127. bid = = <=> bid = ε
+1128. bid " " <=> btext " ε
+1129. batr c / <=> bclass ε ""=ssal
+1130. bclass l l <=> bclass l ε
+1131. bclass a a <=> bclass a ε
+1132. bclass s s <=> bclass s ε
+1133. bclass = = <=> bclass = ε
+1134. bclass " " <=> btext " ε
+1135. batr s / <=> bstyle ε ""=elyt
+1136. bstyle t t <=> bstyle t ε
+1137. bstyle y y <=> bstyle y ε
+1138. bstyle l l <=> bstyle l ε
+1139. bstyle e e <=> bstyle e ε
+1140. bstyle = = <=> bstyle = ε
+1141. bstyle " " <=> btext " ε
+1142. bodyclosetagb > > <=> bodyopendone > ε
+1143. abodytag b / <=> abbrtag ε >rbba/<>rb
+1144. abbrtag b b <=> abbrtag b ε
+1145. abbrtag r r <=> abbrtag r ε
+1146. abbrtag % > <=> abbratr ε ε
+1147. abbrtag $ > <=> abbratr ε ε
+1148. abbratr % > <=> abbratr ε ε
+1149. abbratr $ > <=> abbratr ε ε
+1150. abbrtag > > <=> bodyopendone > ε
+1151. abbratr > > <=> bodyopendone > ε
+1152. abbrtext any " <=> abbrtext ε ε
+1153. abbrtext " " <=> abbrtag " ε
+1154. abbratr i > <=> abbrid ε ""=d
+1155. abbrid d d <=> abbrid d ε
+1156. abbrid = = <=> abbrid = ε
+1157. abbrid " " <=> abbrtext " ε
+1158. abbratr c > <=> abbrclass ε ""=ssal
+1159. abbrclass l l <=> abbrclass l ε
+1160. abbrclass a a <=> abbrclass a ε
+1161. abbrclass s s <=> abbrclass s ε
+1162. abbrclass = = <=> abbrclass = ε
+1163. abbrclass " " <=> abbrtext " ε
+1164. abbratr s > <=> abbrstyle ε ""=elyt
+1165. abbrstyle t t <=> abbrstyle t ε
+1166. abbrstyle y y <=> abbrstyle y ε
+1167. abbrstyle l l <=> abbrstyle l ε
+1168. abbrstyle e e <=> abbrstyle e ε
+1169. abbrstyle = = <=> abbrstyle = ε
+1170. abbrstyle " " <=> abbrtext " ε
+1171. aclose b b <=> abbrclose b ε
+1172. abbrclose b b <=> abbrclose b ε
+1173. abbrclose r r <=> abbrclose r ε
+1174. abbrclose > > <=> bodyopendone > <
+1175. script/small/strong t / <=> strongbody ε <>gnorts/<>gnor
+1176. strongbody r r <=> strongbodyopen r ε
+1177. strongbodyopen o o <=> strongbodyopen o ε
+1178. strongbodyopen n n <=> strongbodyopen n ε
+1179. strongbodyopen g g <=> strongbodyopen g ε
+1180. strongbodyopen $ > <=> strongbodyopenatr ε ε
+1181. strongbodyopen % > <=> strongbodyopenatr ε ε
+1182. strongbodyopenatr % > <=> strongbodyopenatr ε ε
+1183. strongbodyopenatr > > <=> bodyopendone > ε
+1184. strongbodyopenatr i > <=> strongbodyid ε ""=d
+1185. strongbodyid d d <=> strongbodyid d ε
+1186. strongbodyid = = <=> strongbodyid = ε
+1187. strongbodyid " " <=> strongbodytext " ε
+1188. strongbodytext any " <=> strongbodytext ε ε
+1189. strongbodytext " " <=> strongbodyatrdone " ε
+1190. strongbodyatrdone % > <=> strongbodyopenatr ε ε
+1191. strongbodyatrdone $ > <=> strongbodyopenatr ε ε
+1192. strongbodyatrdone > > <=> bodyopendone > ε
+1193. strongbodyopen > > <=> bodyopendone > ε
+1194. bodyopendone $ < <=> bodyopendone ε ε
+1195. strongbodyopenatr c > <=> strongbodyclass ε ""=ssal
+1196. strongbodyclass l l <=> strongbodyclass l ε
+1197. strongbodyclass a a <=> strongbodyclass a ε
+1198. strongbodyclass s s <=> strongbodyclasss s ε
+1199. strongbodyclasss s s <=> strongbodyclass s ε
+1200. strongbodyclass = = <=> strongbodyclass = ε
+1201. strongbodyclass " " <=> strongbodytext " ε
+1202. strongbodyopenatr s > <=> strongbodystyleorsrc ε ε
+1203. strongbodystyleorsrc t > <=> strongbodystyle ε ""=ely
+1204. strongbodystyle y y <=> strongbodystyle y ε
+1205. strongbodystyle l l <=> strongbodycstyle l ε
+1206. strongbodycstyle e e <=> strongbodystyle e ε
+1207. strongbodystyle = = <=> strongbodystyle = ε
+1208. strongbodystyle " " <=> strongbodytext " ε
+1209. strong/smallbodyclose t t <=> strongbodyclose t ε
+1210. strongbodyclose r r <=> strongbodyclose r ε
+1211. strongbodyclose o o <=> strongbodyclose o ε
+1212. strongbodyclose n n <=> strongbodyclose n ε
+1213. strongbodyclose g g <=> strongbodyclose g ε
+1214. strongbodyclose > > <=> bodyopendone > ε
+1215. script/small/strong m / <=> smallbody ε <>llams/<>lla
+1216. smallbody a a <=> smallbodyopen a ε
+1217. smallbodyopen l l <=> smallbodyopen l ε
+1218. smallbodyopen $ > <=> smallbodyopenatr ε ε
+1219. smallbodyopen % > <=> smallbodyopenatr ε ε
+1220. smallbodyopenatr % > <=> smallbodyopenatr ε ε
+1221. smallbodyopenatr > > <=> bodyopendone > ε
+1222. smallbodyopenatr i > <=> smallbodyid ε ""=d
+1223. smallbodyid d d <=> smallbodyid d ε
+1224. smallbodyid = = <=> smallbodyid = ε
+1225. smallbodyid " " <=> smallbodytext " ε
+1226. smallbodytext any " <=> smallbodytext ε ε
+1227. smallbodytext " " <=> smallbodyatrdone " ε
+1228. smallbodyatrdone % > <=> smallbodyopenatr ε ε
+1229. smallbodyatrdone $ > <=> smallbodyopenatr ε ε
+1230. smallbodyatrdone > > <=> bodyopendone > ε
+1231. smallbodyopen > > <=> bodyopendone > ε
+1232. smallbodyopenatr c > <=> smallbodyclass ε ""=ssal
+1233. smallbodyclass l l <=> smallbodyclass l ε
+1234. smallbodyclass a a <=> smallbodyclass a ε
+1235. smallbodyclass s s <=> smallbodyclasss s ε
+1236. smallbodyclasss s s <=> smallbodyclass s ε
+1237. smallbodyclass = = <=> smallbodyclass = ε
+1238. smallbodyclass " " <=> smallbodytext " ε
+1239. smallbodyopenatr s > <=> smallbodystyleorsrc ε ε
+1240. smallbodystyleorsrc t > <=> smallbodystyle ε ""=ely
+1241. smallbodystyle y y <=> smallbodystyle y ε
+1242. smallbodystyle l l <=> smallbodycstyle l ε
+1243. smallbodycstyle e e <=> smallbodystyle e ε
+1244. smallbodystyle = = <=> smallbodystyle = ε
+1245. smallbodystyle " " <=> smallbodytext " ε
+1246. strong/smallbodyclose m m <=> smallbodyclose m ε
+1247. smallbodyclose a a <=> smallbodyclose a ε
+1248. smallbodyclose l l <=> smallbodyclose l ε
+1249. smallbodyclose > > <=> bodyopendone > ε
+1250. bodyacctag e / <=> embodyopen ε <>me/<>m
+1251. embodyopen m m <=> embodyopen m ε
+1252. embodyopen $ > <=> embodyopenatr ε ε
+1253. embodyopen % > <=> embodyopenatr ε ε
+1254. embodyopenatr % > <=> embodyopenatr ε ε
+1255. embodyopenatr > > <=> bodyopendone > ε
+1256. embodyopenatr i > <=> embodyid ε ""=d
+1257. embodyid d d <=> embodyid d ε
+1258. embodyid = = <=> embodyid = ε
+1259. embodyid " " <=> embodytext " ε
+1260. embodytext any " <=> embodytext ε ε
+1261. embodytext " " <=> embodyatrdone " ε
+1262. embodyatrdone % > <=> embodyopenatr ε ε
+1263. embodyatrdone $ > <=> embodyopenatr ε ε
+1264. embodyatrdone > > <=> bodyopendone > ε
+1265. embodyopen > > <=> bodyopendone > ε
+1266. embodyopenatr c > <=> embodyclass ε ""=ssal
+1267. embodyclass l l <=> embodyclass l ε
+1268. embodyclass a a <=> embodyclass a ε
+1269. embodyclass s s <=> embodyclasss s ε
+1270. embodyclasss s s <=> embodyclass s ε
+1271. embodyclass = = <=> embodyclass = ε
+1272. embodyclass " " <=> embodytext " ε
+1273. embodyopenatr s > <=> embodystyleorsrc ε ε
+1274. embodystyleorsrc t > <=> embodystyle ε ""=ely
+1275. embodystyle y y <=> embodystyle y ε
+1276. embodystyle l l <=> embodycstyle l ε
+1277. embodycstyle e e <=> embodystyle e ε
+1278. embodystyle = = <=> embodystyle = ε
+1279. embodystyle " " <=> embodytext " ε
+1280. bodyclosetag e e <=> embodyclose e ε
+1281. embodyclose m m <=> embodyclose m ε
+1282. embodyclose > > <=> bodyopendone > ε
+1283. thclosetag s / <=> strong/smallopenth ε ε
+1284. strong/smallopenth t / <=> strongthopen ε <>gnorts/<>gnor
+1285. strongthopen r r <=> strongthopen r ε
+1286. strongthopen o o <=> strongthopen o ε
+1287. strongthopen n n <=> strongthopen n ε
+1288. strongthopen g g <=> strongthopen g ε
+1289. strongthopen $ > <=> strongthopenatr ε ε
+1290. strongthopen % > <=> strongthopenatr ε ε
+1291. strongthopenatr % > <=> strongthopenatr ε ε
+1292. strongthopenatr > > <=> thcontent > ε
+1293. strongthopenatr i > <=> strongthid ε ""=d
+1294. strongthid d d <=> strongthid d ε
+1295. strongthid = = <=> strongthid = ε
+1296. strongthid " " <=> strongthtext " ε
+1297. strongthtext any " <=> strongthtext ε ε
+1298. strongthtext " " <=> strongthatrdone " ε
+1299. strongthatrdone % > <=> strongthopenatr ε ε
+1300. strongthatrdone $ > <=> strongthopenatr ε ε
+1301. strongthatrdone > > <=> thcontent > ε
+1302. strongthopen > > <=> thcontent > ε
+1303. strongthopenatr c > <=> strongthclass ε ""=ssal
+1304. strongthclass l l <=> strongthclass l ε
+1305. strongthclass a a <=> strongthclass a ε
+1306. strongthclass s s <=> strongthclasss s ε
+1307. strongthclasss s s <=> strongthclass s ε
+1308. strongthclass = = <=> strongthclass = ε
+1309. strongthclass " " <=> strongthtext " ε
+1310. strongthopenatr s > <=> strongthstyleorsrc ε ε
+1311. strongthstyleorsrc t > <=> strongthstyle ε ""=ely
+1312. strongthstyle y y <=> strongthstyle y ε
+1313. strongthstyle l l <=> strongthcstyle l ε
+1314. strongthcstyle e e <=> strongthstyle e ε
+1315. strongthstyle = = <=> strongthstyle = ε
+1316. strongthstyle " " <=> strongthtext " ε
+1317. thclosetag s s <=> strong/smallthclose s ε
+1318. strong/smallthclose t t <=> strongthclose t ε
+1319. strongthclose r r <=> strongthclose r ε
+1320. strongthclose o o <=> strongthclose o ε
+1321. strongthclose n n <=> strongthclose n ε
+1322. strongthclose g g <=> strongthclose g ε
+1323. strongthclose > > <=> thcontent > ε
+1324. strong/smallopenth m / <=> smallthopen ε <>llams/<>lla
+1325. smallthopen a a <=> smallthopen a ε
+1326. smallthopen l l <=> smallthopen l ε
+1327. smallthopen $ > <=> smallthopenatr ε ε
+1328. smallthopen % > <=> smallthopenatr ε ε
+1329. smallthopenatr % > <=> smallthopenatr ε ε
+1330. smallthopenatr > > <=> thcontent > ε
+1331. smallthopenatr i > <=> smallthid ε ""=d
+1332. smallthid d d <=> smallthid d ε
+1333. smallthid = = <=> smallthid = ε
+1334. smallthid " " <=> smallthtext " ε
+1335. smallthtext any " <=> smallthtext ε ε
+1336. smallthtext " " <=> smallthatrdone " ε
+1337. smallthatrdone % > <=> smallthopenatr ε ε
+1338. smallthatrdone $ > <=> smallthopenatr ε ε
+1339. smallthatrdone > > <=> thcontent > ε
+1340. smallthopen > > <=> thcontent > ε
+1341. smallthopenatr c > <=> smallthclass ε ""=ssal
+1342. smallthclass l l <=> smallthclass l ε
+1343. smallthclass a a <=> smallthclass a ε
+1344. smallthclass s s <=> smallthclasss s ε
+1345. smallthclasss s s <=> smallthclass s ε
+1346. smallthclass = = <=> smallthclass = ε
+1347. smallthclass " " <=> smallthtext " ε
+1348. smallthopenatr s > <=> smallthstyleorsrc ε ε
+1349. smallthstyleorsrc t > <=> smallthstyle ε ""=ely
+1350. smallthstyle y y <=> smallthstyle y ε
+1351. smallthstyle l l <=> smallthcstyle l ε
+1352. smallthcstyle e e <=> smallthstyle e ε
+1353. smallthstyle = = <=> smallthstyle = ε
+1354. smallthstyle " " <=> smallthtext " ε
+1355. strong/smallthclose m m <=> smallthclose m ε
+1356. smallthclose a a <=> smallthclose a ε
+1357. smallthclose l l <=> smallthclose l ε
+1358. smallthclose > > <=> thcontent > ε
+1359. tdclosetag s / <=> strong/smallopentd ε ε
+1360. strong/smallopentd t / <=> strongtdopen ε <>gnorts/<>gnor
+1361. strongtdopen r r <=> strongtdopen r ε
+1362. strongtdopen o o <=> strongtdopen o ε
+1363. strongtdopen n n <=> strongtdopen n ε
+1364. strongtdopen g g <=> strongtdopen g ε
+1365. strongtdopen $ > <=> strongtdopenatr ε ε
+1366. strongtdopen % > <=> strongtdopenatr ε ε
+1367. strongtdopenatr % > <=> strongtdopenatr ε ε
+1368. strongtdopenatr > > <=> tdcontent > ε
+1369. strongtdopenatr i > <=> strongtdid ε ""=d
+1370. strongtdid d d <=> strongtdid d ε
+1371. strongtdid = = <=> strongtdid = ε
+1372. strongtdid " " <=> strongtdtext " ε
+1373. strongtdtext any " <=> strongtdtext ε ε
+1374. strongtdtext " " <=> strongtdatrdone " ε
+1375. strongtdatrdone % > <=> strongtdopenatr ε ε
+1376. strongtdatrdone $ > <=> strongtdopenatr ε ε
+1377. strongtdatrdone > > <=> tdcontent > ε
+1378. strongtdopen > > <=> tdcontent > ε
+1379. strongtdopenatr c > <=> strongtdclass ε ""=ssal
+1380. strongtdclass l l <=> strongtdclass l ε
+1381. strongtdclass a a <=> strongtdclass a ε
+1382. strongtdclass s s <=> strongtdclasss s ε
+1383. strongtdclasss s s <=> strongtdclass s ε
+1384. strongtdclass = = <=> strongtdclass = ε
+1385. strongtdclass " " <=> strongtdtext " ε
+1386. strongtdopenatr s > <=> strongtdstyleorsrc ε ε
+1387. strongtdstyleorsrc t > <=> strongtdstyle ε ""=ely
+1388. strongtdstyle y y <=> strongtdstyle y ε
+1389. strongtdstyle l l <=> strongtdcstyle l ε
+1390. strongtdcstyle e e <=> strongtdstyle e ε
+1391. strongtdstyle = = <=> strongtdstyle = ε
+1392. strongtdstyle " " <=> strongtdtext " ε
+1393. tdclosetag s s <=> strong/smalltdclose s ε
+1394. strong/smalltdclose t t <=> strongtdclose t ε
+1395. strongtdclose r r <=> strongtdclose r ε
+1396. strongtdclose o o <=> strongtdclose o ε
+1397. strongtdclose n n <=> strongtdclose n ε
+1398. strongtdclose g g <=> strongtdclose g ε
+1399. strongtdclose > > <=> tdcontent > ε
+1400. strong/smallopentd m / <=> smalltdopen ε <>llams/<>lla
+1401. smalltdopen a a <=> smalltdopen a ε
+1402. smalltdopen l l <=> smalltdopen l ε
+1403. smalltdopen $ > <=> smalltdopenatr ε ε
+1404. smalltdopen % > <=> smalltdopenatr ε ε
+1405. smalltdopenatr % > <=> smalltdopenatr ε ε
+1406. smalltdopenatr > > <=> tdcontent > ε
+1407. smalltdopenatr i > <=> smalltdid ε ""=d
+1408. smalltdid d d <=> smalltdid d ε
+1409. smalltdid = = <=> smalltdid = ε
+1410. smalltdid " " <=> smalltdtext " ε
+1411. smalltdtext any " <=> smalltdtext ε ε
+1412. smalltdtext " " <=> smalltdatrdone " ε
+1413. smalltdatrdone % > <=> smalltdopenatr ε ε
+1414. smalltdatrdone $ > <=> smalltdopenatr ε ε
+1415. smalltdatrdone > > <=> tdcontent > ε
+1416. smalltdopen > > <=> tdcontent > ε
+1417. smalltdopenatr c > <=> smalltdclass ε ""=ssal
+1418. smalltdclass l l <=> smalltdclass l ε
+1419. smalltdclass a a <=> smalltdclass a ε
+1420. smalltdclass s s <=> smalltdclasss s ε
+1421. smalltdclasss s s <=> smalltdclass s ε
+1422. smalltdclass = = <=> smalltdclass = ε
+1423. smalltdclass " " <=> smalltdtext " ε
+1424. smalltdopenatr s > <=> smalltdstyleorsrc ε ε
+1425. smalltdstyleorsrc t > <=> smalltdstyle ε ""=ely
+1426. smalltdstyle y y <=> smalltdstyle y ε
+1427. smalltdstyle l l <=> smalltdcstyle l ε
+1428. smalltdcstyle e e <=> smalltdstyle e ε
+1429. smalltdstyle = = <=> smalltdstyle = ε
+1430. smalltdstyle " " <=> smalltdtext " ε
+1431. strong/smalltdclose m m <=> smalltdclose m ε
+1432. smalltdclose a a <=> smalltdclose a ε
+1433. smalltdclose l l <=> smalltdclose l ε
+1434. smalltdclose > > <=> tdcontent > ε
+1435. thclosetag e / <=> emthopen ε <>me/<>m
+1436. emthopen m m <=> emthopen m ε
+1437. emthopen $ > <=> emthopenatr ε ε
+1438. emthopen % > <=> emthopenatr ε ε
+1439. emthopenatr % > <=> emthopenatr ε ε
+1440. emthopenatr > > <=> thcontent > ε
+1441. emthopenatr i > <=> emthid ε ""=d
+1442. emthid d d <=> emthid d ε
+1443. emthid = = <=> emthid = ε
+1444. emthid " " <=> emthtext " ε
+1445. emthtext any " <=> emthtext ε ε
+1446. emthtext " " <=> emthatrdone " ε
+1447. emthatrdone % > <=> emthopenatr ε ε
+1448. emthatrdone $ > <=> emthopenatr ε ε
+1449. emthatrdone > > <=> thcontent > ε
+1450. emthopen > > <=> thcontent > ε
+1451. emthopenatr c > <=> emthclass ε ""=ssal
+1452. emthclass l l <=> emthclass l ε
+1453. emthclass a a <=> emthclass a ε
+1454. emthclass s s <=> emthclasss s ε
+1455. emthclasss s s <=> emthclass s ε
+1456. emthclass = = <=> emthclass = ε
+1457. emthclass " " <=> emthtext " ε
+1458. emthopenatr s > <=> emthstyleorsrc ε ε
+1459. emthstyleorsrc t > <=> emthstyle ε ""=ely
+1460. emthstyle y y <=> emthstyle y ε
+1461. emthstyle l l <=> emthcstyle l ε
+1462. emthcstyle e e <=> emthstyle e ε
+1463. emthstyle = = <=> emthstyle = ε
+1464. emthstyle " " <=> emthtext " ε
+1465. thclosetag e e <=> emthclose e ε
+1466. emthclose m m <=> emthclose m ε
+1467. emthclose > > <=> thcontent > ε
+1468. tdclosetag e / <=> emtdopen ε <>me/<>m
+1469. emtdopen m m <=> emtdopen m ε
+1470. emtdopen $ > <=> emtdopenatr ε ε
+1471. emtdopen % > <=> emtdopenatr ε ε
+1472. emtdopenatr % > <=> emtdopenatr ε ε
+1473. emtdopenatr > > <=> tdcontent > ε
+1474. emtdopenatr i > <=> emtdid ε ""=d
+1475. emtdid d d <=> emtdid d ε
+1476. emtdid = = <=> emtdid = ε
+1477. emtdid " " <=> emtdtext " ε
+1478. emtdtext any " <=> emtdtext ε ε
+1479. emtdtext " " <=> emtdatrdone " ε
+1480. emtdatrdone % > <=> emtdopenatr ε ε
+1481. emtdatrdone $ > <=> emtdopenatr ε ε
+1482. emtdatrdone > > <=> tdcontent > ε
+1483. emtdopen > > <=> tdcontent > ε
+1484. emtdopenatr c > <=> emtdclass ε ""=ssal
+1485. emtdclass l l <=> emtdclass l ε
+1486. emtdclass a a <=> emtdclass a ε
+1487. emtdclass s s <=> emtdclasss s ε
+1488. emtdclasss s s <=> emtdclass s ε
+1489. emtdclass = = <=> emtdclass = ε
+1490. emtdclass " " <=> emtdtext " ε
+1491. emtdopenatr s > <=> emtdstyleorsrc ε ε
+1492. emtdstyleorsrc t > <=> emtdstyle ε ""=ely
+1493. emtdstyle y y <=> emtdstyle y ε
+1494. emtdstyle l l <=> emtdcstyle l ε
+1495. emtdcstyle e e <=> emtdstyle e ε
+1496. emtdstyle = = <=> emtdstyle = ε
+1497. emtdstyle " " <=> emtdtext " ε
+1498. tdclosetag e e <=> emtdclose e ε
+1499. emtdclose m m <=> emtdclose m ε
+1500. emtdclose > > <=> tdcontent > ε
+1501. thclosetag b / <=> bthopen ε <>b/<>
+1502. bthopen $ > <=> bthopenatr ε ε
+1503. bthopen % > <=> bthopenatr ε ε
+1504. bthopenatr % > <=> bthopenatr ε ε
+1505. bthopenatr > > <=> thcontent > ε
+1506. bthopenatr i > <=> bthid ε ""=d
+1507. bthid d d <=> bthid d ε
+1508. bthid = = <=> bthid = ε
+1509. bthid " " <=> bthtext " ε
+1510. bthtext any " <=> bthtext ε ε
+1511. bthtext " " <=> bthatrdone " ε
+1512. bthatrdone % > <=> bthopenatr ε ε
+1513. bthatrdone $ > <=> bthopenatr ε ε
+1514. bthatrdone > > <=> thcontent > ε
+1515. bthopen > > <=> thcontent > ε
+1516. bthopenatr c > <=> bthclass ε ""=ssal
+1517. bthclass l l <=> bthclass l ε
+1518. bthclass a a <=> bthclass a ε
+1519. bthclass s s <=> bthclasss s ε
+1520. bthclasss s s <=> bthclass s ε
+1521. bthclass = = <=> bthclass = ε
+1522. bthclass " " <=> bthtext " ε
+1523. bthopenatr s > <=> bthstyleorsrc ε ε
+1524. bthstyleorsrc t > <=> bthstyle ε ""=ely
+1525. bthstyle y y <=> bthstyle y ε
+1526. bthstyle l l <=> bthcstyle l ε
+1527. bthcstyle e e <=> bthstyle e ε
+1528. bthstyle = = <=> bthstyle = ε
+1529. bthstyle " " <=> bthtext " ε
+1530. thclosetag b b <=> bthclose s ε
+1531. bthclose > > <=> thcontent > ε
+1532. thclosetag a / <=> abbrthopen ε <>rbba/<>rbb
+1533. abbrthopen b b <=> abbrthopen b ε
+1534. abbrthopen r r <=> abbrthopen r ε
+1535. abbrthopen $ > <=> abbrthopenatr ε ε
+1536. abbrthopen % > <=> abbrthopenatr ε ε
+1537. abbrthopenatr % > <=> abbrthopenatr ε ε
+1538. abbrthopenatr > > <=> thcontent > ε
+1539. abbrthopenatr i > <=> abbrthid ε ""=d
+1540. abbrthid d d <=> abbrthid d ε
+1541. abbrthid = = <=> abbrthid = ε
+1542. abbrthid " " <=> abbrthtext " ε
+1543. abbrthtext any " <=> abbrthtext ε ε
+1544. abbrthtext " " <=> abbrthatrdone " ε
+1545. abbrthatrdone % > <=> abbrthopenatr ε ε
+1546. abbrthatrdone $ > <=> abbrthopenatr ε ε
+1547. abbrthatrdone > > <=> thcontent > ε
+1548. abbrthopen > > <=> thcontent > ε
+1549. abbrthopenatr c > <=> abbrthclass ε ""=ssal
+1550. abbrthclass l l <=> abbrthclass l ε
+1551. abbrthclass a a <=> abbrthclass a ε
+1552. abbrthclass s s <=> abbrthclasss s ε
+1553. abbrthclasss s s <=> abbrthclass s ε
+1554. abbrthclass = = <=> abbrthclass = ε
+1555. abbrthclass " " <=> abbrthtext " ε
+1556. abbrthopenatr s > <=> abbrthstyleorsrc ε ε
+1557. abbrthstyleorsrc t > <=> abbrthstyle ε ""=ely
+1558. abbrthstyle y y <=> abbrthstyle y ε
+1559. abbrthstyle l l <=> abbrthcstyle l ε
+1560. abbrthcstyle e e <=> abbrthstyle e ε
+1561. abbrthstyle = = <=> abbrthstyle = ε
+1562. abbrthstyle " " <=> abbrthtext " ε
+1563. thclosetag a a <=> abbrthclose a ε
+1564. abbrthclose b b <=> abbrthclose a ε
+1565. abbrthclose r r <=> abbrthclose r ε
+1566. abbrthclose > > <=> thcontent > ε
+1567. tdclosetag b / <=> btdopen ε <>b/<>
+1568. btdopen $ > <=> btdopenatr ε ε
+1569. btdopen % > <=> btdopenatr ε ε
+1570. btdopenatr % > <=> btdopenatr ε ε
+1571. btdopenatr > > <=> tdcontent > ε
+1572. btdopenatr i > <=> btdid ε ""=d
+1573. btdid d d <=> btdid d ε
+1574. btdid = = <=> btdid = ε
+1575. btdid " " <=> btdtext " ε
+1576. btdtext any " <=> btdtext ε ε
+1577. btdtext " " <=> btdatrdone " ε
+1578. btdatrdone % > <=> btdopenatr ε ε
+1579. btdatrdone $ > <=> btdopenatr ε ε
+1580. btdatrdone > > <=> tdcontent > ε
+1581. btdopen > > <=> tdcontent > ε
+1582. btdopenatr c > <=> btdclass ε ""=ssal
+1583. btdclass l l <=> btdclass l ε
+1584. btdclass a a <=> btdclass a ε
+1585. btdclass s s <=> btdclasss s ε
+1586. btdclasss s s <=> btdclass s ε
+1587. btdclass = = <=> btdclass = ε
+1588. btdclass " " <=> btdtext " ε
+1589. btdopenatr s > <=> btdstyleorsrc ε ε
+1590. btdstyleorsrc t > <=> btdstyle ε ""=ely
+1591. btdstyle y y <=> btdstyle y ε
+1592. btdstyle l l <=> btdcstyle l ε
+1593. btdcstyle e e <=> btdstyle e ε
+1594. btdstyle = = <=> btdstyle = ε
+1595. btdstyle " " <=> btdtext " ε
+1596. tdclosetag b b <=> btdclose s ε
+1597. btdclose > > <=> tdcontent > ε
+1598. tdclosetag a / <=> abbrtdopen ε <>rbba/<>rbb
+1599. abbrtdopen b b <=> abbrtdopen b ε
+1600. abbrtdopen r r <=> abbrtdopen r ε
+1601. abbrtdopen $ > <=> abbrtdopenatr ε ε
+1602. abbrtdopen % > <=> abbrtdopenatr ε ε
+1603. abbrtdopenatr % > <=> abbrtdopenatr ε ε
+1604. abbrtdopenatr > > <=> tdcontent > ε
+1605. abbrtdopenatr i > <=> abbrtdid ε ""=d
+1606. abbrtdid d d <=> abbrtdid d ε
+1607. abbrtdid = = <=> abbrtdid = ε
+1608. abbrtdid " " <=> abbrtdtext " ε
+1609. abbrtdtext any " <=> abbrtdtext ε ε
+1610. abbrtdtext " " <=> abbrtdatrdone " ε
+1611. abbrtdatrdone % > <=> abbrtdopenatr ε ε
+1612. abbrtdatrdone $ > <=> abbrtdopenatr ε ε
+1613. abbrtdatrdone > > <=> tdcontent > ε
+1614. abbrtdopen > > <=> tdcontent > ε
+1615. abbrtdopenatr c > <=> abbrtdclass ε ""=ssal
+1616. abbrtdclass l l <=> abbrtdclass l ε
+1617. abbrtdclass a a <=> abbrtdclass a ε
+1618. abbrtdclass s s <=> abbrtdclasss s ε
+1619. abbrtdclasss s s <=> abbrtdclass s ε
+1620. abbrtdclass = = <=> abbrtdclass = ε
+1621. abbrtdclass " " <=> abbrtdtext " ε
+1622. abbrtdopenatr s > <=> abbrtdstyleorsrc ε ε
+1623. abbrtdstyleorsrc t > <=> abbrtdstyle ε ""=ely
+1624. abbrtdstyle y y <=> abbrtdstyle y ε
+1625. abbrtdstyle l l <=> abbrtdcstyle l ε
+1626. abbrtdcstyle e e <=> abbrtdstyle e ε
+1627. abbrtdstyle = = <=> abbrtdstyle = ε
+1628. abbrtdstyle " " <=> abbrtdtext " ε
+1629. tdclosetag a a <=> abbrtdclose a ε
+1630. abbrtdclose b b <=> abbrtdclose a ε
+1631. abbrtdclose r r <=> abbrtdclose r ε
+1632. abbrtdclose > > <=> tdcontent > ε

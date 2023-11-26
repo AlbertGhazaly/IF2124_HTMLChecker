@@ -11,16 +11,15 @@ stack = STACK(pda)
 states = set()
 counter = 1
 
-f = open("listRule.txt", "w")
+f = open("listRule.txt", "w", encoding="utf-8")
 
 keys = pda.transition_rules.keys()
 for key in keys:
-    print(f"{counter}. {key} {pda.transition_rules[key]}")
-    val = f"{counter}. {key} {pda.transition_rules[key]}\n"
+    val = f"{counter}. {key[0]} {key[1]} {key[2]} <=> {pda.transition_rules[key][0]} {pda.transition_rules[key][1]} {pda.transition_rules[key][2]}\n"
     states.add(key[0])
     counter += 1
     print(counter)
-    f.write(f"{key} -> {pda.transition_rules[key]}\n")
+    f.write(val)
 f.close()
 
 
