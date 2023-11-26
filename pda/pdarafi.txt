@@ -1180,3 +1180,94 @@ brtagstyle = = brtagstyle = ε
 brtagstyle " " brtagtext " ε
 brtagtext any " brtagtext ε ε
 brtagtext " " brtag " ε
+
+- scriptbody 
+bodyacctag s / script/small/strong ε ε
+
+- opentag scriptbody
+script/small/strong c / scriptbody ε ript></script><
+scriptbody r r scriptbodyopen r ε
+scriptbodyopen i i scriptbodyopen i ε
+scriptbodyopen p p scriptbodyopen t ε
+scriptbodyopen t t scriptbodyopen t ε
+
+- atribut scriptbody 
+scriptbodyopen $ > scriptbodyopenatr ε ε
+scriptbodyopen % > scriptbodyopenatr ε ε
+scriptbodyopenatr % > scriptbodyopenatr ε ε
+scriptbodyopenatr > > scriptbodyopendone > ε
+
+- id scriptbody 
+scriptbodyopenatr i > scriptbodyid ε d=""
+scriptbodyid d d scriptbodyid d ε
+scriptbodyid = = scriptbodyid = ε
+scriptbodyid " " scriptbodytext " ε
+scriptbodytext any " scriptbodytext ε ε
+scriptbodytext " " scriptbodyatrdone " ε
+scriptbodyatrdone % > scriptbodyopenatr ε ε
+scriptbodyatrdone $ > scriptbodyopenatr ε ε
+scriptbodyatrdone > > scriptbodyopendone > ε
+scriptbodyopen > > scriptbodyopendone > ε
+scriptbodyopendone $ < scriptbodyopendone ε ε
+scriptbodyopendone % < scriptbodyopendone ε ε
+
+- class scriptbody 
+scriptbodyopenatr c > scriptbodyclass ε lass=""
+scriptbodyclass l l scriptbodyclass l ε
+scriptbodyclass a a scriptbodyclass a ε
+scriptbodyclass s s scriptbodyclasss s ε
+scriptbodyclasss s s scriptbodyclass s ε
+scriptbodyclass = = scriptbodyclass = ε
+scriptbodyclass " " scriptbodytext " ε
+scriptbodytext any " scriptbodytext ε ε
+scriptbodytext " " scriptbodyatrdone " ε
+scriptbodyatrdone % > scriptbodyopenatr ε ε
+scriptbodyatrdone $ > scriptbodyopenatr ε ε
+scriptbodyatrdone > > scriptbodyopendone > ε
+scriptbodyopen > > scriptbodyopendone > ε
+scriptbodyopendone $ < scriptbodyopendone ε ε
+scriptbodyopendone % < scriptbodyopendone ε ε
+
+- style scriptbody
+scriptbodyopenatr s > scriptbodystyleorsrc ε ε
+scriptbodystyleorsrc t > scriptbodystyle ε yle=""
+scriptbodystyle y y scriptbodystyle y ε
+scriptbodystyle l l scriptbodycstyle l ε
+scriptbodycstyle e e scriptbodystyle e ε
+scriptbodystyle = = scriptbodystyle = ε
+scriptbodystyle " " scriptbodytext " ε
+scriptbodytext any " scriptbodytext ε ε
+scriptbodytext " " scriptbodyatrdone " ε
+scriptbodyatrdone % > scriptbodyopenatr ε ε
+scriptbodyatrdone $ > scriptbodyopenatr ε ε
+scriptbodyatrdone > > scriptbodyopendone > ε
+scriptbodyopen > > scriptbodyopendone > ε
+scriptbodyopendone $ < scriptbodyopendone ε ε
+scriptbodyopendone % < scriptbodyopendone ε ε
+scriptbodyopendone any < scriptbodyopendone ε ε
+
+- src scriptbody 
+scriptbodyopenatr s > scriptbodystyleorsrc ε ε
+scriptbodystyleorsrc r > scriptbodysrc ε c=""
+scriptbodysrc c c scriptbodysrc c ε
+scriptbodysrc = = scriptbodysrc = ε
+scriptbodysrc " " scriptbodytext " ε
+scriptbodytext any " scriptbodytext ε ε
+scriptbodytext " " scriptbodyatrdone " ε
+scriptbodyatrdone % > scriptbodyopenatr ε ε
+scriptbodyatrdone $ > scriptbodyopenatr ε ε
+scriptbodyatrdone > > scriptbodyopendone > ε
+scriptbodyopen > > scriptbodyopendone > ε
+scriptbodyopendone $ < scriptbodyopendone ε ε
+scriptbodyopendone % < scriptbodyopendone ε ε
+
+- closing tag scriptbody
+scriptbodyopendone < < newtaginscriptbody < ε
+newtaginscriptbody / / scriptbodyclose / ε
+scriptbodyclose s s scriptbodyclose s ε
+scriptbodyclose c c scriptbodyclose c ε
+scriptbodyclose r r scriptbodyclose r ε
+scriptbodyclose i i scriptbodyclose i ε
+scriptbodyclose p p scriptbodyclose p ε
+scriptbodyclose t t scriptbodyclose t ε
+scriptbodyclose > > bodyopendone > ε
