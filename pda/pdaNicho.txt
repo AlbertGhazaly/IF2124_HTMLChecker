@@ -359,8 +359,8 @@ imgopen > > bodyopendone > ε
 imgopenatr > > bodyopendone > ε
 
 - start hr html 
-bodyacctag h / hrtag ε r>
-hrtag r r hrtag r ε
+bodyacctag h / hopentag ε ε
+hopentag r / hrtag ε >
 hrtag % > hrtagatr ε ε
 hrtagatr % > hrtag ε ε
 hrtag > > bodyopendone > <
