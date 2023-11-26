@@ -660,10 +660,13 @@ inputstyle " " inputanytext " ε
 
 - hr in body
 bodyacctag h / hopentag ε ε
-hopentag r / hrtag ε >
-hrtag % > hrtagatr ε ε
-hrtagatr % > hrtag ε ε
-hrtag > > bodyopendone > <
+hopentag r / hropentag ε >
+hropentag % > hrtagatr ε ε
+hropentag $ > hrtagatr ε ε
+hrtagatr % > hrtagatr ε ε
+hrtagatr $ > hrtagatr ε ε
+hrtagatr > > bodyopendone > <
+hropentag > > bodyopendone > <
 
 - hrtagatr id
 hrtagatr i > hrtagid ε d=""
@@ -671,7 +674,7 @@ hrtagid d d hrtagid d ε
 hrtagid = = hrtagid = ε
 hrtagid " " hrtagtext " ε
 hrtagtext any " hrtagtext ε ε
-hrtagtext " " hrtag " ε
+hrtagtext " " hropentag " ε
 
 - hrtagatr class 
 hrtagatr c > hrtagclass ε lass=""
@@ -682,7 +685,7 @@ hrtagclass s s hrtagclass s ε
 hrtagclass = = hrtagclass = ε
 hrtagclass " " hrtagtext " ε
 hrtagtext any " hrtagtext ε ε
-hrtagtext " " hrtag " ε
+hrtagtext " " hropentag " ε
 
 - hrtagatr style 
 hrtagatr s > hrtagstyle ε tyle=""
@@ -693,7 +696,7 @@ hrtagstyle e e hrtagstyle e ε
 hrtagstyle = = hrtagstyle = ε
 hrtagstyle " " hrtagtext " ε
 hrtagtext any " hrtagtext ε ε
-hrtagtext " " hrtag " ε
+hrtagtext " " hropentag " ε
 
 - form in body
 bodyacctag f / formopentag ε orm></form>
@@ -780,6 +783,9 @@ buttonopentag t t buttonopentag t ε
 buttonopentag o o buttonopentag o ε
 buttonopentag n n buttonopentag n ε
 buttonopentag % > buttontagatr ε ε
+buttonopentag $ > buttontagatr ε ε
+buttontagatr % > buttontagatr ε ε
+buttontagatr $ > buttontagatr ε ε
 buttonopentag > > buttoncontent > ε
 buttoncontent any < buttoncontent ε ε
 buttoncontent < < buttonclosetag < ε
@@ -856,6 +862,10 @@ bodyacctag h / hopentag ε ε
 - kasus h1
 hopentag 1 / h1opentag ε ></h1>
 h1opentag % > h1tagatr ε ε
+h1opentag $ > h1tagatr ε ε
+h1tagatr % > h1tagatr ε ε
+h1tagatr $ > h1tagatr ε ε
+h1tagatr > > h1content > ε
 h1opentag > > h1content > ε
 h1content any < h1content ε ε
 h1content < < h1closetag < ε
@@ -897,6 +907,10 @@ h1tagtext " " h1opentag " ε
 - kasus h2
 hopentag 2 / h2opentag ε ></h2>
 h2opentag % > h2tagatr ε ε
+h2opentag $ > h2tagatr ε ε
+h2tagatr % > h2tagatr ε ε
+h2tagatr $ > h2tagatr ε ε
+h2tagatr > > h2content > ε
 h2opentag > > h2content > ε
 h2content any < h2content ε ε
 h2content < < h2closetag < ε
@@ -938,6 +952,10 @@ h2tagtext " " h2opentag " ε
 - kasus h3
 hopentag 3 / h3opentag ε ></h3>
 h3opentag % > h3tagatr ε ε
+h3opentag $ > h3tagatr ε ε
+h3tagatr % > h3tagatr ε ε
+h3tagatr $ > h3tagatr ε ε
+h3tagatr > > h3content > ε
 h3opentag > > h3content > ε
 h3content any < h3content ε ε
 h3content < < h3closetag < ε
@@ -979,6 +997,10 @@ h3tagtext " " h3opentag " ε
 - kasus h4
 hopentag 4 / h4opentag ε ></h4>
 h4opentag % > h4tagatr ε ε
+h4opentag $ > h4tagatr ε ε
+h4tagatr % > h4tagatr ε ε
+h4tagatr $ > h4tagatr ε ε
+h4tagatr > > h4content > ε
 h4opentag > > h4content > ε
 h4content any < h4content ε ε
 h4content < < h4closetag < ε
@@ -1020,6 +1042,10 @@ h4tagtext " " h4opentag " ε
 - kasus h5
 hopentag 5 / h5opentag ε ></h5>
 h5opentag % > h5tagatr ε ε
+h5opentag $ > h5tagatr ε ε
+h5tagatr % > h5tagatr ε ε
+h5tagatr $ > h5tagatr ε ε
+h5tagatr > > h5content > ε
 h5opentag > > h5content > ε
 h5content any < h5content ε ε
 h5content < < h5closetag < ε
@@ -1061,6 +1087,10 @@ h5tagtext " " h5opentag " ε
 - kasus h6
 hopentag 6 / h6opentag ε ></h6>
 h6opentag % > h6tagatr ε ε
+h6opentag $ > h6tagatr ε ε
+h6tagatr % > h6tagatr ε ε
+h6tagatr $ > h6tagatr ε ε
+h6tagatr > > h6content > ε
 h6opentag > > h6content > ε
 h6content any < h6content ε ε
 h6content < < h6closetag < ε
@@ -1152,11 +1182,14 @@ aclose a a aclose a ε
 aclose > > bodyopendone > ε
 
 
-- start br html 
+- br in body
 bodyacctag b / bopentag ε ε
 bopentag r / brtag ε >
 brtag % > brtagatr ε ε
-brtagatr % > brtag ε ε
+brtag $ > brtagatr ε ε
+brtagatr % > brtagatr ε ε
+brtagatr $ > brtagatr ε ε
+brtagatr > > bodyopendone > <
 brtag > > bodyopendone > <
 
 - brtagatr id
@@ -1198,6 +1231,10 @@ tableopentag b b tableopentag b ε
 tableopentag l l tableopentag l ε
 tableopentag e e tableopentag e ε
 tableopentag % > tabletagatr ε ε
+tableopentag $ > tabletagatr ε ε
+tabletagatr % > tabletagatr ε ε
+tabletagatr $ > tabletagatr ε ε
+tabletagatr > > bodyopendone > ε
 tableopentag > > bodyopendone > ε
 tableclosetag a a tableclosetag a ε
 tableclosetag b b tableclosetag b ε
