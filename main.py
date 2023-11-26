@@ -32,11 +32,6 @@ while check:
         counterCol = -1
     counterCol += 1
 
-    if currChar == "$":
-        counterRow += 1
-        counterCol = -1
-    counterCol += 1
-
     # print(f"stack: {stack}")
     # print(f"str: {html}")
     # print()
@@ -83,8 +78,9 @@ if stack.top == "#" and len(html) == 0 and not(invalid):
     print("\nAccepted!\n")
 else:
     print("")
+    print(f"  file \"{html_path}\", line {counterRow}")
     print(html_List[counterRow], end="")
     for i in range(counterCol-1):
         print(" ", end="")
     print("^")
-    print("Not Accepted :(\n")
+    print(f"SyntaxError: kode kamu jelek (detected at line {counterRow})")
