@@ -1234,8 +1234,8 @@ tableopentag % > tabletagatr ε ε
 tableopentag $ > tabletagatr ε ε
 tabletagatr % > tabletagatr ε ε
 tabletagatr $ > tabletagatr ε ε
-tabletagatr > > bodyopendone > ε
-tableopentag > > bodyopendone > ε
+tabletagatr > > tablecontent > ε
+tableopentag > > tablecontent > ε
 tableclosetag a a tableclosetag a ε
 tableclosetag b b tableclosetag b ε
 tableclosetag l l tableclosetag l ε
@@ -1271,6 +1271,158 @@ tabletagstyle = = tabletagstyle = ε
 tabletagstyle " " tabletagtext " ε
 tabletagtext any " tabletagtext ε ε
 tabletagtext " " tableopentag " ε
+
+- table content
+tablecontent % < tablecontent ε ε
+tablecontent $ < tablecontent ε ε
+tablecontent < < tableprop < ε
+tableprop / / tableclosetag / ε
+tableclosetag t t tableclosetag t ε
+tableclosetag r r trclosetag r ε
+
+- table properties tr
+tableprop t / tropentag ε r></tr>
+tropentag r r tropentag r ε
+tropentag % > trtagatr ε ε
+tropentag $ > trtagatr ε ε
+tropentag > > trcontent > ε
+trtagatr % > trtagatr ε ε
+trtagatr $ > trtagatr ε ε
+trtagatr > > trcontent > ε
+trcontent % < trcontent ε ε
+trcontent $ < trcontent ε ε
+trcontent < < trprop < ε
+trprop / / trclosetag / ε
+trclosetag t t trclosetag t ε
+trclosetag r r trclosetag r ε
+trclosetag > > tablecontent > <
+
+- tr atribut id
+trtagatr i > trtagid ε d=""
+trtagid d d trtagid d ε
+trtagid = = trtagid = ε
+trtagid " " trtagtext " ε
+trtagtext any " trtagtext ε ε
+trtagtext " " tropentag " ε
+
+- tr atribut class
+trtagatr c > trtagclass ε lass=""
+trtagclass l l trtagclass l ε
+trtagclass a a trtagclass a ε
+trtagclass s s trtagclass s ε
+trtagclass s s trtagclass s ε
+trtagclass = = trtagclass = ε
+trtagclass " " trtagtext " ε
+trtagtext any " trtagtext ε ε
+trtagtext " " tropentag " ε
+
+- tr atribut style
+trtagatr s > trtagstyle ε tyle=""
+trtagstyle t t trtagstyle t ε
+trtagstyle y y trtagstyle y ε
+trtagstyle l l trtagstyle l ε
+trtagstyle e e trtagstyle e ε
+trtagstyle = = trtagstyle = ε
+trtagstyle " " trtagtext " ε
+trtagtext any " trtagtext ε ε
+trtagtext " " tropentag " ε
+
+- table-tr properties th td
+trprop t / thdopentag ε ε
+
+- th
+thdopentag h / thopentag ε ></th>
+thopentag % > thtagatr ε ε
+thopentag $ > thtagatr ε ε
+thopentag > > thcontent > ε
+thtagatr % > thtagatr ε ε
+thtagatr $ > thtagatr ε ε
+thtagatr > > thcontent > ε
+thcontent % < thcontent ε ε
+thcontent $ < thcontent ε ε
+thcontent any < thcontent ε ε
+thcontent < < trprop < ε
+trclosetag h h thclosetag h ε
+thclosetag % > thclosetag ε ε
+thclosetag $ > thclosetag ε ε
+thclosetag > > trcontent > <
+
+- th atribut id
+thtagatr i > thtagid ε d=""
+thtagid d d thtagid d ε
+thtagid = = thtagid = ε
+thtagid " " thtagtext " ε
+thtagtext any " thtagtext ε ε
+thtagtext " " thopentag " ε
+
+- th atribut class
+thtagatr c > thtagclass ε lass=""
+thtagclass l l thtagclass l ε
+thtagclass a a thtagclass a ε
+thtagclass s s thtagclass s ε
+thtagclass s s thtagclass s ε
+thtagclass = = thtagclass = ε
+thtagclass " " thtagtext " ε
+thtagtext any " thtagtext ε ε
+thtagtext " " thopentag " ε
+
+- th atribut style
+thtagatr s > thtagstyle ε tyle=""
+thtagstyle t t thtagstyle t ε
+thtagstyle y y thtagstyle y ε
+thtagstyle l l thtagstyle l ε
+thtagstyle e e thtagstyle e ε
+thtagstyle = = thtagstyle = ε
+thtagstyle " " thtagtext " ε
+thtagtext any " thtagtext ε ε
+thtagtext " " thopentag " ε
+
+- td
+thdopentag d / tdopentag ε ></td>
+tdopentag % > tdtagatr ε ε
+tdopentag $ > tdtagatr ε ε
+tdopentag > > tdcontent > ε
+tdtagatr % > tdtagatr ε ε
+tdtagatr $ > tdtagatr ε ε
+tdtagatr > > tdcontent > ε
+tdcontent % < tdcontent ε ε
+tdcontent $ < tdcontent ε ε
+tdcontent any < tdcontent ε ε
+tdcontent < < trprop < ε
+trclosetag d d tdclosetag d ε
+tdclosetag % > tdclosetag ε ε
+tdclosetag $ > tdclosetag ε ε
+tdclosetag > > trcontent > <
+
+- td atribut id
+tdtagatr i > tdtagid ε d=""
+tdtagid d d tdtagid d ε
+tdtagid = = tdtagid = ε
+tdtagid " " tdtagtext " ε
+tdtagtext any " tdtagtext ε ε
+tdtagtext " " tdopentag " ε
+
+- td atribut class
+tdtagatr c > tdtagclass ε lass=""
+tdtagclass l l tdtagclass l ε
+tdtagclass a a tdtagclass a ε
+tdtagclass s s tdtagclass s ε
+tdtagclass s s tdtagclass s ε
+tdtagclass = = tdtagclass = ε
+tdtagclass " " tdtagtext " ε
+tdtagtext any " tdtagtext ε ε
+tdtagtext " " tdopentag " ε
+
+- td atribut style
+tdtagatr s > tdtagstyle ε tyle=""
+tdtagstyle t t tdtagstyle t ε
+tdtagstyle y y tdtagstyle y ε
+tdtagstyle l l tdtagstyle l ε
+tdtagstyle e e tdtagstyle e ε
+tdtagstyle = = tdtagstyle = ε
+tdtagstyle " " tdtagtext " ε
+tdtagtext any " tdtagtext ε ε
+tdtagtext " " tdopentag " ε
 
 -div tag
 bodyacctag d / divopen ε iv></div><
@@ -1407,3 +1559,104 @@ scriptbodyclose i i scriptbodyclose i ε
 scriptbodyclose p p scriptbodyclose p ε
 scriptbodyclose t t scriptbodyclose t ε
 scriptbodyclose > > bodyopendone > ε
+
+- linkbody
+bodyacctag l / linkbody ε inkrel=""><
+
+linkbody i i linkbody i ε
+linkbody n n linkbody n ε
+linkbody k k linkbody k ε
+linkbody $ > linkbodyatr ε ε
+linkbody % > linkbodyatr ε ε
+linkbody $ r linkbodyatr ε ε
+linkbody % r linkbodyatr ε ε
+linkbody > > bodyopendone > ε
+linkbodyatr $ r linkbodyatr ε ε
+linkbodyatr % r linkbodyatr ε ε
+linkbodyatr $ > linkbodyatr ε ε
+linkbodyatr % > linkbodyatr ε ε
+linkbodyatr $ > linkbodyatr ε ε
+linkbodyatr > > bodyopendone > ε
+
+- rel linkbody 
+linkbodyatr r r linkbodyrelwajib r ε
+linkbodyrelwajib e e linkbodyrelwajib e ε
+linkbodyrelwajib l l linkbodyrelwajib l ε
+linkbodyrelwajib = = linkbodyrelwajib = ε
+linkbodyrelwajib " " linkbodytext " ε
+linkbodytext any " linkbodytext ε ε
+linkbodytext " " linkbodyatrdone " ε
+linkbodyatrdone % > linkbodyatr ε ε
+linkbodyatrdone $ > linkbodyatr ε ε
+linkbodyatrdone > > bodyopendone > ε
+
+- id linkbody 
+linkbodyatr i > linkbodyid ε d=""
+linkbodyid d d linkbodyid d ε
+linkbodyid = = linkbodyid = ε
+linkbodyid " " linkbodytext " ε
+linkbodytext any " linkbodytext ε ε
+linkbodytext " " linkbodyatrdone " ε
+linkbodyatrdone % > linkbodyatr ε ε
+linkbodyatrdone $ > linkbodyatr ε ε
+linkbodyatrdone > > bodyopendone > ε
+linkbody > > bodyopendone > ε
+
+
+- class linkbody 
+linkbodyatr c > linkbodyclass ε lass=""
+linkbodyclass l l linkbodyclass l ε
+linkbodyclass a a linkbodyclass a ε
+linkbodyclass s s linkbodyclasss s ε
+linkbodyclasss s s linkbodyclass s ε
+linkbodyclass = = linkbodyclass = ε
+linkbodyclass " " linkbodytext " ε
+linkbodytext any " linkbodytext ε ε
+linkbodytext " " linkbodyatrdone " ε
+linkbodyatrdone % > linkbodyatr ε ε
+linkbodyatrdone $ > linkbodyatr ε ε
+linkbodyatrdone > > bodyopendone > ε
+linkbody > > bodyopendone > ε
+
+
+- style linkbody
+linkbodyatr s > linkbodystyle ε tyle=""
+linkbodystyle t t linkbodystyle t ε
+linkbodystyle y y linkbodystyle y ε
+linkbodystyle l l linkbodycstyle l ε
+linkbodycstyle e e linkbodystyle e ε
+linkbodystyle = = linkbodystyle = ε
+linkbodystyle " " linkbodytext " ε
+linkbodytext any " linkbodytext ε ε
+linkbodytext " " linkbodyatrdone " ε
+linkbodyatrdone % > linkbodyatr ε ε
+linkbodyatrdone $ > linkbodyatr ε ε
+linkbodyatrdone > > bodyopendone > ε
+linkbody > > bodyopendone > ε
+
+- rel linkbody 
+linkbodyatr r > linkbodyrel ε el=""
+linkbodyrel e e linkbodyrel e ε
+linkbodyrel l l linkbodyrel l ε
+linkbodyrel = = linkbodyrel = ε
+linkbodyrel " " linkbodytext " ε
+linkbodytext any " linkbodytext ε ε
+linkbodytext " " linkbodyatrdone " ε
+linkbodyatrdone % > linkbodyatr ε ε
+linkbodyatrdone $ > linkbodyatr ε ε
+linkbodyatrdone > > bodyopendone > ε
+linkbody > > bodyopendone > ε
+
+- href linkbody 
+linkbodyatr h > linkbodyhref ε ref=""
+linkbodyhref r r linkbodyhref r ε
+linkbodyhref e e linkbodyhref e ε
+linkbodyhref f f linkbodyhref f ε
+linkbodyhref = = linkbodyhref = ε
+linkbodyhref " " linkbodytext " ε
+linkbodytext any " linkbodytext ε ε
+linkbodytext " " linkbodyatrdone " ε
+linkbodyatrdone % > linkbodyatr ε ε
+linkbodyatrdone $ > linkbodyatr ε ε
+linkbodyatrdone > > bodyopendone > ε
+linkbody > > bodyopendone > ε
